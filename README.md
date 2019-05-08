@@ -1,4 +1,4 @@
-##ICPC Resolver - Saris by Club Algoritmia ESCOM
+## ICPC Resolver - Saris by Club Algoritmia ESCOM
 
 The code of this repository contains a react app tool that can be run locally to simulate what happens in the frozen time during a competitive programming competition.
 
@@ -8,7 +8,7 @@ The main idea for this project was to have a resolver for any Codeforces contest
 
 In order to run this tool, you need to follow the [installation](#Installation) steps.
 
-###Installation
+### Installation
 
 To run this tool first you need to get the repository. You can either download the source code in your computer or run the following command:
 
@@ -22,7 +22,7 @@ Once you have run this command, just type next command in the root folder of the
 
 `npm start`
 
-###Input - What the tool needs to run the Resolver
+### Input - What the tool needs to run the Resolver
 
 The resolver (Saris) needs a JSON file in the [src/log](https://github.com/galloska/SarisForCodeforces/tree/master/src/logs) folder with the following format:
 
@@ -79,7 +79,7 @@ Verdicts can be anything you want except the Accepted verdict that must be "Acce
 
 If you have a JSON file with these requirements, then you can run this tool and start revealing the scoreboard.
 
-###Special commands
+### Special commands
 
 There are some commands that you need to type that make this tool to work. The commands are the following ones:
 
