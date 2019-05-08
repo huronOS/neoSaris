@@ -1,8 +1,8 @@
 ## ICPC Resolver - Saris by Club Algoritmia ESCOM
 
-The code of this repository contains a react app tool that can be run locally to simulate what happens in the frozen time during a competitive programming competition.
+The code of this repository contains a react app that can be used locally to simulate what happens in the frozen time during a competitive programming competition.
 
-It is inspired by the [https://icpc.baylor.edu/icpctools/resolver/Resolver.pdf](ICPC Resolver).
+It is inspired by the [ICPC Resolver](https://icpc.baylor.edu/icpctools/resolver/Resolver.pdf).
 
 The main idea for this project was to have a resolver for any Codeforces contest. This idea has changed, and the resolver can be used with any contest because it depends on a JSON input and not on the online judge.
 
