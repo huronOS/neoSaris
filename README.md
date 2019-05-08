@@ -14,7 +14,7 @@ In order to run this tool, you need to follow the [installation](#Installation) 
 
 To run this tool first you need to get the repository. You can either download the source code in your computer or run the following command:
 
-`git clone https://github.com/galloska/SarisForCodeforces.git`
+`git clone https://github.com/galloska/SarisByClubAlgoritmiaESCOM.git`
 
 Once you have downloaded the source code you need to install the dependencies of the project with the following command on the root folder of this project:
 
@@ -26,7 +26,7 @@ Once you have run this command, just type next command in the root folder of the
 
 ### Input - What the tool needs to run the Resolver
 
-The resolver (Saris) needs a JSON file in the [src/log](https://github.com/galloska/SarisForCodeforces/tree/master/src/logs) folder with the following format:
+The resolver (Saris) needs a JSON file in the [src/log](https://github.com/galloska/SarisByClubAlgoritmiaESCOM/tree/master/src/logs) folder with the following format:
 
 ```
 {
@@ -62,7 +62,7 @@ The resolver (Saris) needs a JSON file in the [src/log](https://github.com/gallo
 
 **Contest:** The Contest part contains information about the competition such as duration, frozen time and the number of problems.
 
-**Teams:** In the team’s part the key value is the identifier of the team and it is followed by the name of the team. The key value must be unique for each team and if you want show an image related with that team, you can copy the image to [src/university_logos](https://github.com/galloska/SarisForCodeforces/tree/master/src/university_logos) and rename it to `key.png` where 'key' is the key value in the JSON file for that team.
+**Teams:** In the team’s part the key value is the identifier of the team and it is followed by the name of the team. The key value must be unique for each team and if you want show an image related with that team, you can copy the image to [src/university_logos](https://github.com/galloska/SarisByClubAlgoritmiaESCOM/tree/master/src/university_logos) and rename it to `key.png` where 'key' is the key value in the JSON file for that team.
 
 **VerdictWithoutPenalty:** This includes those verdicts that does not affect penalty time for teams. For example, in some contest a runtime error adds penalty time and in some others this verdict is not considered for a penalty.
 
