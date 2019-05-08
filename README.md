@@ -29,41 +29,32 @@ The resolver (Saris) needs a JSON file in the [src/log](https://github.com/gallo
 ```
 {
   "Contest": {
-		"Duration": 300,
-		"FrozenTime": 60,
-		"NumberOfProblems": 10
-	},
-	"Teams": {
+    "Duration": 300,
+    "FrozenTime": 60,
+    "NumberOfProblems": 10
+  },
+  "Teams": {
     "1": "Red Panda",
-		"2": "Moscow IPT 1",
-		"3": "Moscow IPT Jinotega",
-    .
-    .
-    .
+    "2": "Moscow IPT 1",
+    "3": "Moscow IPT Jinotega"
   },
   "VerdictWithoutPenalty": {
-    "1": "Compilation error",
-    .
-    .
-    .
+    "1": "Compilation error"
   },
-  "Submissions": [
+    "Submissions": [
     {
       "timeSubmission":  47,
       "TeamName":  "Moscow IPT Jinotega",
       "Problem":  "A",
       "Verdict":  "Accepted"
     },
-    .
-    .
-    .
     {
-  		"timeSubmission":  260,
-  		"TeamName":  "Moscow IPT 1",
-  		"Problem":  "H",
-  		"Verdict":  "Wrong answer"
-	  }
-	]
+      "timeSubmission":  260,
+      "TeamName":  "Moscow IPT 1",
+      "Problem":  "H",
+      "Verdict":  "Wrong answer"
+    }
+  ]
 }
 ```
 
