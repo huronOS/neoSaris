@@ -1,68 +1,92 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+##ICPC Resolver - Saris by Club Algoritmia ESCOM
 
-## Available Scripts
+The code of this repository contains a react app tool that can be run locally to simulate what happens in the frozen time during a competitive programming competition.
 
-In the project directory, you can run:
+It is inspired by the [https://icpc.baylor.edu/icpctools/resolver/Resolver.pdf](ICPC Resolver).
 
-### `npm start`
+The main idea for this project was to have a resolver for any Codeforces contest. This idea has changed, and the resolver can be used with any contest because it depends on a JSON input and not on the online judge.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+In order to run this tool, you need to follow the [installation](#Installation) steps.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+###Installation
 
-### `npm test`
+To run this tool first you need to get the repository. You can either download the source code in your computer or run the following command:
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`git clone https://github.com/galloska/SarisForCodeforces.git`
 
-### `npm run build`
+Once you have downloaded the source code you need to install the dependencies of the project with the following command on the root folder of this project:
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`npm install`
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+Once you have run this command, just type next command in the root folder of the project and start using Saris:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`npm start`
 
-### `npm run eject`
+###Input - What the tool needs to run the Resolver
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The resolver (Saris) needs a JSON file in the [src/log](https://github.com/galloska/SarisForCodeforces/tree/master/src/logs) folder with the following format:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+{
+  "Contest": {
+		"Duration": 300,
+		"FrozenTime": 60,
+		"NumberOfProblems": 10
+	},
+	"Teams": {
+    "1": "Red Panda",
+		"2": "Moscow IPT 1",
+		"3": "Moscow IPT Jinotega",
+    .
+    .
+    .
+  },
+  "VerdictWithoutPenalty": {
+    "1": "Compilation error",
+    .
+    .
+    .
+  },
+  "Submissions": [
+    {
+      "timeSubmission":  47,
+      "TeamName":  "Moscow IPT Jinotega",
+      "Problem":  "A",
+      "Verdict":  "Accepted"
+    },
+    .
+    .
+    .
+    {
+  		"timeSubmission":  260,
+  		"TeamName":  "Moscow IPT 1",
+  		"Problem":  "H",
+  		"Verdict":  "Wrong answer"
+	  }
+	]
+}
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Contest: The Contest part contains information about the competition such as duration, frozen time and the number of problems.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Teams: In the team’s part the key value is the identifier of the team and it is followed by the name of the team. The key value must be unique for each team and if you want show an image related with that team, you can copy the image to [src/university_logos](https://github.com/galloska/SarisForCodeforces/tree/master/src/university_logos) and rename it to `key.png` where 'key' is the key value in the JSON file for that team.
 
-## Learn More
+VerdictWithoutPenalty: This includes those verdicts that does not affect penalty time for teams. For example, in some contest a runtime error adds penalty time and in some others this verdict is not considered for a penalty.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Submissions: An array containing the submissions of the contest. Each submission must have the time submission in minutes, the team that submitted the solution, the problem that was submitted and the verdict.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Verdicts can be anything you want except the Accepted verdict that must be "Accepted".
 
-### Code Splitting
+If you have a JSON file with these requirements, then you can run this tool and start revealing the scoreboard.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+###Special commands
 
-### Analyzing the Bundle Size
+There are some commands that you need to type that make this tool to work. The commands are the following ones:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+Enter: If you click enter for the first time then the UI goes to the next pending submission from bottom to top, and highlited it to let know the user that is the current pending submission the score is going to reveal.
 
-### Making a Progressive Web App
+If it is the second time you type the enter key, then it reveals current pending submission.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+Ctrl + Delete: Reveals the final standings.
 
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Ctrl + Back space: Reveals standing until the top 10. That means the top 10 will be in the frozen stage and then you can go one by one revealing the results.
