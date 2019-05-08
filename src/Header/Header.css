@@ -1,0 +1,39 @@
+.headerTableRow {
+  background-color: #0e0e0f;
+  height: 44px;
+  margin-left: 8px;
+  width: 98%;
+}
+
+.headerTableColumnRank {
+  color: white;
+  margin-left: 8px;
+  position: absolute;
+  font-family: Helvetica;
+  font-size: large;
+  width: 3%;
+}
+
+.headerTableColumnSolvedAndTime {
+  color: white;
+  float: right;
+  text-align: right;
+  font-family: Helvetica;
+  font-size: large;
+  width: 10%;
+}
+
+.headerTableColumnTeamName {
+  color: white;
+  left: 45%;
+  position: absolute;
+  font-size: large;
+  font-family: Helvetica;
+}
+
+.headerHuron {
+  color: #9ab9ed;
+  text-align: center;
+  font-size: xx-large;
+  height: 80px;
+}

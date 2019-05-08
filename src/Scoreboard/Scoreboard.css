@@ -1,0 +1,115 @@
+.scoreboardTable {
+  height:100vh;
+}
+
+.scoreboardTableRow {
+  height: 60px;
+  margin-left: 8px;
+  width: 98%;
+}
+
+.scoreboardTableColumnRank {
+  color: white;
+  display: inline-block;
+  font-family: Helvetica;
+  text-align: center;
+  font-size: x-large;
+  width: 3%;
+}
+
+.scoreboardTableColumnTeamPicture {
+  display: inline-block;
+  position: absolute;
+  margin-top: 2px;
+  width: 4%;
+  height: 50px;
+}
+
+.scoreboardTableColumnProblem {
+  border-radius: 10px;
+  display: inline-block;
+  margin-top: 30px;
+  margin-right: 2px;
+  font-family: Helvetica;
+  text-align: center;
+}
+
+.scoreboardTableProblemRowFirstChild > :first-child {
+  margin-left: 4.3%;
+}
+
+.scoreboardTableColumnSolved {
+  color: white;
+  display: inline-block;
+  float: right;
+  margin-top: 30px;
+  text-align: center;
+  font-family: Helvetica;
+  font-size: x-large;
+  width: 2.5%;
+}
+
+.scoreboardTableColumnTime {
+  color: white;
+  display: inline-block;
+  margin-top: 30px;
+  float: right;
+  text-align: center;
+  font-family: Helvetica;
+  font-size: x-large;
+  width: 4%;
+}
+
+.scoreboardTableColumnTeamName {
+  color: white;
+  left: 10%;
+  position: absolute;
+  font-family: Helvetica;
+  font-size: x-large;
+}
+
+.scoreboardTableColumnProblemDefault {
+  color: #8a919b;
+  background-color: #23272d;
+}
+
+.scoreboardTableColumnProblemAccepted {
+  color: white;
+  background-color: #33a524;
+}
+
+.scoreboardTableColumnProblemTried {
+  color: white;
+  background-color: #e21616;
+}
+
+.scoreboardTableColumnProblemPending {
+  color: white;
+  background-color: #ccc908;
+}
+
+.scoreboardTableColumnProblemCurrentPending {
+  color: white;
+  background-color: #efec07;
+}
+
+.scoreboardTableColumnProblemFirstToSolve {
+  color: white;
+  background-color: #0d3d18;
+}
+
+.scoreboardTableGrayRow {
+  background-color: #2a2b2d;
+}
+
+.scoreboardTableBlackRow {
+  background-color: #0e0e0f;
+}
+
+.scoreboardTableSelectedRow {
+  background-color: #74a6f7;
+}
+
+.scoreboardTableSelectedRowFinished {
+  background-color: #2873ed;
+}
