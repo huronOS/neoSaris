@@ -428,6 +428,7 @@ class Scoreboard extends Component {
     }
 
     this.updateScoreboard();
+    this.updatePositionOfStandings();
     this.setState({
       submissions: submissions,
       submissionWhenFrozen: submissionWhenFrozen,
