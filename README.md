@@ -1,6 +1,6 @@
 ## ICPC Resolver - Saris by Club Algoritmia ESCOM
 
-![Example image of Saris by Club Algoritmia ESCOM](/public/exampleImage.png)
+![Example image of Saris by Club Algoritmia ESCOM](/public/exampleImage.PNG)
 
 The code of this repository contains a react app that can be used locally to simulate what happens in the frozen time during a competitive programming competition.
 
