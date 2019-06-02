@@ -22,7 +22,7 @@ class Scoreboard extends Component {
     return submissionsOnContest;
   }
 
-  getSubmissionsWhenFrozen(data) {
+  getSubmissionsWhenFrozen(verdictsWithoutPenalty) {
     let submissionsOnFrozen = [];
     SubmissionsJSON.Submissions.forEach(function(submission) {
       if (submission.timeSubmission >= SubmissionsJSON.Contest.Duration - SubmissionsJSON.Contest.FrozenTime &&
@@ -32,7 +32,9 @@ class Scoreboard extends Component {
         result.timeSubmission = submission.timeSubmission;
         result.verdict = submission.Verdict;
         result.problem = submission.Problem;
-        submissionsOnFrozen.push(result);
+        if (verdictsWithoutPenalty.includes(result.verdict) === false) {
+          submissionsOnFrozen.push(result);
+        }
       }
     });
     return submissionsOnFrozen;
@@ -207,18 +209,19 @@ class Scoreboard extends Component {
       result.penaltyOnProblem = penaltyOnProblem;
       return result;
     });
+
+    let verdictsWithoutPenalty = Object.entries(SubmissionsJSON.VerdictWithoutPenalty).map((verdict) => {
+      return verdict[1];
+    });
+
     let submissions = this.getSubmissions();
     submissions = submissions.sort(function(a, b) {
       return a.timeSubmission - b.timeSubmission;
     });
 
-    let submissionWhenFrozen = this.getSubmissionsWhenFrozen();
+    let submissionWhenFrozen = this.getSubmissionsWhenFrozen(verdictsWithoutPenalty);
     submissionWhenFrozen = submissionWhenFrozen.sort(function(a, b) {
       return a.timeSubmission - b.timeSubmission;
-    });
-
-    let verdictsWithoutPenalty = Object.entries(SubmissionsJSON.VerdictWithoutPenalty).map((verdict) => {
-      return verdict[1];
     });
 
     let idOfNextUserRowHighlighted = -1;
