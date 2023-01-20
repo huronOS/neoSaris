@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^1.2.3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-flip-move": "^3.0.3",
-    "react-scripts": "3.0.0"
+    "react-scripts": "3.0.0",
+    "sha512": "^0.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
