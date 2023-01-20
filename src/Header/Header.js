@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import SubmissionsJSON from '../logs/logs.json';
 import './Header.css';
 
 class Header extends Component {
@@ -6,7 +7,7 @@ class Header extends Component {
     return (
       <div>
         <div className="headerHuron">
-            SARIS - CLUB DE ALGORITMIA ESCOM
+            {SubmissionsJSON.Contest.Name}
         </div>
         <div
           className="headerTableRow">

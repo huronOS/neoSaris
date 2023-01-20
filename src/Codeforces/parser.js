@@ -74,7 +74,8 @@ export const getContestData = async () => {
         contestData: {
             Duration: Math.floor(response.result.contest.durationSeconds/60),
             FrozenTime: 60,
-            NumberOfProblems: response.result.problems.length
+            NumberOfProblems: response.result.problems.length,
+			Name: response.result.contest.name,
         },
         teams: Object.fromEntries(response.result.rows.map((row, index) => {
             return [index, row.party.teamName]
