@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import "./App.css";
 import { buildJSON } from "./Codeforces/parser";
 import Scoreboard from "./Scoreboard/Scoreboard";
-import Form from "./Form/Form";
+import { CircleLoading } from "react-loadingg";
 
 let contestData = {};
 
@@ -20,7 +20,7 @@ function App() {
 
   return (
     <div className="AppBackground">
-      {step === "loading" && <p>Loading</p>}
+      {step === "loading" && <CircleLoading />}
       {step === "reveal" && <Scoreboard submissionsData={contestData} />}
     </div>
   );
