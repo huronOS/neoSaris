@@ -587,7 +587,7 @@ class Scoreboard extends Component {
         onKeyDown={(e) => this.keyDownHandler(e)}
       >
         <div>
-          <Header />
+          <Header title={this.props.submissionsData.Contest.Name} />
           <FlipMove ref="flipMove" staggerDurationBy="30" duration={900}>
             {this.getScoreboard()}
           </FlipMove>
