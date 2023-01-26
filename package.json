@@ -9,6 +9,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-flip-move": "^3.0.3",
+    "react-loadingg": "^1.7.2",
     "react-scripts": "3.0.0",
     "sha512": "^0.0.1"
   },

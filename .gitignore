@@ -1,3 +1,4 @@
 #Dependencies
 /node_modules/*
+build/*
 src/logs/logs.json
