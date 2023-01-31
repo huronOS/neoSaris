@@ -97,3 +97,14 @@ If it is the second time you type the enter key, then it reveals the current pen
 **Ctrl + Delete:** Reveals the final standings.
 
 **Ctrl + Back space:** Reveals standing until the top 10. That means the top 10 will be in the frozen stage and then you can go one by one revealing the results.
+
+### Contribute!
+
+This project is open for contributions, currently there's some goals planned:
+
+- [x] Support Codeforces API
+- [ ] Fully refactor the project to use React functional components
+- [ ] Migrate the project to Typescript
+- [ ] Support IOI-like contests (partial scoring)
+- [ ] Support vjudge API to unfroze standings
+- [ ] Support BOCA for LATAM competitions.
