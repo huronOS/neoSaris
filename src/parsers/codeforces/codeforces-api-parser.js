@@ -26,18 +26,21 @@ const buildHeaders = () => {
 };
 
 export const getContestDataWithCodeforcesAPI = async (
+  frozenTime,
   contestId,
   groupId,
   apiKey,
   apiSecret
 ) => {
-  const submissions = await getSubmissions(
+  const contestData = await getContestData(
+    frozenTime,
     contestId,
     groupId,
     apiKey,
     apiSecret
   );
-  const contestData = await getContestData(
+  const submissions = await getSubmissions(
+    contestData.contestData.Duration,
     contestId,
     groupId,
     apiKey,
@@ -54,7 +57,13 @@ export const getContestDataWithCodeforcesAPI = async (
   return JSONobject;
 };
 
-export const getSubmissions = async (contestId, groupId, apiKey, apiSecret) => {
+export const getSubmissions = async (
+  duration,
+  contestId,
+  groupId,
+  apiKey,
+  apiSecret
+) => {
   const { data: response } = await axios
     .request({
       method: "GET",
@@ -74,17 +83,33 @@ export const getSubmissions = async (contestId, groupId, apiKey, apiSecret) => {
       );
     });
 
-  return response.result.map((submission) => {
-    return {
-      timeSubmission: Math.floor(submission.relativeTimeSeconds / 60),
-      TeamName: submission.author.teamName || "NO_TEAM",
-      Problem: submission.problem.index,
-      Verdict: submission.verdict === "OK" ? "Accepted" : "WRONG",
-    };
-  });
+  console.log("Response", response);
+
+  return response.result
+    .filter(
+      (submission) =>
+        Math.floor(submission.relativeTimeSeconds / 60) <= duration
+    )
+    .map((submission) => {
+      return {
+        timeSubmission: Math.floor(submission.relativeTimeSeconds / 60),
+        TeamName:
+          submission.author.teamName ||
+          submission.author.members[0].handle ||
+          "NO_TEAM_NAME",
+        Problem: submission.problem.index,
+        Verdict: submission.verdict === "OK" ? "Accepted" : "WRONG",
+      };
+    });
 };
 
-export const getContestData = async (contestId, groupId, apiKey, apiSecret) => {
+export const getContestData = async (
+  frozenTime,
+  contestId,
+  groupId,
+  apiKey,
+  apiSecret
+) => {
   const { data: response } = await axios
     .request({
       method: "GET",
@@ -104,16 +129,21 @@ export const getContestData = async (contestId, groupId, apiKey, apiSecret) => {
       );
     });
 
+  console.log("contest request", response);
+
   return {
     contestData: {
       Duration: Math.floor(response.result.contest.durationSeconds / 60),
-      FrozenTime: 60,
+      FrozenTime: frozenTime,
       NumberOfProblems: response.result.problems.length,
       Name: response.result.contest.name,
     },
     teams: Object.fromEntries(
       response.result.rows.map((row, index) => {
-        return [index, row.party.teamName];
+        return [
+          index,
+          row.party.teamName || row.party.members[0].handle || "NO_TEAM_NAME",
+        ];
       })
     ),
   };

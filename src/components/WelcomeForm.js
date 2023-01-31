@@ -52,6 +52,7 @@ const CodeforcesForm = ({ setStep }) => {
   const [groupId, setGroupId] = useState("");
   const [apiKey, setApiKey] = useState("");
   const [apiSecret, setApiSecret] = useState("");
+  const [frozenTime, setFrozenTime] = useState(0);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -61,11 +62,13 @@ const CodeforcesForm = ({ setStep }) => {
     setStep("loading");
     try {
       contestData = await getContestDataWithCodeforcesAPI(
+        frozenTime,
         contestId,
         groupId,
         apiKey,
         apiSecret
       );
+      console.log(contestData);
       setStep("resolver");
     } catch (error) {
       alert(error.message);
@@ -76,7 +79,15 @@ const CodeforcesForm = ({ setStep }) => {
 
   return (
     <div>
-      <form onSubmit={(e) => handleSubmit(e)}>
+      <form onSubmit={(e) => handleSubmit(e)} className="form">
+        <label>Frozen Time (duration in minutes):</label>
+        <input
+          type="number"
+          name="cf_frozen_time"
+          required
+          onChange={(e) => setFrozenTime(parseInt(e.target.value))}
+        />
+
         <label>Contest ID:</label>
         <input
           type="text"
