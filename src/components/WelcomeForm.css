@@ -1,0 +1,12 @@
+.text-white{
+	color: white;
+}
+
+.form{
+	display: flex;
+	flex-direction: column;
+}
+
+input{
+	width: 20rem;
+}

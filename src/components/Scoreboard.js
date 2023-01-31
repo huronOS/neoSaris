@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import FlipMove from "react-flip-move";
 import TableItem from "./TableItem";
-import Header from "../Header/Header";
+import Header from "./Header";
 import "./Scoreboard.css";
 var intervalPendingSubmission = null;
 
@@ -227,7 +227,6 @@ class Scoreboard extends Component {
 
   constructor(props) {
     super(props);
-    console.log(props);
     let teams = Object.entries(props.submissionsData.Teams).map((team, i) => {
       let triesOnProblems = [];
       let isProblemSolved = [];
