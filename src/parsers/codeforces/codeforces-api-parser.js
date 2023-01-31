@@ -31,7 +31,6 @@ const buildHeaders = () => {
 export const buildJSON = async () => {
   const submissions = await getSubmissions();
   const contestData = await getContestData();
-  console.log(contestData);
   const JSONobject = {
     Contest: contestData.contestData,
     Teams: contestData.teams,
@@ -44,13 +43,12 @@ export const buildJSON = async () => {
 };
 
 export const getSubmissions = async () => {
-  const { data: response, headers } = await axios.request({
+  const { data: response } = await axios.request({
     method: "GET",
     url: "https://codeforces.com/api/contest.status",
     headers: buildHeaders(),
     params: buildParams("contest.status"),
   });
-  console.log("headers", headers);
 
   return response.result.map((submission) => {
     return {

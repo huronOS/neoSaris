@@ -1,7 +1,7 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
-import { buildJSON } from "./Codeforces/parser";
-import Scoreboard from "./Scoreboard/Scoreboard";
+import { buildJSON } from "./parsers/codeforces/codeforces-api-parser";
+import Scoreboard from "./components/Scoreboard";
 import { CircleLoading } from "react-loadingg";
 
 let contestData = {};
