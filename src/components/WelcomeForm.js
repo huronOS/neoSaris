@@ -42,6 +42,15 @@ const RawDataForm = ({ setStep }) => {
           }}
         />
         <br />
+        <p>
+          <label>
+            To format the raw JSON object, follow{" "}
+            <a href="https://github.com/equetzal/SarisResolver/blob/main/public/example.json">
+              this
+            </a>{" "}
+            example.
+          </label>
+        </p>
         <input type="submit" value="Start Dancing" />
       </form>
     </div>
@@ -152,6 +161,7 @@ const WelcomeForm = () => {
             what happens on the frozen time of a competition. You can check the
             source code of this project on{" "}
             <a href="https://github.com/equetzal/SarisResolver">github</a>.
+            IOI-like contest (partial scoring) is not supported yet.
           </p>
           <hr height="1px" width="50%" />
           <div>

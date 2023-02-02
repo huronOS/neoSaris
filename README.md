@@ -41,13 +41,14 @@ Once you have run this command, just type next command in the root folder of the
 
 The resolver needs a JSON input format that follows object model of [example.json](https://github.com/equetzal/SarisResolver/tree/public/example.json):
 
-```
+```json
 {
   "Contest": {
     "Duration": 300,
     "FrozenTime": 60,
     "NumberOfProblems": 10,
-	"Name": "Trial Contest"
+    "ProblemsIndex": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"],
+    "Name": "Trial Contest"
   },
   "Teams": {
     "1": "Red Panda",
@@ -57,18 +58,24 @@ The resolver needs a JSON input format that follows object model of [example.jso
   "VerdictWithoutPenalty": {
     "1": "Compilation error"
   },
-    "Submissions": [
+  "Submissions": [
     {
-      "timeSubmission":  47,
-      "TeamName":  "Moscow IPT Jinotega",
-      "Problem":  "A",
-      "Verdict":  "Accepted"
+      "timeSubmission": 47,
+      "TeamName": "Moscow IPT Jinotega",
+      "Problem": "A",
+      "Verdict": "Accepted"
     },
     {
-      "timeSubmission":  260,
-      "TeamName":  "Moscow IPT 1",
-      "Problem":  "H",
-      "Verdict":  "Wrong answer"
+      "timeSubmission": 260,
+      "TeamName": "Moscow IPT 1",
+      "Problem": "H",
+      "Verdict": "Wrong answer"
+    },
+    {
+      "timeSubmission": 270,
+      "TeamName": "Moscow IPT 1",
+      "Problem": "A",
+      "Verdict": "Accepted"
     }
   ]
 }
