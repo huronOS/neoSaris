@@ -83,7 +83,8 @@ class Scoreboard extends Component {
         for (let i = 0; i < teams.length; i++) {
           if (teams[i].name === submission.teamName) {
             for (let j = 0; j < this.state.numberOfProblems; j++) {
-              let problemLetter = String.fromCharCode(j + 65);
+              let problemLetter =
+                this.props.submissionsData.Contest.ProblemsIndex[j];
               if (
                 problemLetter === submission.problem &&
                 teams[i].isProblemSolved[j] === 0
@@ -108,7 +109,8 @@ class Scoreboard extends Component {
         for (let i = 0; i < teams.length; i++) {
           if (teams[i].name === submission.teamName) {
             for (let j = 0; j < this.state.numberOfProblems; j++) {
-              let problemLetter = String.fromCharCode(j + 65);
+              let problemLetter =
+                this.props.submissionsData.Contest.ProblemsIndex[j];
               if (
                 problemLetter === submission.problem &&
                 teams[i].isProblemSolved[j] === 0
@@ -326,6 +328,7 @@ class Scoreboard extends Component {
           index={i}
           team={team}
           numberOfProblems={this.state.numberOfProblems}
+          problemsIndex={this.props.submissionsData.Contest.ProblemsIndex}
           submissionWhenFrozen={this.state.submissionWhenFrozen}
           currentFrozenSubmission={this.state.savedCurrentFrozenSubmission}
           savedCurrentFrozenSubmission={this.state.currentFrozenSubmission}
@@ -338,7 +341,9 @@ class Scoreboard extends Component {
   getProblemId(problemLetter) {
     let problemId = -1;
     for (let h = 0; h < this.state.numberOfProblems; h++) {
-      if (String.fromCharCode(h + 65) === problemLetter) {
+      if (
+        this.props.submissionsData.Contest.ProblemsIndex[h] === problemLetter
+      ) {
         problemId = h;
       }
     }

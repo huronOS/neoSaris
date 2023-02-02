@@ -14,7 +14,7 @@ class TableItem extends Component {
   numberOfTriesOnAcceptedProblem(problemLetter) {
     let team = this.props.team;
     for (let i = 0; i < this.props.numberOfProblems; i++) {
-      if (String.fromCharCode(i + 65) === problemLetter) {
+      if (this.props.problemsIndex === problemLetter) {
         return team.triesOnProblems[i] + 1 + " - " + team.penaltyOnProblem[i];
       }
     }
@@ -24,7 +24,7 @@ class TableItem extends Component {
   numberOfTriesOnTriedProblem(problemLetter) {
     let team = this.props.team;
     for (let i = 0; i < this.props.numberOfProblems; i++) {
-      if (String.fromCharCode(i + 65) === problemLetter) {
+      if (this.props.problemsIndex[i] === problemLetter) {
         return team.triesOnProblems[i] + " - " + team.penaltyOnProblem[i];
       }
     }
@@ -42,7 +42,7 @@ class TableItem extends Component {
       return problemLetter;
     }
     for (let i = 0; i < this.props.numberOfProblems; i++) {
-      if (String.fromCharCode(i + 65) === problemLetter) {
+      if (this.props.problemsIndex[i] === problemLetter) {
         if (team.isProblemSolved[i] !== 0) {
           return problemLetter;
         }
@@ -67,7 +67,7 @@ class TableItem extends Component {
   hasSolvedProblem(problemLetter) {
     let team = this.props.team;
     for (let i = 0; i < this.props.numberOfProblems; i++) {
-      if (String.fromCharCode(i + 65) === problemLetter) {
+      if (this.props.problemsIndex[i] === problemLetter) {
         if (team.isProblemSolved[i] === 0) {
           return false;
         } else {
@@ -81,7 +81,7 @@ class TableItem extends Component {
   hasTriedProblem(problemLetter) {
     let team = this.props.team;
     for (let i = 0; i < this.props.numberOfProblems; i++) {
-      if (String.fromCharCode(i + 65) === problemLetter) {
+      if (this.props.problemsIndex[i] === problemLetter) {
         if (team.triesOnProblems[i] !== 0) {
           return true;
         } else {
@@ -95,7 +95,7 @@ class TableItem extends Component {
   isFirstToSolve(problemLetter) {
     let team = this.props.team;
     for (let i = 0; i < this.props.numberOfProblems; i++) {
-      if (String.fromCharCode(i + 65) === problemLetter) {
+      if (this.props.problemsIndex[i] === problemLetter) {
         if (team.isFirstToSolve[i] !== 0) {
           return true;
         } else {
@@ -116,7 +116,7 @@ class TableItem extends Component {
       return false;
     }
     for (let i = 0; i < this.props.numberOfProblems; i++) {
-      if (String.fromCharCode(i + 65) === problemLetter) {
+      if (this.props.problemsIndex[i] === problemLetter) {
         if (team.isProblemSolved[i] !== 0) {
           return false;
         }
@@ -144,7 +144,7 @@ class TableItem extends Component {
       return false;
     }
     for (let i = 0; i < this.props.numberOfProblems; i++) {
-      if (String.fromCharCode(i + 65) === problemLetter) {
+      if (this.props.problemsIndex[i] === problemLetter) {
         if (team.isProblemSolved[i] !== 0) {
           return false;
         }
@@ -181,16 +181,7 @@ class TableItem extends Component {
   }
 
   render() {
-    let problems = [];
-    let problemLetter = 65;
-    let suffix = "";
-    for (let i = 1; i <= this.props.numberOfProblems; i++, problemLetter++) {
-      problems.push(suffix + String.fromCharCode(problemLetter));
-      if (problemLetter - 65 === 26) {
-        problemLetter = 65;
-        suffix += "A";
-      }
-    }
+    let problems = this.props.problemsIndex;
 
     let sizeProblem = 80.0 / this.props.numberOfProblems;
     let widthPercentage = sizeProblem + "%";

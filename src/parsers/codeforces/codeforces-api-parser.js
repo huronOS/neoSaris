@@ -136,6 +136,9 @@ export const getContestData = async (
       Duration: Math.floor(response.result.contest.durationSeconds / 60),
       FrozenTime: frozenTime,
       NumberOfProblems: response.result.problems.length,
+      ProblemsIndex: response.result.problems.map((problem) => {
+        return problem.index;
+      }),
       Name: response.result.contest.name,
     },
     teams: Object.fromEntries(

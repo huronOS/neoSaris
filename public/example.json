@@ -3,6 +3,7 @@
     "Duration": 300,
     "FrozenTime": 60,
     "NumberOfProblems": 10,
+    "ProblemsIndex": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"],
     "Name": "Trial Contest"
   },
   "Teams": {
@@ -25,6 +26,12 @@
       "TeamName": "Moscow IPT 1",
       "Problem": "H",
       "Verdict": "Wrong answer"
+    },
+    {
+      "timeSubmission": 270,
+      "TeamName": "Moscow IPT 1",
+      "Problem": "A",
+      "Verdict": "Accepted"
     }
   ]
 }

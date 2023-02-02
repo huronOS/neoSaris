@@ -47,7 +47,13 @@ const verifyObject = (contestData) => {
     contestData.Contest.NumberOfProblems == null ||
     typeof contestData.Contest.NumberOfProblems !== "number"
   ) {
-    throw new Error("contestData.Contest.Duration is not an number!");
+    throw new Error("contestData.Contest.NumberOfProblems is not an number!");
+  }
+  if (
+    contestData.Contest.ProblemsIndex == null ||
+    !Array.isArray(contestData.Contest.ProblemsIndex)
+  ) {
+    throw new Error("contestData.Contest.ProblemsIndex is not an array!");
   }
   if (
     contestData.Contest.Name == null ||
