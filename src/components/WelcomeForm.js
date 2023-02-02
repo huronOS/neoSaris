@@ -26,11 +26,12 @@ const RawDataForm = ({ setStep }) => {
 
   return (
     <div>
-      <form onSubmit={(e) => handleSubmit(e)}>
+      <form className="all-forms" onSubmit={(e) => handleSubmit(e)}>
         <p>
           <label>Please, paste your JSON data object:</label>
         </p>
         <textarea
+          className="form-raw-data-json-box"
           id="rawContestDataJSON"
           name="rawContestDataJSON"
           rows="4"
@@ -41,7 +42,7 @@ const RawDataForm = ({ setStep }) => {
           }}
         />
         <br />
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Start Dancing" />
       </form>
     </div>
   );
@@ -79,7 +80,7 @@ const CodeforcesForm = ({ setStep }) => {
 
   return (
     <div>
-      <form onSubmit={(e) => handleSubmit(e)} className="form">
+      <form className="all-forms" onSubmit={(e) => handleSubmit(e)}>
         <label>Frozen Time (duration in minutes):</label>
         <input
           type="number"
@@ -121,7 +122,7 @@ const CodeforcesForm = ({ setStep }) => {
         />
 
         <br />
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Start Dancing" />
       </form>
     </div>
   );
@@ -142,9 +143,17 @@ const WelcomeForm = () => {
   const [step, setStep] = useState("form");
   const [dataSource, setDataSource] = useState("raw");
   return (
-    <div>
+    <div className="saris-box">
       {step === "form" && (
-        <div>
+        <div className="data-source-selector-box">
+          <h1 className="saris-title">Saris Resolver</h1>
+          <p className="saris-description">
+            Saris resolver an ICPC-like standing resolver to be used to reveal
+            what happens on the frozen time of a competition. You can check the
+            source code of this project on{" "}
+            <a href="https://github.com/equetzal/SarisResolver">github</a>.
+          </p>
+          <hr height="1px" width="50%" />
           <div>
             <label className="text-white">Select a data source:</label>
             <select

@@ -1,6 +1,8 @@
 .AppBackground {
   background-color: #000000;
+  color: white;
   min-height: 100vh;
+  z-index: -100;
 }
 
 .AppBackground > div:first-of-type {
