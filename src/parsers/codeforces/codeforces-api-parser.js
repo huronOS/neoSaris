@@ -4,7 +4,19 @@ import { config } from "dotenv";
 
 config();
 
-const buildParams = (method, contestId, groupId, apiKey, apiSecret) => {
+const buildParams = ({
+  method,
+  contestId,
+  isPrivate = false,
+  groupId = "",
+  apiKey = "",
+  apiSecret = "",
+}) => {
+  if (!isPrivate) {
+    return {
+      contestId,
+    };
+  }
   const time = `${Math.floor(Date.now() / 1000)}`;
   const groupCode = groupId;
   const rand = "123456";
@@ -25,57 +37,27 @@ const buildHeaders = () => {
   };
 };
 
-export const getContestDataWithCodeforcesAPI = async (
-  frozenTime,
-  contestId,
-  groupId,
-  apiKey,
-  apiSecret
-) => {
-  const contestData = await getContestData(
-    frozenTime,
-    contestId,
-    groupId,
-    apiKey,
-    apiSecret
-  );
-  const submissions = await getSubmissions(
-    contestData.contestData.Duration,
-    contestId,
-    groupId,
-    apiKey,
-    apiSecret
-  );
-  const JSONobject = {
-    Contest: contestData.contestData,
-    Teams: contestData.teams,
-    VerdictWithoutPenalty: {
-      1: "Compilation error",
-    },
-    Submissions: submissions,
-  };
-  return JSONobject;
-};
-
-export const getSubmissions = async (
+export const getSubmissions = async ({
   duration,
   contestId,
-  groupId,
-  apiKey,
-  apiSecret
-) => {
+  isPrivate = false,
+  groupId = "",
+  apiKey = "",
+  apiSecret = "",
+}) => {
   const { data: response } = await axios
     .request({
       method: "GET",
       url: "https://codeforces.com/api/contest.status",
       headers: buildHeaders(),
-      params: buildParams(
-        "contest.status",
+      params: buildParams({
+        method: "contest.status",
         contestId,
+        isPrivate,
         groupId,
         apiKey,
-        apiSecret
-      ),
+        apiSecret,
+      }),
     })
     .catch((error) => {
       throw new Error(
@@ -103,25 +85,27 @@ export const getSubmissions = async (
     });
 };
 
-export const getContestData = async (
-  frozenTime,
+export const getContestData = async ({
+  frozenTime = 60,
   contestId,
-  groupId,
-  apiKey,
-  apiSecret
-) => {
+  isPrivate = false,
+  groupId = "",
+  apiKey = "",
+  apiSecret = "",
+}) => {
   const { data: response } = await axios
     .request({
       method: "GET",
       url: "https://codeforces.com/api/contest.standings",
       headers: buildHeaders(),
-      params: buildParams(
-        "contest.standings",
+      params: buildParams({
+        method: "contest.standings",
         contestId,
+        isPrivate,
         groupId,
         apiKey,
-        apiSecret
-      ),
+        apiSecret,
+      }),
     })
     .catch((error) => {
       throw new Error(
@@ -150,4 +134,39 @@ export const getContestData = async (
       })
     ),
   };
+};
+
+export const getContestDataWithCodeforcesAPI = async ({
+  frozenTime,
+  contestId,
+  isPrivate = false,
+  groupId = "",
+  apiKey = "",
+  apiSecret = "",
+}) => {
+  const contestData = await getContestData({
+    frozenTime,
+    contestId,
+    isPrivate,
+    groupId,
+    apiKey,
+    apiSecret,
+  });
+  const submissions = await getSubmissions({
+    duration: contestData.contestData.Duration,
+    contestId,
+    isPrivate,
+    groupId,
+    apiKey,
+    apiSecret,
+  });
+  const JSONobject = {
+    Contest: contestData.contestData,
+    Teams: contestData.teams,
+    VerdictWithoutPenalty: {
+      1: "Compilation error",
+    },
+    Submissions: submissions,
+  };
+  return JSONobject;
 };

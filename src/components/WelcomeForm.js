@@ -59,22 +59,24 @@ const RawDataForm = ({ setStep }) => {
 
 const CodeforcesForm = ({ setStep }) => {
   const [contestId, setContestId] = useState("");
+  const [isPrivate, setIsPrivate] = useState(false);
   const [groupId, setGroupId] = useState("");
   const [apiKey, setApiKey] = useState("");
   const [apiSecret, setApiSecret] = useState("");
-  const [frozenTime, setFrozenTime] = useState(0);
+  const [frozenTime, setFrozenTime] = useState(60);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     setStep("loading");
     try {
-      contestData = await getContestDataWithCodeforcesAPI(
+      contestData = await getContestDataWithCodeforcesAPI({
         frozenTime,
         contestId,
+        isPrivate,
         groupId,
         apiKey,
-        apiSecret
-      );
+        apiSecret,
+      });
       console.log(contestData);
       setStep("resolver");
     } catch (error) {
@@ -103,29 +105,44 @@ const CodeforcesForm = ({ setStep }) => {
           onChange={(e) => setContestId(e.target.value)}
         />
 
-        <label>Group ID:</label>
-        <input
-          type="text"
-          name="cf_group_id"
-          required
-          onChange={(e) => setGroupId(e.target.value)}
-        />
+        <label>Is Private Contest? </label>
+        <label className="switch">
+          <input
+            type="checkbox"
+            onChange={(e) => setIsPrivate(e.target.checked)}
+          />
+          <span className="slider round"></span>
+        </label>
 
-        <label>API Key:</label>
-        <input
-          type="text"
-          name="cf_api_key"
-          required
-          onChange={(e) => setApiKey(e.target.value)}
-        />
+        {isPrivate && <label>Group ID:</label>}
+        {isPrivate && (
+          <input
+            type="text"
+            name="cf_group_id"
+            required
+            onChange={(e) => setGroupId(e.target.value)}
+          />
+        )}
 
-        <label>API Secret:</label>
-        <input
-          type="text"
-          name="cf_api_secret"
-          required
-          onChange={(e) => setApiSecret(e.target.value)}
-        />
+        {isPrivate && <label>API Key:</label>}
+        {isPrivate && (
+          <input
+            type="text"
+            name="cf_api_key"
+            required
+            onChange={(e) => setApiKey(e.target.value)}
+          />
+        )}
+
+        {isPrivate && <label>API Secret:</label>}
+        {isPrivate && (
+          <input
+            type="text"
+            name="cf_api_secret"
+            required
+            onChange={(e) => setApiSecret(e.target.value)}
+          />
+        )}
 
         <br />
         <input type="submit" value="Start Dancing" />

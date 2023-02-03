@@ -76,9 +76,15 @@ Verdicts can be anything you want except the Accepted verdict that must be **Acc
 
 ### Codeforces
 
-Currently, Saris is integrated with the [Codeforces API](https://codeforces.com/apiHelp). This integration will let you access **private contests** (public contests integration is WIP), and parse their responses to the Saris format, allowing you to unfreeze the standing.
+Currently, Saris is integrated with the [Codeforces API](https://codeforces.com/apiHelp). This integration will let you access the contests API and parse its responses to the Saris format, allowing you to unfreeze the standing.
 
-To do this, the app will require an API Key and API Secret of a **manager** user of the **private group** you want to access.
+#### Public Contests
+
+For unfreezing public contests you will only need the contestId, this can be a gym contest or a codeforces managed contest. But we do not recommend unfreezing divisional contests as they might be too much data for the API and get a timeout.
+
+#### Private Contests
+
+To use this feature, toggle the Private contest switch, then the app will require the groupID, an API Key and API Secret of a **manager** user of the **private group** you want to access.
 We know this is sensible data, so these keys are only used on this react app as a client (they only live in your browser), and they are only sent to codeforces via their API.
 You can verify this on the [implementation](./src/parsers/codeforces/codeforces-api-parser.js).
 
