@@ -3,6 +3,7 @@ import { CircleLoading } from "react-loadingg";
 import Scoreboard from "./Scoreboard";
 import { getContestDataWithRawData } from "../parsers/raw/raw-json-parser";
 import { getContestDataWithCodeforcesAPI } from "../parsers/codeforces/codeforces-api-parser";
+import { getContestDataWithVjudgeAPI } from "../parsers/vjudge/vjudge-api-parser";
 import "./WelcomeForm.css";
 
 let contestData = {};
@@ -12,7 +13,6 @@ const RawDataForm = ({ setStep }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(rawDataValue);
     setStep("loading");
     try {
       contestData = await getContestDataWithRawData(rawDataValue);
@@ -66,9 +66,6 @@ const CodeforcesForm = ({ setStep }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(
-      `contestId: ${contestId}, groupId: ${groupId}, apiKey: ${apiKey}, apiSecret: ${apiSecret}`
-    );
     setStep("loading");
     try {
       contestData = await getContestDataWithCodeforcesAPI(
@@ -137,12 +134,71 @@ const CodeforcesForm = ({ setStep }) => {
   );
 };
 
+const VjudgeForm = ({ setStep }) => {
+  const [contestId, setContestId] = useState("");
+  const [frozenTime, setFrozenTime] = useState(0);
+  const [numberOfProblems, setNumberOfProblems] = useState(0);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setStep("loading");
+    try {
+      contestData = await getContestDataWithVjudgeAPI(
+        frozenTime,
+        contestId,
+        numberOfProblems
+      );
+      console.log("Raw Data", contestData);
+      setStep("resolver");
+    } catch (error) {
+      alert(error.message);
+      setStep("form");
+    }
+    return false;
+  };
+
+  return (
+    <div>
+      <form className="all-forms" onSubmit={(e) => handleSubmit(e)}>
+        <label>Frozen Time (duration in minutes):</label>
+        <input
+          type="number"
+          name="vjudge_frozen_time"
+          required
+          onChange={(e) => setFrozenTime(parseInt(e.target.value))}
+        />
+
+        <label>Number of Problems:</label>
+        <input
+          type="number"
+          name="vjudge_number_of_problems"
+          required
+          onChange={(e) => setNumberOfProblems(parseInt(e.target.value))}
+        />
+
+        <label>Contest ID:</label>
+        <input
+          type="text"
+          name="vjudge_contest_id"
+          required
+          onChange={(e) => setContestId(e.target.value)}
+        />
+
+        <br />
+        <input type="submit" value="Start Dancing" />
+      </form>
+    </div>
+  );
+};
+
 const getForm = (dataSource, setStep) => {
   switch (dataSource) {
     case "raw":
       return <RawDataForm setStep={setStep} />;
     case "codeforces":
       return <CodeforcesForm setStep={setStep} />;
+    case "vjudge":
+      return <VjudgeForm setStep={setStep} />;
     default:
       return <p>No Option Selected</p>;
   }
@@ -174,6 +230,7 @@ const WelcomeForm = () => {
             >
               <option value="raw">Raw JSON data</option>
               <option value="codeforces">Codeforces API</option>
+              <option value="vjudge">vJudge API</option>
             </select>
           </div>
           <div className="text-white">{getForm(dataSource, setStep)}</div>

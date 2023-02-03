@@ -1,43 +1,26 @@
-## Saris Resolver - ICPC Resolver
+# Saris Resolver - ICPC Resolver
 
 ![Example image of Saris by Club Algoritmia ESCOM](/public/exampleImage.PNG)
 
 The code of this repository contains a react app that can be used to simulate what happens in the frozen time during a competitive programming competition with the ICPC standard rules.
 
-It is inspired by the [ICPC Resolver](https://tools.icpc.global/resolver/).
+It is inspired by the [ICPC Resolver](https://tools.icpc.global/resolver/). This application is a fork of the original (and abandoned) [SarisByAlgoritmiaESCOM](https://github.com/galloska) created by [galloska](https://github.com/galloska). So, this project took that work and started working with integrations to be easy to use.
 
-The main idea for this project was to have a resolver for any Codeforces contest. This idea has changed, and the resolver can be used with any contest because it depends it can take a JSON input to not on the online judge.
-It has also been integrated with the Codeforces API and it can be selected as a source of data and use your own API Keys and API Secrets with the client app.
+## How to Use
 
-In order to use this tool, you can either use it online on [saris.huronos.org](https://saris.huronos.org) thanks to the huronOS project, or you can install it locally following the [installation](#Installation) steps.
+This tool is available on **[saris.huronos.org](https://saris.huronos.org)** thanks to the huronOS project who is providing the hosting.
+You can either use it online as a web client, or you can install it locally following the [installation](#Installation) steps.
 
-### Online Judges Integrations
+## Online Judges Integrations
 
-#### Codeforces
+Currently, Saris uses a data format described on the following subsection. But it have some integrations with:
 
-Currently, Saris is integrated with the [Codeforces API](https://codeforces.com/apiHelp), but in order to access to private contests, the app will require your own API Key and API Secret. This sensible data is only used on this app (client) and it is only sent vía API request and never stored.
+- Codeforces
+- vJudge
 
-The user which provides the API Key and the API Secret needs to be manager of the contest in order to query the Status of the contest. Also, due to the design of the API, **the status do not provide frozen standings**, so it will be necessary to unfroze the standing for a bit when loading the resolver, and then they can be frozen again.
+So that saris automatically parse data (from API or another data syntax) to the required Saris Raw Data format.
 
-#### Other OJ
-
-Feel free to add parsers to the [src/parsers](src/parsers/) directory to then be integrated with the React App. Here you can add static parsers (from text to the required JSON format), or API parsers that integrates Saris directly to another online judge.
-
-### Installation
-
-To run this tool first you need to get the repository. You can either download the source code in your computer or run the following command:
-
-`git clone https://github.com/equetzal/SarisResolver.git`
-
-Once you have downloaded the source code you need to install the dependencies of the project with the following command on the root folder of this project:
-
-`npm install`
-
-Once you have run this command, just type next command in the root folder of the project and start using Saris:
-
-`npm start`
-
-### Input - What the tool needs to run the Resolver
+### Raw Data
 
 The resolver needs a JSON input format that follows object model of [example.json](https://github.com/equetzal/SarisResolver/tree/public/example.json):
 
@@ -91,7 +74,66 @@ The resolver needs a JSON input format that follows object model of [example.jso
 
 Verdicts can be anything you want except the Accepted verdict that must be **Accepted**.
 
-If you have a JSON file with these requirements, then you can run this tool and start revealing the scoreboard.
+### Codeforces
+
+Currently, Saris is integrated with the [Codeforces API](https://codeforces.com/apiHelp). This integration will let you access **private contests** (public contests integration is WIP), and parse their responses to the Saris format, allowing you to unfreeze the standing.
+
+To do this, the app will require an API Key and API Secret of a **manager** user of the **private group** you want to access.
+We know this is sensible data, so these keys are only used on this react app as a client (they only live in your browser), and they are only sent to codeforces via their API.
+You can verify this on the [implementation](./src/parsers/codeforces/codeforces-api-parser.js).
+
+#### IMPORTANT
+
+- The user which provides the API Key and the API Secret needs to be manager of the contest in order to query the Status of the contest.
+- Also, due to the design of the API, **the status do not provide unfrozen standings**, so it will be necessary to unfroze the standing for a bit when loading the resolver, and then they can be frozen again.
+
+### vJudge
+
+Currently, vJudge does not provide a public API but it does have an API for its own frontend which can be accessed by foreign applications.
+
+#### Public contests
+
+To unfreeze the public contests just use the contestId, and Saris will prepare the standing.
+Note that currently vJudge do not froze standings, so you might only want to use Saris with vJudge when revealing prizes.
+
+#### Private contests
+
+Unfortunately vJudge API does not provide an authentication method, it requires of the user _cookies_ in order to provide a response for **private contests**. We cannot integrate a foreign cookie in our requests as that would be a violation almost all browsers security policies. But a local client (node) which is not ran within a browser, can use the cookie to request the API.
+
+To do this, please:
+
+1. Download the repo as `git clone https://github.com/equetzal/SarisResolver`
+2. Make sure to be logged in vJudge, and to be manager of the private contest you want to unfreeze.
+3. Go to the rank page of the contest, press `ctrl + shift + i` to open the page inspector.
+4. Open the network tab and reload the page.
+5. Look for the last request with the number of the contest which endpoint is `https://vjudge.net/contest/rank/single/`
+6. Check the request headers, and copy the `cookie` header.
+7. Go to the repository and replace the values for this command:
+   ```bash
+   node src/parsers/vjudge/vjudge-api-parser-private.js $FROZEN_TIME_MINUTES $CONTEST_ID $NUMBER_OF_PROBLEMS "$COOKIE" $OUTPUT_FILE
+   ```
+   It's important to notice that the cookie must be a string to work.
+8. Open the `$OUPUT_FILE` you specified, and you'll find the Raw Data required to run Saris.
+9. Copy and paste all the content of the Raw Data, on the Saris Raw Data source.
+10. Click on `Start Dancing`
+
+### Other OJ
+
+Feel free to add parsers to the [src/parsers](src/parsers/) directory to then be integrated with the React App. Here you can add static parsers (from text to the required JSON format), or API parsers that integrates Saris directly to another online judge.
+
+### Local Installation
+
+To run this tool first you need to get the repository. You can either download the source code in your computer or run the following command:
+
+`git clone https://github.com/equetzal/SarisResolver.git`
+
+Once you have downloaded the source code you need to install the dependencies of the project with the following command on the root folder of this project:
+
+`npm install`
+
+Once you have run this command, just type next command in the root folder of the project and start using Saris:
+
+`npm start`
 
 ### Special commands
 
@@ -113,5 +155,5 @@ This project is open for contributions, currently there's some goals planned:
 - [ ] Fully refactor the project to use React functional components
 - [ ] Migrate the project to Typescript
 - [ ] Support IOI-like contests (partial scoring)
-- [ ] Support vjudge API to unfroze standings
+- [x] Support vjudge API to unfroze standings
 - [ ] Support BOCA for LATAM competitions.
