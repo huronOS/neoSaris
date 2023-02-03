@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { CircleLoading } from "react-loadingg";
 import Scoreboard from "./Scoreboard";
 import { getContestDataWithRawData } from "../parsers/raw/raw-json-parser";
 import { getContestDataWithCodeforcesAPI } from "../parsers/codeforces/codeforces-api-parser";
@@ -26,7 +25,7 @@ const RawDataForm = ({ setStep }) => {
 
   return (
     <div>
-      <form className="all-forms" onSubmit={(e) => handleSubmit(e)}>
+      <form className="all-forms" onSubmit={handleSubmit}>
         <p>
           <label>Please, paste your JSON data object:</label>
         </p>
@@ -179,7 +178,7 @@ const WelcomeForm = () => {
           <div className="text-white">{getForm(dataSource, setStep)}</div>
         </div>
       )}
-      {step === "loading" && <CircleLoading />}
+      {step === "loading" && <span>...</span>}
       {step === "resolver" && <Scoreboard submissionsData={contestData} />}
     </div>
   );

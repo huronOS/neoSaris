@@ -1,8 +1,5 @@
 import axios from "axios";
 import { sha512 } from "js-sha512";
-import { config } from "dotenv";
-
-config();
 
 const buildParams = (method, contestId, groupId, apiKey, apiSecret) => {
   const time = `${Math.floor(Date.now() / 1000)}`;

@@ -11,6 +11,10 @@ input{
 	width: 20rem;
 }
 
+p {
+	font-family: Helvetica;
+}
+
 .saris-title{
 	margin: 0;
 	padding: 0.5rem;
@@ -21,6 +25,7 @@ input{
 .saris-description{
 	max-width: 50rem;
 	text-align: center;
+	color: white;
 }
 
 .all-forms{

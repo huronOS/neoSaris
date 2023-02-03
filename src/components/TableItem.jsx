@@ -1,14 +1,18 @@
 import React, { Component } from "react";
-var logos = require.context("../media/university_logos", true);
+import defaultImg from "../media/university_logos/default.png";
+import cecyt13 from "../media/university_logos/cecyt13.png";
+import chapingo from "../media/university_logos/chapingo.png";
+import escom from "../media/university_logos/escom.png";
+import itcg from "../media/university_logos/itcg.png";
+import uam from "../media/university_logos/uam.png";
+import ug from "../media/university_logos/ug.png";
+import umsa from "../media/university_logos/umsa.png";
+
+const images = {cecyt13, chapingo, escom, itcg, uam, ug, umsa};
 
 class TableItem extends Component {
-  getImageForTeam(url) {
-    let imgSrc = logos("./default.png");
-    try {
-      imgSrc = logos("./" + url + ".png");
-      return imgSrc;
-    } catch (err) {}
-    return imgSrc;
+  getImageForTeam(name) {
+    return images[name] ?? defaultImg;
   }
 
   numberOfTriesOnAcceptedProblem(problemLetter) {
