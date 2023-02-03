@@ -1,7 +1,8 @@
 import axios from "axios";
 import { sha512 } from "js-sha512";
+import { ContestData } from "./raw-json-parser";
 
-const buildParams = (method, contestId, groupId, apiKey, apiSecret) => {
+const buildParams = (method: string, contestId: string, groupId: string, apiKey: string, apiSecret: string) => {
   const time = `${Math.floor(Date.now() / 1000)}`;
   const groupCode = groupId;
   const rand = "123456";
@@ -16,63 +17,37 @@ const buildParams = (method, contestId, groupId, apiKey, apiSecret) => {
   };
 };
 
-const buildHeaders = () => {
-  return {
-    "Content-Type": "text/plain",
-  };
-};
-
 export const getContestDataWithCodeforcesAPI = async (
-  frozenTime,
-  contestId,
-  groupId,
-  apiKey,
-  apiSecret
-) => {
-  const contestData = await getContestData(
-    frozenTime,
-    contestId,
-    groupId,
-    apiKey,
-    apiSecret
-  );
-  const submissions = await getSubmissions(
-    contestData.contestData.Duration,
-    contestId,
-    groupId,
-    apiKey,
-    apiSecret
-  );
-  const JSONobject = {
+  frozenTime: number,
+  contestId: string,
+  groupId: string,
+  apiKey: string,
+  apiSecret: string
+): Promise<ContestData> => {
+  const contestData = await getContestData(frozenTime, contestId, groupId, apiKey, apiSecret);
+  const submissions = await getSubmissions(contestData.contestData.Duration, contestId, groupId, apiKey, apiSecret);
+
+  return {
     Contest: contestData.contestData,
     Teams: contestData.teams,
-    VerdictWithoutPenalty: {
-      1: "Compilation error",
-    },
+    VerdictWithoutPenalty: { 1: "Compilation error" },
     Submissions: submissions,
   };
-  return JSONobject;
 };
 
 export const getSubmissions = async (
-  duration,
-  contestId,
-  groupId,
-  apiKey,
-  apiSecret
-) => {
+  duration: number,
+  contestId: string,
+  groupId: string,
+  apiKey: string,
+  apiSecret: string
+): Promise<ContestData["Submissions"]> => {
   const { data: response } = await axios
     .request({
       method: "GET",
       url: "https://codeforces.com/api/contest.status",
-      headers: buildHeaders(),
-      params: buildParams(
-        "contest.status",
-        contestId,
-        groupId,
-        apiKey,
-        apiSecret
-      ),
+      headers: { "Content-Type": "text/plain" },
+      params: buildParams("contest.status", contestId, groupId, apiKey, apiSecret),
     })
     .catch((error) => {
       throw new Error(
@@ -83,11 +58,8 @@ export const getSubmissions = async (
   console.log("Response", response);
 
   return response.result
-    .filter(
-      (submission) =>
-        Math.floor(submission.relativeTimeSeconds / 60) <= duration
-    )
-    .map((submission) => {
+    .filter((submission: any) => Math.floor(submission.relativeTimeSeconds / 60) <= duration)
+    .map((submission: any) => {
       return {
         timeSubmission: Math.floor(submission.relativeTimeSeconds / 60),
         TeamName:
@@ -101,17 +73,17 @@ export const getSubmissions = async (
 };
 
 export const getContestData = async (
-  frozenTime,
-  contestId,
-  groupId,
-  apiKey,
-  apiSecret
+  frozenTime: number,
+  contestId: string,
+  groupId: string,
+  apiKey: string,
+  apiSecret: string
 ) => {
   const { data: response } = await axios
     .request({
       method: "GET",
       url: "https://codeforces.com/api/contest.standings",
-      headers: buildHeaders(),
+      headers: { "Content-Type": "text/plain" },
       params: buildParams(
         "contest.standings",
         contestId,
@@ -133,16 +105,16 @@ export const getContestData = async (
       Duration: Math.floor(response.result.contest.durationSeconds / 60),
       FrozenTime: frozenTime,
       NumberOfProblems: response.result.problems.length,
-      ProblemsIndex: response.result.problems.map((problem) => {
+      ProblemsIndex: response.result.problems.map((problem: any) => {
         return problem.index;
       }),
       Name: response.result.contest.name,
     },
     teams: Object.fromEntries(
-      response.result.rows.map((row, index) => {
+      response.result.rows.map((row: any, index: number) => {
         return [
           index,
-          row.party.teamName || row.party.members[0].handle || "NO_TEAM_NAME",
+          row.party.teamName ?? row.party.members[0].handle ?? "NO_TEAM_NAME",
         ];
       })
     ),

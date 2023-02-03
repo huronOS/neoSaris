@@ -229,7 +229,7 @@ class Scoreboard extends Component {
 
   constructor(props) {
     super(props);
-    let teams = Object.entries(props.submissionsData.Teams).map((team, i) => {
+    let teams = Object.entries(props.submissionsData.Teams ?? {}).map((team, i) => {
       let triesOnProblems = [];
       let isProblemSolved = [];
       let penaltyOnProblem = [];
@@ -255,7 +255,7 @@ class Scoreboard extends Component {
     });
 
     let verdictsWithoutPenalty = Object.entries(
-      props.submissionsData.VerdictWithoutPenalty
+      props.submissionsData.VerdictWithoutPenalty ?? {}
     ).map((verdict) => {
       return verdict[1];
     });
@@ -592,7 +592,7 @@ class Scoreboard extends Component {
       >
         <div>
           <Header title={this.props.submissionsData.Contest.Name} />
-          <FlipMove ref="flipMove" staggerDurationBy="30" duration={900}>
+          <FlipMove staggerDurationBy="30" duration={900}>
             {this.getScoreboard()}
           </FlipMove>
         </div>
