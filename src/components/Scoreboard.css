@@ -75,7 +75,7 @@
 
 .scoreboardTableColumnProblemAccepted {
   color: white;
-  background-color: #33a524;
+  background-color: #3bb42b;
 }
 
 .scoreboardTableColumnProblemTried {
@@ -95,7 +95,7 @@
 
 .scoreboardTableColumnProblemFirstToSolve {
   color: white;
-  background-color: #0d3d18;
+  background-color: #080;
 }
 
 .scoreboardTableGrayRow {
