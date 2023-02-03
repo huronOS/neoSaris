@@ -53,7 +53,8 @@ The resolver needs a JSON input format that follows object model of [example.jso
   "Teams": {
     "1": "Red Panda",
     "2": "Moscow IPT 1",
-    "3": "Moscow IPT Jinotega"
+    "3": "Moscow IPT Jinotega",
+    "4": "Ositos"
   },
   "VerdictWithoutPenalty": {
     "1": "Compilation error"

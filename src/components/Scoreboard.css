@@ -3,7 +3,7 @@
 }
 
 .scoreboardTableRow {
-  height: 60px;
+  height: 64px;
   margin-left: 8px;
   width: 98%;
 }
@@ -28,36 +28,39 @@
 .scoreboardTableColumnProblem {
   border-radius: 10px;
   display: inline-block;
-  margin-top: 30px;
   margin-right: 2px;
   font-family: Helvetica;
   text-align: center;
+  margin-top: 32px;
 }
 
-.scoreboardTableProblemRowFirstChild > :first-child {
+.scoreboardTableProblemRowFirstChild {
   margin-left: 4.3%;
 }
 
 .scoreboardTableColumnSolved {
   color: white;
   display: inline-block;
-  float: right;
-  margin-top: 30px;
   text-align: center;
   font-family: Helvetica;
   font-size: x-large;
   width: 2.5%;
 }
 
+.end {
+  display: block;
+  float: right;
+}
+
 .scoreboardTableColumnTime {
   color: white;
   display: inline-block;
-  margin-top: 30px;
-  float: right;
+  margin-top: 24px;
+  margin-left: 26px;
   text-align: center;
   font-family: Helvetica;
   font-size: x-large;
-  width: 4%;
+  width: 3rem;
 }
 
 .scoreboardTableColumnTeamName {
