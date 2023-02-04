@@ -216,9 +216,9 @@ const WelcomeForm = () => {
     <div className="saris-box">
       {step === "form" && (
         <div className="data-source-selector-box">
-          <h1 className="saris-title">neoS4RiS</h1>
+          <h1 className="saris-title">neoSaris</h1>
           <p className="saris-description">
-            neoS4RiS, is an ICPC-like standing resolver to be used to reveal what happens on the
+            neoSaris, is an ICPC-like standing resolver to be used to reveal what happens on the
             frozen time of a competition. You can check the source code of this project on{" "}
             <a href="https://github.com/equetzal/SarisResolver">github</a>. IOI-like contest
             (partial scoring) is not supported yet.
@@ -232,7 +232,7 @@ const WelcomeForm = () => {
                 setDataSource(event.target.value);
               }}
             >
-              <option value="raw">neoS4RiS JSON</option>
+              <option value="raw">neoSaris JSON</option>
               <option value="codeforces">Codeforces API</option>
               <option value="vjudge">vJudge API</option>
             </select>

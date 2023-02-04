@@ -1,11 +1,11 @@
-# neoS4RiS - ICPC Standings Resolver
+# neoSaris - ICPC Standings Resolver
 
 ![Example image of Saris by Club Algoritmia ESCOM](/public/exampleImage.PNG)
 
 The code of this repository contains a react app that can be used to simulate what happens in the frozen time during a competitive programming competition with the ICPC standard rules.
 
 Its UI is inspired by the [ICPC Resolver](https://tools.icpc.global/resolver/).
-The name `neoS4RiS` is inspired by the original [S4RiS](https://github.com/OStrekalovsky/S4RiS-StanD), which development has been stopped since 2014. This neo version of S4RiS, is built from scratch and does not share any code with the original project.
+The name `neoSaris` is inspired by the original [S4RiS](https://github.com/OStrekalovsky/S4RiS-StanD), which development has been stopped since 2014. This neo version of S4RiS, is built from scratch and does not share any code with the original project.
 
 This repository, is a hard-fork of the original (and abandoned) [SarisByAlgoritmiaESCOM](https://github.com/galloska/SarisByClubAlgoritmiaESCOM) created by [galloska](https://github.com/galloska), we decided to improve this project by refactoring major pieces, and integrating it with external platforms to be easier to use.
 
@@ -18,18 +18,18 @@ You can either use it online as a web client, or you can install it locally foll
 
 The current solutions like the official _ICPC Resolver_, require a lot of setup to make them work, other ones like the original S4RiS are abandoned. Added to this, any of them have integrations that allows them to be easier to use with popular platforms like _Codeforces_ which are commonly used to held official competitions, or annual contests.
 
-The main purpose of **neoS4RiS** is to facilitate the access to a resolver without requiring to install a lot of stuff or the need to parse a lot of data to be used. That's why neoS4RiS is mounted on web which can be accessed by anyone at anytime, and just by filling some form data, they're ready to unfreeze their standings.
+The main purpose of **neoSaris** is to facilitate the access to a resolver without requiring to install a lot of stuff or the need to parse a lot of data to be used. That's why neoSaris is mounted on web which can be accessed by anyone at anytime, and just by filling some form data, they're ready to unfreeze their standings.
 
 ## Online Judges Integrations
 
-Currently, neoS4RiS uses a data format described on the following subsection. But it have some integrations with:
+Currently, neoSaris uses a data format described on the following subsection. But it have some integrations with:
 
 - Codeforces
 - vJudge
 
 So that saris automatically parse data (from API or another data syntax) to the required Saris Raw Data format.
 
-### neoS4RiS JSON
+### neoSaris JSON
 
 The resolver needs a JSON input format that follows object model of [example.json](https://github.com/equetzal/SarisResolver/tree/public/example.json):
 
@@ -88,7 +88,7 @@ Verdicts can be anything you want except the Accepted verdict that must be **Acc
 
 ### Codeforces
 
-Currently, neoS4RiS is integrated with the [Codeforces API](https://codeforces.com/apiHelp). This integration will let you access the contests API and parse its responses to the Saris format, allowing you to unfreeze the standing.
+Currently, neoSaris is integrated with the [Codeforces API](https://codeforces.com/apiHelp). This integration will let you access the contests API and parse its responses to the Saris format, allowing you to unfreeze the standing.
 
 #### Public Contests
 
