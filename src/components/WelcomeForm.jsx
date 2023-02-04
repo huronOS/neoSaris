@@ -1,21 +1,21 @@
 import React, { useState } from "react";
 import { CircleLoading } from "react-loadingg";
 import Scoreboard from "./Scoreboard";
-import { getContestDataWithRawData } from "../parsers/raw/raw-json-parser";
+import { getContestDataWithNeoSarisJSON } from "../parsers/neosaris/neosaris-json-parser";
 import { getContestDataWithCodeforcesAPI } from "../parsers/codeforces/codeforces-api-parser";
 import { getContestDataWithVjudgeAPI } from "../parsers/vjudge/vjudge-api-parser";
 import "./WelcomeForm.css";
 
 let contestData = {};
 
-const RawDataForm = ({ setStep }) => {
-  const [rawDataValue, setRawDataValue] = useState("");
+const NeoSarisForm = ({ setStep }) => {
+  const [neoSarisJSON, setNeoSarisJSON] = useState("");
 
   const handleSubmit = async event => {
     event.preventDefault();
     setStep("loading");
     try {
-      contestData = await getContestDataWithRawData(rawDataValue);
+      contestData = await getContestDataWithNeoSarisJSON(neoSarisJSON);
       setStep("resolver");
     } catch (error) {
       alert(error);
@@ -32,13 +32,13 @@ const RawDataForm = ({ setStep }) => {
         </p>
         <textarea
           className="form-raw-data-json-box"
-          id="rawContestDataJSON"
-          name="rawContestDataJSON"
+          id="neoSarisJSON"
+          name="neoSarisJSON"
           rows="4"
           cols="50"
-          value={rawDataValue}
+          value={neoSarisJSON}
           onChange={e => {
-            setRawDataValue(e.target.value);
+            setNeoSarisJSON(e.target.value);
           }}
         />
         <br />
@@ -198,8 +198,8 @@ const VjudgeForm = ({ setStep }) => {
 
 const getForm = (dataSource, setStep) => {
   switch (dataSource) {
-    case "raw":
-      return <RawDataForm setStep={setStep} />;
+    case "neosaris":
+      return <NeoSarisForm setStep={setStep} />;
     case "codeforces":
       return <CodeforcesForm setStep={setStep} />;
     case "vjudge":
@@ -211,7 +211,7 @@ const getForm = (dataSource, setStep) => {
 
 const WelcomeForm = () => {
   const [step, setStep] = useState("form");
-  const [dataSource, setDataSource] = useState("raw");
+  const [dataSource, setDataSource] = useState("neosaris");
   return (
     <div className="saris-box">
       {step === "form" && (
@@ -232,7 +232,7 @@ const WelcomeForm = () => {
                 setDataSource(event.target.value);
               }}
             >
-              <option value="raw">neoSaris JSON</option>
+              <option value="neosaris">neoSaris JSON</option>
               <option value="codeforces">Codeforces API</option>
               <option value="vjudge">vJudge API</option>
             </select>

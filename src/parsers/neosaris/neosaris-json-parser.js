@@ -129,7 +129,7 @@ const verifyObject = contestData => {
   });
 };
 
-export const getContestDataWithRawData = rawText => {
+export const getContestDataWithNeoSarisJSON = rawText => {
   let contestData = {};
   contestData = JSON.parse(rawText);
   verifyObject(contestData);
