@@ -51,12 +51,7 @@ class TableItem extends Component {
             submissionWhenFrozen[j].teamName === team.name &&
             submissionWhenFrozen[j].problem === problemLetter
           ) {
-            return (
-              team.triesOnProblems[i] +
-              1 +
-              " - " +
-              submissionWhenFrozen[j].timeSubmission
-            );
+            return team.triesOnProblems[i] + 1 + " - " + submissionWhenFrozen[j].timeSubmission;
           }
         }
       }
@@ -109,10 +104,7 @@ class TableItem extends Component {
   isAPendingProblem(problemLetter) {
     let team = this.props.team;
     let submissionWhenFrozen = this.props.submissionWhenFrozen;
-    if (
-      submissionWhenFrozen === undefined ||
-      submissionWhenFrozen.length === 0
-    ) {
+    if (submissionWhenFrozen === undefined || submissionWhenFrozen.length === 0) {
       return false;
     }
     for (let i = 0; i < this.props.numberOfProblems; i++) {
@@ -186,7 +178,7 @@ class TableItem extends Component {
     let sizeProblem = 80.0 / this.props.numberOfProblems;
     let widthPercentage = sizeProblem + "%";
 
-    let problemColumns = problems.map((problemLetter) => {
+    let problemColumns = problems.map(problemLetter => {
       let verdict = "scoreboardTableColumnProblemDefault";
       let textToShowInProblem = problemLetter;
 
@@ -196,8 +188,7 @@ class TableItem extends Component {
         } else {
           verdict = "scoreboardTableColumnProblemAccepted";
         }
-        textToShowInProblem =
-          this.numberOfTriesOnAcceptedProblem(problemLetter);
+        textToShowInProblem = this.numberOfTriesOnAcceptedProblem(problemLetter);
       } else if (this.isACurrentFrozenProblem(problemLetter) === true) {
         verdict = "scoreboardTableColumnProblemCurrentPending";
         textToShowInProblem = this.numberOfTriesOnFrozenProblem(problemLetter);
@@ -228,32 +219,21 @@ class TableItem extends Component {
     }
 
     return (
-      <div
-        className={"scoreboardTableRow " + classNameForEachRow}
-        id={this.props.team.id}
-      >
+      <div className={"scoreboardTableRow " + classNameForEachRow} id={this.props.team.id}>
         <div
           dangerouslySetInnerHTML={{ __html: this.props.team.name }}
           className="scoreboardTableColumnTeamName"
           key="team"
         ></div>
-        <span className="scoreboardTableColumnRank">
-          {this.props.team.position}
-        </span>
+        <span className="scoreboardTableColumnRank">{this.props.team.position}</span>
         <img
           className="scoreboardTableColumnTeamPicture"
           src={this.getImageForTeam(this.props.team.id)}
           alt=""
         />
-        <span className="scoreboardTableProblemRowFirstChild">
-          {problemColumns}
-        </span>
-        <span className="scoreboardTableColumnTime">
-          {this.props.team.penalty}
-        </span>
-        <span className="scoreboardTableColumnSolved">
-          {this.props.team.solved}
-        </span>
+        <span className="scoreboardTableProblemRowFirstChild">{problemColumns}</span>
+        <span className="scoreboardTableColumnTime">{this.props.team.penalty}</span>
+        <span className="scoreboardTableColumnSolved">{this.props.team.solved}</span>
       </div>
     );
   }

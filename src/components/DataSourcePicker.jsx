@@ -9,7 +9,7 @@ const Form = ({ setConfigData }) => {
       <input id="contest_id" name="contest_id" type="text" />
       <button
         className="loadScoreboardButton"
-        onClick={(event) => {
+        onClick={event => {
           console.log(event);
           /*setConfigData({
             contest_id: event.target.form.contest_id.value,

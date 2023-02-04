@@ -1,4 +1,4 @@
-const verifyObject = (contestData) => {
+const verifyObject = contestData => {
   if (contestData == null) {
     throw new Error("contestData is null or undefined!");
   }
@@ -31,10 +31,7 @@ const verifyObject = (contestData) => {
   }
 
   //Check contestData
-  if (
-    contestData.Contest.Duration == null ||
-    typeof contestData.Contest.Duration !== "number"
-  ) {
+  if (contestData.Contest.Duration == null || typeof contestData.Contest.Duration !== "number") {
     throw new Error("contestData.Contest.Duration is not an number!");
   }
   if (
@@ -55,10 +52,7 @@ const verifyObject = (contestData) => {
   ) {
     throw new Error("contestData.Contest.ProblemsIndex is not an array!");
   }
-  if (
-    contestData.Contest.Name == null ||
-    typeof contestData.Contest.Name !== "string"
-  ) {
+  if (contestData.Contest.Name == null || typeof contestData.Contest.Name !== "string") {
     throw new Error("contestData.Contest.Name is not an string!");
   }
 
@@ -73,23 +67,17 @@ const verifyObject = (contestData) => {
   }
 
   //Check VerdictWithoutPenalty
-  for (const [key, value] of Object.entries(
-    contestData.VerdictWithoutPenalty
-  )) {
+  for (const [key, value] of Object.entries(contestData.VerdictWithoutPenalty)) {
     if (key == null || typeof key !== "string" || key === "") {
-      throw new Error(
-        "contestData.VerdictWithoutPenalty contain invalid data!"
-      );
+      throw new Error("contestData.VerdictWithoutPenalty contain invalid data!");
     }
     if (value == null || typeof value !== "string" || value === "") {
-      throw new Error(
-        "contestData.VerdictWithoutPenalty contain invalid data!"
-      );
+      throw new Error("contestData.VerdictWithoutPenalty contain invalid data!");
     }
   }
 
   //Check submissions
-  contestData.Submissions.forEach((submission) => {
+  contestData.Submissions.forEach(submission => {
     console.log(submission);
     if (submission == null) {
       throw new Error(
@@ -98,10 +86,7 @@ const verifyObject = (contestData) => {
         )}`
       );
     }
-    if (
-      submission.timeSubmission == null ||
-      typeof submission.timeSubmission !== "number"
-    ) {
+    if (submission.timeSubmission == null || typeof submission.timeSubmission !== "number") {
       throw new Error(
         `contestData.Submissions contains invalid data!\nSubmission have invalid timeSubmission\n${JSON.stringify(
           submission
@@ -144,7 +129,7 @@ const verifyObject = (contestData) => {
   });
 };
 
-export const getContestDataWithRawData = (rawText) => {
+export const getContestDataWithRawData = rawText => {
   let contestData = {};
   contestData = JSON.parse(rawText);
   verifyObject(contestData);

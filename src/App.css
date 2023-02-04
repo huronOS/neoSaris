@@ -1,5 +1,5 @@
-body{
-	background-color: #000000;
+body {
+  background-color: #000000;
 }
 
 .AppBackground {
@@ -11,16 +11,16 @@ body{
 }
 
 .AppBackground > div:first-of-type {
-    height: 970px;
+  height: 970px;
 }
 
 .AppBackground > div:last-of-type {
-    height: 100%;
-    background-color: #000000;
+  height: 100%;
+  background-color: #000000;
 }
 
 @media screen and (max-width: 970px) {
-    body > div:nth-of-type(2) {
-        height: 970px;
-    }
+  body > div:nth-of-type(2) {
+    height: 970px;
+  }
 }

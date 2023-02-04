@@ -59,26 +59,19 @@ export const getSubmissions = async ({
         apiSecret,
       }),
     })
-    .catch((error) => {
-      throw new Error(
-        `Error while making codeforces API request:\n${error.message}`
-      );
+    .catch(error => {
+      throw new Error(`Error while making codeforces API request:\n${error.message}`);
     });
 
   console.log("Response", response);
 
   return response.result
-    .filter(
-      (submission) =>
-        Math.floor(submission.relativeTimeSeconds / 60) <= duration
-    )
-    .map((submission) => {
+    .filter(submission => Math.floor(submission.relativeTimeSeconds / 60) <= duration)
+    .map(submission => {
       return {
         timeSubmission: Math.floor(submission.relativeTimeSeconds / 60),
         TeamName:
-          submission.author.teamName ||
-          submission.author.members[0].handle ||
-          "NO_TEAM_NAME",
+          submission.author.teamName || submission.author.members[0].handle || "NO_TEAM_NAME",
         Problem: submission.problem.index,
         Verdict: submission.verdict === "OK" ? "Accepted" : "WRONG",
       };
@@ -107,10 +100,8 @@ export const getContestData = async ({
         apiSecret,
       }),
     })
-    .catch((error) => {
-      throw new Error(
-        `Error while making codeforces API request:\n${error.message}`
-      );
+    .catch(error => {
+      throw new Error(`Error while making codeforces API request:\n${error.message}`);
     });
 
   console.log("contest request", response);
@@ -120,17 +111,14 @@ export const getContestData = async ({
       Duration: Math.floor(response.result.contest.durationSeconds / 60),
       FrozenTime: frozenTime,
       NumberOfProblems: response.result.problems.length,
-      ProblemsIndex: response.result.problems.map((problem) => {
+      ProblemsIndex: response.result.problems.map(problem => {
         return problem.index;
       }),
       Name: response.result.contest.name,
     },
     teams: Object.fromEntries(
       response.result.rows.map((row, index) => {
-        return [
-          index,
-          row.party.teamName || row.party.members[0].handle || "NO_TEAM_NAME",
-        ];
+        return [index, row.party.teamName || row.party.members[0].handle || "NO_TEAM_NAME"];
       })
     ),
   };

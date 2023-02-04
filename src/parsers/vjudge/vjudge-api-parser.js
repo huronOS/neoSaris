@@ -12,11 +12,7 @@ const buildHeaders = () => {
   };
 };
 
-export const getContestData = async (
-  frozenTime,
-  contestId,
-  numberOfProblems
-) => {
+export const getContestData = async (frozenTime, contestId, numberOfProblems) => {
   const { data: response } = await axios
     .request({
       method: "GET",
@@ -24,10 +20,8 @@ export const getContestData = async (
       headers: buildHeaders(),
       params: buildParams(contestId),
     })
-    .catch((error) => {
-      throw new Error(
-        `Error while making vJudge API request:\n${error.message}`
-      );
+    .catch(error => {
+      throw new Error(`Error while making vJudge API request:\n${error.message}`);
     });
 
   console.log("vJudge, Contest Data Response", response);
@@ -37,7 +31,7 @@ export const getContestData = async (
 
   // Pre calculate data
   const duration = Math.floor(response.length / 1000 / 60);
-  const problems = [...Array(numberOfProblems).keys()].map((idx) => {
+  const problems = [...Array(numberOfProblems).keys()].map(idx => {
     return String.fromCharCode("A".charCodeAt(0) + idx);
   });
   const teamName = new Map();
@@ -59,8 +53,8 @@ export const getContestData = async (
       })
     ),
     submissions: response.submissions
-      .filter((submission) => Math.floor(submission[3] / 60) <= duration)
-      .map((submission) => {
+      .filter(submission => Math.floor(submission[3] / 60) <= duration)
+      .map(submission => {
         return {
           timeSubmission: Math.floor(submission[3] / 60),
           TeamName: teamName.get(submission[0].toString()),
@@ -71,16 +65,8 @@ export const getContestData = async (
   };
 };
 
-export const getContestDataWithVjudgeAPI = async (
-  frozenTime,
-  contestId,
-  numberOfProblems
-) => {
-  const contestData = await getContestData(
-    frozenTime,
-    contestId,
-    numberOfProblems
-  );
+export const getContestDataWithVjudgeAPI = async (frozenTime, contestId, numberOfProblems) => {
+  const contestData = await getContestData(frozenTime, contestId, numberOfProblems);
   const JSONobject = {
     Contest: contestData.contestData,
     Teams: contestData.teams,

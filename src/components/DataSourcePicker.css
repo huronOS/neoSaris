@@ -1,12 +1,12 @@
 * {
-	color: white;
+  color: white;
 }
 
-.configForm{
-	display: flex;
-	flex-direction: column;
+.configForm {
+  display: flex;
+  flex-direction: column;
 }
 
-.loadScoreboardButton{
-	color:black
+.loadScoreboardButton {
+  color: black;
 }
