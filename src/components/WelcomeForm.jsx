@@ -4,6 +4,7 @@ import Scoreboard from "./Scoreboard";
 import { getContestDataWithNeoSarisJSON } from "../parsers/neosaris/neosaris-json-parser";
 import { getContestDataWithCodeforcesAPI } from "../parsers/codeforces/codeforces-api-parser";
 import { getContestDataWithVjudgeAPI } from "../parsers/vjudge/vjudge-api-parser";
+import { getContestDataWithSarisStandJSON } from "../parsers/saris-stand/saris-stand-json-parser"
 import "./WelcomeForm.css";
 
 let contestData = {};
@@ -56,6 +57,55 @@ const NeoSarisForm = ({ setStep }) => {
     </div>
   );
 };
+
+const SarisStandForm = ({ setStep }) => {
+	const [sarisStandJSON, setSarisStandJSON] = useState("");
+  
+	const handleSubmit = async event => {
+	  event.preventDefault();
+	  setStep("loading");
+	  try {
+		contestData = await getContestDataWithSarisStandJSON(sarisStandJSON);
+		setStep("resolver");
+	  } catch (error) {
+		alert(error);
+		setStep("form");
+	  }
+	  return false;
+	};
+  
+	return (
+	  <div>
+		<form className="all-forms" onSubmit={e => handleSubmit(e)}>
+		  <p>
+			<label>Please, paste your JSON data object:</label>
+		  </p>
+		  <textarea
+			className="form-raw-data-json-box"
+			id="sarisStandJSON"
+			name="sarisStandJSON"
+			rows="4"
+			cols="50"
+			value={sarisStandJSON}
+			onChange={e => {
+				setSarisStandJSON(e.target.value);
+			}}
+		  />
+		  <br />
+		  <p>
+			<label>
+			  To format the Saris Stand JSON object, follow{" "}
+			  <a href="https://github.com/OStrekalovsky/S4RiS-StanD/blob/master/log%20examples/test-contest.txt">
+				this
+			  </a>{" "}
+			  example.
+			</label>
+		  </p>
+		  <input type="submit" value="Start Dancing" />
+		</form>
+	  </div>
+	);
+  };
 
 const CodeforcesForm = ({ setStep }) => {
   const [contestId, setContestId] = useState("");
@@ -198,10 +248,12 @@ const VjudgeForm = ({ setStep }) => {
 
 const getForm = (dataSource, setStep) => {
   switch (dataSource) {
-    case "neosaris":
-      return <NeoSarisForm setStep={setStep} />;
     case "codeforces":
       return <CodeforcesForm setStep={setStep} />;
+	case "neosaris":
+      return <NeoSarisForm setStep={setStep} />;
+	case "saris-stand":
+      return <SarisStandForm setStep={setStep} />;
     case "vjudge":
       return <VjudgeForm setStep={setStep} />;
     default:
@@ -234,6 +286,7 @@ const WelcomeForm = () => {
             >
               <option value="neosaris">neoSaris JSON</option>
               <option value="codeforces">Codeforces API</option>
+			  <option value="saris-stand">S4RiS StanD JSON</option>
               <option value="vjudge">vJudge API</option>
             </select>
           </div>
