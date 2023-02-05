@@ -202,6 +202,7 @@ class TableItem extends Component {
       }
 
       return {
+        key: problemLetter,
         letter: problemLetter,
         width: widthPercentage,
         problemStatus: verdict,

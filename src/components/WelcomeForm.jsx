@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { CircleLoading } from "react-loadingg";
-import Scoreboard from "./scoreboard/Scoreboard";
 import CodeforcesForm from "./forms/CodeforcesForm";
 import NeoSarisForm from "./forms/NeoSarisForm";
 import SarisStandForm from "./forms/SarisStandForm";
@@ -22,41 +20,33 @@ const getForm = (dataSource, setContestData, setStep) => {
   }
 };
 
-const WelcomeForm = () => {
-  const [step, setStep] = useState("form");
+const WelcomeForm = ({ setContestData, setStep }) => {
   const [dataSource, setDataSource] = useState("neosaris");
-  const [contestData, setContestData] = useState({});
   return (
-    <div className="saris-box">
-      {step === "form" && (
-        <div className="data-source-selector-box">
-          <h1 className="saris-title">neoSaris</h1>
-          <p className="saris-description">
-            neoSaris, is an ICPC-like standing resolver to be used to reveal what happens on the
-            frozen time of a competition. You can check the source code of this project on{" "}
-            <a href="https://github.com/equetzal/SarisResolver">github</a>. IOI-like contest
-            (partial scoring) is not supported yet.
-          </p>
-          <hr height="1px" width="50%" />
-          <div>
-            <label className="text-white">Select a data source:</label>
-            <select
-              id="data-source"
-              onChange={event => {
-                setDataSource(event.target.value);
-              }}
-            >
-              <option value="neosaris">neoSaris JSON</option>
-              <option value="codeforces">Codeforces API</option>
-              <option value="saris-stand">S4RiS StanD JSON</option>
-              <option value="vjudge">vJudge API</option>
-            </select>
-          </div>
-          <div className="text-white">{getForm(dataSource, setContestData, setStep)}</div>
-        </div>
-      )}
-      {step === "loading" && <CircleLoading />}
-      {step === "resolver" && <Scoreboard submissionsData={contestData} />}
+    <div className="data-source-selector-box">
+      <h1 className="saris-title">neoSaris</h1>
+      <p className="saris-description">
+        neoSaris, is an ICPC-like standing resolver to be used to reveal what happens on the frozen
+        time of a competition. You can check the source code of this project on{" "}
+        <a href="https://github.com/equetzal/SarisResolver">github</a>. IOI-like contest (partial
+        scoring) is not supported yet.
+      </p>
+      <hr height="1px" width="50%" />
+      <div>
+        <label className="text-white">Select a data source:</label>
+        <select
+          id="data-source"
+          onChange={event => {
+            setDataSource(event.target.value);
+          }}
+        >
+          <option value="neosaris">neoSaris JSON</option>
+          <option value="codeforces">Codeforces API</option>
+          <option value="saris-stand">S4RiS StanD JSON</option>
+          <option value="vjudge">vJudge API</option>
+        </select>
+      </div>
+      <div className="text-white">{getForm(dataSource, setContestData, setStep)}</div>
     </div>
   );
 };
