@@ -2,61 +2,8 @@
   height: 100vh;
 }
 
-.scoreboardTableRow {
-  height: 60px;
-  margin-left: 8px;
-  width: 98%;
-}
-
-.scoreboardTableColumnRank {
-  color: white;
-  display: inline-block;
-  font-family: Helvetica;
-  text-align: center;
-  font-size: x-large;
-  width: 3%;
-}
-
-.scoreboardTableColumnTeamPicture {
-  display: inline-block;
-  position: absolute;
-  margin-top: 2px;
-  width: 4%;
-  height: 50px;
-}
-
 .scoreboardTableProblemRowFirstChild > :first-child {
   margin-left: 4.3%;
-}
-
-.scoreboardTableColumnSolved {
-  color: white;
-  display: inline-block;
-  float: right;
-  margin-top: 30px;
-  text-align: center;
-  font-family: Helvetica;
-  font-size: x-large;
-  width: 2.5%;
-}
-
-.scoreboardTableColumnTime {
-  color: white;
-  display: inline-block;
-  margin-top: 30px;
-  float: right;
-  text-align: center;
-  font-family: Helvetica;
-  font-size: x-large;
-  width: 4%;
-}
-
-.scoreboardTableColumnTeamName {
-  color: white;
-  left: 10%;
-  position: absolute;
-  font-family: Helvetica;
-  font-size: x-large;
 }
 
 .scoreboardTableGrayRow {

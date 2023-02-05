@@ -1,0 +1,82 @@
+.tableRow {
+  height: auto;
+  width: auto;
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-around;
+  gap: 0.3rem;
+}
+
+.tableRow-Rank {
+  order: 0;
+  width: 3%;
+  min-width: 3%;
+  max-width: 3%;
+  margin: 0;
+  color: white;
+  font-family: Helvetica;
+  text-align: center;
+  font-size: min(5vmin, 24px);
+}
+
+.tableRow-Picture {
+  order: 1;
+  width: 5%;
+  min-width: 5%;
+  max-width: 5%;
+  margin: 0;
+  height: 50px;
+  object-fit: contain;
+}
+
+.tableRow-TeamData {
+  order: 2;
+  width: 84%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.tableRow-ResolvedProblems {
+  order: 3;
+  width: 4%;
+  min-width: 4%;
+  max-width: 4%;
+  color: white;
+  text-align: center;
+  font-family: Helvetica;
+  font-size: min(3vmin, 22px);
+}
+
+.tableRow-Penalty {
+  order: 4;
+  width: 4%;
+  min-width: 4%;
+  max-width: 4%;
+  margin: 0;
+  color: white;
+  text-align: center;
+  font-family: Helvetica;
+  font-size: min(2.3vmin, 18px);
+}
+
+.tableRox-TeamName {
+  color: white;
+  font-family: Helvetica;
+  font-size: min(5vmin, 26px);
+}
+
+.tableRox-Problems {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 0.2rem;
+}

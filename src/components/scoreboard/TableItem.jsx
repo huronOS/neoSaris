@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ProblemBox from "./ProblemBox";
+import "./TableRow.css";
 var logos = require.context("../../media/university_logos", true);
 
 class TableItem extends Component {
@@ -176,7 +177,7 @@ class TableItem extends Component {
   render() {
     let problems = this.props.problemsIndex;
 
-    let sizeProblem = 80.0 / this.props.numberOfProblems;
+    let sizeProblem = 84.0 / this.props.numberOfProblems;
     let widthPercentage = sizeProblem + "%";
 
     let problemColumns = problems.map(problemLetter => {
@@ -218,25 +219,38 @@ class TableItem extends Component {
     }
 
     return (
-      <div className={"scoreboardTableRow " + classNameForEachRow} id={this.props.team.id}>
+      <div className={"tableRow " + classNameForEachRow} id={this.props.team.id}>
+        {/*Rank*/}
+        <span className="tableRow-Rank">{this.props.team.position}</span>
+        {/*Photo*/}
+        <img className="tableRow-Picture" src={this.getImageForTeam(this.props.team.id)} alt="" />
+        {/*Name+Problems*/}
+        <div className="tableRow-TeamData">
+          {/*ContestantName*/}
+          <span className="tableRox-TeamName">{this.props.team.name}</span>
+          {/*Problem Boxes*/}
+          <div className="tableRox-Problems">
+            {problemColumns.map(problemData => {
+              return <ProblemBox {...problemData} />;
+            })}
+          </div>
+        </div>
+        {/*ProblemsSolved*/}
+        <span className="tableRow-ResolvedProblems">{this.props.team.solved}</span>
+        {/*Penalty*/}
+        <span className="tableRow-Penalty">{this.props.team.penalty}</span>
+        {/*
         <div
           dangerouslySetInnerHTML={{ __html: this.props.team.name }}
           className="scoreboardTableColumnTeamName"
           key="team"
         ></div>
-        <span className="scoreboardTableColumnRank">{this.props.team.position}</span>
-        <img
-          className="scoreboardTableColumnTeamPicture"
-          src={this.getImageForTeam(this.props.team.id)}
-          alt=""
-        />
         <span className="scoreboardTableProblemRowFirstChild">
-          {problemColumns.map(problemData => {
-            return <ProblemBox {...problemData} />;
-          })}
+          {}
         </span>
-        <span className="scoreboardTableColumnTime">{this.props.team.penalty}</span>
-        <span className="scoreboardTableColumnSolved">{this.props.team.solved}</span>
+        <span className=""></span>
+        <span className=""></span>
+		*/}
       </div>
     );
   }

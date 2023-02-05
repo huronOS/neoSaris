@@ -1,14 +1,15 @@
 .problemBox {
   box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   border-radius: 8px;
-  display: inline-block;
-  margin-top: 30px;
-  margin-right: 2px;
+  display: inline-flex;
   font-family: Helvetica;
-  text-align: center;
-  height: max-content;
+  font-size: min(2vmin, 22px);
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  height: auto;
+  flex-grow: 1;
+  padding: 0.1rem 0.2rem 0.1rem 0.2rem;
 }
 
 .problemBox-FirstAccepted {
