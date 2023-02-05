@@ -14,6 +14,18 @@ This repository, is a hard-fork of the original (and abandoned) [SarisByAlgoritm
 This tool is available on **[saris.huronos.org](https://saris.huronos.org)** thanks to the huronOS project who is providing the hosting.
 You can either use it online as a web client, or you can install it locally following the [installation](#Installation) steps.
 
+### Commands
+
+**(N)ext Submission** `(press: n)`  
+**1st** `n`, the UI goes to the next pending submission from bottom to top, and highlight it to let the user know that is the next pending submission to reveal.  
+**2nd** `n`reveals the selected pending submission.
+
+**(U)nfroze Standings** `(press: ctrl + u)`  
+Reveals the final standings.
+
+**(T)op 10 Standings** `(press: ctrl + t)`  
+Reveals standing until the top 10. That means the top 10 will be in the frozen stage and then you can go one by one revealing the results.
+
 ## Why a [another] ICPC Resolver?
 
 The current solutions like the official _ICPC Resolver_, require a lot of setup to make them work, other ones like the original S4RiS are abandoned. Added to this, any of them have integrations that allows them to be easier to use with popular platforms like _Codeforces_ which are commonly used to held official competitions, or annual contests.
@@ -152,21 +164,6 @@ Once you have downloaded the source code you need to install the dependencies of
 Once you have run this command, just type next command in the root folder of the project and start using Saris:
 
 `npm start`
-
-### Special commands
-
-There are some commands that you need to type that make this tool to work. The commands are the following ones:
-
-**(N)ext Submission** `(press: n)`  
-If you click **n** for the first time then the UI goes to the next pending submission from bottom to top, and highlighted it to let the user know that is the current pending submission the score is going to reveal.
-
-If it is the second time you type the **n** key, then it reveals the current pending submission.
-
-**(U)nfroze Standings** `(press: ctrl + u)`  
-Reveals the final standings.
-
-**(T)op 10 Standings** `(press: ctrl + t)`  
-Reveals standing until the top 10. That means the top 10 will be in the frozen stage and then you can go one by one revealing the results.
 
 ### Contribute!
 
