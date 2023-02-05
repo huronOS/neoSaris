@@ -157,13 +157,16 @@ Once you have run this command, just type next command in the root folder of the
 
 There are some commands that you need to type that make this tool to work. The commands are the following ones:
 
-**Enter:** If you click enter for the first time then the UI goes to the next pending submission from bottom to top, and highlighted it to let the user know that is the current pending submission the score is going to reveal.
+**(N)ext Submission** `(press: n)`  
+If you click **n** for the first time then the UI goes to the next pending submission from bottom to top, and highlighted it to let the user know that is the current pending submission the score is going to reveal.
 
-If it is the second time you type the enter key, then it reveals the current pending submission.
+If it is the second time you type the **n** key, then it reveals the current pending submission.
 
-**Ctrl + Delete:** Reveals the final standings.
+**(U)nfroze Standings** `(press: ctrl + u)`  
+Reveals the final standings.
 
-**Ctrl + Back space:** Reveals standing until the top 10. That means the top 10 will be in the frozen stage and then you can go one by one revealing the results.
+**(T)op 10 Standings** `(press: ctrl + t)`  
+Reveals standing until the top 10. That means the top 10 will be in the frozen stage and then you can go one by one revealing the results.
 
 ### Contribute!
 
@@ -172,6 +175,8 @@ This project is open for contributions, currently there's some goals planned:
 - [x] Support Codeforces API
 - [ ] Fully refactor the project to use React functional components
 - [ ] Migrate the project to Typescript
+- [ ] Implement (F)ast Submission key command
+- [ ] Implement (A)utomatic Reveal key command
 - [ ] Support IOI-like contests (partial scoring)
 - [x] Support vJudge API to unfroze standings
 - [ ] Support BOCA for LATAM competitions.

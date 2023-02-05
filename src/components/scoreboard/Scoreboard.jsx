@@ -474,32 +474,49 @@ class Scoreboard extends Component {
   }
 
   keyDownHandler(e) {
-    if (e.keyCode === 8 && e.ctrlKey === true) {
-      // Leave pending Top 10
-      this.revealUntilTop(10);
-    } else if (e.keyCode === 46 && e.ctrlKey === true) {
-      // Unfroze scoreboard.
-      this.revealUntilTop(0);
-    } else if (e.keyCode === 13) {
-      if (this.state.isPressedKeyOn === 0 && this.state.teamNameToSelect !== null) {
-        let idOfNextUserRowHighlighted = this.state.idOfNextUserRowHighlighted;
-        if (this.state.standingHasChangedInLastOperation === false) {
-          idOfNextUserRowHighlighted = Math.max(idOfNextUserRowHighlighted - 1, -1);
+    switch (e.keyCode) {
+      case 78: //(N)ext Submission
+        if (this.state.isPressedKeyOn === 0 && this.state.teamNameToSelect !== null) {
+          let idOfNextUserRowHighlighted = this.state.idOfNextUserRowHighlighted;
+          if (this.state.standingHasChangedInLastOperation === false) {
+            idOfNextUserRowHighlighted = Math.max(idOfNextUserRowHighlighted - 1, -1);
+          }
+          this.setState({
+            teamNameToSelect: null,
+            standingHasChangedInLastOperation: false,
+            idOfNextUserRowHighlighted: idOfNextUserRowHighlighted,
+          });
+        } else {
+          this.findNextSubmissionToReveal();
+          let isPressedKeyOn = 1 - this.state.isPressedKeyOn;
+          this.setState({
+            isPressedKeyOn: isPressedKeyOn,
+            hasNotBeenScrolled: false,
+          });
+          this.scrollToElementSelected();
         }
-        this.setState({
-          teamNameToSelect: null,
-          standingHasChangedInLastOperation: false,
-          idOfNextUserRowHighlighted: idOfNextUserRowHighlighted,
-        });
-      } else {
-        this.findNextSubmissionToReveal();
-        let isPressedKeyOn = 1 - this.state.isPressedKeyOn;
-        this.setState({
-          isPressedKeyOn: isPressedKeyOn,
-          hasNotBeenScrolled: false,
-        });
-        this.scrollToElementSelected();
-      }
+        break;
+
+      case 70: //(F)ast Submission
+        //TODO: Implement Fast Submission, Reveal all pending solutions until AC or final WA
+        console.log("(F)ast Submission, not implemented yet");
+        break;
+
+      case 84: //(T)op 10 Standing
+        if (e.ctrlKey === true) this.revealUntilTop(10);
+        break;
+
+      case 85: //(U)nfroze Standing
+        if (e.ctrlKey === true) this.revealUntilTop(0);
+        break;
+
+      case 65: //(A)utomatic Reveal
+        //TODO: Implement automatic reveal, every X time reveal next submission
+        console.log("(A)utomatic Reveal, not implemented yet");
+        break;
+
+      default:
+        break;
     }
   }
 
