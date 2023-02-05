@@ -503,11 +503,11 @@ class Scoreboard extends Component {
         break;
 
       case 84: //(T)op 10 Standing
-        if (e.ctrlKey === true) this.revealUntilTop(10);
+        this.revealUntilTop(10);
         break;
 
       case 85: //(U)nfroze Standing
-        if (e.ctrlKey === true) this.revealUntilTop(0);
+        this.revealUntilTop(0);
         break;
 
       case 65: //(A)utomatic Reveal
