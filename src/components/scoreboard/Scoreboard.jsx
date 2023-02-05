@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import FlipMove from "react-flip-move";
-import TableItem from "./TableItem";
+import TableRow from "./TableRow";
 import Header from "./Header";
 import "./Scoreboard.css";
 var intervalPendingSubmission = null;
@@ -279,7 +279,7 @@ class Scoreboard extends Component {
         }
       }
       return (
-        <TableItem
+        <TableRow
           key={team.id}
           view={this.state.view}
           index={i}

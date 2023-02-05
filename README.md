@@ -1,6 +1,6 @@
 # neoSaris - ICPC Standings Resolver
 
-![Example image of Saris by Club Algoritmia ESCOM](/public/exampleImage.PNG)
+![Example image of Saris by Club Algoritmia ESCOM](/public/neoSarisExample.PNG)
 
 The code of this repository contains a react app that can be used to simulate what happens in the frozen time during a competitive programming competition with the ICPC standard rules.
 

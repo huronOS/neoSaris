@@ -3,7 +3,7 @@ import ProblemBox from "./ProblemBox";
 import "./TableRow.css";
 var logos = require.context("../../media/university_logos", true);
 
-class TableItem extends Component {
+class TableRow extends Component {
   getImageForTeam(url) {
     let imgSrc = logos("./default.png");
     try {
@@ -256,4 +256,4 @@ class TableItem extends Component {
   }
 }
 
-export default TableItem;
+export default TableRow;
