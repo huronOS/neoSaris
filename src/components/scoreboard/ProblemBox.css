@@ -1,0 +1,44 @@
+.problemBox {
+  border-radius: 8px;
+  display: inline-block;
+  margin-top: 30px;
+  margin-right: 2px;
+  font-family: Helvetica;
+  text-align: center;
+}
+
+.problemBox-FirstAccepted {
+  color: white;
+  background-color: #004400;
+  border: 2px solid #00de00;
+}
+
+.problemBox-Accepted {
+  color: white;
+  background-color: #009c00;
+  border: 2px solid transparent;
+}
+
+.problemBox-Resolving {
+  color: white;
+  background-color: #cbb000;
+  border: 2px solid #ffff08;
+}
+
+.problemBox-Pending {
+  color: white;
+  background-color: #cbb000;
+  border: 2px solid transparent;
+}
+
+.problemBox-WrongAnswer {
+  color: white;
+  background-color: #ad0b0b;
+  border: 2px solid transparent;
+}
+
+.problemBox-NoAttempted {
+  color: #8a919b;
+  background-color: #282828;
+  border: 2px solid transparent;
+}

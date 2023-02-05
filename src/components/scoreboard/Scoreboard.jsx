@@ -184,31 +184,6 @@ class Scoreboard extends Component {
     return true;
   }
 
-  /*componentDidUpdate() {
-	setTimeout(() => {
-		if (this.state.isPressedKeyOn === 0 && this.state.teamNameToSelect !== null) {
-			let idOfNextUserRowHighlighted = this.state.idOfNextUserRowHighlighted;
-			if (this.state.standingHasChangedInLastOperation === false) {
-			  idOfNextUserRowHighlighted = Math.max(idOfNextUserRowHighlighted - 1, -1);
-			}
-			this.setState({
-			  teamNameToSelect: null,
-			  standingHasChangedInLastOperation: false,
-			  idOfNextUserRowHighlighted: idOfNextUserRowHighlighted
-			});
-		  }
-		  else {
-			this.findNextSubmissionToReveal();
-			let isPressedKeyOn = 1 - this.state.isPressedKeyOn;
-			this.setState({
-			  isPressedKeyOn: isPressedKeyOn,
-			  hasNotBeenScrolled: false
-			});
-			this.scrollToElementSelected();
-		  }
-	}, 3000);
-  }*/
-
   componentDidMount() {
     this.updateScoreboard();
     this.updatePositionOfStandings();

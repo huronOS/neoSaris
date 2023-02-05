@@ -25,15 +25,6 @@
   height: 50px;
 }
 
-.scoreboardTableColumnProblem {
-  border-radius: 10px;
-  display: inline-block;
-  margin-top: 30px;
-  margin-right: 2px;
-  font-family: Helvetica;
-  text-align: center;
-}
-
 .scoreboardTableProblemRowFirstChild > :first-child {
   margin-left: 4.3%;
 }
@@ -68,36 +59,6 @@
   font-size: x-large;
 }
 
-.scoreboardTableColumnProblemDefault {
-  color: #8a919b;
-  background-color: #23272d;
-}
-
-.scoreboardTableColumnProblemAccepted {
-  color: white;
-  background-color: #3bb42b;
-}
-
-.scoreboardTableColumnProblemTried {
-  color: white;
-  background-color: #e21616;
-}
-
-.scoreboardTableColumnProblemPending {
-  color: white;
-  background-color: #ccc908;
-}
-
-.scoreboardTableColumnProblemCurrentPending {
-  color: white;
-  background-color: #efec07;
-}
-
-.scoreboardTableColumnProblemFirstToSolve {
-  color: white;
-  background-color: #080;
-}
-
 .scoreboardTableGrayRow {
   background-color: #2a2b2d;
 }
@@ -107,9 +68,9 @@
 }
 
 .scoreboardTableSelectedRow {
-  background-color: #74a6f7;
+  background-color: #2873ed;
 }
 
 .scoreboardTableSelectedRowFinished {
-  background-color: #2873ed;
+  background-color: #255eba;
 }

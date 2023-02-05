@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ProblemBox from "./ProblemBox";
 var logos = require.context("../../media/university_logos", true);
 
 class TableItem extends Component {
@@ -179,36 +180,33 @@ class TableItem extends Component {
     let widthPercentage = sizeProblem + "%";
 
     let problemColumns = problems.map(problemLetter => {
-      let verdict = "scoreboardTableColumnProblemDefault";
+      let verdict = "NoAttempted";
       let textToShowInProblem = problemLetter;
 
       if (this.hasSolvedProblem(problemLetter) === true) {
         if (this.isFirstToSolve(problemLetter) === true) {
-          verdict = "scoreboardTableColumnProblemFirstToSolve";
+          verdict = "FirstAccepted";
         } else {
-          verdict = "scoreboardTableColumnProblemAccepted";
+          verdict = "Accepted";
         }
         textToShowInProblem = this.numberOfTriesOnAcceptedProblem(problemLetter);
       } else if (this.isACurrentFrozenProblem(problemLetter) === true) {
-        verdict = "scoreboardTableColumnProblemCurrentPending";
+        verdict = "Resolving";
         textToShowInProblem = this.numberOfTriesOnFrozenProblem(problemLetter);
       } else if (this.isAPendingProblem(problemLetter) === true) {
-        verdict = "scoreboardTableColumnProblemPending";
+        verdict = "Pending";
         textToShowInProblem = this.numberOfTriesOnFrozenProblem(problemLetter);
       } else if (this.hasTriedProblem(problemLetter) === true) {
-        verdict = "scoreboardTableColumnProblemTried";
+        verdict = "WrongAnswer";
         textToShowInProblem = this.numberOfTriesOnTriedProblem(problemLetter);
       }
 
-      return (
-        <span
-          className={"scoreboardTableColumnProblem " + verdict}
-          style={{ width: widthPercentage }}
-          key={problemLetter}
-        >
-          {textToShowInProblem}
-        </span>
-      );
+      return {
+        letter: problemLetter,
+        width: widthPercentage,
+        problemStatus: verdict,
+        displayText: textToShowInProblem,
+      };
     });
 
     let classNameForEachRow = "scoreboardTableGrayRow";
@@ -231,7 +229,11 @@ class TableItem extends Component {
           src={this.getImageForTeam(this.props.team.id)}
           alt=""
         />
-        <span className="scoreboardTableProblemRowFirstChild">{problemColumns}</span>
+        <span className="scoreboardTableProblemRowFirstChild">
+          {problemColumns.map(problemData => {
+            return <ProblemBox {...problemData} />;
+          })}
+        </span>
         <span className="scoreboardTableColumnTime">{this.props.team.penalty}</span>
         <span className="scoreboardTableColumnSolved">{this.props.team.solved}</span>
       </div>
