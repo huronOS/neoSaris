@@ -1,0 +1,56 @@
+import React, { useState } from "react";
+import { getContestDataWithVjudgeAPI } from "../../parsers/vjudge/vjudge-api-parser";
+
+const VjudgeForm = ({ setContestData, setStep }) => {
+  const [contestId, setContestId] = useState("");
+  const [frozenTime, setFrozenTime] = useState(0);
+  const [numberOfProblems, setNumberOfProblems] = useState(0);
+
+  const handleSubmit = async event => {
+    event.preventDefault();
+    setStep("loading");
+    try {
+      setContestData(await getContestDataWithVjudgeAPI(frozenTime, contestId, numberOfProblems));
+      setStep("resolver");
+    } catch (error) {
+      alert(error.message);
+      setStep("form");
+    }
+    return false;
+  };
+
+  return (
+    <div>
+      <form className="all-forms" onSubmit={e => handleSubmit(e)}>
+        <label>Frozen Time (duration in minutes):</label>
+        <input
+          type="number"
+          name="vjudge_frozen_time"
+          required
+          onChange={e => setFrozenTime(parseInt(e.target.value))}
+        />
+
+        <label>Number of Problems:</label>
+        <input
+          type="number"
+          name="vjudge_number_of_problems"
+          required
+          onChange={e => setNumberOfProblems(parseInt(e.target.value))}
+        />
+
+        <label>Contest ID:</label>
+        <input
+          type="text"
+          name="vjudge_contest_id"
+          required
+          onChange={e => setContestId(e.target.value)}
+        />
+
+        <br />
+        <input type="submit" value="Start Dancing" />
+      </form>
+    </div>
+  );
+};
+
+export default VjudgeForm;

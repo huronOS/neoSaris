@@ -1,261 +1,22 @@
 import React, { useState } from "react";
 import { CircleLoading } from "react-loadingg";
 import Scoreboard from "./Scoreboard";
-import { getContestDataWithNeoSarisJSON } from "../parsers/neosaris/neosaris-json-parser";
-import { getContestDataWithCodeforcesAPI } from "../parsers/codeforces/codeforces-api-parser";
-import { getContestDataWithVjudgeAPI } from "../parsers/vjudge/vjudge-api-parser";
-import { getContestDataWithSarisStandJSON } from "../parsers/saris-stand/saris-stand-json-parser"
+import CodeforcesForm from "./forms/CodeforcesForm";
+import NeoSarisForm from "./forms/NeoSarisForm";
+import SarisStandForm from "./forms/SarisStandForm";
+import VjudgeForm from "./forms/VJudgeForm";
 import "./WelcomeForm.css";
 
-let contestData = {};
-
-const NeoSarisForm = ({ setStep }) => {
-  const [neoSarisJSON, setNeoSarisJSON] = useState("");
-
-  const handleSubmit = async event => {
-    event.preventDefault();
-    setStep("loading");
-    try {
-      contestData = await getContestDataWithNeoSarisJSON(neoSarisJSON);
-      setStep("resolver");
-    } catch (error) {
-      alert(error);
-      setStep("form");
-    }
-    return false;
-  };
-
-  return (
-    <div>
-      <form className="all-forms" onSubmit={e => handleSubmit(e)}>
-        <p>
-          <label>Please, paste your JSON data object:</label>
-        </p>
-        <textarea
-          className="form-raw-data-json-box"
-          id="neoSarisJSON"
-          name="neoSarisJSON"
-          rows="4"
-          cols="50"
-          value={neoSarisJSON}
-          onChange={e => {
-            setNeoSarisJSON(e.target.value);
-          }}
-        />
-        <br />
-        <p>
-          <label>
-            To format the raw JSON object, follow{" "}
-            <a href="https://github.com/equetzal/SarisResolver/blob/main/public/example.json">
-              this
-            </a>{" "}
-            example.
-          </label>
-        </p>
-        <input type="submit" value="Start Dancing" />
-      </form>
-    </div>
-  );
-};
-
-const SarisStandForm = ({ setStep }) => {
-	const [sarisStandJSON, setSarisStandJSON] = useState("");
-  
-	const handleSubmit = async event => {
-	  event.preventDefault();
-	  setStep("loading");
-	  try {
-		contestData = await getContestDataWithSarisStandJSON(sarisStandJSON);
-		setStep("resolver");
-	  } catch (error) {
-		alert(error);
-		setStep("form");
-	  }
-	  return false;
-	};
-  
-	return (
-	  <div>
-		<form className="all-forms" onSubmit={e => handleSubmit(e)}>
-		  <p>
-			<label>Please, paste your JSON data object:</label>
-		  </p>
-		  <textarea
-			className="form-raw-data-json-box"
-			id="sarisStandJSON"
-			name="sarisStandJSON"
-			rows="4"
-			cols="50"
-			value={sarisStandJSON}
-			onChange={e => {
-				setSarisStandJSON(e.target.value);
-			}}
-		  />
-		  <br />
-		  <p>
-			<label>
-			  To format the Saris Stand JSON object, follow{" "}
-			  <a href="https://github.com/OStrekalovsky/S4RiS-StanD/blob/master/log%20examples/test-contest.txt">
-				this
-			  </a>{" "}
-			  example.
-			</label>
-		  </p>
-		  <input type="submit" value="Start Dancing" />
-		</form>
-	  </div>
-	);
-  };
-
-const CodeforcesForm = ({ setStep }) => {
-  const [contestId, setContestId] = useState("");
-  const [isPrivate, setIsPrivate] = useState(false);
-  const [groupId, setGroupId] = useState("");
-  const [apiKey, setApiKey] = useState("");
-  const [apiSecret, setApiSecret] = useState("");
-  const [frozenTime, setFrozenTime] = useState(60);
-
-  const handleSubmit = async event => {
-    event.preventDefault();
-    setStep("loading");
-    try {
-      contestData = await getContestDataWithCodeforcesAPI({
-        frozenTime,
-        contestId,
-        isPrivate,
-        groupId,
-        apiKey,
-        apiSecret,
-      });
-      console.log(contestData);
-      setStep("resolver");
-    } catch (error) {
-      alert(error.message);
-      setStep("form");
-    }
-    return false;
-  };
-
-  return (
-    <div>
-      <form className="all-forms" onSubmit={e => handleSubmit(e)}>
-        <label>Frozen Time (duration in minutes):</label>
-        <input
-          type="number"
-          name="cf_frozen_time"
-          required
-          onChange={e => setFrozenTime(parseInt(e.target.value))}
-        />
-
-        <label>Contest ID:</label>
-        <input
-          type="text"
-          name="cf_contest_id"
-          required
-          onChange={e => setContestId(e.target.value)}
-        />
-
-        <label>Is Private Contest? </label>
-        <label className="switch">
-          <input type="checkbox" onChange={e => setIsPrivate(e.target.checked)} />
-          <span className="slider round"></span>
-        </label>
-
-        {isPrivate && <label>Group ID:</label>}
-        {isPrivate && (
-          <input
-            type="text"
-            name="cf_group_id"
-            required
-            onChange={e => setGroupId(e.target.value)}
-          />
-        )}
-
-        {isPrivate && <label>API Key:</label>}
-        {isPrivate && (
-          <input type="text" name="cf_api_key" required onChange={e => setApiKey(e.target.value)} />
-        )}
-
-        {isPrivate && <label>API Secret:</label>}
-        {isPrivate && (
-          <input
-            type="text"
-            name="cf_api_secret"
-            required
-            onChange={e => setApiSecret(e.target.value)}
-          />
-        )}
-
-        <br />
-        <input type="submit" value="Start Dancing" />
-      </form>
-    </div>
-  );
-};
-
-const VjudgeForm = ({ setStep }) => {
-  const [contestId, setContestId] = useState("");
-  const [frozenTime, setFrozenTime] = useState(0);
-  const [numberOfProblems, setNumberOfProblems] = useState(0);
-
-  const handleSubmit = async event => {
-    event.preventDefault();
-    setStep("loading");
-    try {
-      contestData = await getContestDataWithVjudgeAPI(frozenTime, contestId, numberOfProblems);
-      console.log("Raw Data", contestData);
-      setStep("resolver");
-    } catch (error) {
-      alert(error.message);
-      setStep("form");
-    }
-    return false;
-  };
-
-  return (
-    <div>
-      <form className="all-forms" onSubmit={e => handleSubmit(e)}>
-        <label>Frozen Time (duration in minutes):</label>
-        <input
-          type="number"
-          name="vjudge_frozen_time"
-          required
-          onChange={e => setFrozenTime(parseInt(e.target.value))}
-        />
-
-        <label>Number of Problems:</label>
-        <input
-          type="number"
-          name="vjudge_number_of_problems"
-          required
-          onChange={e => setNumberOfProblems(parseInt(e.target.value))}
-        />
-
-        <label>Contest ID:</label>
-        <input
-          type="text"
-          name="vjudge_contest_id"
-          required
-          onChange={e => setContestId(e.target.value)}
-        />
-
-        <br />
-        <input type="submit" value="Start Dancing" />
-      </form>
-    </div>
-  );
-};
-
-const getForm = (dataSource, setStep) => {
+const getForm = (dataSource, setContestData, setStep) => {
   switch (dataSource) {
     case "codeforces":
-      return <CodeforcesForm setStep={setStep} />;
-	case "neosaris":
-      return <NeoSarisForm setStep={setStep} />;
-	case "saris-stand":
-      return <SarisStandForm setStep={setStep} />;
+      return <CodeforcesForm setContestData={setContestData} setStep={setStep} />;
+    case "neosaris":
+      return <NeoSarisForm setContestData={setContestData} setStep={setStep} />;
+    case "saris-stand":
+      return <SarisStandForm setContestData={setContestData} setStep={setStep} />;
     case "vjudge":
-      return <VjudgeForm setStep={setStep} />;
+      return <VjudgeForm setContestData={setContestData} setStep={setStep} />;
     default:
       return <p>No Option Selected</p>;
   }
@@ -264,6 +25,7 @@ const getForm = (dataSource, setStep) => {
 const WelcomeForm = () => {
   const [step, setStep] = useState("form");
   const [dataSource, setDataSource] = useState("neosaris");
+  const [contestData, setContestData] = useState({});
   return (
     <div className="saris-box">
       {step === "form" && (
@@ -286,11 +48,11 @@ const WelcomeForm = () => {
             >
               <option value="neosaris">neoSaris JSON</option>
               <option value="codeforces">Codeforces API</option>
-			  <option value="saris-stand">S4RiS StanD JSON</option>
+              <option value="saris-stand">S4RiS StanD JSON</option>
               <option value="vjudge">vJudge API</option>
             </select>
           </div>
-          <div className="text-white">{getForm(dataSource, setStep)}</div>
+          <div className="text-white">{getForm(dataSource, setContestData, setStep)}</div>
         </div>
       )}
       {step === "loading" && <CircleLoading />}
