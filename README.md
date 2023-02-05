@@ -177,3 +177,4 @@ This project is open for contributions, currently there's some goals planned:
 - [ ] Support IOI-like contests (partial scoring)
 - [x] Support vJudge API to unfroze standings
 - [ ] Support BOCA for LATAM competitions.
+- [ ] Add [CCS API](https://ccs-specs.icpc.io) compatibility (DOMjudge, Kattis, PC^2, ICPC CDS)
