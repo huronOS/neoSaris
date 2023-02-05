@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { CircleLoading } from "react-loadingg";
-import Scoreboard from "./Scoreboard";
+import Scoreboard from "./scoreboard/Scoreboard";
 import CodeforcesForm from "./forms/CodeforcesForm";
 import NeoSarisForm from "./forms/NeoSarisForm";
 import SarisStandForm from "./forms/SarisStandForm";

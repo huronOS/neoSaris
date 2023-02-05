@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-var logos = require.context("../media/university_logos", true);
+var logos = require.context("../../media/university_logos", true);
 
 class TableItem extends Component {
   getImageForTeam(url) {
