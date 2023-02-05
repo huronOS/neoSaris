@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { CircleLoading } from "react-loadingg";
 import Scoreboard from "./components/scoreboard/Scoreboard";
 import WelcomeForm from "./components/WelcomeForm";
 import "./App.css";
@@ -10,7 +9,11 @@ function App() {
   return (
     <div className="AppBackground">
       {step === "form" && <WelcomeForm setContestData={setContestData} setStep={setStep} />}
-      {step === "loading" && <CircleLoading />}
+      {step === "loading" && (
+        <div className="loading">
+          <h1>...</h1>
+        </div>
+      )}
       {step === "resolver" && <Scoreboard submissionsData={contestData} />}
     </div>
   );
