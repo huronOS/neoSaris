@@ -2,14 +2,14 @@ import React, { Component } from "react";
 import ProblemBox from "./ProblemBox";
 import "./TableRow.css";
 
-import defaultImage from "../../media/university_logos/default.png";
-import cecyt13 from "../../media/university_logos/cecyt13.png";
-import chapingo from "../../media/university_logos/chapingo.png";
-import escom from "../../media/university_logos/escom.png";
-import itcg from "../../media/university_logos/itcg.png";
-import uam from "../../media/university_logos/uam.png";
-import ug from "../../media/university_logos/ug.png";
-import umsa from "../../media/university_logos/umsa.png";
+import defaultImage from "../../assets/university_logos/default.png";
+import cecyt13 from "../../assets/university_logos/cecyt13.png";
+import chapingo from "../../assets/university_logos/chapingo.png";
+import escom from "../../assets/university_logos/escom.png";
+import itcg from "../../assets/university_logos/itcg.png";
+import uam from "../../assets/university_logos/uam.png";
+import ug from "../../assets/university_logos/ug.png";
+import umsa from "../../assets/university_logos/umsa.png";
 
 
 const images = { cecyt13, chapingo, escom, itcg, uam, ug, umsa };
