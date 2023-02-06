@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Scoreboard from "./components/scoreboard/Scoreboard";
 import WelcomeForm from "./components/WelcomeForm";
+import Spinner from "./components/misc/Spinner";
 import "./App.css";
 
 function App() {
@@ -9,11 +10,7 @@ function App() {
   return (
     <div className="AppBackground">
       {step === "form" && <WelcomeForm setContestData={setContestData} setStep={setStep} />}
-      {step === "loading" && (
-        <div className="loading">
-          <h1>...</h1>
-        </div>
-      )}
+      {step === "loading" && <Spinner />}
       {step === "resolver" && <Scoreboard submissionsData={contestData} />}
     </div>
   );
