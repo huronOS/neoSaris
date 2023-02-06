@@ -1,9 +1,9 @@
 .problemBox {
   box-sizing: border-box;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   display: inline-flex;
   font-family: Helvetica;
-  font-size: min(2vmin, 22px);
+  font-size: min(1.5vw, 18px);
   align-items: center;
   align-content: center;
   justify-content: center;

@@ -1,39 +1,92 @@
-.headerTableRow {
-  background-color: #0e0e0f;
-  height: 44px;
-  margin-left: 8px;
-  width: 98%;
+.headerContainer {
+  order: 0;
+  z-index: 100;
+  width: 100%;
+  height: auto;
+  background-color: #000000;
 }
 
-.headerTableColumnRank {
-  color: white;
-  margin-left: 8px;
-  position: absolute;
-  font-family: Helvetica;
-  font-size: large;
+.contestTitle {
+  color: #ffffff;
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  font-family: "Segoe UI";
+  font-weight: bold;
+  font-size: min(4vw, 32px);
+  padding: 0.5rem 0 0.5rem 0;
+  height: min-content;
+  background-color: #000000;
+}
+
+.columTitles {
+  height: auto;
+  width: auto;
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-around;
+  gap: 0.3rem;
+  border-bottom: 2px solid white;
+  background-color: #000000;
+}
+
+.columTitles-Rank {
+  order: 0;
   width: 3%;
+  min-width: 3%;
+  max-width: 3%;
+  color: white;
+  font-family: Helvetica;
+  font-size: min(2.8vw, 18px);
 }
 
-.headerTableColumnSolvedAndTime {
+.columTitles-Photo {
+  order: 1;
+  width: 5%;
+  min-width: 5%;
+  max-width: 5%;
+  height: 0.5rem;
   color: white;
-  float: right;
+}
+
+.columTitles-TeamName {
+  order: 2;
+  width: 84%;
+  min-width: 84%;
+  max-width: 84%;
+  color: white;
+  font-size: min(2.8vw, 18px);
+  font-family: Helvetica;
+}
+
+.columTitles-Problems {
+  order: 3;
+  width: 4%;
+  min-width: 4%;
+  max-width: 4%;
+  color: white;
   text-align: right;
   font-family: Helvetica;
-  font-size: large;
-  width: 10%;
+  font-size: min(2vw, 12px);
 }
 
-.headerTableColumnTeamName {
+.columTitles-Penalty {
+  order: 4;
+  width: 4%;
+  min-width: 4%;
+  max-width: 4%;
   color: white;
-  left: 45%;
-  position: absolute;
-  font-size: large;
+  text-align: right;
   font-family: Helvetica;
-}
-
-.headerHuron {
-  color: #9ab9ed;
-  text-align: center;
-  font-size: xx-large;
-  height: 80px;
+  font-size: min(2vw, 12px);
 }

@@ -4,6 +4,15 @@ body {
   padding: 0;
 }
 
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #707070;
+}
+
 .AppBackground {
   color: white;
   min-height: 100vh;

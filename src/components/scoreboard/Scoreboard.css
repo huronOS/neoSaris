@@ -1,5 +1,15 @@
 .scoreboardTable {
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+}
+
+.score-FlipMove {
+  order: 1;
+  position: relative;
+  height: auto;
+  overflow-y: scroll;
 }
 
 .scoreboardTableProblemRowFirstChild > :first-child {

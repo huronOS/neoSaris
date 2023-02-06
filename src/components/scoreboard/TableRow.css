@@ -24,7 +24,7 @@
   color: white;
   font-family: Helvetica;
   text-align: center;
-  font-size: min(3.2vmin, 24px);
+  font-size: min(2vw, 24px);
 }
 
 .tableRow-Picture {
@@ -53,7 +53,7 @@
   color: white;
   text-align: center;
   font-family: Helvetica;
-  font-size: min(3vmin, 22px);
+  font-size: min(1.8vw, 22px);
 }
 
 .tableRow-Penalty {
@@ -65,13 +65,13 @@
   color: white;
   text-align: center;
   font-family: Helvetica;
-  font-size: min(2.3vmin, 18px);
+  font-size: min(1.5vw, 18px);
 }
 
 .tableRox-TeamName {
   color: white;
   font-family: Helvetica;
-  font-size: min(5vmin, 26px);
+  font-size: min(3vw, 26px);
 }
 
 .tableRox-Problems {

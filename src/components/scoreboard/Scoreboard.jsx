@@ -526,10 +526,13 @@ class Scoreboard extends Component {
       this.state.idOfNextUserRowHighlighted !== -1 &&
       this.state.hasNotBeenScrolled === false
     ) {
-      let id = this.state.teams[this.state.idOfNextUserRowHighlighted].id;
-      let element = document.getElementById(id);
-      window.scrollTo(0, element.offsetTop);
-      this.setState({ hasNotBeenScrolled: true });
+      let targetTeam = this.state.idOfNextUserRowHighlighted - 2;
+      try {
+        let id = this.state.teams[targetTeam].id;
+        let element = document.getElementById(id);
+        document.getElementById("score-FlipMove").scrollTo(0, element.offsetTop);
+        this.setState({ hasNotBeenScrolled: true });
+      } catch (e) {}
     }
   }
 
@@ -542,9 +545,11 @@ class Scoreboard extends Component {
         onKeyDown={e => this.keyDownHandler(e)}
       >
         <Header title={this.props.submissionsData.Contest.Name} />
-        <FlipMove ref="flipMove" staggerDurationBy="30" duration={900}>
-          {this.getScoreboard()}
-        </FlipMove>
+        <div className="score-FlipMove" id="score-FlipMove">
+          <FlipMove ref="flipMove" staggerDurationBy="10" duration={900}>
+            {this.getScoreboard()}
+          </FlipMove>
+        </div>
       </div>
     );
   }
