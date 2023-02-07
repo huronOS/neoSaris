@@ -47,7 +47,7 @@ The resolver needs a JSON input format that follows object model of [example.jso
 
 ```json
 {
-  "contest": {
+  "contestMetadata": {
     "duration": 300,
     "frozenTime": 60,
     "numberOfProblems": 10,

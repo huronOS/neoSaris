@@ -146,7 +146,7 @@ export const getContestDataWithCodeforcesAPI = async ({
     apiSecret,
   });
   const JSONobject = {
-    contest: contestData.contestData,
+    contestMetadata: contestData.contestData,
     teams: contestData.teams,
     verdictWithoutPenalty: {
       1: "Compilation error",

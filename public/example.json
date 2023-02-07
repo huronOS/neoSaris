@@ -1,5 +1,5 @@
 {
-  "contest": {
+  "contestMetadata": {
     "duration": 300,
     "frozenTime": 60,
     "numberOfProblems": 10,

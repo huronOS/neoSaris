@@ -11,7 +11,7 @@ class Scoreboard extends Component {
     submissionsData.submissions.forEach(function (submission) {
       if (
         submission.timeSubmission <
-        submissionsData.contest.duration - submissionsData.contest.frozenTime
+        submissionsData.contestMetadata.duration - submissionsData.contestMetadata.frozenTime
       ) {
         let result = {};
         result.teamName = submission.teamName;
@@ -29,8 +29,8 @@ class Scoreboard extends Component {
     submissionsData.submissions.forEach(function (submission) {
       if (
         submission.timeSubmission >=
-          submissionsData.contest.duration - submissionsData.contest.frozenTime &&
-        submission.timeSubmission < submissionsData.contest.duration
+          submissionsData.contestMetadata.duration - submissionsData.contestMetadata.frozenTime &&
+        submission.timeSubmission < submissionsData.contestMetadata.duration
       ) {
         let result = {};
         result.teamName = submission.teamName;
@@ -80,7 +80,7 @@ class Scoreboard extends Component {
         for (let i = 0; i < teams.length; i++) {
           if (teams[i].name === submission.teamName) {
             for (let j = 0; j < this.state.numberOfProblems; j++) {
-              let problemLetter = this.props.submissionsData.contest.problemsIndex[j];
+              let problemLetter = this.props.submissionsData.contestMetadata.problemsIndex[j];
               if (problemLetter === submission.problem && teams[i].isProblemSolved[j] === 0) {
                 teams[i].isProblemSolved[j] = 1;
                 teams[i].penaltyOnProblem[j] = submission.timeSubmission;
@@ -101,7 +101,7 @@ class Scoreboard extends Component {
         for (let i = 0; i < teams.length; i++) {
           if (teams[i].name === submission.teamName) {
             for (let j = 0; j < this.state.numberOfProblems; j++) {
-              let problemLetter = this.props.submissionsData.contest.problemsIndex[j];
+              let problemLetter = this.props.submissionsData.contestMetadata.problemsIndex[j];
               if (problemLetter === submission.problem && teams[i].isProblemSolved[j] === 0) {
                 teams[i].triesOnProblems[j]++;
                 break;
@@ -197,7 +197,7 @@ class Scoreboard extends Component {
       let isProblemSolved = [];
       let penaltyOnProblem = [];
       let isFirstToSolve = [];
-      for (let j = 0; j < props.submissionsData.contest.numberOfProblems; j++) {
+      for (let j = 0; j < props.submissionsData.contestMetadata.numberOfProblems; j++) {
         isProblemSolved.push(0);
         isFirstToSolve.push(0);
         triesOnProblems.push(0);
@@ -244,9 +244,9 @@ class Scoreboard extends Component {
     this.state = {
       submissions: submissions,
       submissionWhenFrozen: submissionWhenFrozen,
-      contestDuration: props.submissionsData.contest.duration,
-      contestFrozenTime: props.submissionsData.contest.frozenTime,
-      numberOfProblems: props.submissionsData.contest.numberOfProblems,
+      contestDuration: props.submissionsData.contestMetadata.duration,
+      contestFrozenTime: props.submissionsData.contestMetadata.frozenTime,
+      numberOfProblems: props.submissionsData.contestMetadata.numberOfProblems,
       teams: teams,
       verdictsWithoutPenalty: verdictsWithoutPenalty,
       currentFrozenSubmission: null,
@@ -285,7 +285,7 @@ class Scoreboard extends Component {
           index={i}
           team={team}
           numberOfProblems={this.state.numberOfProblems}
-          problemsIndex={this.props.submissionsData.contest.problemsIndex}
+          problemsIndex={this.props.submissionsData.contestMetadata.problemsIndex}
           submissionWhenFrozen={this.state.submissionWhenFrozen}
           currentFrozenSubmission={this.state.savedCurrentFrozenSubmission}
           savedCurrentFrozenSubmission={this.state.currentFrozenSubmission}
@@ -298,7 +298,7 @@ class Scoreboard extends Component {
   getProblemId(problemLetter) {
     let problemId = -1;
     for (let h = 0; h < this.state.numberOfProblems; h++) {
-      if (this.props.submissionsData.contest.problemsIndex[h] === problemLetter) {
+      if (this.props.submissionsData.contestMetadata.problemsIndex[h] === problemLetter) {
         problemId = h;
       }
     }
@@ -544,7 +544,7 @@ class Scoreboard extends Component {
         tabIndex="0"
         onKeyDown={e => this.keyDownHandler(e)}
       >
-        <Header title={this.props.submissionsData.contest.name} />
+        <Header title={this.props.submissionsData.contestMetadata.name} />
         <div className="score-FlipMove" id="score-FlipMove">
           <FlipMove ref="flipMove" staggerDurationBy="10" duration={900}>
             {this.getScoreboard()}

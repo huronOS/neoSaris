@@ -4,8 +4,8 @@ const verifyObject = contestData => {
   }
 
   //level 1 objects
-  if (contestData.contest == null) {
-    throw new Error("contestData.contest is null or undefined!");
+  if (contestData.contestMetadata == null) {
+    throw new Error("contestData.contestMetadata is null or undefined!");
   }
   if (contestData.teams == null) {
     throw new Error("contestData.teams is null or undefined!");
@@ -17,8 +17,8 @@ const verifyObject = contestData => {
     throw new Error("contestData.submissions is null or undefined!");
   }
   //Check data types
-  if (typeof contestData.contest !== "object") {
-    throw new Error("contestData.contest is not an object!");
+  if (typeof contestData.contestMetadata !== "object") {
+    throw new Error("contestData.contestMetadata is not an object!");
   }
   if (typeof contestData.teams !== "object") {
     throw new Error("contestData.teams is not an object!");
@@ -31,29 +31,35 @@ const verifyObject = contestData => {
   }
 
   //Check contestData
-  if (contestData.contest.duration == null || typeof contestData.contest.duration !== "number") {
-    throw new Error("contestData.contest.Duration is not an number!");
+  if (
+    contestData.contestMetadata.duration == null ||
+    typeof contestData.contestMetadata.duration !== "number"
+  ) {
+    throw new Error("contestData.contestMetadata.Duration is not an number!");
   }
   if (
-    contestData.contest.frozenTime == null ||
-    typeof contestData.contest.frozenTime !== "number"
+    contestData.contestMetadata.frozenTime == null ||
+    typeof contestData.contestMetadata.frozenTime !== "number"
   ) {
-    throw new Error("contestData.contest.frozenTime is not an number!");
+    throw new Error("contestData.contestMetadata.frozenTime is not an number!");
   }
   if (
-    contestData.contest.numberOfProblems == null ||
-    typeof contestData.contest.numberOfProblems !== "number"
+    contestData.contestMetadata.numberOfProblems == null ||
+    typeof contestData.contestMetadata.numberOfProblems !== "number"
   ) {
-    throw new Error("contestData.contest.numberOfProblems is not an number!");
+    throw new Error("contestData.contestMetadata.numberOfProblems is not an number!");
   }
   if (
-    contestData.contest.problemsIndex == null ||
-    !Array.isArray(contestData.contest.problemsIndex)
+    contestData.contestMetadata.problemsIndex == null ||
+    !Array.isArray(contestData.contestMetadata.problemsIndex)
   ) {
-    throw new Error("contestData.contest.problemsIndex is not an array!");
+    throw new Error("contestData.contestMetadata.problemsIndex is not an array!");
   }
-  if (contestData.contest.name == null || typeof contestData.contest.name !== "string") {
-    throw new Error("contestData.contest.name is not an string!");
+  if (
+    contestData.contestMetadata.name == null ||
+    typeof contestData.contestMetadata.name !== "string"
+  ) {
+    throw new Error("contestData.contestMetadata.name is not an string!");
   }
 
   //Check Teams

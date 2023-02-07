@@ -71,7 +71,7 @@ export const getContestDataWithSarisStandJSON = rawText => {
   console.log("S4RiS StanD JSON, Input Object", oldSarisData);
   verifyObject(oldSarisData);
   return {
-    contest: {
+    contestMetadata: {
       duration: 300,
       frozenTime: 300 - oldSarisData.freezeTimeMinutesFromStart,
       numberOfProblems: oldSarisData.problemLetters.length,
