@@ -44,7 +44,6 @@ export const getContestData = async (frozenTime, contestId, numberOfProblems, co
     contestData: {
       duration: duration,
       frozenTime: frozenTime,
-      numberOfProblems: numberOfProblems,
       problemsIndex: problems,
       name: response.title,
     },

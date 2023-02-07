@@ -197,7 +197,7 @@ class Scoreboard extends Component {
       let isProblemSolved = [];
       let penaltyOnProblem = [];
       let isFirstToSolve = [];
-      for (let j = 0; j < props.submissionsData.contestMetadata.numberOfProblems; j++) {
+      for (let j = 0; j < props.submissionsData.contestMetadata.problemsIndex.length; j++) {
         isProblemSolved.push(0);
         isFirstToSolve.push(0);
         triesOnProblems.push(0);
@@ -246,7 +246,7 @@ class Scoreboard extends Component {
       submissionWhenFrozen: submissionWhenFrozen,
       contestDuration: props.submissionsData.contestMetadata.duration,
       contestFrozenTime: props.submissionsData.contestMetadata.frozenTime,
-      numberOfProblems: props.submissionsData.contestMetadata.numberOfProblems,
+      numberOfProblems: props.submissionsData.contestMetadata.problemsIndex.length,
       teams: teams,
       verdictsWithoutPenalty: verdictsWithoutPenalty,
       currentFrozenSubmission: null,

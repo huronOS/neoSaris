@@ -27,7 +27,7 @@ const verifyObject = contestData => {
     throw new Error("contestData.verdictWithoutPenalty is not an object!");
   }
   if (!Array.isArray(contestData.submissions)) {
-    throw new Error("contestData.contest is not an array!");
+    throw new Error("contestData.submissions is not an array!");
   }
 
   //Check contestData
@@ -42,12 +42,6 @@ const verifyObject = contestData => {
     typeof contestData.contestMetadata.frozenTime !== "number"
   ) {
     throw new Error("contestData.contestMetadata.frozenTime is not an number!");
-  }
-  if (
-    contestData.contestMetadata.numberOfProblems == null ||
-    typeof contestData.contestMetadata.numberOfProblems !== "number"
-  ) {
-    throw new Error("contestData.contestMetadata.numberOfProblems is not an number!");
   }
   if (
     contestData.contestMetadata.problemsIndex == null ||
