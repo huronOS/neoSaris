@@ -68,6 +68,7 @@ const verifyObject = contestData => {
 
 export const getContestDataWithSarisStandJSON = rawText => {
   const oldSarisData = JSON.parse(rawText);
+  console.log("S4RiS StanD JSON, Input Object", oldSarisData);
   verifyObject(oldSarisData);
   return {
     contest: {

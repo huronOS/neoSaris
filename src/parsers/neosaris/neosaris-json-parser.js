@@ -78,7 +78,6 @@ const verifyObject = contestData => {
 
   //Check submissions
   contestData.submissions.forEach(submission => {
-    console.log(submission);
     if (submission == null) {
       throw new Error(
         `contestData.submissions contains invalid data!\nSubmission is null or undefined\n${JSON.stringify(
@@ -132,6 +131,7 @@ const verifyObject = contestData => {
 export const getContestDataWithNeoSarisJSON = rawText => {
   let contestData = {};
   contestData = JSON.parse(rawText);
+  console.log("neoSaris JSON, Input Object", contestData);
   verifyObject(contestData);
   return contestData;
 };

@@ -7,9 +7,14 @@ import "./App.css";
 function App() {
   const [step, setStep] = useState("form");
   const [contestData, setContestData] = useState({});
+  const setContestDataWithLog = contestData => {
+    console.log("contestData", contestData);
+    setContestData(contestData);
+  };
+
   return (
     <div className="AppBackground">
-      {step === "form" && <WelcomeForm setContestData={setContestData} setStep={setStep} />}
+      {step === "form" && <WelcomeForm setContestData={setContestDataWithLog} setStep={setStep} />}
       {step === "loading" && <Spinner />}
       {step === "resolver" && <Scoreboard submissionsData={contestData} />}
     </div>

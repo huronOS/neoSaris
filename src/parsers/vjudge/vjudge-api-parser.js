@@ -24,7 +24,7 @@ export const getContestData = async (frozenTime, contestId, numberOfProblems) =>
       throw new Error(`Error while making vJudge API request:\n${error.message}`);
     });
 
-  console.log("vJudge, Contest Data Response", response);
+  console.log("vJudge API, Contests Response", response);
   if (response == null || Object.keys(response).length === 0) {
     throw new Error("No answer from vJudge. Is this a private contest?");
   }

@@ -60,7 +60,7 @@ export const getSubmissions = async ({
       throw new Error(`Error while making codeforces API request:\n${error.message}`);
     });
 
-  console.log("Response", response);
+  console.log("Codeforces API, Submissions Response", response);
 
   return response.result
     .filter(submission => Math.floor(submission.relativeTimeSeconds / 60) <= duration)
@@ -101,7 +101,7 @@ export const getContestData = async ({
       throw new Error(`Error while making codeforces API request:\n${error.message}`);
     });
 
-  console.log("contest request", response);
+  console.log("Codeforces API, Contest Information Response", response);
 
   return {
     contestData: {
