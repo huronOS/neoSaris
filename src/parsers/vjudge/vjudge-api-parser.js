@@ -44,6 +44,7 @@ export const getContestData = async (frozenTime, contestId, numberOfProblems) =>
       duration: duration,
       frozenTime: frozenTime,
       name: response.title,
+      type: "ICPC",
     },
     problemsIndex: problems,
     teams: Object.fromEntries(

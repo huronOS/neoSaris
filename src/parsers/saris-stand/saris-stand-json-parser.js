@@ -75,6 +75,7 @@ export const getContestDataWithSarisStandJSON = rawText => {
       duration: 300,
       frozenTime: 300 - oldSarisData.freezeTimeMinutesFromStart,
       name: oldSarisData.contestName,
+      type: "ICPC",
     },
     problemsIndex: oldSarisData.problemLetters,
     teams: Object.fromEntries(

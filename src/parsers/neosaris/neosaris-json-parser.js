@@ -20,6 +20,9 @@ const verifyObject = contestData => {
   if (typeof contestData.contestMetadata !== "object") {
     throw new Error("contestData.contestMetadata is not an object!");
   }
+  if (contestData.problemsIndex == null || !Array.isArray(contestData.problemsIndex)) {
+    throw new Error("contestData.problemsIndex is not an array!");
+  }
   if (typeof contestData.teams !== "object") {
     throw new Error("contestData.teams is not an object!");
   }
@@ -43,14 +46,18 @@ const verifyObject = contestData => {
   ) {
     throw new Error("contestData.contestMetadata.frozenTime is not an number!");
   }
-  if (contestData.problemsIndex == null || !Array.isArray(contestData.problemsIndex)) {
-    throw new Error("contestData.problemsIndex is not an array!");
-  }
   if (
     contestData.contestMetadata.name == null ||
     typeof contestData.contestMetadata.name !== "string"
   ) {
     throw new Error("contestData.contestMetadata.name is not an string!");
+  }
+  if (
+    contestData.contestMetadata.type == null ||
+    typeof contestData.contestMetadata.type !== "string" ||
+    contestData.contestMetadata.type !== "ICPC"
+  ) {
+    throw new Error('contestData.contestMetadata.type is not "ICPC"!');
   }
 
   //Check Teams
