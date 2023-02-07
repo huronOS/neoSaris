@@ -42,11 +42,11 @@ export const getContestData = async (frozenTime, contestId, numberOfProblems, co
 
   return {
     contestData: {
-      Duration: duration,
-      FrozenTime: frozenTime,
-      NumberOfProblems: numberOfProblems,
-      ProblemsIndex: problems,
-      Name: response.title,
+      duration: duration,
+      frozenTime: frozenTime,
+      numberOfProblems: numberOfProblems,
+      problemsIndex: problems,
+      name: response.title,
     },
     teams: Object.fromEntries(
       Object.entries(response.participants).map((value, idx) => {
@@ -58,9 +58,9 @@ export const getContestData = async (frozenTime, contestId, numberOfProblems, co
       .map(submission => {
         return {
           timeSubmission: Math.floor(submission[3] / 60),
-          TeamName: teamName.get(submission[0].toString()),
-          Problem: problems[submission[1]],
-          Verdict: submission[2] === 1 ? "Accepted" : "WRONG",
+          teamName: teamName.get(submission[0].toString()),
+          problem: problems[submission[1]],
+          verdict: submission[2] === 1 ? "Accepted" : "WRONG",
         };
       }),
   };
@@ -74,12 +74,12 @@ export const getContestDataWithVjudgeAPI = async (
 ) => {
   const contestData = await getContestData(frozenTime, contestId, numberOfProblems, cookie);
   const JSONobject = {
-    Contest: contestData.contestData,
-    Teams: contestData.teams,
-    VerdictWithoutPenalty: {
+    contest: contestData.contestData,
+    teams: contestData.teams,
+    verdictWithoutPenalty: {
       1: "Compilation error",
     },
-    Submissions: contestData.submissions,
+    submissions: contestData.submissions,
   };
   return JSONobject;
 };

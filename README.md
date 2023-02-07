@@ -47,39 +47,39 @@ The resolver needs a JSON input format that follows object model of [example.jso
 
 ```json
 {
-  "Contest": {
-    "Duration": 300,
-    "FrozenTime": 60,
-    "NumberOfProblems": 10,
-    "ProblemsIndex": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"],
-    "Name": "Trial Contest"
+  "contest": {
+    "duration": 300,
+    "frozenTime": 60,
+    "numberOfProblems": 10,
+    "problemsIndex": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"],
+    "name": "Trial Contest"
   },
-  "Teams": {
+  "teams": {
     "1": "Red Panda",
     "2": "Moscow IPT 1",
     "3": "Moscow IPT Jinotega"
   },
-  "VerdictWithoutPenalty": {
+  "verdictWithoutPenalty": {
     "1": "Compilation error"
   },
-  "Submissions": [
+  "submissions": [
     {
       "timeSubmission": 47,
-      "TeamName": "Moscow IPT Jinotega",
-      "Problem": "A",
-      "Verdict": "Accepted"
+      "teamName": "Moscow IPT Jinotega",
+      "problem": "A",
+      "verdict": "Accepted"
     },
     {
       "timeSubmission": 260,
-      "TeamName": "Moscow IPT 1",
-      "Problem": "H",
-      "Verdict": "Wrong answer"
+      "teamName": "Moscow IPT 1",
+      "problem": "H",
+      "verdict": "Wrong answer"
     },
     {
       "timeSubmission": 270,
-      "TeamName": "Moscow IPT 1",
-      "Problem": "A",
-      "Verdict": "Accepted"
+      "teamName": "Moscow IPT 1",
+      "problem": "A",
+      "verdict": "Accepted"
     }
   ]
 }

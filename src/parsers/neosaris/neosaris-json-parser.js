@@ -4,124 +4,124 @@ const verifyObject = contestData => {
   }
 
   //level 1 objects
-  if (contestData.Contest == null) {
-    throw new Error("contestData.Contest is null or undefined!");
+  if (contestData.contest == null) {
+    throw new Error("contestData.contest is null or undefined!");
   }
-  if (contestData.Teams == null) {
-    throw new Error("contestData.Teams is null or undefined!");
+  if (contestData.teams == null) {
+    throw new Error("contestData.teams is null or undefined!");
   }
-  if (contestData.VerdictWithoutPenalty == null) {
-    throw new Error("contestData.VerdictWithoutPenalty is null or undefined!");
+  if (contestData.verdictWithoutPenalty == null) {
+    throw new Error("contestData.verdictWithoutPenalty is null or undefined!");
   }
-  if (contestData.Submissions == null) {
-    throw new Error("contestData.Submissions is null or undefined!");
+  if (contestData.submissions == null) {
+    throw new Error("contestData.submissions is null or undefined!");
   }
   //Check data types
-  if (typeof contestData.Contest !== "object") {
-    throw new Error("contestData.Contest is not an object!");
+  if (typeof contestData.contest !== "object") {
+    throw new Error("contestData.contest is not an object!");
   }
-  if (typeof contestData.Teams !== "object") {
-    throw new Error("contestData.Teams is not an object!");
+  if (typeof contestData.teams !== "object") {
+    throw new Error("contestData.teams is not an object!");
   }
-  if (typeof contestData.VerdictWithoutPenalty !== "object") {
-    throw new Error("contestData.VerdictWithoutPenalty is not an object!");
+  if (typeof contestData.verdictWithoutPenalty !== "object") {
+    throw new Error("contestData.verdictWithoutPenalty is not an object!");
   }
-  if (!Array.isArray(contestData.Submissions)) {
-    throw new Error("contestData.Contest is not an array!");
+  if (!Array.isArray(contestData.submissions)) {
+    throw new Error("contestData.contest is not an array!");
   }
 
   //Check contestData
-  if (contestData.Contest.Duration == null || typeof contestData.Contest.Duration !== "number") {
-    throw new Error("contestData.Contest.Duration is not an number!");
+  if (contestData.contest.duration == null || typeof contestData.contest.duration !== "number") {
+    throw new Error("contestData.contest.Duration is not an number!");
   }
   if (
-    contestData.Contest.FrozenTime == null ||
-    typeof contestData.Contest.FrozenTime !== "number"
+    contestData.contest.frozenTime == null ||
+    typeof contestData.contest.frozenTime !== "number"
   ) {
-    throw new Error("contestData.Contest.FrozenTime is not an number!");
+    throw new Error("contestData.contest.frozenTime is not an number!");
   }
   if (
-    contestData.Contest.NumberOfProblems == null ||
-    typeof contestData.Contest.NumberOfProblems !== "number"
+    contestData.contest.numberOfProblems == null ||
+    typeof contestData.contest.numberOfProblems !== "number"
   ) {
-    throw new Error("contestData.Contest.NumberOfProblems is not an number!");
+    throw new Error("contestData.contest.numberOfProblems is not an number!");
   }
   if (
-    contestData.Contest.ProblemsIndex == null ||
-    !Array.isArray(contestData.Contest.ProblemsIndex)
+    contestData.contest.problemsIndex == null ||
+    !Array.isArray(contestData.contest.problemsIndex)
   ) {
-    throw new Error("contestData.Contest.ProblemsIndex is not an array!");
+    throw new Error("contestData.contest.problemsIndex is not an array!");
   }
-  if (contestData.Contest.Name == null || typeof contestData.Contest.Name !== "string") {
-    throw new Error("contestData.Contest.Name is not an string!");
+  if (contestData.contest.name == null || typeof contestData.contest.name !== "string") {
+    throw new Error("contestData.contest.name is not an string!");
   }
 
   //Check Teams
-  for (const [key, value] of Object.entries(contestData.Teams)) {
+  for (const [key, value] of Object.entries(contestData.teams)) {
     if (key == null || typeof key !== "string" || key === "") {
-      throw new Error("contestData.Contest.Teams contain invalid data!");
+      throw new Error("contestData.contest.teams contain invalid data!");
     }
     if (value == null || typeof value !== "string" || value === "") {
-      throw new Error("contestData.Contest.Teams contain invalid data!");
+      throw new Error("contestData.contest.teams contain invalid data!");
     }
   }
 
   //Check VerdictWithoutPenalty
-  for (const [key, value] of Object.entries(contestData.VerdictWithoutPenalty)) {
+  for (const [key, value] of Object.entries(contestData.verdictWithoutPenalty)) {
     if (key == null || typeof key !== "string" || key === "") {
-      throw new Error("contestData.VerdictWithoutPenalty contain invalid data!");
+      throw new Error("contestData.verdictWithoutPenalty contain invalid data!");
     }
     if (value == null || typeof value !== "string" || value === "") {
-      throw new Error("contestData.VerdictWithoutPenalty contain invalid data!");
+      throw new Error("contestData.verdictWithoutPenalty contain invalid data!");
     }
   }
 
   //Check submissions
-  contestData.Submissions.forEach(submission => {
+  contestData.submissions.forEach(submission => {
     console.log(submission);
     if (submission == null) {
       throw new Error(
-        `contestData.Submissions contains invalid data!\nSubmission is null or undefined\n${JSON.stringify(
+        `contestData.submissions contains invalid data!\nSubmission is null or undefined\n${JSON.stringify(
           submission
         )}`
       );
     }
     if (submission.timeSubmission == null || typeof submission.timeSubmission !== "number") {
       throw new Error(
-        `contestData.Submissions contains invalid data!\nSubmission have invalid timeSubmission\n${JSON.stringify(
+        `contestData.submissions contains invalid data!\nSubmission have invalid timeSubmission\n${JSON.stringify(
           submission
         )}`
       );
     }
     if (
-      submission.TeamName == null ||
-      typeof submission.TeamName !== "string" ||
-      submission.TeamName === ""
+      submission.teamName == null ||
+      typeof submission.teamName !== "string" ||
+      submission.teamName === ""
     ) {
       throw new Error(
-        `contestData.Submissions contains invalid data!\nSubmission have invalid TeamName\n${JSON.stringify(
+        `contestData.submissions contains invalid data!\nSubmission have invalid TeamName\n${JSON.stringify(
           submission
         )}`
       );
     }
     if (
-      submission.Problem == null ||
-      typeof submission.Problem !== "string" ||
-      submission.TeamName === ""
+      submission.problem == null ||
+      typeof submission.problem !== "string" ||
+      submission.teamName === ""
     ) {
       throw new Error(
-        `contestData.Submissions contains invalid data!\nSubmission have invalid Problem\n${JSON.stringify(
+        `contestData.submissions contains invalid data!\nSubmission have invalid Problem\n${JSON.stringify(
           submission
         )}`
       );
     }
     if (
-      submission.Verdict == null ||
-      typeof submission.Verdict !== "string" ||
-      submission.TeamName === ""
+      submission.verdict == null ||
+      typeof submission.verdict !== "string" ||
+      submission.teamName === ""
     ) {
       throw new Error(
-        `contestData.Submissions contains invalid data!\nSubmission have invalid verdict\n${JSON.stringify(
+        `contestData.submissions contains invalid data!\nSubmission have invalid verdict\n${JSON.stringify(
           submission
         )}`
       );

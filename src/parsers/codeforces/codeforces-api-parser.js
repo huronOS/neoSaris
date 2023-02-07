@@ -67,10 +67,10 @@ export const getSubmissions = async ({
     .map(submission => {
       return {
         timeSubmission: Math.floor(submission.relativeTimeSeconds / 60),
-        TeamName:
+        teamName:
           submission.author.teamName || submission.author.members[0].handle || "NO_TEAM_NAME",
-        Problem: submission.problem.index,
-        Verdict: submission.verdict === "OK" ? "Accepted" : "WRONG",
+        problem: submission.problem.index,
+        verdict: submission.verdict === "OK" ? "Accepted" : "WRONG",
       };
     });
 };
@@ -105,13 +105,13 @@ export const getContestData = async ({
 
   return {
     contestData: {
-      Duration: Math.floor(response.result.contest.durationSeconds / 60),
-      FrozenTime: frozenTime,
-      NumberOfProblems: response.result.problems.length,
-      ProblemsIndex: response.result.problems.map(problem => {
+      duration: Math.floor(response.result.contest.durationSeconds / 60),
+      frozenTime: frozenTime,
+      numberOfProblems: response.result.problems.length,
+      problemsIndex: response.result.problems.map(problem => {
         return problem.index;
       }),
-      Name: response.result.contest.name,
+      name: response.result.contest.name,
     },
     teams: Object.fromEntries(
       response.result.rows.map((row, index) => {
@@ -138,7 +138,7 @@ export const getContestDataWithCodeforcesAPI = async ({
     apiSecret,
   });
   const submissions = await getSubmissions({
-    duration: contestData.contestData.Duration,
+    duration: contestData.contestData.duration,
     contestId,
     isPrivate,
     groupId,
@@ -146,12 +146,12 @@ export const getContestDataWithCodeforcesAPI = async ({
     apiSecret,
   });
   const JSONobject = {
-    Contest: contestData.contestData,
-    Teams: contestData.teams,
-    VerdictWithoutPenalty: {
+    contest: contestData.contestData,
+    teams: contestData.teams,
+    verdictWithoutPenalty: {
       1: "Compilation error",
     },
-    Submissions: submissions,
+    submissions: submissions,
   };
   return JSONobject;
 };

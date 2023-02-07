@@ -70,27 +70,27 @@ export const getContestDataWithSarisStandJSON = rawText => {
   const oldSarisData = JSON.parse(rawText);
   verifyObject(oldSarisData);
   return {
-    Contest: {
-      Duration: 300,
-      FrozenTime: 300 - oldSarisData.freezeTimeMinutesFromStart,
-      NumberOfProblems: oldSarisData.problemLetters.length,
-      ProblemsIndex: oldSarisData.problemLetters,
-      Name: oldSarisData.contestName,
+    contest: {
+      duration: 300,
+      frozenTime: 300 - oldSarisData.freezeTimeMinutesFromStart,
+      numberOfProblems: oldSarisData.problemLetters.length,
+      problemsIndex: oldSarisData.problemLetters,
+      name: oldSarisData.contestName,
     },
-    Teams: Object.fromEntries(
+    teams: Object.fromEntries(
       oldSarisData.contestants.map((name, idx) => {
         return [idx, name];
       })
     ),
-    VerdictWithoutPenalty: {
+    verdictWithoutPenalty: {
       1: "Compilation error",
     },
-    Submissions: oldSarisData.runs.map(run => {
+    submissions: oldSarisData.runs.map(run => {
       return {
         timeSubmission: run.timeMinutesFromStart,
-        TeamName: run.contestant,
-        Problem: run.problemLetter,
-        Verdict: run.success ? "Accepted" : "WRONG_ANSWER",
+        teamName: run.contestant,
+        problem: run.problemLetter,
+        verdict: run.success ? "Accepted" : "WRONG_ANSWER",
       };
     }),
   };

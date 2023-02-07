@@ -11,7 +11,6 @@ import uam from "../../assets/university_logos/uam.png";
 import ug from "../../assets/university_logos/ug.png";
 import umsa from "../../assets/university_logos/umsa.png";
 
-
 const images = { cecyt13, chapingo, escom, itcg, uam, ug, umsa };
 
 class TableRow extends Component {
@@ -245,18 +244,6 @@ class TableRow extends Component {
         <span className="tableRow-ResolvedProblems">{this.props.team.solved}</span>
         {/*Penalty*/}
         <span className="tableRow-Penalty">{this.props.team.penalty}</span>
-        {/*
-        <div
-          dangerouslySetInnerHTML={{ __html: this.props.team.name }}
-          className="scoreboardTableColumnTeamName"
-          key="team"
-        ></div>
-        <span className="scoreboardTableProblemRowFirstChild">
-          {}
-        </span>
-        <span className=""></span>
-        <span className=""></span>
-		*/}
       </div>
     );
   }
