@@ -43,9 +43,9 @@ export const getContestData = async (frozenTime, contestId, numberOfProblems) =>
     contestData: {
       duration: duration,
       frozenTime: frozenTime,
-      problemsIndex: problems,
       name: response.title,
     },
+    problemsIndex: problems,
     teams: Object.fromEntries(
       Object.entries(response.participants).map((value, idx) => {
         return [idx, value[1][0]];
@@ -69,6 +69,7 @@ export const getContestDataWithVjudgeAPI = async (frozenTime, contestId, numberO
   const JSONobject = {
     contestMetadata: contestData.contestData,
     teams: contestData.teams,
+    problemsIndex: contestData.problemsIndex,
     verdictWithoutPenalty: {
       1: "Compilation error",
     },

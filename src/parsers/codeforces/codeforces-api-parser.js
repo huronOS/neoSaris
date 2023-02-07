@@ -107,11 +107,11 @@ export const getContestData = async ({
     contestData: {
       duration: Math.floor(response.result.contest.durationSeconds / 60),
       frozenTime: frozenTime,
-      problemsIndex: response.result.problems.map(problem => {
-        return problem.index;
-      }),
       name: response.result.contest.name,
     },
+    problemsIndex: response.result.problems.map(problem => {
+      return problem.index;
+    }),
     teams: Object.fromEntries(
       response.result.rows.map((row, index) => {
         return [index, row.party.teamName || row.party.members[0].handle || "NO_TEAM_NAME"];
@@ -146,6 +146,7 @@ export const getContestDataWithCodeforcesAPI = async ({
   });
   const JSONobject = {
     contestMetadata: contestData.contestData,
+    problemsIndex: contestData.problemsIndex,
     teams: contestData.teams,
     verdictWithoutPenalty: {
       1: "Compilation error",

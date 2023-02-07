@@ -43,11 +43,8 @@ const verifyObject = contestData => {
   ) {
     throw new Error("contestData.contestMetadata.frozenTime is not an number!");
   }
-  if (
-    contestData.contestMetadata.problemsIndex == null ||
-    !Array.isArray(contestData.contestMetadata.problemsIndex)
-  ) {
-    throw new Error("contestData.contestMetadata.problemsIndex is not an array!");
+  if (contestData.problemsIndex == null || !Array.isArray(contestData.problemsIndex)) {
+    throw new Error("contestData.problemsIndex is not an array!");
   }
   if (
     contestData.contestMetadata.name == null ||

@@ -44,9 +44,9 @@ export const getContestData = async (frozenTime, contestId, numberOfProblems, co
     contestData: {
       duration: duration,
       frozenTime: frozenTime,
-      problemsIndex: problems,
       name: response.title,
     },
+    problemsIndex: problems,
     teams: Object.fromEntries(
       Object.entries(response.participants).map((value, idx) => {
         return [idx, value[1][0]];
