@@ -71,7 +71,7 @@ export const getContestDataWithVjudgeAPI = async (frozenTime, contestId, numberO
     contestMetadata: contestData.contestData,
     teams: contestData.teams,
     problems: contestData.problems.map(letter => {
-      return { shortName: letter };
+      return { index: letter };
     }),
     verdictWithoutPenalty: {
       1: "Compilation error",

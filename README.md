@@ -54,16 +54,16 @@ The resolver needs a JSON input format that follows object model of [example.jso
     "type": "ICPC"
   },
   "problems": [
-    { "shortName": "A" },
-    { "shortName": "B" },
-    { "shortName": "C" },
-    { "shortName": "D" },
-    { "shortName": "E" },
-    { "shortName": "F" },
-    { "shortName": "G" },
-    { "shortName": "H" },
-    { "shortName": "I" },
-    { "shortName": "J" }
+    { "index": "A" },
+    { "index": "B" },
+    { "index": "C" },
+    { "index": "D" },
+    { "index": "E" },
+    { "index": "F" },
+    { "index": "G" },
+    { "index": "H" },
+    { "index": "I" },
+    { "index": "J" }
   ],
   "teams": {
     "1": "Red Panda",

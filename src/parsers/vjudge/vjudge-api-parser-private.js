@@ -76,7 +76,7 @@ export const getContestDataWithVjudgeAPI = async (
   const JSONobject = {
     contestMetadata: contestData.contestData,
     problems: contestData.problems.map(letter => {
-      return { shortName: letter };
+      return { index: letter };
     }),
     teams: contestData.teams,
     verdictWithoutPenalty: {

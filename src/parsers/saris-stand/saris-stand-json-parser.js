@@ -78,7 +78,7 @@ export const getContestDataWithSarisStandJSON = rawText => {
       type: "ICPC",
     },
     problems: oldSarisData.problemLetters.map(letter => {
-      return { shortName: letter };
+      return { index: letter };
     }),
     teams: Object.fromEntries(
       oldSarisData.contestants.map((name, idx) => {

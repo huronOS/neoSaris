@@ -22,7 +22,7 @@ class TableRow extends Component {
     let team = this.props.team;
     return problemLetter;
     for (let i = 0; i < this.props.numberOfProblems; i++) {
-      if (this.props.problems[i].shortName === problemLetter) {
+      if (this.props.problems[i].index === problemLetter) {
         return team.triesOnProblems[i] + 1 + " - " + team.penaltyOnProblem[i];
       }
     }
@@ -32,7 +32,7 @@ class TableRow extends Component {
   numberOfTriesOnTriedProblem(problemLetter) {
     let team = this.props.team;
     for (let i = 0; i < this.props.numberOfProblems; i++) {
-      if (this.props.problems[i].shortName === problemLetter) {
+      if (this.props.problems[i].index === problemLetter) {
         return team.triesOnProblems[i] + " - " + team.penaltyOnProblem[i];
       }
     }
@@ -50,7 +50,7 @@ class TableRow extends Component {
       return problemLetter;
     }
     for (let i = 0; i < this.props.numberOfProblems; i++) {
-      if (this.props.problems[i].shortName === problemLetter) {
+      if (this.props.problems[i].index === problemLetter) {
         if (team.isProblemSolved[i] !== 0) {
           return problemLetter;
         }
@@ -70,7 +70,7 @@ class TableRow extends Component {
   hasSolvedProblem(problemLetter) {
     let team = this.props.team;
     for (let i = 0; i < this.props.numberOfProblems; i++) {
-      if (this.props.problems[i].shortName === problemLetter) {
+      if (this.props.problems[i].index === problemLetter) {
         if (team.isProblemSolved[i] === 0) {
           return false;
         } else {
@@ -84,7 +84,7 @@ class TableRow extends Component {
   hasTriedProblem(problemLetter) {
     let team = this.props.team;
     for (let i = 0; i < this.props.numberOfProblems; i++) {
-      if (this.props.problems[i].shortName === problemLetter) {
+      if (this.props.problems[i].index === problemLetter) {
         if (team.triesOnProblems[i] !== 0) {
           return true;
         } else {
@@ -98,7 +98,7 @@ class TableRow extends Component {
   isFirstToSolve(problemLetter) {
     let team = this.props.team;
     for (let i = 0; i < this.props.numberOfProblems; i++) {
-      if (this.props.problems[i].shortName === problemLetter) {
+      if (this.props.problems[i].index === problemLetter) {
         if (team.isFirstToSolve[i] !== 0) {
           return true;
         } else {
@@ -116,7 +116,7 @@ class TableRow extends Component {
       return false;
     }
     for (let i = 0; i < this.props.numberOfProblems; i++) {
-      if (this.props.problems[i].shortName === problemLetter) {
+      if (this.props.problems[i].index === problemLetter) {
         if (team.isProblemSolved[i] !== 0) {
           return false;
         }
@@ -144,7 +144,7 @@ class TableRow extends Component {
       return false;
     }
     for (let i = 0; i < this.props.numberOfProblems; i++) {
-      if (this.props.problems[i].shortName === problemLetter) {
+      if (this.props.problems[i].index === problemLetter) {
         if (team.isProblemSolved[i] !== 0) {
           return false;
         }
@@ -188,29 +188,29 @@ class TableRow extends Component {
 
     let problemColumns = problems.map(problem => {
       let verdict = "NoAttempted";
-      let textToShowInProblem = problem.shortName;
+      let textToShowInProblem = problem.index;
 
-      if (this.hasSolvedProblem(problem.shortName) === true) {
-        if (this.isFirstToSolve(problem.shortName) === true) {
+      if (this.hasSolvedProblem(problem.index) === true) {
+        if (this.isFirstToSolve(problem.index) === true) {
           verdict = "FirstAccepted";
         } else {
           verdict = "Accepted";
         }
-        textToShowInProblem = this.numberOfTriesOnAcceptedProblem(problem.shortName);
-      } else if (this.isACurrentFrozenProblem(problem.shortName) === true) {
+        textToShowInProblem = this.numberOfTriesOnAcceptedProblem(problem.index);
+      } else if (this.isACurrentFrozenProblem(problem.index) === true) {
         verdict = "Resolving";
-        textToShowInProblem = this.numberOfTriesOnFrozenProblem(problem.shortName);
-      } else if (this.isAPendingProblem(problem.shortName) === true) {
+        textToShowInProblem = this.numberOfTriesOnFrozenProblem(problem.index);
+      } else if (this.isAPendingProblem(problem.index) === true) {
         verdict = "Pending";
-        textToShowInProblem = this.numberOfTriesOnFrozenProblem(problem.shortName);
-      } else if (this.hasTriedProblem(problem.shortName) === true) {
+        textToShowInProblem = this.numberOfTriesOnFrozenProblem(problem.index);
+      } else if (this.hasTriedProblem(problem.index) === true) {
         verdict = "WrongAnswer";
-        textToShowInProblem = this.numberOfTriesOnTriedProblem(problem.shortName);
+        textToShowInProblem = this.numberOfTriesOnTriedProblem(problem.index);
       }
 
       return {
-        key: problem.shortName,
-        letter: problem.shortName,
+        key: problem.index,
+        letter: problem.index,
         width: widthPercentage,
         problemStatus: verdict,
         displayText: textToShowInProblem,
