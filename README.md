@@ -65,11 +65,11 @@ The resolver needs a JSON input format that follows object model of [example.jso
     { "index": "I" },
     { "index": "J" }
   ],
-  "teams": {
-    "1": "Red Panda",
-    "2": "Moscow IPT 1",
-    "3": "Moscow IPT Jinotega"
-  },
+  "contestants": [
+    { "id": 1, "name": "Red Panda" },
+    { "id": 2, "name": "Moscow IPT 1" },
+    { "id": 3, "name": "Moscow IPT Jinotega" }
+  ],
   "verdictWithoutPenalty": {
     "1": "Compilation error"
   },

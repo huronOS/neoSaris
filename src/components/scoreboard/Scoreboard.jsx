@@ -192,7 +192,7 @@ class Scoreboard extends Component {
 
   constructor(props) {
     super(props);
-    let teams = Object.entries(props.submissionsData.teams).map((team, i) => {
+    let teams = props.submissionsData.contestants.map(contestant => {
       let triesOnProblems = [];
       let isProblemSolved = [];
       let penaltyOnProblem = [];
@@ -206,8 +206,8 @@ class Scoreboard extends Component {
 
       let result = {};
       result.position = 0;
-      result.name = team[1];
-      result.id = team[0];
+      result.name = contestant.name;
+      result.id = contestant.id;
       result.penalty = 0;
       result.solved = 0;
       result.isProblemSolved = isProblemSolved;

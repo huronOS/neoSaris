@@ -48,11 +48,9 @@ export const getContestData = async (frozenTime, contestId, numberOfProblems, co
       type: "ICPC",
     },
     problems: problems,
-    teams: Object.fromEntries(
-      Object.entries(response.participants).map((value, idx) => {
-        return [idx, value[1][0]];
-      })
-    ),
+    contestants: Object.entries(response.participants).map((value, idx) => {
+      return { id: idx, name: value[1][0] };
+    }),
     submissions: response.submissions
       .filter(submission => Math.floor(submission[3] / 60) <= duration)
       .map(submission => {
@@ -78,7 +76,7 @@ export const getContestDataWithVjudgeAPI = async (
     problems: contestData.problems.map(letter => {
       return { index: letter };
     }),
-    teams: contestData.teams,
+    contestants: contestData.contestants,
     verdictWithoutPenalty: {
       1: "Compilation error",
     },

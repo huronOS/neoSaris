@@ -80,11 +80,9 @@ export const getContestDataWithSarisStandJSON = rawText => {
     problems: oldSarisData.problemLetters.map(letter => {
       return { index: letter };
     }),
-    teams: Object.fromEntries(
-      oldSarisData.contestants.map((name, idx) => {
-        return [idx, name];
-      })
-    ),
+    contestants: oldSarisData.contestants.map((name, idx) => {
+      return { id: idx, name };
+    }),
     verdictWithoutPenalty: {
       1: "Compilation error",
     },

@@ -7,8 +7,8 @@ const verifyObject = contestData => {
   if (contestData.contestMetadata == null) {
     throw new Error("contestData.contestMetadata is null or undefined!");
   }
-  if (contestData.teams == null) {
-    throw new Error("contestData.teams is null or undefined!");
+  if (contestData.contestants == null) {
+    throw new Error("contestData.contestants is null or undefined!");
   }
   if (contestData.verdictWithoutPenalty == null) {
     throw new Error("contestData.verdictWithoutPenalty is null or undefined!");
@@ -23,8 +23,8 @@ const verifyObject = contestData => {
   if (contestData.problems == null || !Array.isArray(contestData.problems)) {
     throw new Error("contestData.problems is not an array!");
   }
-  if (typeof contestData.teams !== "object") {
-    throw new Error("contestData.teams is not an object!");
+  if (!Array.isArray(contestData.contestants)) {
+    throw new Error("contestData.contestants is not an array!");
   }
   if (typeof contestData.verdictWithoutPenalty !== "object") {
     throw new Error("contestData.verdictWithoutPenalty is not an object!");
@@ -60,15 +60,15 @@ const verifyObject = contestData => {
     throw new Error('contestData.contestMetadata.type is not "ICPC"!');
   }
 
-  //Check Teams
-  for (const [key, value] of Object.entries(contestData.teams)) {
-    if (key == null || typeof key !== "string" || key === "") {
-      throw new Error("contestData.contest.teams contain invalid data!");
+  //Check contestants
+  contestData.contestants.forEach(contestant => {
+    if (contestant.id == null || typeof contestant.id !== "number") {
+      throw new Error("contestData.contestant.id contain invalid data!");
     }
-    if (value == null || typeof value !== "string" || value === "") {
-      throw new Error("contestData.contest.teams contain invalid data!");
+    if (contestant.name == null || typeof contestant.name !== "string" || contestant.name === "") {
+      throw new Error("contestData.contestant.name contain invalid data!");
     }
-  }
+  });
 
   //Check VerdictWithoutPenalty
   for (const [key, value] of Object.entries(contestData.verdictWithoutPenalty)) {

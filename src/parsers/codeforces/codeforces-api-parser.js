@@ -113,11 +113,12 @@ export const getContestData = async ({
     problems: response.result.problems.map(problem => {
       return { index: problem.index, name: problem.name };
     }),
-    teams: Object.fromEntries(
-      response.result.rows.map((row, index) => {
-        return [index, row.party.teamName || row.party.members[0].handle || "NO_TEAM_NAME"];
-      })
-    ),
+    contestants: response.result.rows.map((row, index) => {
+      return {
+        id: index,
+        name: row.party.teamName || row.party.members[0].handle || `NO_TEAM_NAME_${id}`,
+      };
+    }),
   };
 };
 
@@ -148,7 +149,7 @@ export const getContestDataWithCodeforcesAPI = async ({
   const JSONobject = {
     contestMetadata: contestData.contestData,
     problems: contestData.problems,
-    teams: contestData.teams,
+    contestants: contestData.contestants,
     verdictWithoutPenalty: {
       1: "Compilation error",
     },

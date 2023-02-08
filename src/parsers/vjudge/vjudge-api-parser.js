@@ -47,11 +47,9 @@ export const getContestData = async (frozenTime, contestId, numberOfProblems) =>
       type: "ICPC",
     },
     problems: problems,
-    teams: Object.fromEntries(
-      Object.entries(response.participants).map((value, idx) => {
-        return [idx, value[1][0]];
-      })
-    ),
+    contestants: Object.entries(response.participants).map((value, idx) => {
+      return { id: idx, name: value[1][0] };
+    }),
     submissions: response.submissions
       .filter(submission => Math.floor(submission[3] / 60) <= duration)
       .map(submission => {
@@ -69,7 +67,7 @@ export const getContestDataWithVjudgeAPI = async (frozenTime, contestId, numberO
   const contestData = await getContestData(frozenTime, contestId, numberOfProblems);
   const JSONobject = {
     contestMetadata: contestData.contestData,
-    teams: contestData.teams,
+    contestants: contestData.contestants,
     problems: contestData.problems.map(letter => {
       return { index: letter };
     }),
