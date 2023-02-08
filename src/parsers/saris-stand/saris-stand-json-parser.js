@@ -74,10 +74,12 @@ export const getContestDataWithSarisStandJSON = rawText => {
     contestMetadata: {
       duration: 300,
       frozenTime: 300 - oldSarisData.freezeTimeMinutesFromStart,
-      name: oldSarisData.contestName,
+      title: oldSarisData.contestName,
       type: "ICPC",
     },
-    problemsIndex: oldSarisData.problemLetters,
+    problemsIndex: oldSarisData.problemLetters.map(letter => {
+      return { shortName: letter };
+    }),
     teams: Object.fromEntries(
       oldSarisData.contestants.map((name, idx) => {
         return [idx, name];

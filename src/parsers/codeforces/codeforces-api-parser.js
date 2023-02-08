@@ -111,7 +111,7 @@ export const getContestData = async ({
       type: response.result.contest.type,
     },
     problemsIndex: response.result.problems.map(problem => {
-      return problem.index;
+      return { shortName: problem.index };
     }),
     teams: Object.fromEntries(
       response.result.rows.map((row, index) => {

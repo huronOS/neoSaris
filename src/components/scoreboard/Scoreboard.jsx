@@ -80,7 +80,7 @@ class Scoreboard extends Component {
         for (let i = 0; i < teams.length; i++) {
           if (teams[i].name === submission.teamName) {
             for (let j = 0; j < this.state.numberOfProblems; j++) {
-              let problemLetter = this.props.submissionsData.problemsIndex[j];
+              let problemLetter = this.props.submissionsData.problemsIndex[j].shortName;
               if (problemLetter === submission.problem && teams[i].isProblemSolved[j] === 0) {
                 teams[i].isProblemSolved[j] = 1;
                 teams[i].penaltyOnProblem[j] = submission.timeSubmission;
@@ -101,7 +101,7 @@ class Scoreboard extends Component {
         for (let i = 0; i < teams.length; i++) {
           if (teams[i].name === submission.teamName) {
             for (let j = 0; j < this.state.numberOfProblems; j++) {
-              let problemLetter = this.props.submissionsData.problemsIndex[j];
+              let problemLetter = this.props.submissionsData.problemsIndex[j].shortName;
               if (problemLetter === submission.problem && teams[i].isProblemSolved[j] === 0) {
                 teams[i].triesOnProblems[j]++;
                 break;
@@ -298,7 +298,7 @@ class Scoreboard extends Component {
   getProblemId(problemLetter) {
     let problemId = -1;
     for (let h = 0; h < this.state.numberOfProblems; h++) {
-      if (this.props.submissionsData.problemsIndex[h] === problemLetter) {
+      if (this.props.submissionsData.problemsIndex[h].shortName === problemLetter) {
         problemId = h;
       }
     }

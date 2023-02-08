@@ -75,6 +75,9 @@ export const getContestDataWithVjudgeAPI = async (
   const contestData = await getContestData(frozenTime, contestId, numberOfProblems, cookie);
   const JSONobject = {
     contestMetadata: contestData.contestData,
+    problemsIndex: contestData.problemsIndex.map(letter => {
+      return { shortName: letter };
+    }),
     teams: contestData.teams,
     verdictWithoutPenalty: {
       1: "Compilation error",
