@@ -50,9 +50,10 @@ The resolver needs a JSON input format that follows object model of [example.jso
   "contestMetadata": {
     "duration": 300,
     "frozenTime": 60,
-    "problemsIndex": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"],
-    "name": "Trial Contest"
+    "name": "Trial Contest",
+    "type": "ICPC"
   },
+  "problemsIndex": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"],
   "teams": {
     "1": "Red Panda",
     "2": "Moscow IPT 1",
