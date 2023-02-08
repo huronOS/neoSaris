@@ -80,7 +80,7 @@ class Scoreboard extends Component {
         for (let i = 0; i < teams.length; i++) {
           if (teams[i].name === submission.teamName) {
             for (let j = 0; j < this.state.numberOfProblems; j++) {
-              let problemLetter = this.props.submissionsData.problemsIndex[j].shortName;
+              let problemLetter = this.props.submissionsData.problems[j].shortName;
               if (problemLetter === submission.problem && teams[i].isProblemSolved[j] === 0) {
                 teams[i].isProblemSolved[j] = 1;
                 teams[i].penaltyOnProblem[j] = submission.timeSubmission;
@@ -101,7 +101,7 @@ class Scoreboard extends Component {
         for (let i = 0; i < teams.length; i++) {
           if (teams[i].name === submission.teamName) {
             for (let j = 0; j < this.state.numberOfProblems; j++) {
-              let problemLetter = this.props.submissionsData.problemsIndex[j].shortName;
+              let problemLetter = this.props.submissionsData.problems[j].shortName;
               if (problemLetter === submission.problem && teams[i].isProblemSolved[j] === 0) {
                 teams[i].triesOnProblems[j]++;
                 break;
@@ -197,7 +197,7 @@ class Scoreboard extends Component {
       let isProblemSolved = [];
       let penaltyOnProblem = [];
       let isFirstToSolve = [];
-      for (let j = 0; j < props.submissionsData.problemsIndex.length; j++) {
+      for (let j = 0; j < props.submissionsData.problems.length; j++) {
         isProblemSolved.push(0);
         isFirstToSolve.push(0);
         triesOnProblems.push(0);
@@ -246,7 +246,7 @@ class Scoreboard extends Component {
       submissionWhenFrozen: submissionWhenFrozen,
       contestDuration: props.submissionsData.contestMetadata.duration,
       contestFrozenTime: props.submissionsData.contestMetadata.frozenTime,
-      numberOfProblems: props.submissionsData.problemsIndex.length,
+      numberOfProblems: props.submissionsData.problems.length,
       teams: teams,
       verdictsWithoutPenalty: verdictsWithoutPenalty,
       currentFrozenSubmission: null,
@@ -285,7 +285,7 @@ class Scoreboard extends Component {
           index={i}
           team={team}
           numberOfProblems={this.state.numberOfProblems}
-          problemsIndex={this.props.submissionsData.problemsIndex}
+          problems={this.props.submissionsData.problems}
           submissionWhenFrozen={this.state.submissionWhenFrozen}
           currentFrozenSubmission={this.state.savedCurrentFrozenSubmission}
           savedCurrentFrozenSubmission={this.state.currentFrozenSubmission}
@@ -298,7 +298,7 @@ class Scoreboard extends Component {
   getProblemId(problemLetter) {
     let problemId = -1;
     for (let h = 0; h < this.state.numberOfProblems; h++) {
-      if (this.props.submissionsData.problemsIndex[h].shortName === problemLetter) {
+      if (this.props.submissionsData.problems[h].shortName === problemLetter) {
         problemId = h;
       }
     }

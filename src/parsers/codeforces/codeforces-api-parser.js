@@ -110,7 +110,7 @@ export const getContestData = async ({
       name: response.result.contest.name,
       type: response.result.contest.type,
     },
-    problemsIndex: response.result.problems.map(problem => {
+    problems: response.result.problems.map(problem => {
       return { shortName: problem.index };
     }),
     teams: Object.fromEntries(
@@ -147,7 +147,7 @@ export const getContestDataWithCodeforcesAPI = async ({
   });
   const JSONobject = {
     contestMetadata: contestData.contestData,
-    problemsIndex: contestData.problemsIndex,
+    problems: contestData.problems,
     teams: contestData.teams,
     verdictWithoutPenalty: {
       1: "Compilation error",

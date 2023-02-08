@@ -47,7 +47,7 @@ export const getContestData = async (frozenTime, contestId, numberOfProblems, co
       name: response.title,
       type: "ICPC",
     },
-    problemsIndex: problems,
+    problems: problems,
     teams: Object.fromEntries(
       Object.entries(response.participants).map((value, idx) => {
         return [idx, value[1][0]];
@@ -75,7 +75,7 @@ export const getContestDataWithVjudgeAPI = async (
   const contestData = await getContestData(frozenTime, contestId, numberOfProblems, cookie);
   const JSONobject = {
     contestMetadata: contestData.contestData,
-    problemsIndex: contestData.problemsIndex.map(letter => {
+    problems: contestData.problems.map(letter => {
       return { shortName: letter };
     }),
     teams: contestData.teams,

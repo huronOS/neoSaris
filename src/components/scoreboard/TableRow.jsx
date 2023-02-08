@@ -20,8 +20,9 @@ class TableRow extends Component {
 
   numberOfTriesOnAcceptedProblem(problemLetter) {
     let team = this.props.team;
+    return problemLetter;
     for (let i = 0; i < this.props.numberOfProblems; i++) {
-      if (this.props.problemsIndex.shortName === problemLetter) {
+      if (this.props.problems[i].shortName === problemLetter) {
         return team.triesOnProblems[i] + 1 + " - " + team.penaltyOnProblem[i];
       }
     }
@@ -31,7 +32,7 @@ class TableRow extends Component {
   numberOfTriesOnTriedProblem(problemLetter) {
     let team = this.props.team;
     for (let i = 0; i < this.props.numberOfProblems; i++) {
-      if (this.props.problemsIndex[i].shortName === problemLetter) {
+      if (this.props.problems[i].shortName === problemLetter) {
         return team.triesOnProblems[i] + " - " + team.penaltyOnProblem[i];
       }
     }
@@ -49,7 +50,7 @@ class TableRow extends Component {
       return problemLetter;
     }
     for (let i = 0; i < this.props.numberOfProblems; i++) {
-      if (this.props.problemsIndex[i].shortName === problemLetter) {
+      if (this.props.problems[i].shortName === problemLetter) {
         if (team.isProblemSolved[i] !== 0) {
           return problemLetter;
         }
@@ -69,7 +70,7 @@ class TableRow extends Component {
   hasSolvedProblem(problemLetter) {
     let team = this.props.team;
     for (let i = 0; i < this.props.numberOfProblems; i++) {
-      if (this.props.problemsIndex[i].shortName === problemLetter) {
+      if (this.props.problems[i].shortName === problemLetter) {
         if (team.isProblemSolved[i] === 0) {
           return false;
         } else {
@@ -83,7 +84,7 @@ class TableRow extends Component {
   hasTriedProblem(problemLetter) {
     let team = this.props.team;
     for (let i = 0; i < this.props.numberOfProblems; i++) {
-      if (this.props.problemsIndex[i].shortName === problemLetter) {
+      if (this.props.problems[i].shortName === problemLetter) {
         if (team.triesOnProblems[i] !== 0) {
           return true;
         } else {
@@ -97,7 +98,7 @@ class TableRow extends Component {
   isFirstToSolve(problemLetter) {
     let team = this.props.team;
     for (let i = 0; i < this.props.numberOfProblems; i++) {
-      if (this.props.problemsIndex[i].shortName === problemLetter) {
+      if (this.props.problems[i].shortName === problemLetter) {
         if (team.isFirstToSolve[i] !== 0) {
           return true;
         } else {
@@ -115,7 +116,7 @@ class TableRow extends Component {
       return false;
     }
     for (let i = 0; i < this.props.numberOfProblems; i++) {
-      if (this.props.problemsIndex[i].shortName === problemLetter) {
+      if (this.props.problems[i].shortName === problemLetter) {
         if (team.isProblemSolved[i] !== 0) {
           return false;
         }
@@ -143,7 +144,7 @@ class TableRow extends Component {
       return false;
     }
     for (let i = 0; i < this.props.numberOfProblems; i++) {
-      if (this.props.problemsIndex[i].shortName === problemLetter) {
+      if (this.props.problems[i].shortName === problemLetter) {
         if (team.isProblemSolved[i] !== 0) {
           return false;
         }
@@ -180,7 +181,7 @@ class TableRow extends Component {
   }
 
   render() {
-    let problems = this.props.problemsIndex;
+    let problems = this.props.problems;
 
     let sizeProblem = 84.0 / this.props.numberOfProblems;
     let widthPercentage = sizeProblem + "%";

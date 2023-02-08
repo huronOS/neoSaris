@@ -20,8 +20,8 @@ const verifyObject = contestData => {
   if (typeof contestData.contestMetadata !== "object") {
     throw new Error("contestData.contestMetadata is not an object!");
   }
-  if (contestData.problemsIndex == null || !Array.isArray(contestData.problemsIndex)) {
-    throw new Error("contestData.problemsIndex is not an array!");
+  if (contestData.problems == null || !Array.isArray(contestData.problems)) {
+    throw new Error("contestData.problems is not an array!");
   }
   if (typeof contestData.teams !== "object") {
     throw new Error("contestData.teams is not an object!");

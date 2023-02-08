@@ -53,7 +53,7 @@ The resolver needs a JSON input format that follows object model of [example.jso
     "name": "Trial Contest",
     "type": "ICPC"
   },
-  "problemsIndex": [
+  "problems": [
     { "shortName": "A" },
     { "shortName": "B" },
     { "shortName": "C" },
