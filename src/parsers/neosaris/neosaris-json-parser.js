@@ -32,11 +32,7 @@ const Data = z.object({
   ),
 });
 
-export const getContestDataWithNeoSarisJSON = rawText => {
-  let contestData = {};
-  contestData = JSON.parse(rawText);
-  console.log("neoSaris JSON, Input Object", contestData);
-
+export const verifyNeoSarisJSON = contestData => {
   const result = Data.safeParse(contestData);
   if (!result.success) {
     console.log("Zod Result", result);
@@ -51,5 +47,13 @@ export const getContestDataWithNeoSarisJSON = rawText => {
     );
     throw new Error("Invalid neoSaris JSON");
   }
+  return contestData;
+};
+
+export const getContestDataWithNeoSarisJSON = rawText => {
+  let contestData = {};
+  contestData = JSON.parse(rawText);
+  console.log("neoSaris JSON, Input Object", contestData);
+  verifyNeoSarisJSON(contestData);
   return contestData;
 };
