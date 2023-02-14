@@ -90,7 +90,7 @@ export const getContestDataWithSarisStandJSON = rawText => {
     },
     submissions: oldSarisData.runs.map(run => {
       return {
-        timeSubmission: run.timeMinutesFromStart,
+        timeSubmitted: run.timeMinutesFromStart,
         teamName: run.contestant,
         problem: run.problemLetter,
         verdict: run.success ? "ACCEPTED" : "WRONG_ANSWER",

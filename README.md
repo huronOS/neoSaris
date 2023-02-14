@@ -77,19 +77,19 @@ The resolver needs a JSON input format that follows object model of [example.jso
   },
   "submissions": [
     {
-      "timeSubmission": 47,
+      "timeSubmitted": 47,
       "teamName": "Moscow IPT Jinotega",
       "problem": "A",
       "verdict": "Accepted"
     },
     {
-      "timeSubmission": 260,
+      "timeSubmitted": 260,
       "teamName": "Moscow IPT 1",
       "problem": "H",
       "verdict": "Wrong answer"
     },
     {
-      "timeSubmission": 270,
+      "timeSubmitted": 270,
       "teamName": "Moscow IPT 1",
       "problem": "A",
       "verdict": "Accepted"

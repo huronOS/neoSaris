@@ -10,13 +10,13 @@ class Scoreboard extends Component {
     let submissionsOnContest = [];
     submissionsData.submissions.forEach(function (submission) {
       if (
-        submission.timeSubmission <
+        submission.timeSubmitted <
         submissionsData.contestMetadata.duration -
           submissionsData.contestMetadata.frozenTimeDuration
       ) {
         let result = {};
         result.teamName = submission.teamName;
-        result.timeSubmission = submission.timeSubmission;
+        result.timeSubmitted = submission.timeSubmitted;
         result.verdict = submission.verdict;
         result.problem = submission.problem;
         submissionsOnContest.push(result);
@@ -29,14 +29,14 @@ class Scoreboard extends Component {
     let submissionsOnFrozen = [];
     submissionsData.submissions.forEach(function (submission) {
       if (
-        submission.timeSubmission >=
+        submission.timeSubmitted >=
           submissionsData.contestMetadata.duration -
             submissionsData.contestMetadata.frozenTimeDuration &&
-        submission.timeSubmission < submissionsData.contestMetadata.duration
+        submission.timeSubmitted < submissionsData.contestMetadata.duration
       ) {
         let result = {};
         result.teamName = submission.teamName;
-        result.timeSubmission = submission.timeSubmission;
+        result.timeSubmitted = submission.timeSubmitted;
         result.verdict = submission.verdict;
         result.problem = submission.problem;
         if (submissionsData.verdicts.wrongAnswerWithoutPenalty.includes(result.verdict) === false) {
@@ -88,8 +88,8 @@ class Scoreboard extends Component {
               let problemLetter = this.props.submissionsData.problems[j].index;
               if (problemLetter === submission.problem && teams[i].isProblemSolved[j] === 0) {
                 teams[i].isProblemSolved[j] = 1;
-                teams[i].penaltyOnProblem[j] = submission.timeSubmission;
-                teams[i].penalty += submission.timeSubmission + teams[i].triesOnProblems[j] * 20;
+                teams[i].penaltyOnProblem[j] = submission.timeSubmitted;
+                teams[i].penalty += submission.timeSubmitted + teams[i].triesOnProblems[j] * 20;
                 teams[i].solved++;
                 if (problemHasBeenSolved[j] === 0) {
                   problemHasBeenSolved[j] = 1;
@@ -145,12 +145,12 @@ class Scoreboard extends Component {
   sortTeamsByStandingPosition() {
     let submissions = this.state.submissions;
     submissions = submissions.sort(function (a, b) {
-      return a.timeSubmission - b.timeSubmission;
+      return a.timeSubmitted - b.timeSubmitted;
     });
 
     let submissionWhenFrozen = this.state.submissionWhenFrozen;
     submissionWhenFrozen = submissionWhenFrozen.sort(function (a, b) {
-      return a.timeSubmission - b.timeSubmission;
+      return a.timeSubmitted - b.timeSubmitted;
     });
 
     this.setState({
@@ -224,12 +224,12 @@ class Scoreboard extends Component {
 
     let submissions = this.getSubmissions(props.submissionsData);
     submissions = submissions.sort(function (a, b) {
-      return a.timeSubmission - b.timeSubmission;
+      return a.timeSubmitted - b.timeSubmitted;
     });
 
     let submissionWhenFrozen = this.getSubmissionsWhenFrozen(props.submissionsData);
     submissionWhenFrozen = submissionWhenFrozen.sort(function (a, b) {
-      return a.timeSubmission - b.timeSubmission;
+      return a.timeSubmitted - b.timeSubmitted;
     });
 
     let idOfNextUserRowHighlighted = -1;

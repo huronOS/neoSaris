@@ -66,7 +66,7 @@ export const getSubmissions = async ({
     .filter(submission => Math.floor(submission.relativeTimeSeconds / 60) <= duration)
     .map(submission => {
       return {
-        timeSubmission: Math.floor(submission.relativeTimeSeconds / 60),
+        timeSubmitted: Math.floor(submission.relativeTimeSeconds / 60),
         teamName:
           submission.author.teamName || submission.author.members[0].handle || "NO_TEAM_NAME",
         problem: submission.problem.index,

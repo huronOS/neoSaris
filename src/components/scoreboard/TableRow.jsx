@@ -59,7 +59,7 @@ class TableRow extends Component {
             submissionWhenFrozen[j].teamName === team.name &&
             submissionWhenFrozen[j].problem === problemLetter
           ) {
-            return team.triesOnProblems[i] + 1 + " - " + submissionWhenFrozen[j].timeSubmission;
+            return team.triesOnProblems[i] + 1 + " - " + submissionWhenFrozen[j].timeSubmitted;
           }
         }
       }
