@@ -57,7 +57,7 @@ class TableRow extends Component {
         for (let j = 0; j < submissionWhenFrozen.length; j++) {
           if (
             submissionWhenFrozen[j].teamName === team.name &&
-            submissionWhenFrozen[j].problem === problemLetter
+            submissionWhenFrozen[j].problemIndex === problemLetter
           ) {
             return team.triesOnProblems[i] + 1 + " - " + submissionWhenFrozen[j].timeSubmitted;
           }
@@ -123,7 +123,7 @@ class TableRow extends Component {
         for (let j = 0; j < submissionWhenFrozen.length; j++) {
           if (
             submissionWhenFrozen[j].teamName === team.name &&
-            submissionWhenFrozen[j].problem === problemLetter
+            submissionWhenFrozen[j].problemIndex === problemLetter
           ) {
             return true;
           }
@@ -150,7 +150,7 @@ class TableRow extends Component {
         }
         if (
           savedCurrentFrozenSubmission.teamName === team.name &&
-          savedCurrentFrozenSubmission.problem === problemLetter
+          savedCurrentFrozenSubmission.problemIndex === problemLetter
         ) {
           return true;
         }
@@ -165,7 +165,7 @@ class TableRow extends Component {
     }
     if (
       this.props.currentFrozenSubmission.teamName === this.props.team.name &&
-      problemLetter === this.props.currentFrozenSubmission.problem
+      problemLetter === this.props.currentFrozenSubmission.problemIndex
     ) {
       return true;
     }
@@ -210,7 +210,7 @@ class TableRow extends Component {
 
       return {
         key: problem.index,
-        letter: problem.index,
+        index: problem.index,
         width: widthPercentage,
         problemStatus: verdict,
         displayText: textToShowInProblem,

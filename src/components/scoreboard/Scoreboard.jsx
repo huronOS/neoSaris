@@ -18,7 +18,7 @@ class Scoreboard extends Component {
         result.teamName = submission.teamName;
         result.timeSubmitted = submission.timeSubmitted;
         result.verdict = submission.verdict;
-        result.problem = submission.problem;
+        result.problemIndex = submission.problemIndex;
         submissionsOnContest.push(result);
       }
     });
@@ -32,13 +32,13 @@ class Scoreboard extends Component {
         submission.timeSubmitted >=
           submissionsData.contestMetadata.duration -
             submissionsData.contestMetadata.frozenTimeDuration &&
-        submission.timeSubmitted < submissionsData.contestMetadata.duration
+        submission.timeSubmitted <= submissionsData.contestMetadata.duration
       ) {
         let result = {};
         result.teamName = submission.teamName;
         result.timeSubmitted = submission.timeSubmitted;
         result.verdict = submission.verdict;
-        result.problem = submission.problem;
+        result.problemIndex = submission.problemIndex;
         if (submissionsData.verdicts.wrongAnswerWithoutPenalty.includes(result.verdict) === false) {
           submissionsOnFrozen.push(result);
         }
@@ -86,7 +86,7 @@ class Scoreboard extends Component {
           if (teams[i].name === submission.teamName) {
             for (let j = 0; j < this.state.numberOfProblems; j++) {
               let problemLetter = this.props.submissionsData.problems[j].index;
-              if (problemLetter === submission.problem && teams[i].isProblemSolved[j] === 0) {
+              if (problemLetter === submission.problemIndex && teams[i].isProblemSolved[j] === 0) {
                 teams[i].isProblemSolved[j] = 1;
                 teams[i].penaltyOnProblem[j] = submission.timeSubmitted;
                 teams[i].penalty += submission.timeSubmitted + teams[i].triesOnProblems[j] * 20;
@@ -107,7 +107,7 @@ class Scoreboard extends Component {
           if (teams[i].name === submission.teamName) {
             for (let j = 0; j < this.state.numberOfProblems; j++) {
               let problemLetter = this.props.submissionsData.problems[j].index;
-              if (problemLetter === submission.problem && teams[i].isProblemSolved[j] === 0) {
+              if (problemLetter === submission.problemIndex && teams[i].isProblemSolved[j] === 0) {
                 teams[i].triesOnProblems[j]++;
                 break;
               }
@@ -307,7 +307,7 @@ class Scoreboard extends Component {
     let newSubmissionWhenFrozen = [];
 
     for (let i = 0; i < submissionWhenFrozen.length; i++) {
-      let problemId = this.getProblemId(submissionWhenFrozen[i].problem);
+      let problemId = this.getProblemId(submissionWhenFrozen[i].problemIndex);
       if (problemId === -1) {
         continue;
       }
@@ -337,7 +337,7 @@ class Scoreboard extends Component {
     let submissionToRevealId = -1;
     for (let i = teams.length - 1; i >= 0 && submissionToRevealId === -1; i--) {
       for (let j = 0; j < submissionWhenFrozen.length; j++) {
-        let problemId = this.getProblemId(submissionWhenFrozen[j].problem);
+        let problemId = this.getProblemId(submissionWhenFrozen[j].problemIndex);
         if (problemId === -1) {
           continue;
         }

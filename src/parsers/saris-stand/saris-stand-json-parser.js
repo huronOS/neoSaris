@@ -92,7 +92,7 @@ export const getContestDataWithSarisStandJSON = rawText => {
       return {
         timeSubmitted: run.timeMinutesFromStart,
         teamName: run.contestant,
-        problem: run.problemLetter,
+        problemIndex: run.problemLetter,
         verdict: run.success ? "ACCEPTED" : "WRONG_ANSWER",
       };
     }),

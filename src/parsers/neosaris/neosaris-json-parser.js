@@ -30,7 +30,7 @@ const Data = z.object({
     z.object({
       timeSubmitted: z.number(),
       teamName: z.string(),
-      problem: z.string(),
+      problemIndex: z.string(),
       verdict: z.string(),
     })
   ),

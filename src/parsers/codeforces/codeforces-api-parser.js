@@ -69,7 +69,7 @@ export const getSubmissions = async ({
         timeSubmitted: Math.floor(submission.relativeTimeSeconds / 60),
         teamName:
           submission.author.teamName || submission.author.members[0].handle || "NO_TEAM_NAME",
-        problem: submission.problem.index,
+        problemIndex: submission.problem.index,
         verdict: submission.verdict,
       };
     });
