@@ -70,7 +70,7 @@ export const getSubmissions = async ({
         teamName:
           submission.author.teamName || submission.author.members[0].handle || "NO_TEAM_NAME",
         problem: submission.problem.index,
-        verdict: submission.verdict === "OK" ? "Accepted" : "WRONG",
+        verdict: submission.verdict,
       };
     });
 };
@@ -150,8 +150,24 @@ export const getContestDataWithCodeforcesAPI = async ({
     contestMetadata: contestData.contestData,
     problems: contestData.problems,
     contestants: contestData.contestants,
-    verdictWithoutPenalty: {
-      1: "Compilation error",
+    verdicts: {
+      accepted: ["OK", "PARTIAL"],
+      wrongAnswerWithPenalty: [
+        "FAILED",
+        "RUNTIME_ERROR",
+        "WRONG_ANSWER",
+        "PRESENTATION_ERROR",
+        "TIME_LIMIT_EXCEEDED",
+        "MEMORY_LIMIT_EXCEEDED",
+        "IDLENESS_LIMIT_EXCEEDED",
+        "SECURITY_VIOLATED",
+        "CRASHED",
+        "INPUT_PREPARATION_CRASHED",
+        "CHALLENGED",
+        "REJECTED",
+        "SKIPPED",
+      ],
+      wrongAnswerWithoutPenalty: ["COMPILATION_ERROR"],
     },
     submissions: submissions,
   };

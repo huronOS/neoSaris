@@ -19,7 +19,12 @@ export type ContestData = {
     iconName?: String; //Id of the icon to display for this contestant
     //For awards, we can include fields about members of the team
   }>;
-  verdictWithoutPenalty: Map<string, string>;
+  verdicts: {
+    accepted: Array<String>; //Name of the accepted verdicts
+    //For IOI we can add partial verdict name
+    wrongAnswerWithPenalty: Array<String>; //Name of WA verdicts that causes penalty
+    wrongAnswerWithoutPenalty: Array<String>; //Name of of WA verdicts that does not causes penalty
+  };
   //For awards, we can add an object for different awards (TopRanked, FirstToSolve, Medals)
   submissions: Array<{
     timeSubmission: Number; //Floor time in minutes of the submission, relative to the contest start.

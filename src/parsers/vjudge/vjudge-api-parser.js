@@ -57,7 +57,7 @@ export const getContestData = async (frozenTime, contestId, numberOfProblems) =>
           timeSubmission: Math.floor(submission[3] / 60),
           teamName: teamName.get(submission[0].toString()),
           problem: problems[submission[1]],
-          verdict: submission[2] === 1 ? "Accepted" : "WRONG",
+          verdict: submission[2] === 1 ? "ACCEPTED" : "WRONG_ANSWER",
         };
       }),
   };
@@ -71,8 +71,10 @@ export const getContestDataWithVjudgeAPI = async (frozenTime, contestId, numberO
     problems: contestData.problems.map(letter => {
       return { index: letter };
     }),
-    verdictWithoutPenalty: {
-      1: "Compilation error",
+    verdicts: {
+      accepted: ["ACCEPTED"],
+      wrongAnswerWithPenalty: ["WRONG_ANSWER"],
+      wrongAnswerWithoutPenalty: [],
     },
     submissions: contestData.submissions,
   };

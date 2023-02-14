@@ -22,8 +22,10 @@
     { "id": 2, "name": "Moscow IPT 1" },
     { "id": 3, "name": "Moscow IPT Jinotega" }
   ],
-  "verdictWithoutPenalty": {
-    "1": "Compilation error"
+  "verdicts": {
+    "accepted": ["Accepted"],
+    "wrongAnswerWithPenalty": ["Wrong answer"],
+    "wrongAnswerWithoutPenalty": ["Compilation error"]
   },
   "submissions": [
     {

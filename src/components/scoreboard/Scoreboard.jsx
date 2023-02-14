@@ -24,7 +24,7 @@ class Scoreboard extends Component {
     return submissionsOnContest;
   }
 
-  getSubmissionsWhenFrozen(submissionsData, verdictsWithoutPenalty) {
+  getSubmissionsWhenFrozen(submissionsData) {
     let submissionsOnFrozen = [];
     submissionsData.submissions.forEach(function (submission) {
       if (
@@ -37,7 +37,7 @@ class Scoreboard extends Component {
         result.timeSubmission = submission.timeSubmission;
         result.verdict = submission.verdict;
         result.problem = submission.problem;
-        if (verdictsWithoutPenalty.includes(result.verdict) === false) {
+        if (submissionsData.verdicts.wrongAnswerWithoutPenalty.includes(result.verdict) === false) {
           submissionsOnFrozen.push(result);
         }
       }
@@ -73,9 +73,12 @@ class Scoreboard extends Component {
 
     for (let h = 0; h < submissions.length; h++) {
       let submission = submissions[h];
-      if (this.state.verdictsWithoutPenalty.includes(submission.verdict) === true) {
+      //Wrong Answer without penalty
+      if (
+        this.props.submissionsData.verdicts.wrongAnswerWithoutPenalty.includes(submission.verdict)
+      ) {
         continue;
-      } else if (submission.verdict === "Accepted") {
+      } else if (this.props.submissionsData.verdicts.accepted.includes(submission.verdict)) {
         // Update accepted problem only if has not been accepted before.
         for (let i = 0; i < teams.length; i++) {
           if (teams[i].name === submission.teamName) {
@@ -217,21 +220,12 @@ class Scoreboard extends Component {
       return result;
     });
 
-    let verdictsWithoutPenalty = Object.entries(props.submissionsData.verdictWithoutPenalty).map(
-      verdict => {
-        return verdict[1];
-      }
-    );
-
     let submissions = this.getSubmissions(props.submissionsData);
     submissions = submissions.sort(function (a, b) {
       return a.timeSubmission - b.timeSubmission;
     });
 
-    let submissionWhenFrozen = this.getSubmissionsWhenFrozen(
-      props.submissionsData,
-      verdictsWithoutPenalty
-    );
+    let submissionWhenFrozen = this.getSubmissionsWhenFrozen(props.submissionsData);
     submissionWhenFrozen = submissionWhenFrozen.sort(function (a, b) {
       return a.timeSubmission - b.timeSubmission;
     });
@@ -248,7 +242,7 @@ class Scoreboard extends Component {
       contestFrozenTime: props.submissionsData.contestMetadata.frozenTime,
       numberOfProblems: props.submissionsData.problems.length,
       teams: teams,
-      verdictsWithoutPenalty: verdictsWithoutPenalty,
+      verdictsWithoutPenalty: this.props.submissionsData.verdicts.wrongAnswerWithoutPenalty,
       currentFrozenSubmission: null,
       savedCurrentFrozenSubmission: null,
       savedCurrentFrozenSubmissionId: null,

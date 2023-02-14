@@ -74,7 +74,7 @@ export const getContestDataWithSarisStandJSON = rawText => {
     contestMetadata: {
       duration: 300,
       frozenTime: 300 - oldSarisData.freezeTimeMinutesFromStart,
-      title: oldSarisData.contestName,
+      name: oldSarisData.contestName,
       type: "ICPC",
     },
     problems: oldSarisData.problemLetters.map(letter => {
@@ -83,15 +83,17 @@ export const getContestDataWithSarisStandJSON = rawText => {
     contestants: oldSarisData.contestants.map((name, idx) => {
       return { id: idx, name };
     }),
-    verdictWithoutPenalty: {
-      1: "Compilation error",
+    verdicts: {
+      accepted: ["ACCEPTED"],
+      wrongAnswerWithPenalty: ["WRONG_ANSWER"],
+      wrongAnswerWithoutPenalty: [],
     },
     submissions: oldSarisData.runs.map(run => {
       return {
         timeSubmission: run.timeMinutesFromStart,
         teamName: run.contestant,
         problem: run.problemLetter,
-        verdict: run.success ? "Accepted" : "WRONG_ANSWER",
+        verdict: run.success ? "ACCEPTED" : "WRONG_ANSWER",
       };
     }),
   };

@@ -21,7 +21,11 @@ const Data = z.object({
       iconName: z.string().optional(),
     })
   ),
-  verdictWithoutPenalty: z.object({}).catchall(z.string()),
+  verdicts: z.object({
+    accepted: z.array(z.string()),
+    wrongAnswerWithPenalty: z.array(z.string()),
+    wrongAnswerWithoutPenalty: z.array(z.string()),
+  }),
   submissions: z.array(
     z.object({
       timeSubmission: z.number(),
