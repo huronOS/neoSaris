@@ -56,7 +56,7 @@ export const getContestData = async (frozenTime, contestId, numberOfProblems, co
       .map(submission => {
         return {
           timeSubmitted: Math.floor(submission[3] / 60),
-          teamName: teamName.get(submission[0].toString()),
+          contestantName: teamName.get(submission[0].toString()),
           problemIndex: problems[submission[1]],
           verdict: submission[2] === 1 ? "ACCEPTED" : "WRONG_ANSWER",
         };

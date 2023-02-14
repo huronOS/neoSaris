@@ -27,9 +27,9 @@ export type ContestData = {
   };
   //For awards, we can add an object for different awards (TopRanked, FirstToSolve, Medals)
   submissions: Array<{
-    timeSubmission: Number; //Floor time in minutes of the submission, relative to the contest start.
-    teamName: String; //Name of the contestant
-    problem: String; //Should match problems array
+    timeSubmitted: Number; //Floor time in minutes of the submission, relative to the contest start.
+    contestantName: String; //Name of the contestant
+    problemIndex: String; //Should match problems array
     verdict: String; //Should match a registered verdict
     //For IOI we can add the partial scores
   }>;

@@ -29,7 +29,7 @@ const Data = z.object({
   submissions: z.array(
     z.object({
       timeSubmitted: z.number(),
-      teamName: z.string(),
+      contestantName: z.string(),
       problemIndex: z.string(),
       verdict: z.string(),
     })
