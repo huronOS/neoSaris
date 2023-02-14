@@ -9,7 +9,7 @@ function App() {
   const [step, setStep] = useState("form");
   const [contestData, setContestData] = useState({});
   const setContestDataWithLog = contestData => {
-    console.log("contestData", contestData);
+    console.log("neoSarisJSON", contestData);
     verifyNeoSarisJSON(contestData);
     setContestData(contestData);
   };

@@ -1,7 +1,7 @@
 export type ContestData = {
   contestMetadata: {
     duration: Number; //Duration in minutes
-    frozenTime: Number; //Duration of the frozen time in minutes
+    frozenTimeDuration: Number; //Duration of the frozen time in minutes
     name: String; // Title to display for the problem
     type: "ICPC"; // Type of contest to evaluate
     //^ We can add a future type for IOI to identify IOI contests

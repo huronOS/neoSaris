@@ -3,7 +3,7 @@ import { z } from "zod";
 const Data = z.object({
   contestMetadata: z.object({
     duration: z.number(),
-    frozenTime: z.number(),
+    frozenTimeDuration: z.number(),
     name: z.string(),
     type: z.literal("ICPC"),
   }),

@@ -73,7 +73,7 @@ export const getContestDataWithSarisStandJSON = rawText => {
   return {
     contestMetadata: {
       duration: 300,
-      frozenTime: 300 - oldSarisData.freezeTimeMinutesFromStart,
+      frozenTimeDuration: 300 - oldSarisData.freezeTimeMinutesFromStart,
       name: oldSarisData.contestName,
       type: "ICPC",
     },

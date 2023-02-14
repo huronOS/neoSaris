@@ -106,7 +106,7 @@ export const getContestData = async ({
   return {
     contestData: {
       duration: Math.floor(response.result.contest.durationSeconds / 60),
-      frozenTime: frozenTime,
+      frozenTimeDuration: frozenTime,
       name: response.result.contest.name,
       type: response.result.contest.type,
     },

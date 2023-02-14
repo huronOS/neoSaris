@@ -11,7 +11,8 @@ class Scoreboard extends Component {
     submissionsData.submissions.forEach(function (submission) {
       if (
         submission.timeSubmission <
-        submissionsData.contestMetadata.duration - submissionsData.contestMetadata.frozenTime
+        submissionsData.contestMetadata.duration -
+          submissionsData.contestMetadata.frozenTimeDuration
       ) {
         let result = {};
         result.teamName = submission.teamName;
@@ -29,7 +30,8 @@ class Scoreboard extends Component {
     submissionsData.submissions.forEach(function (submission) {
       if (
         submission.timeSubmission >=
-          submissionsData.contestMetadata.duration - submissionsData.contestMetadata.frozenTime &&
+          submissionsData.contestMetadata.duration -
+            submissionsData.contestMetadata.frozenTimeDuration &&
         submission.timeSubmission < submissionsData.contestMetadata.duration
       ) {
         let result = {};
@@ -239,7 +241,7 @@ class Scoreboard extends Component {
       submissions: submissions,
       submissionWhenFrozen: submissionWhenFrozen,
       contestDuration: props.submissionsData.contestMetadata.duration,
-      contestFrozenTime: props.submissionsData.contestMetadata.frozenTime,
+      contestFrozenTime: props.submissionsData.contestMetadata.frozenTimeDuration,
       numberOfProblems: props.submissionsData.problems.length,
       teams: teams,
       verdictsWithoutPenalty: this.props.submissionsData.verdicts.wrongAnswerWithoutPenalty,

@@ -42,7 +42,7 @@ export const getContestData = async (frozenTime, contestId, numberOfProblems) =>
   return {
     contestData: {
       duration: duration,
-      frozenTime: frozenTime,
+      frozenTimeDuration: frozenTime,
       name: response.title,
       type: "ICPC",
     },
