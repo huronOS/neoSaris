@@ -1,137 +1,63 @@
-const verifyObject = contestData => {
-  if (contestData == null) {
-    throw new Error("contestData is null or undefined!");
-  }
+import { z } from "zod";
 
-  //level 1 objects
-  if (contestData.contest == null) {
-    throw new Error("contestData.contest is null or undefined!");
-  }
-  if (contestData.teams == null) {
-    throw new Error("contestData.teams is null or undefined!");
-  }
-  if (contestData.verdictWithoutPenalty == null) {
-    throw new Error("contestData.verdictWithoutPenalty is null or undefined!");
-  }
-  if (contestData.submissions == null) {
-    throw new Error("contestData.submissions is null or undefined!");
-  }
-  //Check data types
-  if (typeof contestData.contest !== "object") {
-    throw new Error("contestData.contest is not an object!");
-  }
-  if (typeof contestData.teams !== "object") {
-    throw new Error("contestData.teams is not an object!");
-  }
-  if (typeof contestData.verdictWithoutPenalty !== "object") {
-    throw new Error("contestData.verdictWithoutPenalty is not an object!");
-  }
-  if (!Array.isArray(contestData.submissions)) {
-    throw new Error("contestData.contest is not an array!");
-  }
+const Data = z.object({
+  contestMetadata: z.object({
+    duration: z.number(),
+    frozenTimeDuration: z.number(),
+    name: z.string(),
+    type: z.literal("ICPC"),
+  }),
+  problems: z.array(
+    z.object({
+      index: z.string(),
+      name: z.string().optional(),
+    })
+  ),
+  contestants: z.array(
+    z.object({
+      id: z.number(),
+      name: z.string(),
+      school: z.string().optional(),
+      iconName: z.string().optional(),
+    })
+  ),
+  verdicts: z.object({
+    accepted: z.array(z.string()),
+    wrongAnswerWithPenalty: z.array(z.string()),
+    wrongAnswerWithoutPenalty: z.array(z.string()),
+  }),
+  submissions: z.array(
+    z.object({
+      timeSubmitted: z.number(),
+      contestantName: z.string(),
+      problemIndex: z.string(),
+      verdict: z.string(),
+    })
+  ),
+});
 
-  //Check contestData
-  if (contestData.contest.duration == null || typeof contestData.contest.duration !== "number") {
-    throw new Error("contestData.contest.Duration is not an number!");
+export const verifyNeoSarisJSON = contestData => {
+  const result = Data.safeParse(contestData);
+  if (!result.success) {
+    console.log("Zod Result", result);
+    alert(
+      result.error.issues
+        .map(issue => {
+          return `Error ${issue.code}, for ${issue.path.join(".")} expected ${issue.number}, got ${
+            issue.received
+          }`;
+        })
+        .join("\n")
+    );
+    throw new Error("Invalid neoSaris JSON");
   }
-  if (
-    contestData.contest.frozenTime == null ||
-    typeof contestData.contest.frozenTime !== "number"
-  ) {
-    throw new Error("contestData.contest.frozenTime is not an number!");
-  }
-  if (
-    contestData.contest.numberOfProblems == null ||
-    typeof contestData.contest.numberOfProblems !== "number"
-  ) {
-    throw new Error("contestData.contest.numberOfProblems is not an number!");
-  }
-  if (
-    contestData.contest.problemsIndex == null ||
-    !Array.isArray(contestData.contest.problemsIndex)
-  ) {
-    throw new Error("contestData.contest.problemsIndex is not an array!");
-  }
-  if (contestData.contest.name == null || typeof contestData.contest.name !== "string") {
-    throw new Error("contestData.contest.name is not an string!");
-  }
-
-  //Check Teams
-  for (const [key, value] of Object.entries(contestData.teams)) {
-    if (key == null || typeof key !== "string" || key === "") {
-      throw new Error("contestData.contest.teams contain invalid data!");
-    }
-    if (value == null || typeof value !== "string" || value === "") {
-      throw new Error("contestData.contest.teams contain invalid data!");
-    }
-  }
-
-  //Check VerdictWithoutPenalty
-  for (const [key, value] of Object.entries(contestData.verdictWithoutPenalty)) {
-    if (key == null || typeof key !== "string" || key === "") {
-      throw new Error("contestData.verdictWithoutPenalty contain invalid data!");
-    }
-    if (value == null || typeof value !== "string" || value === "") {
-      throw new Error("contestData.verdictWithoutPenalty contain invalid data!");
-    }
-  }
-
-  //Check submissions
-  contestData.submissions.forEach(submission => {
-    console.log(submission);
-    if (submission == null) {
-      throw new Error(
-        `contestData.submissions contains invalid data!\nSubmission is null or undefined\n${JSON.stringify(
-          submission
-        )}`
-      );
-    }
-    if (submission.timeSubmission == null || typeof submission.timeSubmission !== "number") {
-      throw new Error(
-        `contestData.submissions contains invalid data!\nSubmission have invalid timeSubmission\n${JSON.stringify(
-          submission
-        )}`
-      );
-    }
-    if (
-      submission.teamName == null ||
-      typeof submission.teamName !== "string" ||
-      submission.teamName === ""
-    ) {
-      throw new Error(
-        `contestData.submissions contains invalid data!\nSubmission have invalid TeamName\n${JSON.stringify(
-          submission
-        )}`
-      );
-    }
-    if (
-      submission.problem == null ||
-      typeof submission.problem !== "string" ||
-      submission.teamName === ""
-    ) {
-      throw new Error(
-        `contestData.submissions contains invalid data!\nSubmission have invalid Problem\n${JSON.stringify(
-          submission
-        )}`
-      );
-    }
-    if (
-      submission.verdict == null ||
-      typeof submission.verdict !== "string" ||
-      submission.teamName === ""
-    ) {
-      throw new Error(
-        `contestData.submissions contains invalid data!\nSubmission have invalid verdict\n${JSON.stringify(
-          submission
-        )}`
-      );
-    }
-  });
+  return contestData;
 };
 
 export const getContestDataWithNeoSarisJSON = rawText => {
   let contestData = {};
   contestData = JSON.parse(rawText);
-  verifyObject(contestData);
+  console.log("neoSaris JSON, Input Object", contestData);
+  verifyNeoSarisJSON(contestData);
   return contestData;
 };

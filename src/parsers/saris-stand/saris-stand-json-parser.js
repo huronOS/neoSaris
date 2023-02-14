@@ -68,29 +68,32 @@ const verifyObject = contestData => {
 
 export const getContestDataWithSarisStandJSON = rawText => {
   const oldSarisData = JSON.parse(rawText);
+  console.log("S4RiS StanD JSON, Input Object", oldSarisData);
   verifyObject(oldSarisData);
   return {
-    contest: {
+    contestMetadata: {
       duration: 300,
-      frozenTime: 300 - oldSarisData.freezeTimeMinutesFromStart,
-      numberOfProblems: oldSarisData.problemLetters.length,
-      problemsIndex: oldSarisData.problemLetters,
+      frozenTimeDuration: 300 - oldSarisData.freezeTimeMinutesFromStart,
       name: oldSarisData.contestName,
+      type: "ICPC",
     },
-    teams: Object.fromEntries(
-      oldSarisData.contestants.map((name, idx) => {
-        return [idx, name];
-      })
-    ),
-    verdictWithoutPenalty: {
-      1: "Compilation error",
+    problems: oldSarisData.problemLetters.map(letter => {
+      return { index: letter };
+    }),
+    contestants: oldSarisData.contestants.map((name, idx) => {
+      return { id: idx, name };
+    }),
+    verdicts: {
+      accepted: ["ACCEPTED"],
+      wrongAnswerWithPenalty: ["WRONG_ANSWER"],
+      wrongAnswerWithoutPenalty: [],
     },
     submissions: oldSarisData.runs.map(run => {
       return {
-        timeSubmission: run.timeMinutesFromStart,
-        teamName: run.contestant,
-        problem: run.problemLetter,
-        verdict: run.success ? "Accepted" : "WRONG_ANSWER",
+        timeSubmitted: run.timeMinutesFromStart,
+        contestantName: run.contestant,
+        problemIndex: run.problemLetter,
+        verdict: run.success ? "ACCEPTED" : "WRONG_ANSWER",
       };
     }),
   };

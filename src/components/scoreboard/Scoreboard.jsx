@@ -10,34 +10,36 @@ class Scoreboard extends Component {
     let submissionsOnContest = [];
     submissionsData.submissions.forEach(function (submission) {
       if (
-        submission.timeSubmission <
-        submissionsData.contest.duration - submissionsData.contest.frozenTime
+        submission.timeSubmitted <
+        submissionsData.contestMetadata.duration -
+          submissionsData.contestMetadata.frozenTimeDuration
       ) {
         let result = {};
-        result.teamName = submission.teamName;
-        result.timeSubmission = submission.timeSubmission;
+        result.contestantName = submission.contestantName;
+        result.timeSubmitted = submission.timeSubmitted;
         result.verdict = submission.verdict;
-        result.problem = submission.problem;
+        result.problemIndex = submission.problemIndex;
         submissionsOnContest.push(result);
       }
     });
     return submissionsOnContest;
   }
 
-  getSubmissionsWhenFrozen(submissionsData, verdictsWithoutPenalty) {
+  getSubmissionsWhenFrozen(submissionsData) {
     let submissionsOnFrozen = [];
     submissionsData.submissions.forEach(function (submission) {
       if (
-        submission.timeSubmission >=
-          submissionsData.contest.duration - submissionsData.contest.frozenTime &&
-        submission.timeSubmission < submissionsData.contest.duration
+        submission.timeSubmitted >=
+          submissionsData.contestMetadata.duration -
+            submissionsData.contestMetadata.frozenTimeDuration &&
+        submission.timeSubmitted <= submissionsData.contestMetadata.duration
       ) {
         let result = {};
-        result.teamName = submission.teamName;
-        result.timeSubmission = submission.timeSubmission;
+        result.contestantName = submission.contestantName;
+        result.timeSubmitted = submission.timeSubmitted;
         result.verdict = submission.verdict;
-        result.problem = submission.problem;
-        if (verdictsWithoutPenalty.includes(result.verdict) === false) {
+        result.problemIndex = submission.problemIndex;
+        if (submissionsData.verdicts.wrongAnswerWithoutPenalty.includes(result.verdict) === false) {
           submissionsOnFrozen.push(result);
         }
       }
@@ -73,18 +75,21 @@ class Scoreboard extends Component {
 
     for (let h = 0; h < submissions.length; h++) {
       let submission = submissions[h];
-      if (this.state.verdictsWithoutPenalty.includes(submission.verdict) === true) {
+      //Wrong Answer without penalty
+      if (
+        this.props.submissionsData.verdicts.wrongAnswerWithoutPenalty.includes(submission.verdict)
+      ) {
         continue;
-      } else if (submission.verdict === "Accepted") {
+      } else if (this.props.submissionsData.verdicts.accepted.includes(submission.verdict)) {
         // Update accepted problem only if has not been accepted before.
         for (let i = 0; i < teams.length; i++) {
-          if (teams[i].name === submission.teamName) {
+          if (teams[i].name === submission.contestantName) {
             for (let j = 0; j < this.state.numberOfProblems; j++) {
-              let problemLetter = this.props.submissionsData.contest.problemsIndex[j];
-              if (problemLetter === submission.problem && teams[i].isProblemSolved[j] === 0) {
+              let problemLetter = this.props.submissionsData.problems[j].index;
+              if (problemLetter === submission.problemIndex && teams[i].isProblemSolved[j] === 0) {
                 teams[i].isProblemSolved[j] = 1;
-                teams[i].penaltyOnProblem[j] = submission.timeSubmission;
-                teams[i].penalty += submission.timeSubmission + teams[i].triesOnProblems[j] * 20;
+                teams[i].penaltyOnProblem[j] = submission.timeSubmitted;
+                teams[i].penalty += submission.timeSubmitted + teams[i].triesOnProblems[j] * 20;
                 teams[i].solved++;
                 if (problemHasBeenSolved[j] === 0) {
                   problemHasBeenSolved[j] = 1;
@@ -99,10 +104,10 @@ class Scoreboard extends Component {
       } else {
         // Update penalty problem only if has not been accepted before.
         for (let i = 0; i < teams.length; i++) {
-          if (teams[i].name === submission.teamName) {
+          if (teams[i].name === submission.contestantName) {
             for (let j = 0; j < this.state.numberOfProblems; j++) {
-              let problemLetter = this.props.submissionsData.contest.problemsIndex[j];
-              if (problemLetter === submission.problem && teams[i].isProblemSolved[j] === 0) {
+              let problemLetter = this.props.submissionsData.problems[j].index;
+              if (problemLetter === submission.problemIndex && teams[i].isProblemSolved[j] === 0) {
                 teams[i].triesOnProblems[j]++;
                 break;
               }
@@ -140,12 +145,12 @@ class Scoreboard extends Component {
   sortTeamsByStandingPosition() {
     let submissions = this.state.submissions;
     submissions = submissions.sort(function (a, b) {
-      return a.timeSubmission - b.timeSubmission;
+      return a.timeSubmitted - b.timeSubmitted;
     });
 
     let submissionWhenFrozen = this.state.submissionWhenFrozen;
     submissionWhenFrozen = submissionWhenFrozen.sort(function (a, b) {
-      return a.timeSubmission - b.timeSubmission;
+      return a.timeSubmitted - b.timeSubmitted;
     });
 
     this.setState({
@@ -192,12 +197,12 @@ class Scoreboard extends Component {
 
   constructor(props) {
     super(props);
-    let teams = Object.entries(props.submissionsData.teams).map((team, i) => {
+    let teams = props.submissionsData.contestants.map(contestant => {
       let triesOnProblems = [];
       let isProblemSolved = [];
       let penaltyOnProblem = [];
       let isFirstToSolve = [];
-      for (let j = 0; j < props.submissionsData.contest.numberOfProblems; j++) {
+      for (let j = 0; j < props.submissionsData.problems.length; j++) {
         isProblemSolved.push(0);
         isFirstToSolve.push(0);
         triesOnProblems.push(0);
@@ -206,8 +211,8 @@ class Scoreboard extends Component {
 
       let result = {};
       result.position = 0;
-      result.name = team[1];
-      result.id = team[0];
+      result.name = contestant.name;
+      result.id = contestant.id;
       result.penalty = 0;
       result.solved = 0;
       result.isProblemSolved = isProblemSolved;
@@ -217,23 +222,14 @@ class Scoreboard extends Component {
       return result;
     });
 
-    let verdictsWithoutPenalty = Object.entries(props.submissionsData.verdictWithoutPenalty).map(
-      verdict => {
-        return verdict[1];
-      }
-    );
-
     let submissions = this.getSubmissions(props.submissionsData);
     submissions = submissions.sort(function (a, b) {
-      return a.timeSubmission - b.timeSubmission;
+      return a.timeSubmitted - b.timeSubmitted;
     });
 
-    let submissionWhenFrozen = this.getSubmissionsWhenFrozen(
-      props.submissionsData,
-      verdictsWithoutPenalty
-    );
+    let submissionWhenFrozen = this.getSubmissionsWhenFrozen(props.submissionsData);
     submissionWhenFrozen = submissionWhenFrozen.sort(function (a, b) {
-      return a.timeSubmission - b.timeSubmission;
+      return a.timeSubmitted - b.timeSubmitted;
     });
 
     let idOfNextUserRowHighlighted = -1;
@@ -244,11 +240,11 @@ class Scoreboard extends Component {
     this.state = {
       submissions: submissions,
       submissionWhenFrozen: submissionWhenFrozen,
-      contestDuration: props.submissionsData.contest.duration,
-      contestFrozenTime: props.submissionsData.contest.frozenTime,
-      numberOfProblems: props.submissionsData.contest.numberOfProblems,
+      contestDuration: props.submissionsData.contestMetadata.duration,
+      contestFrozenTime: props.submissionsData.contestMetadata.frozenTimeDuration,
+      numberOfProblems: props.submissionsData.problems.length,
       teams: teams,
-      verdictsWithoutPenalty: verdictsWithoutPenalty,
+      verdictsWithoutPenalty: this.props.submissionsData.verdicts.wrongAnswerWithoutPenalty,
       currentFrozenSubmission: null,
       savedCurrentFrozenSubmission: null,
       savedCurrentFrozenSubmissionId: null,
@@ -256,7 +252,7 @@ class Scoreboard extends Component {
       hasUserFinishedSubmissions: false,
       isPressedKeyOn: 0,
       hasNotBeenScrolled: false,
-      teamNameToSelect: null,
+      contestantNameToSelect: null,
       standingHasChangedInLastOperation: false,
       lastPositionInStanding: {},
     };
@@ -271,7 +267,10 @@ class Scoreboard extends Component {
         } else {
           classNameForThisRow += " scoreboardTableSelectedRow";
         }
-      } else if (this.state.isPressedKeyOn === 0 && this.state.teamNameToSelect === team.name) {
+      } else if (
+        this.state.isPressedKeyOn === 0 &&
+        this.state.contestantNameToSelect === team.name
+      ) {
         if (this.state.standingHasChangedInLastOperation === false) {
           classNameForThisRow += " scoreboardTableSelectedRowFinished";
         } else {
@@ -285,7 +284,7 @@ class Scoreboard extends Component {
           index={i}
           team={team}
           numberOfProblems={this.state.numberOfProblems}
-          problemsIndex={this.props.submissionsData.contest.problemsIndex}
+          problems={this.props.submissionsData.problems}
           submissionWhenFrozen={this.state.submissionWhenFrozen}
           currentFrozenSubmission={this.state.savedCurrentFrozenSubmission}
           savedCurrentFrozenSubmission={this.state.currentFrozenSubmission}
@@ -298,7 +297,7 @@ class Scoreboard extends Component {
   getProblemId(problemLetter) {
     let problemId = -1;
     for (let h = 0; h < this.state.numberOfProblems; h++) {
-      if (this.props.submissionsData.contest.problemsIndex[h] === problemLetter) {
+      if (this.props.submissionsData.problems[h].index === problemLetter) {
         problemId = h;
       }
     }
@@ -311,13 +310,13 @@ class Scoreboard extends Component {
     let newSubmissionWhenFrozen = [];
 
     for (let i = 0; i < submissionWhenFrozen.length; i++) {
-      let problemId = this.getProblemId(submissionWhenFrozen[i].problem);
+      let problemId = this.getProblemId(submissionWhenFrozen[i].problemIndex);
       if (problemId === -1) {
         continue;
       }
       for (let j = 0; j < teams.length; j++) {
         if (
-          teams[j].name === submissionWhenFrozen[i].teamName &&
+          teams[j].name === submissionWhenFrozen[i].contestantName &&
           teams[j].isProblemSolved[problemId] === 0
         ) {
           newSubmissionWhenFrozen.push(submissionWhenFrozen[i]);
@@ -341,13 +340,13 @@ class Scoreboard extends Component {
     let submissionToRevealId = -1;
     for (let i = teams.length - 1; i >= 0 && submissionToRevealId === -1; i--) {
       for (let j = 0; j < submissionWhenFrozen.length; j++) {
-        let problemId = this.getProblemId(submissionWhenFrozen[j].problem);
+        let problemId = this.getProblemId(submissionWhenFrozen[j].problemIndex);
         if (problemId === -1) {
           continue;
         }
 
         if (
-          submissionWhenFrozen[j].teamName === teams[i].name &&
+          submissionWhenFrozen[j].contestantName === teams[i].name &&
           idOfNextUserRowHighlighted === i
         ) {
           submissionToRevealId = j;
@@ -385,20 +384,20 @@ class Scoreboard extends Component {
         this.state.idOfNextUserRowHighlighted >= 0 &&
         this.standingRemainsStatic() === true
       ) {
-        let teamNameToSelect = this.state.teams[this.state.idOfNextUserRowHighlighted].name;
+        let contestantNameToSelect = this.state.teams[this.state.idOfNextUserRowHighlighted].name;
         this.setState({
-          teamNameToSelect: teamNameToSelect,
+          contestantNameToSelect: contestantNameToSelect,
           standingHasChangedInLastOperation: false,
         });
       } else if (
         this.state.idOfNextUserRowHighlighted >= 0 &&
         this.standingRemainsStatic() === false
       ) {
-        let teamNameToSelect =
+        let contestantNameToSelect =
           this.state.lastPositionInStanding[this.state.idOfNextUserRowHighlighted];
         this.updatePositionOfStandings();
         this.setState({
-          teamNameToSelect: teamNameToSelect,
+          contestantNameToSelect: contestantNameToSelect,
           standingHasChangedInLastOperation: true,
         });
       }
@@ -468,7 +467,7 @@ class Scoreboard extends Component {
       hasUserFinishedSubmissions: false,
       isPressedKeyOn: 0,
       hasNotBeenScrolled: false,
-      teamNameToSelect: null,
+      contestantNameToSelect: null,
       standingHasChangedInLastOperation: false,
     });
   }
@@ -476,13 +475,13 @@ class Scoreboard extends Component {
   keyDownHandler(e) {
     switch (e.keyCode) {
       case 78: //(N)ext Submission
-        if (this.state.isPressedKeyOn === 0 && this.state.teamNameToSelect !== null) {
+        if (this.state.isPressedKeyOn === 0 && this.state.contestantNameToSelect !== null) {
           let idOfNextUserRowHighlighted = this.state.idOfNextUserRowHighlighted;
           if (this.state.standingHasChangedInLastOperation === false) {
             idOfNextUserRowHighlighted = Math.max(idOfNextUserRowHighlighted - 1, -1);
           }
           this.setState({
-            teamNameToSelect: null,
+            contestantNameToSelect: null,
             standingHasChangedInLastOperation: false,
             idOfNextUserRowHighlighted: idOfNextUserRowHighlighted,
           });
@@ -544,7 +543,7 @@ class Scoreboard extends Component {
         tabIndex="0"
         onKeyDown={e => this.keyDownHandler(e)}
       >
-        <Header title={this.props.submissionsData.contest.name} />
+        <Header title={this.props.submissionsData.contestMetadata.name} />
         <div className="score-FlipMove" id="score-FlipMove">
           <FlipMove ref="flipMove" staggerDurationBy="10" duration={900}>
             {this.getScoreboard()}

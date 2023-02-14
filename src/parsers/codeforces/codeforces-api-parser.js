@@ -60,17 +60,17 @@ export const getSubmissions = async ({
       throw new Error(`Error while making codeforces API request:\n${error.message}`);
     });
 
-  console.log("Response", response);
+  console.log("Codeforces API, Submissions Response", response);
 
   return response.result
     .filter(submission => Math.floor(submission.relativeTimeSeconds / 60) <= duration)
     .map(submission => {
       return {
-        timeSubmission: Math.floor(submission.relativeTimeSeconds / 60),
-        teamName:
+        timeSubmitted: Math.floor(submission.relativeTimeSeconds / 60),
+        contestantName:
           submission.author.teamName || submission.author.members[0].handle || "NO_TEAM_NAME",
-        problem: submission.problem.index,
-        verdict: submission.verdict === "OK" ? "Accepted" : "WRONG",
+        problemIndex: submission.problem.index,
+        verdict: submission.verdict,
       };
     });
 };
@@ -101,23 +101,24 @@ export const getContestData = async ({
       throw new Error(`Error while making codeforces API request:\n${error.message}`);
     });
 
-  console.log("contest request", response);
+  console.log("Codeforces API, Contest Information Response", response);
 
   return {
     contestData: {
       duration: Math.floor(response.result.contest.durationSeconds / 60),
-      frozenTime: frozenTime,
-      numberOfProblems: response.result.problems.length,
-      problemsIndex: response.result.problems.map(problem => {
-        return problem.index;
-      }),
+      frozenTimeDuration: frozenTime,
       name: response.result.contest.name,
+      type: response.result.contest.type,
     },
-    teams: Object.fromEntries(
-      response.result.rows.map((row, index) => {
-        return [index, row.party.teamName || row.party.members[0].handle || "NO_TEAM_NAME"];
-      })
-    ),
+    problems: response.result.problems.map(problem => {
+      return { index: problem.index, name: problem.name };
+    }),
+    contestants: response.result.rows.map((row, index) => {
+      return {
+        id: index,
+        name: row.party.teamName || row.party.members[0].handle || `NO_TEAM_NAME_${id}`,
+      };
+    }),
   };
 };
 
@@ -146,10 +147,27 @@ export const getContestDataWithCodeforcesAPI = async ({
     apiSecret,
   });
   const JSONobject = {
-    contest: contestData.contestData,
-    teams: contestData.teams,
-    verdictWithoutPenalty: {
-      1: "Compilation error",
+    contestMetadata: contestData.contestData,
+    problems: contestData.problems,
+    contestants: contestData.contestants,
+    verdicts: {
+      accepted: ["OK", "PARTIAL"],
+      wrongAnswerWithPenalty: [
+        "FAILED",
+        "RUNTIME_ERROR",
+        "WRONG_ANSWER",
+        "PRESENTATION_ERROR",
+        "TIME_LIMIT_EXCEEDED",
+        "MEMORY_LIMIT_EXCEEDED",
+        "IDLENESS_LIMIT_EXCEEDED",
+        "SECURITY_VIOLATED",
+        "CRASHED",
+        "INPUT_PREPARATION_CRASHED",
+        "CHALLENGED",
+        "REJECTED",
+        "SKIPPED",
+      ],
+      wrongAnswerWithoutPenalty: ["COMPILATION_ERROR"],
     },
     submissions: submissions,
   };

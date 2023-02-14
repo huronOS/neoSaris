@@ -1,36 +1,49 @@
 {
-  "contest": {
+  "contestMetadata": {
     "duration": 300,
-    "frozenTime": 60,
-    "numberOfProblems": 10,
-    "problemsIndex": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"],
-    "name": "Trial Contest"
+    "frozenTimeDuration": 60,
+    "name": "Trial Contest",
+    "type": "ICPC"
   },
-  "teams": {
-    "1": "Red Panda",
-    "2": "Moscow IPT 1",
-    "3": "Moscow IPT Jinotega"
-  },
-  "verdictWithoutPenalty": {
-    "1": "Compilation error"
+  "problems": [
+    { "index": "A" },
+    { "index": "B" },
+    { "index": "C" },
+    { "index": "D" },
+    { "index": "E" },
+    { "index": "F" },
+    { "index": "G" },
+    { "index": "H" },
+    { "index": "I" },
+    { "index": "J" }
+  ],
+  "contestants": [
+    { "id": 1, "name": "Red Panda" },
+    { "id": 2, "name": "Moscow IPT 1" },
+    { "id": 3, "name": "Moscow IPT Jinotega" }
+  ],
+  "verdicts": {
+    "accepted": ["Accepted"],
+    "wrongAnswerWithPenalty": ["Wrong answer"],
+    "wrongAnswerWithoutPenalty": ["Compilation error"]
   },
   "submissions": [
     {
-      "timeSubmission": 47,
-      "teamName": "Moscow IPT Jinotega",
-      "problem": "A",
+      "timeSubmitted": 47,
+      "contestantName": "Moscow IPT Jinotega",
+      "problemIndex": "A",
       "verdict": "Accepted"
     },
     {
-      "timeSubmission": 260,
-      "teamName": "Moscow IPT 1",
-      "problem": "H",
+      "timeSubmitted": 260,
+      "contestantName": "Moscow IPT 1",
+      "problemIndex": "H",
       "verdict": "Wrong answer"
     },
     {
-      "timeSubmission": 270,
-      "teamName": "Moscow IPT 1",
-      "problem": "A",
+      "timeSubmitted": 270,
+      "contestantName": "Moscow IPT 1",
+      "problemIndex": "A",
       "verdict": "Accepted"
     }
   ]

@@ -43,24 +43,22 @@ export const getContestData = async (frozenTime, contestId, numberOfProblems, co
   return {
     contestData: {
       duration: duration,
-      frozenTime: frozenTime,
-      numberOfProblems: numberOfProblems,
-      problemsIndex: problems,
+      frozenTimeDuration: frozenTime,
       name: response.title,
+      type: "ICPC",
     },
-    teams: Object.fromEntries(
-      Object.entries(response.participants).map((value, idx) => {
-        return [idx, value[1][0]];
-      })
-    ),
+    problems: problems,
+    contestants: Object.entries(response.participants).map((value, idx) => {
+      return { id: idx, name: value[1][0] };
+    }),
     submissions: response.submissions
       .filter(submission => Math.floor(submission[3] / 60) <= duration)
       .map(submission => {
         return {
-          timeSubmission: Math.floor(submission[3] / 60),
-          teamName: teamName.get(submission[0].toString()),
-          problem: problems[submission[1]],
-          verdict: submission[2] === 1 ? "Accepted" : "WRONG",
+          timeSubmitted: Math.floor(submission[3] / 60),
+          contestantName: teamName.get(submission[0].toString()),
+          problemIndex: problems[submission[1]],
+          verdict: submission[2] === 1 ? "ACCEPTED" : "WRONG_ANSWER",
         };
       }),
   };
@@ -74,10 +72,15 @@ export const getContestDataWithVjudgeAPI = async (
 ) => {
   const contestData = await getContestData(frozenTime, contestId, numberOfProblems, cookie);
   const JSONobject = {
-    contest: contestData.contestData,
-    teams: contestData.teams,
-    verdictWithoutPenalty: {
-      1: "Compilation error",
+    contestMetadata: contestData.contestData,
+    problems: contestData.problems.map(letter => {
+      return { index: letter };
+    }),
+    contestants: contestData.contestants,
+    verdicts: {
+      accepted: ["ACCEPTED"],
+      wrongAnswerWithPenalty: ["WRONG_ANSWER"],
+      wrongAnswerWithoutPenalty: [],
     },
     submissions: contestData.submissions,
   };

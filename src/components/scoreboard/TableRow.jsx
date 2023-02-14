@@ -20,8 +20,9 @@ class TableRow extends Component {
 
   numberOfTriesOnAcceptedProblem(problemLetter) {
     let team = this.props.team;
+    return problemLetter;
     for (let i = 0; i < this.props.numberOfProblems; i++) {
-      if (this.props.problemsIndex === problemLetter) {
+      if (this.props.problems[i].index === problemLetter) {
         return team.triesOnProblems[i] + 1 + " - " + team.penaltyOnProblem[i];
       }
     }
@@ -31,7 +32,7 @@ class TableRow extends Component {
   numberOfTriesOnTriedProblem(problemLetter) {
     let team = this.props.team;
     for (let i = 0; i < this.props.numberOfProblems; i++) {
-      if (this.props.problemsIndex[i] === problemLetter) {
+      if (this.props.problems[i].index === problemLetter) {
         return team.triesOnProblems[i] + " - " + team.penaltyOnProblem[i];
       }
     }
@@ -49,16 +50,16 @@ class TableRow extends Component {
       return problemLetter;
     }
     for (let i = 0; i < this.props.numberOfProblems; i++) {
-      if (this.props.problemsIndex[i] === problemLetter) {
+      if (this.props.problems[i].index === problemLetter) {
         if (team.isProblemSolved[i] !== 0) {
           return problemLetter;
         }
         for (let j = 0; j < submissionWhenFrozen.length; j++) {
           if (
-            submissionWhenFrozen[j].teamName === team.name &&
-            submissionWhenFrozen[j].problem === problemLetter
+            submissionWhenFrozen[j].contestantName === team.name &&
+            submissionWhenFrozen[j].problemIndex === problemLetter
           ) {
-            return team.triesOnProblems[i] + 1 + " - " + submissionWhenFrozen[j].timeSubmission;
+            return team.triesOnProblems[i] + 1 + " - " + submissionWhenFrozen[j].timeSubmitted;
           }
         }
       }
@@ -69,7 +70,7 @@ class TableRow extends Component {
   hasSolvedProblem(problemLetter) {
     let team = this.props.team;
     for (let i = 0; i < this.props.numberOfProblems; i++) {
-      if (this.props.problemsIndex[i] === problemLetter) {
+      if (this.props.problems[i].index === problemLetter) {
         if (team.isProblemSolved[i] === 0) {
           return false;
         } else {
@@ -83,7 +84,7 @@ class TableRow extends Component {
   hasTriedProblem(problemLetter) {
     let team = this.props.team;
     for (let i = 0; i < this.props.numberOfProblems; i++) {
-      if (this.props.problemsIndex[i] === problemLetter) {
+      if (this.props.problems[i].index === problemLetter) {
         if (team.triesOnProblems[i] !== 0) {
           return true;
         } else {
@@ -97,7 +98,7 @@ class TableRow extends Component {
   isFirstToSolve(problemLetter) {
     let team = this.props.team;
     for (let i = 0; i < this.props.numberOfProblems; i++) {
-      if (this.props.problemsIndex[i] === problemLetter) {
+      if (this.props.problems[i].index === problemLetter) {
         if (team.isFirstToSolve[i] !== 0) {
           return true;
         } else {
@@ -115,14 +116,14 @@ class TableRow extends Component {
       return false;
     }
     for (let i = 0; i < this.props.numberOfProblems; i++) {
-      if (this.props.problemsIndex[i] === problemLetter) {
+      if (this.props.problems[i].index === problemLetter) {
         if (team.isProblemSolved[i] !== 0) {
           return false;
         }
         for (let j = 0; j < submissionWhenFrozen.length; j++) {
           if (
-            submissionWhenFrozen[j].teamName === team.name &&
-            submissionWhenFrozen[j].problem === problemLetter
+            submissionWhenFrozen[j].contestantName === team.name &&
+            submissionWhenFrozen[j].problemIndex === problemLetter
           ) {
             return true;
           }
@@ -143,13 +144,13 @@ class TableRow extends Component {
       return false;
     }
     for (let i = 0; i < this.props.numberOfProblems; i++) {
-      if (this.props.problemsIndex[i] === problemLetter) {
+      if (this.props.problems[i].index === problemLetter) {
         if (team.isProblemSolved[i] !== 0) {
           return false;
         }
         if (
-          savedCurrentFrozenSubmission.teamName === team.name &&
-          savedCurrentFrozenSubmission.problem === problemLetter
+          savedCurrentFrozenSubmission.contestantName === team.name &&
+          savedCurrentFrozenSubmission.problemIndex === problemLetter
         ) {
           return true;
         }
@@ -163,8 +164,8 @@ class TableRow extends Component {
       return false;
     }
     if (
-      this.props.currentFrozenSubmission.teamName === this.props.team.name &&
-      problemLetter === this.props.currentFrozenSubmission.problem
+      this.props.currentFrozenSubmission.contestantName === this.props.team.name &&
+      problemLetter === this.props.currentFrozenSubmission.problemIndex
     ) {
       return true;
     }
@@ -180,36 +181,36 @@ class TableRow extends Component {
   }
 
   render() {
-    let problems = this.props.problemsIndex;
+    let problems = this.props.problems;
 
     let sizeProblem = 84.0 / this.props.numberOfProblems;
     let widthPercentage = sizeProblem + "%";
 
-    let problemColumns = problems.map(problemLetter => {
+    let problemColumns = problems.map(problem => {
       let verdict = "NoAttempted";
-      let textToShowInProblem = problemLetter;
+      let textToShowInProblem = problem.index;
 
-      if (this.hasSolvedProblem(problemLetter) === true) {
-        if (this.isFirstToSolve(problemLetter) === true) {
+      if (this.hasSolvedProblem(problem.index) === true) {
+        if (this.isFirstToSolve(problem.index) === true) {
           verdict = "FirstAccepted";
         } else {
           verdict = "Accepted";
         }
-        textToShowInProblem = this.numberOfTriesOnAcceptedProblem(problemLetter);
-      } else if (this.isACurrentFrozenProblem(problemLetter) === true) {
+        textToShowInProblem = this.numberOfTriesOnAcceptedProblem(problem.index);
+      } else if (this.isACurrentFrozenProblem(problem.index) === true) {
         verdict = "Resolving";
-        textToShowInProblem = this.numberOfTriesOnFrozenProblem(problemLetter);
-      } else if (this.isAPendingProblem(problemLetter) === true) {
+        textToShowInProblem = this.numberOfTriesOnFrozenProblem(problem.index);
+      } else if (this.isAPendingProblem(problem.index) === true) {
         verdict = "Pending";
-        textToShowInProblem = this.numberOfTriesOnFrozenProblem(problemLetter);
-      } else if (this.hasTriedProblem(problemLetter) === true) {
+        textToShowInProblem = this.numberOfTriesOnFrozenProblem(problem.index);
+      } else if (this.hasTriedProblem(problem.index) === true) {
         verdict = "WrongAnswer";
-        textToShowInProblem = this.numberOfTriesOnTriedProblem(problemLetter);
+        textToShowInProblem = this.numberOfTriesOnTriedProblem(problem.index);
       }
 
       return {
-        key: problemLetter,
-        letter: problemLetter,
+        key: problem.index,
+        index: problem.index,
         width: widthPercentage,
         problemStatus: verdict,
         displayText: textToShowInProblem,
@@ -232,7 +233,7 @@ class TableRow extends Component {
         {/*Name+Problems*/}
         <div className="tableRow-TeamData">
           {/*ContestantName*/}
-          <span className="tableRox-TeamName">{this.props.team.name}</span>
+          <span className="tableRox-ContestantName">{this.props.team.name}</span>
           {/*Problem Boxes*/}
           <div className="tableRox-Problems">
             {problemColumns.map(problemData => {
