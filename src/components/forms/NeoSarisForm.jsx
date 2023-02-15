@@ -35,7 +35,7 @@ const NeoSarisForm = ({ setContestData, setStep }) => {
       <fieldset className="form-field">
         <label>
           To format the raw JSON object, follow{" "}
-          <a href="https://github.com/equetzal/SarisResolver/blob/main/public/example.json">this</a>{" "}
+          <a href="https://github.com/equetzal/neoSaris/blob/main/public/example.json">this</a>{" "}
           example.
         </label>
       </fieldset>

@@ -29,7 +29,7 @@ const Introduction = () => {
       <p className="introduction-description">
         neoSaris, is an standing resolver used to reveal what happens on the frozen time of an
         ICPC-like competition. You can check the source code of this project on{" "}
-        <a href="https://github.com/equetzal/SarisResolver">github</a>.
+        <a href="https://github.com/equetzal/neoSaris">github</a>.
       </p>
       <hr className="introduction-separator" height="1px" width="50%" />
     </>

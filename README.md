@@ -1,6 +1,6 @@
 # neoSaris - ICPC Standings Resolver
 
-![Example image of Saris by Club Algoritmia ESCOM](public/neoSarisExample.png)
+![Example image of neoSaris](public/neoSarisExample.png)
 
 The code of this repository contains a react app that can be used to simulate what happens in the frozen time during a competitive programming competition with the ICPC standard rules.
 
@@ -11,7 +11,7 @@ This repository, is a hard-fork of the original (and abandoned) [SarisByAlgoritm
 
 ## How to Use
 
-This tool is available on **[saris.huronos.org](https://saris.huronos.org)** thanks to the huronOS project who is providing the hosting.
+This tool is available on **[neosaris.huronos.org](https://neosaris.huronos.org)** thanks to the [huronOS project](https://huronos.org) who is providing the hosting.
 You can either use it online as a web client, or you can install it locally following the [installation](#Installation) steps.
 
 ### Commands
@@ -39,11 +39,11 @@ Currently, neoSaris uses a data format described on the following subsection. Bu
 - Codeforces
 - vJudge
 
-So that saris automatically parse data (from API or another data syntax) to the required Saris Raw Data format.
+So that neoSaris automatically parses that data (from API or another data syntax) to the required neoSaris JSON input format.
 
 ### neoSaris JSON
 
-The resolver needs a JSON input format that follows object model of [example.json](https://github.com/equetzal/SarisResolver/tree/public/example.json):
+The resolver needs a JSON input format that follows [this](https://github.com/equetzal/neoSaris/blob/main/src/types/contestDataTypes.ts) object model, and here is an [example](https://github.com/equetzal/SarisResolver/tree/public/example.json) of a valid object in JSON notation:
 
 ```json
 {
@@ -98,22 +98,22 @@ The resolver needs a JSON input format that follows object model of [example.jso
 }
 ```
 
-**Contest:** The Contest part contains information about the competition such as duration, frozen time, the number of problems and the name of the contest.
+**contestMetadata:** The `contestMetadata` contains information about the competition such as duration, frozen time and the name of the contest.
 
-**Teams:** In the team’s part the key value is the identifier of the team and it is followed by the name of the team. The key value must be unique for each team.
+**problems:** The `problems` section describes all the important information about the problems, mainly its index letter, and optionally its name.
+
+**contestants:** In the `contestants` part the id is the identifier of the contestant and it is followed by the name of the contestant.
 
 <!-- and if you want show an image related with that team, you can copy the image to [src/university_logos](https://github.com/galloska/SarisByClubAlgoritmiaESCOM/tree/master/src/university_logos) and rename it to `key.png` where 'key' is the key value in the JSON file for that team.
 -->
 
-**VerdictWithoutPenalty:** This includes those verdicts that does not affect penalty time for teams. For example, in some contest a runtime error adds penalty time and in some others this verdict is not considered for a penalty.
+**verdicts:** This section will allow you to specify the verdicts of you _Online Judge_ and specify which submissions will be considered _Accepted_, _WrongAnswer_ or _WrongAnswerWithoutPenalty_.
 
-**Submissions:** An array containing the submissions of the contest. Each submission must have the time submission in minutes, the team that submitted the solution, the problem that was submitted and the verdict.
-
-Verdicts can be anything you want except the Accepted verdict that must be **Accepted**.
+**submissions:** An array containing the submissions of the contest. Each submission must have the time submission in minutes, the contestant that submitted the solution, the problem that was submitted and the verdict.
 
 ### Codeforces
 
-Currently, neoSaris is integrated with the [Codeforces API](https://codeforces.com/apiHelp). This integration will let you access the contests API and parse its responses to the Saris format, allowing you to unfreeze the standing.
+Currently, neoSaris is integrated with the [Codeforces API](https://codeforces.com/apiHelp). This integration will let you access the contests API and parse its responses to the Saris format, allowing you to unfreeze the standing automatically.
 
 #### Public Contests
 
@@ -145,7 +145,7 @@ Unfortunately vJudge API does not provide an authentication method, it requires 
 
 To do this, please:
 
-1. Download the repo as `git clone https://github.com/equetzal/SarisResolver`
+1. Download the repo as `git clone https://github.com/equetzal/neoSaris`
 2. Make sure to be logged in vJudge, and to be manager of the private contest you want to unfreeze.
 3. Go to the rank page of the contest, press `ctrl + shift + i` to open the page inspector.
 4. Open the network tab and reload the page.
@@ -162,32 +162,33 @@ To do this, please:
 
 ### Other OJ
 
-Feel free to add parsers to the [src/parsers](src/parsers/) directory to then be integrated with the React App. Here you can add static parsers (from text to the required JSON format), or API parsers that integrates Saris directly to another online judge.
+Feel free to add parsers to the [src/parsers](src/parsers/) directory to then be integrated with the React App. Here you can add static parsers (from text to the required JSON format), or API parsers that integrates neeoSaris directly to another online judge.
 
 ### Local Installation
 
 To run this tool first you need to get the repository. You can either download the source code in your computer or run the following command:
 
-`git clone https://github.com/equetzal/SarisResolver.git`
+`git clone https://github.com/equetzal/neoSaris.git`
 
 Once you have downloaded the source code you need to install the dependencies of the project with the following command on the root folder of this project:
 
 `npm install`
 
-Once you have run this command, just type next command in the root folder of the project and start using Saris:
+Once you have run this command, just type next command in the root folder of the project and start using neoSaris:
 
-`npm start`
+`npm run dev`
 
 ### Contribute!
 
 This project is open for contributions, currently there's some goals planned:
 
 - [x] Support Codeforces API
-- [ ] Fully refactor the project to use React functional components
+- [x] Support S4RiS StanD JSON
+- [x] Support vJudge API to unfroze standings
+- [ ] Add [CCS API](https://ccs-specs.icpc.io) compatibility (DOMjudge, Kattis, PC^2, ICPC CDS)
+- [ ] Support BOCA for LATAM competitions.
+- [ ] Refactor missing class components to functional components
 - [ ] Migrate the project to Typescript
 - [ ] Implement (F)ast Submission key command
 - [ ] Implement (A)utomatic Reveal key command
 - [ ] Support IOI-like contests (partial scoring)
-- [x] Support vJudge API to unfroze standings
-- [ ] Support BOCA for LATAM competitions.
-- [ ] Add [CCS API](https://ccs-specs.icpc.io) compatibility (DOMjudge, Kattis, PC^2, ICPC CDS)
