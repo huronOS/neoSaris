@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import Scoreboard from "./components/scoreboard/Scoreboard";
-import WelcomeForm from "./components/WelcomeForm";
-import Spinner from "./components/misc/Spinner";
-import { verifyNeoSarisJSON } from "./parsers/neosaris/neosaris-json-parser";
+import Scoreboard from "./scoreboard/Scoreboard";
+import WelcomeForm from "./Welcome";
+import Spinner from "./misc/Spinner";
+import { verifyNeoSarisJSON } from "../parsers/neosaris/neosaris-json-parser";
 import "./App.css";
 
-function App() {
+const App = () => {
   const [step, setStep] = useState("form");
   const [contestData, setContestData] = useState({});
   const setContestDataWithLog = contestData => {
@@ -21,6 +21,6 @@ function App() {
       {step === "resolver" && <Scoreboard submissionsData={contestData} />}
     </div>
   );
-}
+};
 
 export default App;

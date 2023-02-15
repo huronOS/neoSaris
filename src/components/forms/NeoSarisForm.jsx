@@ -18,35 +18,32 @@ const NeoSarisForm = ({ setContestData, setStep }) => {
   };
 
   return (
-    <div>
-      <form className="all-forms" onSubmit={e => handleSubmit(e)}>
-        <p>
-          <label>Please, paste your JSON data object:</label>
-        </p>
+    <form className="form-box" onSubmit={e => handleSubmit(e)}>
+      <fieldset className="form-field">
+        <label>Please, paste your JSON data object:</label>
         <textarea
           className="form-raw-data-json-box"
           id="neoSarisJSON"
           name="neoSarisJSON"
-          rows="4"
-          cols="50"
           value={neoSarisJSON}
           onChange={e => {
             setNeoSarisJSON(e.target.value);
           }}
         />
-        <br />
-        <p>
-          <label>
-            To format the raw JSON object, follow{" "}
-            <a href="https://github.com/equetzal/SarisResolver/blob/main/public/example.json">
-              this
-            </a>{" "}
-            example.
-          </label>
-        </p>
+      </fieldset>
+
+      <fieldset className="form-field">
+        <label>
+          To format the raw JSON object, follow{" "}
+          <a href="https://github.com/equetzal/SarisResolver/blob/main/public/example.json">this</a>{" "}
+          example.
+        </label>
+      </fieldset>
+
+      <fieldset className="form-field">
         <input type="submit" value="Start Dancing" />
-      </form>
-    </div>
+      </fieldset>
+    </form>
   );
 };
 

@@ -1,0 +1,237 @@
+.form-field {
+  padding: 0.2rem 3rem 0.2rem 3rem;
+  border: 0;
+}
+
+.form-field label {
+  color: darkslategray;
+  font-family: "Segoe UI";
+}
+
+.form-field input[type="text"] {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 0.2rem;
+  padding: 0.5rem 0.7rem;
+  margin: 0.1rem 0;
+  box-sizing: border-box;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+}
+
+.form-field input[type="number"] {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 0.2rem;
+  padding: 0.5rem 0.7rem;
+  margin: 0.1rem 0;
+  box-sizing: border-box;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+}
+
+.form-field input[type="submit"] {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 0.2rem;
+  padding: 0.5rem 0.7rem;
+  margin: 0.1rem 0;
+  color: white;
+  box-sizing: border-box;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+  background-color: #1f7422;
+  cursor: pointer;
+}
+
+.form-field input[type="submit"]:hover {
+  background-color: #1a611e;
+}
+
+.form-field select {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 0.2rem;
+  padding: 0.5rem 0.7rem;
+  margin: 0.1rem 0;
+  box-sizing: border-box;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+}
+
+.form-field select option {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 0.2rem;
+  padding: 0.5rem 0.7rem;
+  margin: 0.1rem 0;
+  box-sizing: border-box;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+  transition: all 0.5s;
+}
+
+.form-field textarea {
+  width: 100%;
+  height: 6rem;
+  border: 1px solid #ccc;
+  border-radius: 0.2rem;
+  padding: 0.5rem 0.7rem;
+  margin: 0.1rem 0;
+  box-sizing: border-box;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+  width: 100%;
+}
+
+.form-switch {
+  width: 100%;
+  margin: 0.3rem 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 17px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #9b9b9b;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 13px;
+  width: 13px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #4caf50;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #45a049;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(13px);
+  -ms-transform: translateX(13px);
+  transform: translateX(13px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 17px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/*
+.welcome-data-source-picker {
+  background-color: red;
+}
+
+.welcome-form {
+  order: 2;
+  background-color: blue;
+}
+
+.text-white {
+  color: white;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  width: 20rem;
+}
+
+.saris-title {
+  margin: 0;
+  padding: 0.5rem;
+  color: white;
+  z-index: 0;
+}
+
+.saris-description {
+  max-width: 50rem;
+  text-align: center;
+}
+
+.all-forms {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.form-raw-data-json-box {
+  width: 70%;
+  max-width: 40rem;
+  height: 10rem;
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 4px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="number"],
+select {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 4px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  width: 100%;
+  background-color: #4caf50;
+  color: white;
+  padding: 7px 10px;
+  margin: 4px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+
+*/

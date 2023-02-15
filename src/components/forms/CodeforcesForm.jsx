@@ -32,8 +32,8 @@ const CodeforcesForm = ({ setContestData, setStep }) => {
   };
 
   return (
-    <div>
-      <form className="all-forms" onSubmit={e => handleSubmit(e)}>
+    <form className="form-box" onSubmit={e => handleSubmit(e)}>
+      <fieldset className="form-field">
         <label>Frozen Time (duration in minutes):</label>
         <input
           type="number"
@@ -41,7 +41,9 @@ const CodeforcesForm = ({ setContestData, setStep }) => {
           required
           onChange={e => setFrozenTime(parseInt(e.target.value))}
         />
+      </fieldset>
 
+      <fieldset className="form-field">
         <label>Contest ID:</label>
         <input
           type="text"
@@ -49,42 +51,51 @@ const CodeforcesForm = ({ setContestData, setStep }) => {
           required
           onChange={e => setContestId(e.target.value)}
         />
+      </fieldset>
 
+      <fieldset className="form-field form-switch">
         <label>Is Private Contest? </label>
         <label className="switch">
           <input type="checkbox" onChange={e => setIsPrivate(e.target.checked)} />
           <span className="slider round"></span>
         </label>
+      </fieldset>
 
-        {isPrivate && <label>Group ID:</label>}
-        {isPrivate && (
+      {isPrivate && (
+        <fieldset className="form-field">
+          <label>Group ID:</label>
           <input
             type="text"
             name="cf_group_id"
             required
             onChange={e => setGroupId(e.target.value)}
           />
-        )}
+        </fieldset>
+      )}
 
-        {isPrivate && <label>API Key:</label>}
-        {isPrivate && (
+      {isPrivate && (
+        <fieldset className="form-field">
+          <label>API Key:</label>
           <input type="text" name="cf_api_key" required onChange={e => setApiKey(e.target.value)} />
-        )}
+        </fieldset>
+      )}
 
-        {isPrivate && <label>API Secret:</label>}
-        {isPrivate && (
+      {isPrivate && (
+        <fieldset className="form-field">
+          <label>API Secret:</label>
           <input
             type="text"
             name="cf_api_secret"
             required
             onChange={e => setApiSecret(e.target.value)}
           />
-        )}
+        </fieldset>
+      )}
 
-        <br />
+      <fieldset className="form-field">
         <input type="submit" value="Start Dancing" />
-      </form>
-    </div>
+      </fieldset>
+    </form>
   );
 };
 

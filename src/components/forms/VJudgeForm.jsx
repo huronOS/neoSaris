@@ -20,8 +20,8 @@ const VjudgeForm = ({ setContestData, setStep }) => {
   };
 
   return (
-    <div>
-      <form className="all-forms" onSubmit={e => handleSubmit(e)}>
+    <form className="form-box" onSubmit={e => handleSubmit(e)}>
+      <fieldset className="form-field">
         <label>Frozen Time (duration in minutes):</label>
         <input
           type="number"
@@ -29,7 +29,9 @@ const VjudgeForm = ({ setContestData, setStep }) => {
           required
           onChange={e => setFrozenTime(parseInt(e.target.value))}
         />
+      </fieldset>
 
+      <fieldset className="form-field">
         <label>Number of Problems:</label>
         <input
           type="number"
@@ -37,7 +39,9 @@ const VjudgeForm = ({ setContestData, setStep }) => {
           required
           onChange={e => setNumberOfProblems(parseInt(e.target.value))}
         />
+      </fieldset>
 
+      <fieldset className="form-field">
         <label>Contest ID:</label>
         <input
           type="text"
@@ -45,11 +49,12 @@ const VjudgeForm = ({ setContestData, setStep }) => {
           required
           onChange={e => setContestId(e.target.value)}
         />
+      </fieldset>
 
-        <br />
+      <fieldset className="form-field">
         <input type="submit" value="Start Dancing" />
-      </form>
-    </div>
+      </fieldset>
+    </form>
   );
 };
 
