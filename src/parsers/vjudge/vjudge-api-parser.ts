@@ -1,4 +1,5 @@
 import axios from "axios";
+import { ContestData } from "../../types/contestDataTypes";
 
 const buildParams = () => {
   return {
@@ -18,7 +19,7 @@ export const getContestData = async (frozenTime, contestId, numberOfProblems) =>
       method: "GET",
       url: `https://vjudge.net/contest/rank/single/${contestId}`,
       headers: buildHeaders(),
-      params: buildParams(contestId),
+      params: buildParams(),
     })
     .catch(error => {
       throw new Error(`Error while making vJudge API request:\n${error.message}`);
@@ -34,8 +35,8 @@ export const getContestData = async (frozenTime, contestId, numberOfProblems) =>
   const problems = [...Array(numberOfProblems).keys()].map(idx => {
     return String.fromCharCode("A".charCodeAt(0) + idx);
   });
-  const teamName = new Map();
-  Object.entries(response.participants).forEach((value, idx) => {
+  const teamName = new Map<string, string>();
+  Object.entries(response.participants).forEach((value: any, idx) => {
     teamName.set(value[0], value[1][0]);
   });
 
@@ -47,7 +48,7 @@ export const getContestData = async (frozenTime, contestId, numberOfProblems) =>
       type: "ICPC",
     },
     problems: problems,
-    contestants: Object.entries(response.participants).map((value, idx) => {
+    contestants: Object.entries(response.participants).map((value: any, idx) => {
       return { id: idx, name: value[1][0] };
     }),
     submissions: response.submissions
@@ -65,7 +66,7 @@ export const getContestData = async (frozenTime, contestId, numberOfProblems) =>
 
 export const getContestDataWithVjudgeAPI = async (frozenTime, contestId, numberOfProblems) => {
   const contestData = await getContestData(frozenTime, contestId, numberOfProblems);
-  const JSONobject = {
+  const JSONobject: ContestData = {
     contestMetadata: contestData.contestData,
     contestants: contestData.contestants,
     problems: contestData.problems.map(letter => {
@@ -77,6 +78,6 @@ export const getContestDataWithVjudgeAPI = async (frozenTime, contestId, numberO
       wrongAnswerWithoutPenalty: [],
     },
     submissions: contestData.submissions,
-  };
+  } as ContestData;
   return JSONobject;
 };
