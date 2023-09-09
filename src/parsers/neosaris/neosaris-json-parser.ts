@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { ContestData } from "../../types/contestDataTypes";
 
 const Data = z.object({
   contestMetadata: z.object({
@@ -36,28 +37,25 @@ const Data = z.object({
   ),
 });
 
-export const verifyNeoSarisJSON = contestData => {
+export function verifyNeoSarisJSON(contestData: ContestData) {
   const result = Data.safeParse(contestData);
   if (!result.success) {
     console.log("Zod Result", result);
     alert(
       result.error.issues
         .map(issue => {
-          return `Error ${issue.code}, for ${issue.path.join(".")} expected ${issue.number}, got ${
-            issue.received
-          }`;
+          return `Error ${issue.code}, for ${issue.path.join(".")}`;
         })
         .join("\n")
     );
     throw new Error("Invalid neoSaris JSON");
   }
   return contestData;
-};
+}
 
-export const getContestDataWithNeoSarisJSON = rawText => {
-  let contestData = {};
-  contestData = JSON.parse(rawText);
+export function getContestDataWithNeoSarisJSON(rawText: string) {
+  let contestData = JSON.parse(rawText) as ContestData;
   console.log("neoSaris JSON, Input Object", contestData);
   verifyNeoSarisJSON(contestData);
   return contestData;
-};
+}

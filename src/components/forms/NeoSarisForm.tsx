@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 import { getContestDataWithNeoSarisJSON } from "../../parsers/neosaris/neosaris-json-parser";
+import { ContestData } from "../../types/contestDataTypes";
 
-const NeoSarisForm = ({ setContestData, setStep }) => {
+const NeoSarisForm = ({
+  setContestData,
+  setStep,
+}: {
+  setContestData: React.Dispatch<React.SetStateAction<ContestData>>;
+  setStep: React.Dispatch<React.SetStateAction<string>>;
+}) => {
   const [neoSarisJSON, setNeoSarisJSON] = useState("");
 
   const handleSubmit = async event => {
