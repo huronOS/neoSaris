@@ -1,3 +1,4 @@
+import { ContestData } from "../../types/contestDataTypes";
 const verifyObject = contestData => {
   if (contestData == null) {
     throw new Error("contestData is null or undefined!");
@@ -66,7 +67,7 @@ const verifyObject = contestData => {
   });
 };
 
-export const getContestDataWithSarisStandJSON = rawText => {
+export const getContestDataWithSarisStandJSON = (rawText: string) => {
   const oldSarisData = JSON.parse(rawText);
   console.log("S4RiS StanD JSON, Input Object", oldSarisData);
   verifyObject(oldSarisData);
@@ -96,5 +97,5 @@ export const getContestDataWithSarisStandJSON = rawText => {
         verdict: run.success ? "ACCEPTED" : "WRONG_ANSWER",
       };
     }),
-  };
+  } as ContestData;
 };
