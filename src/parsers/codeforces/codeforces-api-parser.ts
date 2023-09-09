@@ -1,5 +1,6 @@
 import axios from "axios";
 import { sha512 } from "js-sha512";
+import { ContestData } from "../../types/contestDataTypes";
 
 const buildParams = ({
   method,
@@ -116,7 +117,7 @@ export const getContestData = async ({
     contestants: response.result.rows.map((row, index) => {
       return {
         id: index,
-        name: row.party.teamName || row.party.members[0].handle || `NO_TEAM_NAME_${id}`,
+        name: row.party.teamName || row.party.members[0].handle || `NO_TEAM_NAME_${index}`,
       };
     }),
   };
@@ -146,7 +147,7 @@ export const getContestDataWithCodeforcesAPI = async ({
     apiKey,
     apiSecret,
   });
-  const JSONobject = {
+  const JSONobject: ContestData = {
     contestMetadata: contestData.contestData,
     problems: contestData.problems,
     contestants: contestData.contestants,

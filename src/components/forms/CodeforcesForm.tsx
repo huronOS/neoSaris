@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 import { getContestDataWithCodeforcesAPI } from "../../parsers/codeforces/codeforces-api-parser";
+import { ContestData } from "../../types/contestDataTypes";
 
-const CodeforcesForm = ({ setContestData, setStep }) => {
+const CodeforcesForm = ({
+  setContestData,
+  setStep,
+}: {
+  setContestData: React.Dispatch<React.SetStateAction<ContestData>>;
+  setStep: React.Dispatch<React.SetStateAction<string>>;
+}) => {
   const [contestId, setContestId] = useState("");
   const [isPrivate, setIsPrivate] = useState(false);
   const [groupId, setGroupId] = useState("");
