@@ -4,10 +4,11 @@ import WelcomeForm from "./Welcome";
 import Spinner from "./misc/Spinner";
 import { verifyNeoSarisJSON } from "../parsers/neosaris/neosaris-json-parser";
 import "./App.css";
+import { ContestData } from "../types/contestDataTypes";
 
 const App = () => {
   const [step, setStep] = useState("form");
-  const [contestData, setContestData] = useState({});
+  const [contestData, setContestData] = useState<ContestData>({} as ContestData);
   const setContestDataWithLog = contestData => {
     console.log("neoSarisJSON", contestData);
     verifyNeoSarisJSON(contestData);

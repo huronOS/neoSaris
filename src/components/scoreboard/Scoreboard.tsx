@@ -3,18 +3,44 @@ import FlipMove from "react-flip-move";
 import TableRow from "./TableRow";
 import Header from "./Header";
 import "./Scoreboard.css";
-var intervalPendingSubmission = null;
+import { ContestData, Submission } from "../../types/contestDataTypes";
+import { Team } from "../../types/scoreboardDataTypes";
+var intervalPendingSubmission: number | null = null;
 
-class Scoreboard extends Component {
-  getSubmissions(submissionsData) {
-    let submissionsOnContest = [];
+interface IProps {
+  submissionsData: ContestData;
+}
+
+interface IState {
+  submissions: Array<Submission>;
+  submissionWhenFrozen: Array<Submission>;
+  contestDuration: number;
+  contestFrozenTime: number;
+  numberOfProblems: number;
+  teams: Array<Team>;
+  verdictsWithoutPenalty: Array<String>;
+  currentFrozenSubmission: Submission | null;
+  savedCurrentFrozenSubmission: Submission | null;
+  savedCurrentFrozenSubmissionId: number | null;
+  idOfNextUserRowHighlighted: number;
+  hasUserFinishedSubmissions: boolean;
+  isPressedKeyOn: number;
+  hasNotBeenScrolled: boolean;
+  contestantNameToSelect: string | null;
+  standingHasChangedInLastOperation: boolean;
+  lastPositionInStanding: Array<string>;
+}
+
+class Scoreboard extends Component<IProps, IState> {
+  getSubmissions(submissionsData: ContestData) {
+    let submissionsOnContest: Array<Submission> = [];
     submissionsData.submissions.forEach(function (submission) {
       if (
         submission.timeSubmitted <
         submissionsData.contestMetadata.duration -
           submissionsData.contestMetadata.frozenTimeDuration
       ) {
-        let result = {};
+        let result: Submission = {} as Submission;
         result.contestantName = submission.contestantName;
         result.timeSubmitted = submission.timeSubmitted;
         result.verdict = submission.verdict;
@@ -25,8 +51,8 @@ class Scoreboard extends Component {
     return submissionsOnContest;
   }
 
-  getSubmissionsWhenFrozen(submissionsData) {
-    let submissionsOnFrozen = [];
+  getSubmissionsWhenFrozen(submissionsData: ContestData) {
+    let submissionsOnFrozen: Array<Submission> = [];
     submissionsData.submissions.forEach(function (submission) {
       if (
         submission.timeSubmitted >=
@@ -34,7 +60,7 @@ class Scoreboard extends Component {
             submissionsData.contestMetadata.frozenTimeDuration &&
         submission.timeSubmitted <= submissionsData.contestMetadata.duration
       ) {
-        let result = {};
+        let result: Submission = {} as Submission;
         result.contestantName = submission.contestantName;
         result.timeSubmitted = submission.timeSubmitted;
         result.verdict = submission.verdict;
@@ -47,7 +73,7 @@ class Scoreboard extends Component {
     return submissionsOnFrozen;
   }
 
-  resetTeams(teams) {
+  resetTeams(teams: Array<Team>) {
     for (let i = 0; i < teams.length; i++) {
       teams[i].position = 0;
       teams[i].penalty = 0;
@@ -67,8 +93,8 @@ class Scoreboard extends Component {
     this.setState({ teams: teams });
   }
 
-  addSubmissionsTo(teams, submissions) {
-    let problemHasBeenSolved = [];
+  addSubmissionsTo(teams: Array<Team>, submissions: Array<Submission>) {
+    let problemHasBeenSolved: Array<number> = [];
     for (let i = 0; i < this.state.numberOfProblems; i++) {
       problemHasBeenSolved.push(0);
     }
@@ -120,7 +146,7 @@ class Scoreboard extends Component {
     return teams;
   }
 
-  sortTeams(teams) {
+  sortTeams(teams: Array<Team>) {
     let teamsSorted = teams.sort(function (a, b) {
       if (a.solved !== b.solved) {
         return b.solved - a.solved;
@@ -173,7 +199,7 @@ class Scoreboard extends Component {
   }
 
   updatePositionOfStandings() {
-    let lastPositionInStanding = {};
+    let lastPositionInStanding: Array<string> = {} as Array<string>;
     for (let i = 0; i < this.state.teams.length; i++) {
       lastPositionInStanding[i] = this.state.teams[i].name;
     }
@@ -195,13 +221,13 @@ class Scoreboard extends Component {
     this.cleanSubmissions();
   }
 
-  constructor(props) {
+  constructor(props: IProps) {
     super(props);
     let teams = props.submissionsData.contestants.map(contestant => {
-      let triesOnProblems = [];
-      let isProblemSolved = [];
-      let penaltyOnProblem = [];
-      let isFirstToSolve = [];
+      let triesOnProblems: Array<number> = [];
+      let isProblemSolved: Array<number> = [];
+      let penaltyOnProblem: Array<number> = [];
+      let isFirstToSolve: Array<number> = [];
       for (let j = 0; j < props.submissionsData.problems.length; j++) {
         isProblemSolved.push(0);
         isFirstToSolve.push(0);
@@ -209,7 +235,7 @@ class Scoreboard extends Component {
         penaltyOnProblem.push(0);
       }
 
-      let result = {};
+      let result: Team = {} as Team;
       result.position = 0;
       result.name = contestant.name;
       result.id = contestant.id;
@@ -254,7 +280,7 @@ class Scoreboard extends Component {
       hasNotBeenScrolled: false,
       contestantNameToSelect: null,
       standingHasChangedInLastOperation: false,
-      lastPositionInStanding: {},
+      lastPositionInStanding: [],
     };
   }
 
@@ -280,7 +306,7 @@ class Scoreboard extends Component {
       return (
         <TableRow
           key={team.id}
-          view={this.state.view}
+          //   view={this.state.view}
           index={i}
           team={team}
           numberOfProblems={this.state.numberOfProblems}
@@ -294,7 +320,7 @@ class Scoreboard extends Component {
     });
   }
 
-  getProblemId(problemLetter) {
+  getProblemId(problemLetter: string) {
     let problemId = -1;
     for (let h = 0; h < this.state.numberOfProblems; h++) {
       if (this.props.submissionsData.problems[h].index === problemLetter) {
@@ -307,7 +333,7 @@ class Scoreboard extends Component {
   cleanSubmissions() {
     let teams = this.state.teams;
     let submissionWhenFrozen = this.state.submissionWhenFrozen;
-    let newSubmissionWhenFrozen = [];
+    let newSubmissionWhenFrozen: Submission[] = [];
 
     for (let i = 0; i < submissionWhenFrozen.length; i++) {
       let problemId = this.getProblemId(submissionWhenFrozen[i].problemIndex);
@@ -336,7 +362,11 @@ class Scoreboard extends Component {
     }
   }
 
-  nextSubmission(idOfNextUserRowHighlighted, submissionWhenFrozen, teams) {
+  nextSubmission(
+    idOfNextUserRowHighlighted: number,
+    submissionWhenFrozen: Array<Submission>,
+    teams: Array<Team>
+  ) {
     let submissionToRevealId = -1;
     for (let i = teams.length - 1; i >= 0 && submissionToRevealId === -1; i--) {
       for (let j = 0; j < submissionWhenFrozen.length; j++) {
@@ -359,7 +389,7 @@ class Scoreboard extends Component {
 
   findNextSubmissionToReveal() {
     if (this.state.currentFrozenSubmission !== null) {
-      let idToRemove = this.state.savedCurrentFrozenSubmissionId;
+      let idToRemove = this.state.savedCurrentFrozenSubmissionId!;
       let submissions = this.state.submissions;
       let submissionWhenFrozen = this.state.submissionWhenFrozen;
 
@@ -402,7 +432,7 @@ class Scoreboard extends Component {
         });
       }
 
-      clearInterval(intervalPendingSubmission);
+      clearInterval(intervalPendingSubmission!);
       return;
     }
 
@@ -436,7 +466,7 @@ class Scoreboard extends Component {
     }
   }
 
-  revealUntilTop(topTeams) {
+  revealUntilTop(topTeams: number) {
     let teams = this.state.teams;
     let submissions = this.state.submissions;
     let submissionWhenFrozen = this.state.submissionWhenFrozen;
@@ -472,7 +502,7 @@ class Scoreboard extends Component {
     });
   }
 
-  keyDownHandler(e) {
+  keyDownHandler(e: React.KeyboardEvent<HTMLDivElement>) {
     switch (e.keyCode) {
       case 78: //(N)ext Submission
         if (this.state.isPressedKeyOn === 0 && this.state.contestantNameToSelect !== null) {
@@ -528,8 +558,8 @@ class Scoreboard extends Component {
       let targetTeam = this.state.idOfNextUserRowHighlighted - 2;
       try {
         let id = this.state.teams[targetTeam].id;
-        let element = document.getElementById(id);
-        document.getElementById("score-FlipMove").scrollTo(0, element.offsetTop);
+        let element = document.getElementById(`${id}`);
+        document.getElementById("score-FlipMove")!.scrollTo(0, element!.offsetTop);
         this.setState({ hasNotBeenScrolled: true });
       } catch (e) {}
     }
@@ -540,7 +570,7 @@ class Scoreboard extends Component {
       <div
         id="score"
         className={"scoreboardTable"}
-        tabIndex="0"
+        tabIndex={0}
         onKeyDown={e => this.keyDownHandler(e)}
       >
         <Header title={this.props.submissionsData.contestMetadata.name} />
