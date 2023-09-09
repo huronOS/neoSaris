@@ -10,7 +10,7 @@ import itcg from "../../assets/university_logos/itcg.png";
 import uam from "../../assets/university_logos/uam.png";
 import ug from "../../assets/university_logos/ug.png";
 import umsa from "../../assets/university_logos/umsa.png";
-import { Team } from "../../types/scoreboardDataTypes";
+import { ProblemColumn, Team } from "../../types/scoreboardDataTypes";
 import { Problem, Submission } from "../../types/contestDataTypes";
 
 const images = { cecyt13, chapingo, escom, itcg, uam, ug, umsa };
@@ -197,7 +197,7 @@ class TableRow extends Component<IProps, IState> {
     let sizeProblem = 84.0 / this.props.numberOfProblems;
     let widthPercentage = sizeProblem + "%";
 
-    let problemColumns = problems.map(problem => {
+    let problemColumns: Array<ProblemColumn> = problems.map(problem => {
       let verdict = "NoAttempted";
       let textToShowInProblem = problem.index;
 
@@ -226,7 +226,7 @@ class TableRow extends Component<IProps, IState> {
         problemStatus: verdict,
         displayText: textToShowInProblem,
       };
-    });
+    }) as ProblemColumn[];
 
     let classNameForEachRow = "scoreboardTableGrayRow";
     if (this.thisRowShhouldBeSelected(problems) === true) {

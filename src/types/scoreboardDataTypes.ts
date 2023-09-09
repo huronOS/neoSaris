@@ -9,3 +9,17 @@ export type Team = {
   name: string;
   id: number;
 };
+
+export type ProblemColumn = {
+  key: string;
+  index: string;
+  width: string;
+  problemStatus:
+    | "FirstAccepted"
+    | "Accepted"
+    | "Resolving"
+    | "Pending"
+    | "WrongAnswer"
+    | "NoAttempted";
+  displayText: string;
+};
