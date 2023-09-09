@@ -185,10 +185,10 @@ This project is open for contributions, currently there's some goals planned:
 - [x] Support Codeforces API
 - [x] Support S4RiS StanD JSON
 - [x] Support vJudge API to unfroze standings
+- [p] Migrate the project to Typescript (still has any values)
 - [ ] Add [CCS API](https://ccs-specs.icpc.io) compatibility (DOMjudge, Kattis, PC^2, ICPC CDS)
 - [ ] Support BOCA for LATAM competitions.
 - [ ] Refactor missing class components to functional components
-- [ ] Migrate the project to Typescript
 - [ ] Implement (F)ast Submission key command
 - [ ] Implement (A)utomatic Reveal key command
 - [ ] Support IOI-like contests (partial scoring)
