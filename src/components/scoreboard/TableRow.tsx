@@ -10,10 +10,25 @@ import itcg from "../../assets/university_logos/itcg.png";
 import uam from "../../assets/university_logos/uam.png";
 import ug from "../../assets/university_logos/ug.png";
 import umsa from "../../assets/university_logos/umsa.png";
+import { Team } from "../../types/scoreboardDataTypes";
+import { Problem, Submission } from "../../types/contestDataTypes";
 
 const images = { cecyt13, chapingo, escom, itcg, uam, ug, umsa };
 
-class TableRow extends Component {
+interface IProps {
+  index: number;
+  team: Team;
+  numberOfProblems: number;
+  problems: Array<Problem>;
+  submissionWhenFrozen: Array<Submission>;
+  currentFrozenSubmission: Submission | null;
+  savedCurrentFrozenSubmission: Submission | null;
+  classNameForThisRow: string;
+}
+
+interface IState {}
+
+class TableRow extends Component<IProps, IState> {
   getImageForTeam(url) {
     return images[url] ?? defaultImage;
   }
@@ -21,12 +36,12 @@ class TableRow extends Component {
   numberOfTriesOnAcceptedProblem(problemLetter) {
     let team = this.props.team;
     return problemLetter;
-    for (let i = 0; i < this.props.numberOfProblems; i++) {
-      if (this.props.problems[i].index === problemLetter) {
-        return team.triesOnProblems[i] + 1 + " - " + team.penaltyOnProblem[i];
-      }
-    }
-    return problemLetter;
+    // for (let i = 0; i < this.props.numberOfProblems; i++) {
+    //   if (this.props.problems[i].index === problemLetter) {
+    //     return team.triesOnProblems[i] + 1 + " - " + team.penaltyOnProblem[i];
+    //   }
+    // }
+    // return problemLetter;
   }
 
   numberOfTriesOnTriedProblem(problemLetter) {
@@ -136,11 +151,7 @@ class TableRow extends Component {
   isAPendingProblemOnThisRow(problemLetter) {
     let team = this.props.team;
     let savedCurrentFrozenSubmission = this.props.savedCurrentFrozenSubmission;
-    if (
-      savedCurrentFrozenSubmission === undefined ||
-      savedCurrentFrozenSubmission === null ||
-      savedCurrentFrozenSubmission.length === 0
-    ) {
+    if (savedCurrentFrozenSubmission === null) {
       return false;
     }
     for (let i = 0; i < this.props.numberOfProblems; i++) {
