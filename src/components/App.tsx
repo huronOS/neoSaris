@@ -9,7 +9,7 @@ import { ContestData } from "../types/contestDataTypes";
 const App = () => {
   const [step, setStep] = useState("form");
   const [contestData, setContestData] = useState<ContestData>({} as ContestData);
-  const setContestDataWithLog = contestData => {
+  const setContestDataWithLog = (contestData: ContestData) => {
     console.log("neoSarisJSON", contestData);
     verifyNeoSarisJSON(contestData);
     setContestData(contestData);

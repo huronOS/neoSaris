@@ -6,8 +6,8 @@ const VjudgeForm = ({
   setContestData,
   setStep,
 }: {
-  setContestData: React.Dispatch<React.SetStateAction<ContestData>>;
-  setStep: React.Dispatch<React.SetStateAction<string>>;
+  setContestData: (contestData: ContestData) => void;
+  setStep: (step: string) => void;
 }) => {
   const [contestId, setContestId] = useState("");
   const [frozenTime, setFrozenTime] = useState(0);

@@ -10,8 +10,8 @@ import { ContestData } from "../types/contestDataTypes";
 
 const getForm = (
   dataSource: string,
-  setContestData: React.Dispatch<React.SetStateAction<ContestData>>,
-  setStep: React.Dispatch<React.SetStateAction<string>>
+  setContestData: (contestData: ContestData) => void,
+  setStep: (step: string) => void
 ) => {
   switch (dataSource) {
     case "codeforces":
@@ -68,8 +68,8 @@ const WelcomeForm = ({
   setContestData,
   setStep,
 }: {
-  setContestData: React.Dispatch<React.SetStateAction<ContestData>>;
-  setStep: React.Dispatch<React.SetStateAction<string>>;
+  setContestData: (contestData: ContestData) => void;
+  setStep: (step: string) => void;
 }) => {
   const [dataSource, setDataSource] = useState("neosaris");
   return (
