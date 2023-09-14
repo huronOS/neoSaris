@@ -189,6 +189,6 @@ This project is open for contributions, currently there's some goals planned:
 - [ ] Add [CCS API](https://ccs-specs.icpc.io) compatibility (DOMjudge, Kattis, PC^2, ICPC CDS)
 - [ ] Support BOCA for LATAM competitions.
 - [ ] Refactor missing class components to functional components
-- [ ] Implement (F)ast Submission key command
-- [ ] Implement (A)utomatic Reveal key command
+- [ ] Implement (F)ast Submission key command (Reveal all pending solutions until AC or final WA)
+- [ ] Implement (A)utomatic Reveal key command (every X time reveal next submission)
 - [ ] Support IOI-like contests (partial scoring)
