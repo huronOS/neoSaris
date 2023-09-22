@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 import { getContestDataWithSarisStandJSON } from "../../parsers/saris-stand/saris-stand-json-parser";
+import { ContestData } from "../../types/contestDataTypes";
 
-const SarisStandForm = ({ setContestData, setStep }) => {
+const SarisStandForm = ({
+  setContestData,
+  setStep,
+}: {
+  setContestData: (contestData: ContestData) => void;
+  setStep: (step: string) => void;
+}) => {
   const [sarisStandJSON, setSarisStandJSON] = useState("");
 
   const handleSubmit = async event => {

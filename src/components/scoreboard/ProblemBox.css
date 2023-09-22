@@ -27,6 +27,25 @@
 .problemBox-Resolving {
   color: white;
   background-color: #cbb000;
+}
+
+.problemBox-Bordered {
+  animation: border-blink 1s steps(1) infinite;
+}
+
+@keyframes border-blink {
+  0% {
+    border: 2px solid white;
+  }
+
+  50% {
+    border: 0px solid transparent;
+  }
+}
+
+.problemBox-Partial {
+  color: white;
+  background-color: #ff6600;
   border: 2px solid #ffff08;
 }
 

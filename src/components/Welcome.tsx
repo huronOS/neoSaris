@@ -6,8 +6,13 @@ import VjudgeForm from "./forms/VJudgeForm";
 import neoSarisLogo from "../assets/neoSaris/neoSaris_logo_vertical_dark.svg";
 import "./forms/Forms.css";
 import "./Welcome.css";
+import { ContestData } from "../types/contestDataTypes";
 
-const getForm = (dataSource, setContestData, setStep) => {
+const getForm = (
+  dataSource: string,
+  setContestData: (contestData: ContestData) => void,
+  setStep: (step: string) => void
+) => {
   switch (dataSource) {
     case "codeforces":
       return <CodeforcesForm setContestData={setContestData} setStep={setStep} />;
@@ -31,12 +36,16 @@ const Introduction = () => {
         ICPC-like competition. You can check the source code of this project on{" "}
         <a href="https://github.com/equetzal/neoSaris">github</a>.
       </p>
-      <hr className="introduction-separator" height="1px" width="50%" />
+      <hr className="introduction-separator" style={{ height: "1px", width: "50%" }} />
     </>
   );
 };
 
-const DataSourcePicker = ({ setDataSource }) => {
+const DataSourcePicker = ({
+  setDataSource,
+}: {
+  setDataSource: React.Dispatch<React.SetStateAction<string>>;
+}) => {
   return (
     <fieldset className="form-field">
       <label>Select a data source:</label>
@@ -55,7 +64,13 @@ const DataSourcePicker = ({ setDataSource }) => {
   );
 };
 
-const WelcomeForm = ({ setContestData, setStep }) => {
+const WelcomeForm = ({
+  setContestData,
+  setStep,
+}: {
+  setContestData: (contestData: ContestData) => void;
+  setStep: (step: string) => void;
+}) => {
   const [dataSource, setDataSource] = useState("neosaris");
   return (
     <div className="welcome-wrapper">

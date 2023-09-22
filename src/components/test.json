@@ -1,0 +1,4844 @@
+{
+    "contestMetadata": {
+      "duration": 14400,
+      "frozenTimeDuration": 3600,
+      "name": "Coding Cup - Media Superior 2023",
+      "type": "ICPC",
+      "scoreMode": "partial",
+      "penaltyPerSubmission": 10
+    },
+    "problems": [
+      {
+        "index": "A"
+      },
+      {
+        "index": "B"
+      },
+      {
+        "index": "C"
+      },
+      {
+        "index": "D"
+      },
+      {
+        "index": "E"
+      },
+      {
+        "index": "F"
+      },
+      {
+        "index": "G"
+      },
+      {
+        "index": "H"
+      },
+      {
+        "index": "I"
+      },
+      {
+        "index": "J"
+      },
+      {
+        "index": "K"
+      },
+      {
+        "index": "L"
+      },
+      {
+        "index": "M"
+      },
+      {
+        "index": "N"
+      }
+    ],
+    "contestants": [
+      {
+        "id": 7,
+        "name": "MS23:usr-01(Net Teams-BACH. BIVALENTE TALENTOS IRAPUATO)"
+      },
+      {
+        "id": 8,
+        "name": "MS23:usr-02(GARA BBT-BACH. BIVALENTE TALENTOS IRAPUATO)"
+      },
+      {
+        "id": 9,
+        "name": "MS23:usr-03(PrograMOP-CBTIS 172)"
+      },
+      {
+        "id": 10,
+        "name": "MS23:usr-04(The ORIG rejected us-CBTIS 217)"
+      },
+      {
+        "id": 11,
+        "name": "MS23:usr-05(FamCode-CBTIS 217)"
+      },
+      {
+        "id": 12,
+        "name": "MS23:usr-06(Maikroso-CBTIS 217)"
+      },
+      {
+        "id": 13,
+        "name": "MS23:usr-07(Team Wolf-CBTIS 217)"
+      },
+      {
+        "id": 14,
+        "name": "MS23:usr-08(Codigo CeReAl-CBTIS 217)"
+      },
+      {
+        "id": 15,
+        "name": "MS23:usr-09(Chicos_13-CBTIS 217)"
+      },
+      {
+        "id": 16,
+        "name": "MS23:usr-10(NovaElix-CBTIS 65)"
+      },
+      {
+        "id": 17,
+        "name": "MS23:usr-11(Osos Informaticos-CBTIS 65)"
+      },
+      {
+        "id": 18,
+        "name": "MS23:usr-12(Programando Experiencia-CETIS 89)"
+      },
+      {
+        "id": 19,
+        "name": "MS23:usr-13(Full Stack Alchemist-CETIS 120)"
+      },
+      {
+        "id": 20,
+        "name": "MS23:usr-14(Puro StackOverflow-CETIS 120)"
+      },
+      {
+        "id": 21,
+        "name": "MS23:usr-15(Malware-CETIS 77)"
+      },
+      {
+        "id": 22,
+        "name": "MS23:usr-16(COMPUTER TEAM-CETIS 89)"
+      },
+      {
+        "id": 23,
+        "name": "MS23:usr-17(CLIC-K-CONALEP VALLE DE SANTIAGO)"
+      },
+      {
+        "id": 24,
+        "name": "MS23:usr-18(LOS PCS-CONALEP VALLE DE SANTIAGO)"
+      },
+      {
+        "id": 25,
+        "name": "MS23:usr-19(Tecno power girls-CONALEP ACAMBARO)"
+      },
+      {
+        "id": 26,
+        "name": "MS23:usr-20(Los guapos-CONALEP ACAMBARO)"
+      },
+      {
+        "id": 27,
+        "name": "MS23:usr-21(Nobody-CONALEP MOROLEON)"
+      },
+      {
+        "id": 28,
+        "name": "MS23:usr-22(WOLF BOTS-CONALEP MOROLEON)"
+      },
+      {
+        "id": 29,
+        "name": "MS23:usr-23(DragonWorK-CONALEP SALVATIERRA)"
+      },
+      {
+        "id": 30,
+        "name": "MS23:usr-24(ENMS Penjamo-ENMS PENJAMO)"
+      },
+      {
+        "id": 31,
+        "name": "MS23:usr-25(C-Chaperos-ENMS SALVATIERRA)"
+      },
+      {
+        "id": 32,
+        "name": "MS23:usr-26(CuriCientificos-ENMS SALVATIERRA)"
+      },
+      {
+        "id": 33,
+        "name": "MS23:usr-27(Aztrobots 1-TALENTOS GUANAJUATO-AZTECA)"
+      },
+      {
+        "id": 34,
+        "name": "MS23:usr-28(Aztrobots 2-TALENTOS GUANAJUATO-AZTECA)"
+      },
+      {
+        "id": 35,
+        "name": "MS23:usr-29(The Fallen Order-OMI MICHOACAN)"
+      },
+      {
+        "id": 36,
+        "name": "MS23:usr-30(Binary Sorters-OMI MICHOACAN)"
+      },
+      {
+        "id": 37,
+        "name": "MS23:usr-31(Omega-vectors-OMI MICHOACAN)"
+      },
+      {
+        "id": 38,
+        "name": "MS23:usr-32(THUNDERS-SABES SN JUAN OTATES-LUCIO BLANCO)"
+      },
+      {
+        "id": 39,
+        "name": "MS23:usr-33(LOS PRIMOS-SECUNDARIAS MENDEL-INDEP-IBERO)"
+      }
+    ],
+    "verdicts": {
+      "accepted": [
+        "AC"
+      ],
+      "partiallyAccepted": [
+        "PA"
+      ],
+      "wrongAnswerWithPenalty": [
+        "WA"
+      ],
+      "wrongAnswerWithoutPenalty": [
+        "CE"
+      ]
+    },
+    "submissions": [
+      {
+        "timeSubmitted": 14396,
+        "contestantName": "MS23:usr-28(Aztrobots 2-TALENTOS GUANAJUATO-AZTECA)",
+        "problemIndex": "D",
+        "verdict": "PA",
+        "problemScore": 10,
+        "penalty": 239
+      },
+      {
+        "timeSubmitted": 14394,
+        "contestantName": "MS23:usr-27(Aztrobots 1-TALENTOS GUANAJUATO-AZTECA)",
+        "problemIndex": "D",
+        "verdict": "PA",
+        "problemScore": 50,
+        "penalty": 239
+      },
+      {
+        "timeSubmitted": 14388,
+        "contestantName": "MS23:usr-15(Malware-CETIS 77)",
+        "problemIndex": "N",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 239
+      },
+      {
+        "timeSubmitted": 14388,
+        "contestantName": "MS23:usr-31(Omega-vectors-OMI MICHOACAN)",
+        "problemIndex": "G",
+        "verdict": "OLE",
+        "problemScore": 0,
+        "penalty": 239
+      },
+      {
+        "timeSubmitted": 14388,
+        "contestantName": "MS23:usr-24(ENMS Penjamo-ENMS PENJAMO)",
+        "problemIndex": "L",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 239
+      },
+      {
+        "timeSubmitted": 14359,
+        "contestantName": "MS23:usr-16(COMPUTER TEAM-CETIS 89)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 80,
+        "penalty": 239
+      },
+      {
+        "timeSubmitted": 14356,
+        "contestantName": "MS23:usr-13(Full Stack Alchemist-CETIS 120)",
+        "problemIndex": "G",
+        "verdict": "OLE",
+        "problemScore": 0,
+        "penalty": 239
+      },
+      {
+        "timeSubmitted": 14351,
+        "contestantName": "MS23:usr-33(LOS PRIMOS-SECUNDARIAS MENDEL-INDEP-IBERO)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 239
+      },
+      {
+        "timeSubmitted": 14334,
+        "contestantName": "MS23:usr-26(CuriCientificos-ENMS SALVATIERRA)",
+        "problemIndex": "E",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 0
+      },
+      {
+        "timeSubmitted": 14317,
+        "contestantName": "MS23:usr-05(FamCode-CBTIS 217)",
+        "problemIndex": "H",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 238
+      },
+      {
+        "timeSubmitted": 14289,
+        "contestantName": "MS23:usr-33(LOS PRIMOS-SECUNDARIAS MENDEL-INDEP-IBERO)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 238
+      },
+      {
+        "timeSubmitted": 14286,
+        "contestantName": "MS23:usr-25(C-Chaperos-ENMS SALVATIERRA)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 57,
+        "penalty": 238
+      },
+      {
+        "timeSubmitted": 14274,
+        "contestantName": "MS23:usr-14(Puro StackOverflow-CETIS 120)",
+        "problemIndex": "H",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 237
+      },
+      {
+        "timeSubmitted": 14242,
+        "contestantName": "MS23:usr-04(The ORIG rejected us-CBTIS 217)",
+        "problemIndex": "E",
+        "verdict": "PA",
+        "problemScore": 14.29,
+        "penalty": 0
+      },
+      {
+        "timeSubmitted": 14237,
+        "contestantName": "MS23:usr-18(LOS PCS-CONALEP VALLE DE SANTIAGO)",
+        "problemIndex": "G",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 237
+      },
+      {
+        "timeSubmitted": 14236,
+        "contestantName": "MS23:usr-17(CLIC-K-CONALEP VALLE DE SANTIAGO)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 56,
+        "penalty": 237
+      },
+      {
+        "timeSubmitted": 14202,
+        "contestantName": "MS23:usr-06(Maikroso-CBTIS 217)",
+        "problemIndex": "L",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 236
+      },
+      {
+        "timeSubmitted": 14197,
+        "contestantName": "MS23:usr-33(LOS PRIMOS-SECUNDARIAS MENDEL-INDEP-IBERO)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 236
+      },
+      {
+        "timeSubmitted": 14176,
+        "contestantName": "MS23:usr-22(WOLF BOTS-CONALEP MOROLEON)",
+        "problemIndex": "F",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 236
+      },
+      {
+        "timeSubmitted": 14172,
+        "contestantName": "MS23:usr-18(LOS PCS-CONALEP VALLE DE SANTIAGO)",
+        "problemIndex": "E",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 0
+      },
+      {
+        "timeSubmitted": 14132,
+        "contestantName": "MS23:usr-26(CuriCientificos-ENMS SALVATIERRA)",
+        "problemIndex": "G",
+        "verdict": "TLE",
+        "problemScore": 0,
+        "penalty": 235
+      },
+      {
+        "timeSubmitted": 14100,
+        "contestantName": "MS23:usr-29(The Fallen Order-OMI MICHOACAN)",
+        "problemIndex": "G",
+        "verdict": "TLE",
+        "problemScore": 0,
+        "penalty": 235
+      },
+      {
+        "timeSubmitted": 14075,
+        "contestantName": "MS23:usr-33(LOS PRIMOS-SECUNDARIAS MENDEL-INDEP-IBERO)",
+        "problemIndex": "D",
+        "verdict": "PA",
+        "problemScore": 40,
+        "penalty": 234
+      },
+      {
+        "timeSubmitted": 14050,
+        "contestantName": "MS23:usr-14(Puro StackOverflow-CETIS 120)",
+        "problemIndex": "L",
+        "verdict": "RTE",
+        "problemScore": 0,
+        "penalty": 234
+      },
+      {
+        "timeSubmitted": 14029,
+        "contestantName": "MS23:usr-04(The ORIG rejected us-CBTIS 217)",
+        "problemIndex": "E",
+        "verdict": "PA",
+        "problemScore": 14.29,
+        "penalty": 0
+      },
+      {
+        "timeSubmitted": 14027,
+        "contestantName": "MS23:usr-16(COMPUTER TEAM-CETIS 89)",
+        "problemIndex": "F",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 233
+      },
+      {
+        "timeSubmitted": 14022,
+        "contestantName": "MS23:usr-08(Codigo CeReAl-CBTIS 217)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 80,
+        "penalty": 233
+      },
+      {
+        "timeSubmitted": 13989,
+        "contestantName": "MS23:usr-14(Puro StackOverflow-CETIS 120)",
+        "problemIndex": "L",
+        "verdict": "CE",
+        "problemScore": 0,
+        "penalty": 233
+      },
+      {
+        "timeSubmitted": 13954,
+        "contestantName": "MS23:usr-04(The ORIG rejected us-CBTIS 217)",
+        "problemIndex": "E",
+        "verdict": "PA",
+        "problemScore": 14.29,
+        "penalty": 0
+      },
+      {
+        "timeSubmitted": 13930,
+        "contestantName": "MS23:usr-33(LOS PRIMOS-SECUNDARIAS MENDEL-INDEP-IBERO)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 232
+      },
+      {
+        "timeSubmitted": 13909,
+        "contestantName": "MS23:usr-03(PrograMOP-CBTIS 172)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 86.67,
+        "penalty": 231
+      },
+      {
+        "timeSubmitted": 13884,
+        "contestantName": "MS23:usr-04(The ORIG rejected us-CBTIS 217)",
+        "problemIndex": "E",
+        "verdict": "PA",
+        "problemScore": 14.29,
+        "penalty": 0
+      },
+      {
+        "timeSubmitted": 13878,
+        "contestantName": "MS23:usr-26(CuriCientificos-ENMS SALVATIERRA)",
+        "problemIndex": "D",
+        "verdict": "PA",
+        "problemScore": 40,
+        "penalty": 231
+      },
+      {
+        "timeSubmitted": 13851,
+        "contestantName": "MS23:usr-33(LOS PRIMOS-SECUNDARIAS MENDEL-INDEP-IBERO)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 230
+      },
+      {
+        "timeSubmitted": 13832,
+        "contestantName": "MS23:usr-18(LOS PCS-CONALEP VALLE DE SANTIAGO)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 3.33,
+        "penalty": 230
+      },
+      {
+        "timeSubmitted": 13827,
+        "contestantName": "MS23:usr-05(FamCode-CBTIS 217)",
+        "problemIndex": "G",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 230
+      },
+      {
+        "timeSubmitted": 13795,
+        "contestantName": "MS23:usr-22(WOLF BOTS-CONALEP MOROLEON)",
+        "problemIndex": "M",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 229
+      },
+      {
+        "timeSubmitted": 13784,
+        "contestantName": "MS23:usr-33(LOS PRIMOS-SECUNDARIAS MENDEL-INDEP-IBERO)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 229
+      },
+      {
+        "timeSubmitted": 13776,
+        "contestantName": "MS23:usr-16(COMPUTER TEAM-CETIS 89)",
+        "problemIndex": "F",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 229
+      },
+      {
+        "timeSubmitted": 13758,
+        "contestantName": "MS23:usr-06(Maikroso-CBTIS 217)",
+        "problemIndex": "E",
+        "verdict": "PA",
+        "problemScore": 14.29,
+        "penalty": 0
+      },
+      {
+        "timeSubmitted": 13739,
+        "contestantName": "MS23:usr-29(The Fallen Order-OMI MICHOACAN)",
+        "problemIndex": "D",
+        "verdict": "PA",
+        "problemScore": 50,
+        "penalty": 228
+      },
+      {
+        "timeSubmitted": 13728,
+        "contestantName": "MS23:usr-14(Puro StackOverflow-CETIS 120)",
+        "problemIndex": "D",
+        "verdict": "PA",
+        "problemScore": 40,
+        "penalty": 228
+      },
+      {
+        "timeSubmitted": 13724,
+        "contestantName": "MS23:usr-26(CuriCientificos-ENMS SALVATIERRA)",
+        "problemIndex": "D",
+        "verdict": "PA",
+        "problemScore": 40,
+        "penalty": 228
+      },
+      {
+        "timeSubmitted": 13710,
+        "contestantName": "MS23:usr-15(Malware-CETIS 77)",
+        "problemIndex": "F",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 228
+      },
+      {
+        "timeSubmitted": 13702,
+        "contestantName": "MS23:usr-04(The ORIG rejected us-CBTIS 217)",
+        "problemIndex": "E",
+        "verdict": "PA",
+        "problemScore": 14.29,
+        "penalty": 0
+      },
+      {
+        "timeSubmitted": 13657,
+        "contestantName": "MS23:usr-14(Puro StackOverflow-CETIS 120)",
+        "problemIndex": "D",
+        "verdict": "RTE",
+        "problemScore": 0,
+        "penalty": 227
+      },
+      {
+        "timeSubmitted": 13648,
+        "contestantName": "MS23:usr-29(The Fallen Order-OMI MICHOACAN)",
+        "problemIndex": "D",
+        "verdict": "CE",
+        "problemScore": 0,
+        "penalty": 227
+      },
+      {
+        "timeSubmitted": 13609,
+        "contestantName": "MS23:usr-18(LOS PCS-CONALEP VALLE DE SANTIAGO)",
+        "problemIndex": "E",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 0
+      },
+      {
+        "timeSubmitted": 13597,
+        "contestantName": "MS23:usr-20(Los guapos-CONALEP ACAMBARO)",
+        "problemIndex": "K",
+        "verdict": "RTE",
+        "problemScore": 0,
+        "penalty": 226
+      },
+      {
+        "timeSubmitted": 13555,
+        "contestantName": "MS23:usr-23(DragonWorK-CONALEP SALVATIERRA)",
+        "problemIndex": "K",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 225
+      },
+      {
+        "timeSubmitted": 13551,
+        "contestantName": "MS23:usr-15(Malware-CETIS 77)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 57,
+        "penalty": 225
+      },
+      {
+        "timeSubmitted": 13517,
+        "contestantName": "MS23:usr-05(FamCode-CBTIS 217)",
+        "problemIndex": "E",
+        "verdict": "PA",
+        "problemScore": 14.29,
+        "penalty": 0
+      },
+      {
+        "timeSubmitted": 13475,
+        "contestantName": "MS23:usr-22(WOLF BOTS-CONALEP MOROLEON)",
+        "problemIndex": "M",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 224
+      },
+      {
+        "timeSubmitted": 13416,
+        "contestantName": "MS23:usr-30(Binary Sorters-OMI MICHOACAN)",
+        "problemIndex": "E",
+        "verdict": "PA",
+        "problemScore": 14.29,
+        "penalty": 0
+      },
+      {
+        "timeSubmitted": 13414,
+        "contestantName": "MS23:usr-08(Codigo CeReAl-CBTIS 217)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 80,
+        "penalty": 223
+      },
+      {
+        "timeSubmitted": 13343,
+        "contestantName": "MS23:usr-09(Chicos_13-CBTIS 217)",
+        "problemIndex": "J",
+        "verdict": "PA",
+        "problemScore": 73.33,
+        "penalty": 222
+      },
+      {
+        "timeSubmitted": 13334,
+        "contestantName": "MS23:usr-30(Binary Sorters-OMI MICHOACAN)",
+        "problemIndex": "E",
+        "verdict": "CE",
+        "problemScore": 0,
+        "penalty": 0
+      },
+      {
+        "timeSubmitted": 13333,
+        "contestantName": "MS23:usr-18(LOS PCS-CONALEP VALLE DE SANTIAGO)",
+        "problemIndex": "D",
+        "verdict": "PA",
+        "problemScore": 20,
+        "penalty": 222
+      },
+      {
+        "timeSubmitted": 13320,
+        "contestantName": "MS23:usr-16(COMPUTER TEAM-CETIS 89)",
+        "problemIndex": "F",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 222
+      },
+      {
+        "timeSubmitted": 13311,
+        "contestantName": "MS23:usr-05(FamCode-CBTIS 217)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 96.67,
+        "penalty": 221
+      },
+      {
+        "timeSubmitted": 13306,
+        "contestantName": "MS23:usr-20(Los guapos-CONALEP ACAMBARO)",
+        "problemIndex": "M",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 221
+      },
+      {
+        "timeSubmitted": 13304,
+        "contestantName": "MS23:usr-22(WOLF BOTS-CONALEP MOROLEON)",
+        "problemIndex": "M",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 221
+      },
+      {
+        "timeSubmitted": 13252,
+        "contestantName": "MS23:usr-26(CuriCientificos-ENMS SALVATIERRA)",
+        "problemIndex": "D",
+        "verdict": "CE",
+        "problemScore": 0,
+        "penalty": 220
+      },
+      {
+        "timeSubmitted": 13226,
+        "contestantName": "MS23:usr-06(Maikroso-CBTIS 217)",
+        "problemIndex": "G",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 220
+      },
+      {
+        "timeSubmitted": 13187,
+        "contestantName": "MS23:usr-15(Malware-CETIS 77)",
+        "problemIndex": "E",
+        "verdict": "PA",
+        "problemScore": 14.29,
+        "penalty": 0
+      },
+      {
+        "timeSubmitted": 13186,
+        "contestantName": "MS23:usr-16(COMPUTER TEAM-CETIS 89)",
+        "problemIndex": "F",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 219
+      },
+      {
+        "timeSubmitted": 13171,
+        "contestantName": "MS23:usr-15(Malware-CETIS 77)",
+        "problemIndex": "N",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 219
+      },
+      {
+        "timeSubmitted": 13132,
+        "contestantName": "MS23:usr-29(The Fallen Order-OMI MICHOACAN)",
+        "problemIndex": "G",
+        "verdict": "RTE",
+        "problemScore": 0,
+        "penalty": 218
+      },
+      {
+        "timeSubmitted": 13122,
+        "contestantName": "MS23:usr-26(CuriCientificos-ENMS SALVATIERRA)",
+        "problemIndex": "G",
+        "verdict": "TLE",
+        "problemScore": 0,
+        "penalty": 218
+      },
+      {
+        "timeSubmitted": 13088,
+        "contestantName": "MS23:usr-05(FamCode-CBTIS 217)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 218
+      },
+      {
+        "timeSubmitted": 13086,
+        "contestantName": "MS23:usr-08(Codigo CeReAl-CBTIS 217)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 80,
+        "penalty": 218
+      },
+      {
+        "timeSubmitted": 13036,
+        "contestantName": "MS23:usr-26(CuriCientificos-ENMS SALVATIERRA)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 57,
+        "penalty": 217
+      },
+      {
+        "timeSubmitted": 13006,
+        "contestantName": "MS23:usr-18(LOS PCS-CONALEP VALLE DE SANTIAGO)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 57,
+        "penalty": 216
+      },
+      {
+        "timeSubmitted": 12975,
+        "contestantName": "MS23:usr-22(WOLF BOTS-CONALEP MOROLEON)",
+        "problemIndex": "M",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 216
+      },
+      {
+        "timeSubmitted": 12950,
+        "contestantName": "MS23:usr-29(The Fallen Order-OMI MICHOACAN)",
+        "problemIndex": "D",
+        "verdict": "PA",
+        "problemScore": 50,
+        "penalty": 215
+      },
+      {
+        "timeSubmitted": 12885,
+        "contestantName": "MS23:usr-19(Tecno power girls-CONALEP ACAMBARO)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 80,
+        "penalty": 214
+      },
+      {
+        "timeSubmitted": 12862,
+        "contestantName": "MS23:usr-29(The Fallen Order-OMI MICHOACAN)",
+        "problemIndex": "D",
+        "verdict": "PA",
+        "problemScore": 50,
+        "penalty": 214
+      },
+      {
+        "timeSubmitted": 12806,
+        "contestantName": "MS23:usr-27(Aztrobots 1-TALENTOS GUANAJUATO-AZTECA)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 213
+      },
+      {
+        "timeSubmitted": 12679,
+        "contestantName": "MS23:usr-10(NovaElix-CBTIS 65)",
+        "problemIndex": "K",
+        "verdict": "PA",
+        "problemScore": 90,
+        "penalty": 211
+      },
+      {
+        "timeSubmitted": 12655,
+        "contestantName": "MS23:usr-31(Omega-vectors-OMI MICHOACAN)",
+        "problemIndex": "E",
+        "verdict": "PA",
+        "problemScore": 14.29,
+        "penalty": 210
+      },
+      {
+        "timeSubmitted": 12653,
+        "contestantName": "MS23:usr-10(NovaElix-CBTIS 65)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 210
+      },
+      {
+        "timeSubmitted": 12651,
+        "contestantName": "MS23:usr-27(Aztrobots 1-TALENTOS GUANAJUATO-AZTECA)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 80,
+        "penalty": 210
+      },
+      {
+        "timeSubmitted": 12647,
+        "contestantName": "MS23:usr-20(Los guapos-CONALEP ACAMBARO)",
+        "problemIndex": "F",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 210
+      },
+      {
+        "timeSubmitted": 12583,
+        "contestantName": "MS23:usr-20(Los guapos-CONALEP ACAMBARO)",
+        "problemIndex": "F",
+        "verdict": "CE",
+        "problemScore": 0,
+        "penalty": 209
+      },
+      {
+        "timeSubmitted": 12498,
+        "contestantName": "MS23:usr-20(Los guapos-CONALEP ACAMBARO)",
+        "problemIndex": "F",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 208
+      },
+      {
+        "timeSubmitted": 12492,
+        "contestantName": "MS23:usr-23(DragonWorK-CONALEP SALVATIERRA)",
+        "problemIndex": "K",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 208
+      },
+      {
+        "timeSubmitted": 12489,
+        "contestantName": "MS23:usr-16(COMPUTER TEAM-CETIS 89)",
+        "problemIndex": "M",
+        "verdict": "PA",
+        "problemScore": 35.48,
+        "penalty": 208
+      },
+      {
+        "timeSubmitted": 12484,
+        "contestantName": "MS23:usr-26(CuriCientificos-ENMS SALVATIERRA)",
+        "problemIndex": "E",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 208
+      },
+      {
+        "timeSubmitted": 12475,
+        "contestantName": "MS23:usr-27(Aztrobots 1-TALENTOS GUANAJUATO-AZTECA)",
+        "problemIndex": "F",
+        "verdict": "CE",
+        "problemScore": 0,
+        "penalty": 207
+      },
+      {
+        "timeSubmitted": 12466,
+        "contestantName": "MS23:usr-14(Puro StackOverflow-CETIS 120)",
+        "problemIndex": "D",
+        "verdict": "CE",
+        "problemScore": 0,
+        "penalty": 207
+      },
+      {
+        "timeSubmitted": 12442,
+        "contestantName": "MS23:usr-11(Osos Informaticos-CBTIS 65)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 207
+      },
+      {
+        "timeSubmitted": 12440,
+        "contestantName": "MS23:usr-18(LOS PCS-CONALEP VALLE DE SANTIAGO)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 57,
+        "penalty": 207
+      },
+      {
+        "timeSubmitted": 12414,
+        "contestantName": "MS23:usr-29(The Fallen Order-OMI MICHOACAN)",
+        "problemIndex": "G",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 206
+      },
+      {
+        "timeSubmitted": 12402,
+        "contestantName": "MS23:usr-14(Puro StackOverflow-CETIS 120)",
+        "problemIndex": "D",
+        "verdict": "CE",
+        "problemScore": 0,
+        "penalty": 206
+      },
+      {
+        "timeSubmitted": 12377,
+        "contestantName": "MS23:usr-24(ENMS Penjamo-ENMS PENJAMO)",
+        "problemIndex": "E",
+        "verdict": "PA",
+        "problemScore": 14.29,
+        "penalty": 206
+      },
+      {
+        "timeSubmitted": 12364,
+        "contestantName": "MS23:usr-23(DragonWorK-CONALEP SALVATIERRA)",
+        "problemIndex": "K",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 206
+      },
+      {
+        "timeSubmitted": 12340,
+        "contestantName": "MS23:usr-10(NovaElix-CBTIS 65)",
+        "problemIndex": "M",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 205
+      },
+      {
+        "timeSubmitted": 12331,
+        "contestantName": "MS23:usr-28(Aztrobots 2-TALENTOS GUANAJUATO-AZTECA)",
+        "problemIndex": "N",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 205
+      },
+      {
+        "timeSubmitted": 12320,
+        "contestantName": "MS23:usr-20(Los guapos-CONALEP ACAMBARO)",
+        "problemIndex": "A",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 205
+      },
+      {
+        "timeSubmitted": 12305,
+        "contestantName": "MS23:usr-14(Puro StackOverflow-CETIS 120)",
+        "problemIndex": "D",
+        "verdict": "PA",
+        "problemScore": 40,
+        "penalty": 205
+      },
+      {
+        "timeSubmitted": 12300,
+        "contestantName": "MS23:usr-07(Team Wolf-CBTIS 217)",
+        "problemIndex": "K",
+        "verdict": "PA",
+        "problemScore": 90,
+        "penalty": 205
+      },
+      {
+        "timeSubmitted": 12291,
+        "contestantName": "MS23:usr-08(Codigo CeReAl-CBTIS 217)",
+        "problemIndex": "N",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 204
+      },
+      {
+        "timeSubmitted": 12262,
+        "contestantName": "MS23:usr-03(PrograMOP-CBTIS 172)",
+        "problemIndex": "M",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 204
+      },
+      {
+        "timeSubmitted": 12137,
+        "contestantName": "MS23:usr-08(Codigo CeReAl-CBTIS 217)",
+        "problemIndex": "D",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 202
+      },
+      {
+        "timeSubmitted": 12087,
+        "contestantName": "MS23:usr-13(Full Stack Alchemist-CETIS 120)",
+        "problemIndex": "N",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 201
+      },
+      {
+        "timeSubmitted": 12077,
+        "contestantName": "MS23:usr-23(DragonWorK-CONALEP SALVATIERRA)",
+        "problemIndex": "K",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 201
+      },
+      {
+        "timeSubmitted": 12064,
+        "contestantName": "MS23:usr-01(Net Teams-BACH. BIVALENTE TALENTOS IRAPUATO)",
+        "problemIndex": "I",
+        "verdict": "PA",
+        "problemScore": 20,
+        "penalty": 201
+      },
+      {
+        "timeSubmitted": 11910,
+        "contestantName": "MS23:usr-04(The ORIG rejected us-CBTIS 217)",
+        "problemIndex": "E",
+        "verdict": "PA",
+        "problemScore": 14.29,
+        "penalty": 198
+      },
+      {
+        "timeSubmitted": 11906,
+        "contestantName": "MS23:usr-21(Nobody-CONALEP MOROLEON)",
+        "problemIndex": "K",
+        "verdict": "PA",
+        "problemScore": 90,
+        "penalty": 198
+      },
+      {
+        "timeSubmitted": 11904,
+        "contestantName": "MS23:usr-22(WOLF BOTS-CONALEP MOROLEON)",
+        "problemIndex": "M",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 198
+      },
+      {
+        "timeSubmitted": 11899,
+        "contestantName": "MS23:usr-29(The Fallen Order-OMI MICHOACAN)",
+        "problemIndex": "G",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 198
+      },
+      {
+        "timeSubmitted": 11874,
+        "contestantName": "MS23:usr-31(Omega-vectors-OMI MICHOACAN)",
+        "problemIndex": "D",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 197
+      },
+      {
+        "timeSubmitted": 11865,
+        "contestantName": "MS23:usr-12(Programando Experiencia-CETIS 89)",
+        "problemIndex": "K",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 197
+      },
+      {
+        "timeSubmitted": 11862,
+        "contestantName": "MS23:usr-20(Los guapos-CONALEP ACAMBARO)",
+        "problemIndex": "K",
+        "verdict": "RTE",
+        "problemScore": 0,
+        "penalty": 197
+      },
+      {
+        "timeSubmitted": 11847,
+        "contestantName": "MS23:usr-16(COMPUTER TEAM-CETIS 89)",
+        "problemIndex": "I",
+        "verdict": "PA",
+        "problemScore": 20,
+        "penalty": 197
+      },
+      {
+        "timeSubmitted": 11843,
+        "contestantName": "MS23:usr-21(Nobody-CONALEP MOROLEON)",
+        "problemIndex": "K",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 197
+      },
+      {
+        "timeSubmitted": 11836,
+        "contestantName": "MS23:usr-22(WOLF BOTS-CONALEP MOROLEON)",
+        "problemIndex": "M",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 197
+      },
+      {
+        "timeSubmitted": 11772,
+        "contestantName": "MS23:usr-04(The ORIG rejected us-CBTIS 217)",
+        "problemIndex": "E",
+        "verdict": "PA",
+        "problemScore": 14.29,
+        "penalty": 196
+      },
+      {
+        "timeSubmitted": 11729,
+        "contestantName": "MS23:usr-15(Malware-CETIS 77)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 57,
+        "penalty": 195
+      },
+      {
+        "timeSubmitted": 11698,
+        "contestantName": "MS23:usr-13(Full Stack Alchemist-CETIS 120)",
+        "problemIndex": "D",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 194
+      },
+      {
+        "timeSubmitted": 11687,
+        "contestantName": "MS23:usr-20(Los guapos-CONALEP ACAMBARO)",
+        "problemIndex": "C",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 194
+      },
+      {
+        "timeSubmitted": 11682,
+        "contestantName": "MS23:usr-03(PrograMOP-CBTIS 172)",
+        "problemIndex": "M",
+        "verdict": "PA",
+        "problemScore": 83.87,
+        "penalty": 194
+      },
+      {
+        "timeSubmitted": 11669,
+        "contestantName": "MS23:usr-16(COMPUTER TEAM-CETIS 89)",
+        "problemIndex": "I",
+        "verdict": "PA",
+        "problemScore": 20,
+        "penalty": 194
+      },
+      {
+        "timeSubmitted": 11662,
+        "contestantName": "MS23:usr-21(Nobody-CONALEP MOROLEON)",
+        "problemIndex": "K",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 194
+      },
+      {
+        "timeSubmitted": 11655,
+        "contestantName": "MS23:usr-10(NovaElix-CBTIS 65)",
+        "problemIndex": "K",
+        "verdict": "PA",
+        "problemScore": 90,
+        "penalty": 194
+      },
+      {
+        "timeSubmitted": 11600,
+        "contestantName": "MS23:usr-12(Programando Experiencia-CETIS 89)",
+        "problemIndex": "M",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 193
+      },
+      {
+        "timeSubmitted": 11577,
+        "contestantName": "MS23:usr-27(Aztrobots 1-TALENTOS GUANAJUATO-AZTECA)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 192
+      },
+      {
+        "timeSubmitted": 11564,
+        "contestantName": "MS23:usr-10(NovaElix-CBTIS 65)",
+        "problemIndex": "K",
+        "verdict": "CE",
+        "problemScore": 0,
+        "penalty": 192
+      },
+      {
+        "timeSubmitted": 11514,
+        "contestantName": "MS23:usr-16(COMPUTER TEAM-CETIS 89)",
+        "problemIndex": "I",
+        "verdict": "CE",
+        "problemScore": 0,
+        "penalty": 191
+      },
+      {
+        "timeSubmitted": 11359,
+        "contestantName": "MS23:usr-24(ENMS Penjamo-ENMS PENJAMO)",
+        "problemIndex": "N",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 189
+      },
+      {
+        "timeSubmitted": 11291,
+        "contestantName": "MS23:usr-08(Codigo CeReAl-CBTIS 217)",
+        "problemIndex": "D",
+        "verdict": "PA",
+        "problemScore": 50,
+        "penalty": 188
+      },
+      {
+        "timeSubmitted": 11275,
+        "contestantName": "MS23:usr-22(WOLF BOTS-CONALEP MOROLEON)",
+        "problemIndex": "I",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 187
+      },
+      {
+        "timeSubmitted": 11273,
+        "contestantName": "MS23:usr-06(Maikroso-CBTIS 217)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 96.67,
+        "penalty": 187
+      },
+      {
+        "timeSubmitted": 11212,
+        "contestantName": "MS23:usr-19(Tecno power girls-CONALEP ACAMBARO)",
+        "problemIndex": "K",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 186
+      },
+      {
+        "timeSubmitted": 11175,
+        "contestantName": "MS23:usr-29(The Fallen Order-OMI MICHOACAN)",
+        "problemIndex": "G",
+        "verdict": "TLE",
+        "problemScore": 0,
+        "penalty": 186
+      },
+      {
+        "timeSubmitted": 11163,
+        "contestantName": "MS23:usr-25(C-Chaperos-ENMS SALVATIERRA)",
+        "problemIndex": "K",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 186
+      },
+      {
+        "timeSubmitted": 11119,
+        "contestantName": "MS23:usr-16(COMPUTER TEAM-CETIS 89)",
+        "problemIndex": "C",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 185
+      },
+      {
+        "timeSubmitted": 11116,
+        "contestantName": "MS23:usr-28(Aztrobots 2-TALENTOS GUANAJUATO-AZTECA)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 6.67,
+        "penalty": 185
+      },
+      {
+        "timeSubmitted": 11052,
+        "contestantName": "MS23:usr-16(COMPUTER TEAM-CETIS 89)",
+        "problemIndex": "A",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 184
+      },
+      {
+        "timeSubmitted": 11012,
+        "contestantName": "MS23:usr-10(NovaElix-CBTIS 65)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 80,
+        "penalty": 183
+      },
+      {
+        "timeSubmitted": 10992,
+        "contestantName": "MS23:usr-30(Binary Sorters-OMI MICHOACAN)",
+        "problemIndex": "D",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 183
+      },
+      {
+        "timeSubmitted": 10992,
+        "contestantName": "MS23:usr-03(PrograMOP-CBTIS 172)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 57,
+        "penalty": 183
+      },
+      {
+        "timeSubmitted": 10957,
+        "contestantName": "MS23:usr-09(Chicos_13-CBTIS 217)",
+        "problemIndex": "J",
+        "verdict": "PA",
+        "problemScore": 73.33,
+        "penalty": 182
+      },
+      {
+        "timeSubmitted": 10952,
+        "contestantName": "MS23:usr-33(LOS PRIMOS-SECUNDARIAS MENDEL-INDEP-IBERO)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 182
+      },
+      {
+        "timeSubmitted": 10929,
+        "contestantName": "MS23:usr-10(NovaElix-CBTIS 65)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 80,
+        "penalty": 182
+      },
+      {
+        "timeSubmitted": 10917,
+        "contestantName": "MS23:usr-24(ENMS Penjamo-ENMS PENJAMO)",
+        "problemIndex": "E",
+        "verdict": "PA",
+        "problemScore": 14.29,
+        "penalty": 181
+      },
+      {
+        "timeSubmitted": 10857,
+        "contestantName": "MS23:usr-24(ENMS Penjamo-ENMS PENJAMO)",
+        "problemIndex": "E",
+        "verdict": "PA",
+        "problemScore": 14.29,
+        "penalty": 180
+      },
+      {
+        "timeSubmitted": 10854,
+        "contestantName": "MS23:usr-30(Binary Sorters-OMI MICHOACAN)",
+        "problemIndex": "D",
+        "verdict": "PA",
+        "problemScore": 90,
+        "penalty": 180
+      },
+      {
+        "timeSubmitted": 10790,
+        "contestantName": "MS23:usr-25(C-Chaperos-ENMS SALVATIERRA)",
+        "problemIndex": "K",
+        "verdict": "TLE",
+        "problemScore": 0,
+        "penalty": 179
+      },
+      {
+        "timeSubmitted": 10784,
+        "contestantName": "MS23:usr-08(Codigo CeReAl-CBTIS 217)",
+        "problemIndex": "D",
+        "verdict": "PA",
+        "problemScore": 40,
+        "penalty": 179
+      },
+      {
+        "timeSubmitted": 10724,
+        "contestantName": "MS23:usr-19(Tecno power girls-CONALEP ACAMBARO)",
+        "problemIndex": "K",
+        "verdict": "CE",
+        "problemScore": 0,
+        "penalty": 178
+      },
+      {
+        "timeSubmitted": 10716,
+        "contestantName": "MS23:usr-16(COMPUTER TEAM-CETIS 89)",
+        "problemIndex": "A",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 178
+      },
+      {
+        "timeSubmitted": 10682,
+        "contestantName": "MS23:usr-33(LOS PRIMOS-SECUNDARIAS MENDEL-INDEP-IBERO)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 13.33,
+        "penalty": 178
+      },
+      {
+        "timeSubmitted": 10678,
+        "contestantName": "MS23:usr-13(Full Stack Alchemist-CETIS 120)",
+        "problemIndex": "E",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 177
+      },
+      {
+        "timeSubmitted": 10677,
+        "contestantName": "MS23:usr-06(Maikroso-CBTIS 217)",
+        "problemIndex": "D",
+        "verdict": "PA",
+        "problemScore": 20,
+        "penalty": 177
+      },
+      {
+        "timeSubmitted": 10669,
+        "contestantName": "MS23:usr-22(WOLF BOTS-CONALEP MOROLEON)",
+        "problemIndex": "I",
+        "verdict": "PA",
+        "problemScore": 40,
+        "penalty": 177
+      },
+      {
+        "timeSubmitted": 10655,
+        "contestantName": "MS23:usr-12(Programando Experiencia-CETIS 89)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 96.67,
+        "penalty": 177
+      },
+      {
+        "timeSubmitted": 10597,
+        "contestantName": "MS23:usr-33(LOS PRIMOS-SECUNDARIAS MENDEL-INDEP-IBERO)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 176
+      },
+      {
+        "timeSubmitted": 10581,
+        "contestantName": "MS23:usr-09(Chicos_13-CBTIS 217)",
+        "problemIndex": "J",
+        "verdict": "PA",
+        "problemScore": 73.33,
+        "penalty": 176
+      },
+      {
+        "timeSubmitted": 10561,
+        "contestantName": "MS23:usr-19(Tecno power girls-CONALEP ACAMBARO)",
+        "problemIndex": "K",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 176
+      },
+      {
+        "timeSubmitted": 10490,
+        "contestantName": "MS23:usr-28(Aztrobots 2-TALENTOS GUANAJUATO-AZTECA)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 6.67,
+        "penalty": 174
+      },
+      {
+        "timeSubmitted": 10457,
+        "contestantName": "MS23:usr-15(Malware-CETIS 77)",
+        "problemIndex": "D",
+        "verdict": "CE",
+        "problemScore": 0,
+        "penalty": 174
+      },
+      {
+        "timeSubmitted": 10372,
+        "contestantName": "MS23:usr-23(DragonWorK-CONALEP SALVATIERRA)",
+        "problemIndex": "F",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 172
+      },
+      {
+        "timeSubmitted": 10350,
+        "contestantName": "MS23:usr-05(FamCode-CBTIS 217)",
+        "problemIndex": "K",
+        "verdict": "PA",
+        "problemScore": 90,
+        "penalty": 172
+      },
+      {
+        "timeSubmitted": 10329,
+        "contestantName": "MS23:usr-33(LOS PRIMOS-SECUNDARIAS MENDEL-INDEP-IBERO)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 172
+      },
+      {
+        "timeSubmitted": 10324,
+        "contestantName": "MS23:usr-16(COMPUTER TEAM-CETIS 89)",
+        "problemIndex": "B",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 172
+      },
+      {
+        "timeSubmitted": 10321,
+        "contestantName": "MS23:usr-15(Malware-CETIS 77)",
+        "problemIndex": "D",
+        "verdict": "PA",
+        "problemScore": 90,
+        "penalty": 172
+      },
+      {
+        "timeSubmitted": 10206,
+        "contestantName": "MS23:usr-31(Omega-vectors-OMI MICHOACAN)",
+        "problemIndex": "D",
+        "verdict": "PA",
+        "problemScore": 50,
+        "penalty": 170
+      },
+      {
+        "timeSubmitted": 10201,
+        "contestantName": "MS23:usr-19(Tecno power girls-CONALEP ACAMBARO)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 80,
+        "penalty": 170
+      },
+      {
+        "timeSubmitted": 10154,
+        "contestantName": "MS23:usr-16(COMPUTER TEAM-CETIS 89)",
+        "problemIndex": "B",
+        "verdict": "CE",
+        "problemScore": 0,
+        "penalty": 169
+      },
+      {
+        "timeSubmitted": 10092,
+        "contestantName": "MS23:usr-23(DragonWorK-CONALEP SALVATIERRA)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 80,
+        "penalty": 168
+      },
+      {
+        "timeSubmitted": 10079,
+        "contestantName": "MS23:usr-30(Binary Sorters-OMI MICHOACAN)",
+        "problemIndex": "N",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 167
+      },
+      {
+        "timeSubmitted": 10068,
+        "contestantName": "MS23:usr-06(Maikroso-CBTIS 217)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 167
+      },
+      {
+        "timeSubmitted": 10059,
+        "contestantName": "MS23:usr-25(C-Chaperos-ENMS SALVATIERRA)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 57,
+        "penalty": 167
+      },
+      {
+        "timeSubmitted": 10033,
+        "contestantName": "MS23:usr-27(Aztrobots 1-TALENTOS GUANAJUATO-AZTECA)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 10,
+        "penalty": 167
+      },
+      {
+        "timeSubmitted": 9963,
+        "contestantName": "MS23:usr-06(Maikroso-CBTIS 217)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 166
+      },
+      {
+        "timeSubmitted": 9947,
+        "contestantName": "MS23:usr-31(Omega-vectors-OMI MICHOACAN)",
+        "problemIndex": "N",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 165
+      },
+      {
+        "timeSubmitted": 9942,
+        "contestantName": "MS23:usr-30(Binary Sorters-OMI MICHOACAN)",
+        "problemIndex": "D",
+        "verdict": "PA",
+        "problemScore": 70,
+        "penalty": 165
+      },
+      {
+        "timeSubmitted": 9902,
+        "contestantName": "MS23:usr-23(DragonWorK-CONALEP SALVATIERRA)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 57,
+        "penalty": 165
+      },
+      {
+        "timeSubmitted": 9900,
+        "contestantName": "MS23:usr-19(Tecno power girls-CONALEP ACAMBARO)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 56,
+        "penalty": 165
+      },
+      {
+        "timeSubmitted": 9879,
+        "contestantName": "MS23:usr-33(LOS PRIMOS-SECUNDARIAS MENDEL-INDEP-IBERO)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 164
+      },
+      {
+        "timeSubmitted": 9858,
+        "contestantName": "MS23:usr-05(FamCode-CBTIS 217)",
+        "problemIndex": "K",
+        "verdict": "PA",
+        "problemScore": 90,
+        "penalty": 164
+      },
+      {
+        "timeSubmitted": 9813,
+        "contestantName": "MS23:usr-03(PrograMOP-CBTIS 172)",
+        "problemIndex": "J",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 163
+      },
+      {
+        "timeSubmitted": 9787,
+        "contestantName": "MS23:usr-06(Maikroso-CBTIS 217)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 163
+      },
+      {
+        "timeSubmitted": 9780,
+        "contestantName": "MS23:usr-15(Malware-CETIS 77)",
+        "problemIndex": "K",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 163
+      },
+      {
+        "timeSubmitted": 9763,
+        "contestantName": "MS23:usr-05(FamCode-CBTIS 217)",
+        "problemIndex": "K",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 162
+      },
+      {
+        "timeSubmitted": 9758,
+        "contestantName": "MS23:usr-19(Tecno power girls-CONALEP ACAMBARO)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 80,
+        "penalty": 162
+      },
+      {
+        "timeSubmitted": 9734,
+        "contestantName": "MS23:usr-04(The ORIG rejected us-CBTIS 217)",
+        "problemIndex": "E",
+        "verdict": "PA",
+        "problemScore": 14.29,
+        "penalty": 162
+      },
+      {
+        "timeSubmitted": 9730,
+        "contestantName": "MS23:usr-33(LOS PRIMOS-SECUNDARIAS MENDEL-INDEP-IBERO)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 162
+      },
+      {
+        "timeSubmitted": 9694,
+        "contestantName": "MS23:usr-16(COMPUTER TEAM-CETIS 89)",
+        "problemIndex": "B",
+        "verdict": "CE",
+        "problemScore": 0,
+        "penalty": 161
+      },
+      {
+        "timeSubmitted": 9661,
+        "contestantName": "MS23:usr-33(LOS PRIMOS-SECUNDARIAS MENDEL-INDEP-IBERO)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 161
+      },
+      {
+        "timeSubmitted": 9648,
+        "contestantName": "MS23:usr-31(Omega-vectors-OMI MICHOACAN)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 96.67,
+        "penalty": 160
+      },
+      {
+        "timeSubmitted": 9639,
+        "contestantName": "MS23:usr-19(Tecno power girls-CONALEP ACAMBARO)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 80,
+        "penalty": 160
+      },
+      {
+        "timeSubmitted": 9626,
+        "contestantName": "MS23:usr-06(Maikroso-CBTIS 217)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 160
+      },
+      {
+        "timeSubmitted": 9598,
+        "contestantName": "MS23:usr-04(The ORIG rejected us-CBTIS 217)",
+        "problemIndex": "E",
+        "verdict": "MLE",
+        "problemScore": 0,
+        "penalty": 159
+      },
+      {
+        "timeSubmitted": 9509,
+        "contestantName": "MS23:usr-19(Tecno power girls-CONALEP ACAMBARO)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 80,
+        "penalty": 158
+      },
+      {
+        "timeSubmitted": 9443,
+        "contestantName": "MS23:usr-14(Puro StackOverflow-CETIS 120)",
+        "problemIndex": "E",
+        "verdict": "PA",
+        "problemScore": 14.29,
+        "penalty": 157
+      },
+      {
+        "timeSubmitted": 9416,
+        "contestantName": "MS23:usr-06(Maikroso-CBTIS 217)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 156
+      },
+      {
+        "timeSubmitted": 9390,
+        "contestantName": "MS23:usr-19(Tecno power girls-CONALEP ACAMBARO)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 80,
+        "penalty": 156
+      },
+      {
+        "timeSubmitted": 9358,
+        "contestantName": "MS23:usr-29(The Fallen Order-OMI MICHOACAN)",
+        "problemIndex": "N",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 155
+      },
+      {
+        "timeSubmitted": 9344,
+        "contestantName": "MS23:usr-15(Malware-CETIS 77)",
+        "problemIndex": "N",
+        "verdict": "TLE",
+        "problemScore": 0,
+        "penalty": 155
+      },
+      {
+        "timeSubmitted": 9337,
+        "contestantName": "MS23:usr-21(Nobody-CONALEP MOROLEON)",
+        "problemIndex": "A",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 155
+      },
+      {
+        "timeSubmitted": 9330,
+        "contestantName": "MS23:usr-05(FamCode-CBTIS 217)",
+        "problemIndex": "D",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 155
+      },
+      {
+        "timeSubmitted": 9277,
+        "contestantName": "MS23:usr-28(Aztrobots 2-TALENTOS GUANAJUATO-AZTECA)",
+        "problemIndex": "K",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 154
+      },
+      {
+        "timeSubmitted": 9275,
+        "contestantName": "MS23:usr-14(Puro StackOverflow-CETIS 120)",
+        "problemIndex": "D",
+        "verdict": "PA",
+        "problemScore": 10,
+        "penalty": 154
+      },
+      {
+        "timeSubmitted": 9272,
+        "contestantName": "MS23:usr-19(Tecno power girls-CONALEP ACAMBARO)",
+        "problemIndex": "F",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 154
+      },
+      {
+        "timeSubmitted": 9263,
+        "contestantName": "MS23:usr-08(Codigo CeReAl-CBTIS 217)",
+        "problemIndex": "N",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 154
+      },
+      {
+        "timeSubmitted": 9168,
+        "contestantName": "MS23:usr-04(The ORIG rejected us-CBTIS 217)",
+        "problemIndex": "E",
+        "verdict": "PA",
+        "problemScore": 14.29,
+        "penalty": 152
+      },
+      {
+        "timeSubmitted": 9128,
+        "contestantName": "MS23:usr-07(Team Wolf-CBTIS 217)",
+        "problemIndex": "J",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 152
+      },
+      {
+        "timeSubmitted": 9128,
+        "contestantName": "MS23:usr-28(Aztrobots 2-TALENTOS GUANAJUATO-AZTECA)",
+        "problemIndex": "K",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 152
+      },
+      {
+        "timeSubmitted": 9124,
+        "contestantName": "MS23:usr-12(Programando Experiencia-CETIS 89)",
+        "problemIndex": "K",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 152
+      },
+      {
+        "timeSubmitted": 9104,
+        "contestantName": "MS23:usr-04(The ORIG rejected us-CBTIS 217)",
+        "problemIndex": "E",
+        "verdict": "RTE",
+        "problemScore": 0,
+        "penalty": 151
+      },
+      {
+        "timeSubmitted": 9067,
+        "contestantName": "MS23:usr-12(Programando Experiencia-CETIS 89)",
+        "problemIndex": "I",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 151
+      },
+      {
+        "timeSubmitted": 9051,
+        "contestantName": "MS23:usr-15(Malware-CETIS 77)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 150
+      },
+      {
+        "timeSubmitted": 8852,
+        "contestantName": "MS23:usr-24(ENMS Penjamo-ENMS PENJAMO)",
+        "problemIndex": "G",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 147
+      },
+      {
+        "timeSubmitted": 8836,
+        "contestantName": "MS23:usr-10(NovaElix-CBTIS 65)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 57,
+        "penalty": 147
+      },
+      {
+        "timeSubmitted": 8806,
+        "contestantName": "MS23:usr-21(Nobody-CONALEP MOROLEON)",
+        "problemIndex": "M",
+        "verdict": "PA",
+        "problemScore": 70.97,
+        "penalty": 146
+      },
+      {
+        "timeSubmitted": 8773,
+        "contestantName": "MS23:usr-29(The Fallen Order-OMI MICHOACAN)",
+        "problemIndex": "E",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 146
+      },
+      {
+        "timeSubmitted": 8736,
+        "contestantName": "MS23:usr-21(Nobody-CONALEP MOROLEON)",
+        "problemIndex": "M",
+        "verdict": "CE",
+        "problemScore": 0,
+        "penalty": 145
+      },
+      {
+        "timeSubmitted": 8710,
+        "contestantName": "MS23:usr-11(Osos Informaticos-CBTIS 65)",
+        "problemIndex": "K",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 145
+      },
+      {
+        "timeSubmitted": 8705,
+        "contestantName": "MS23:usr-12(Programando Experiencia-CETIS 89)",
+        "problemIndex": "I",
+        "verdict": "PA",
+        "problemScore": 80,
+        "penalty": 145
+      },
+      {
+        "timeSubmitted": 8667,
+        "contestantName": "MS23:usr-15(Malware-CETIS 77)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 144
+      },
+      {
+        "timeSubmitted": 8655,
+        "contestantName": "MS23:usr-09(Chicos_13-CBTIS 217)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 144
+      },
+      {
+        "timeSubmitted": 8620,
+        "contestantName": "MS23:usr-26(CuriCientificos-ENMS SALVATIERRA)",
+        "problemIndex": "K",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 143
+      },
+      {
+        "timeSubmitted": 8601,
+        "contestantName": "MS23:usr-15(Malware-CETIS 77)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 143
+      },
+      {
+        "timeSubmitted": 8589,
+        "contestantName": "MS23:usr-05(FamCode-CBTIS 217)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 143
+      },
+      {
+        "timeSubmitted": 8585,
+        "contestantName": "MS23:usr-09(Chicos_13-CBTIS 217)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 143
+      },
+      {
+        "timeSubmitted": 8559,
+        "contestantName": "MS23:usr-26(CuriCientificos-ENMS SALVATIERRA)",
+        "problemIndex": "K",
+        "verdict": "PA",
+        "problemScore": 90,
+        "penalty": 142
+      },
+      {
+        "timeSubmitted": 8556,
+        "contestantName": "MS23:usr-25(C-Chaperos-ENMS SALVATIERRA)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 57,
+        "penalty": 142
+      },
+      {
+        "timeSubmitted": 8477,
+        "contestantName": "MS23:usr-10(NovaElix-CBTIS 65)",
+        "problemIndex": "M",
+        "verdict": "PA",
+        "problemScore": 41.94,
+        "penalty": 141
+      },
+      {
+        "timeSubmitted": 8390,
+        "contestantName": "MS23:usr-01(Net Teams-BACH. BIVALENTE TALENTOS IRAPUATO)",
+        "problemIndex": "K",
+        "verdict": "PA",
+        "problemScore": 90,
+        "penalty": 139
+      },
+      {
+        "timeSubmitted": 8360,
+        "contestantName": "MS23:usr-28(Aztrobots 2-TALENTOS GUANAJUATO-AZTECA)",
+        "problemIndex": "K",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 139
+      },
+      {
+        "timeSubmitted": 8358,
+        "contestantName": "MS23:usr-09(Chicos_13-CBTIS 217)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 139
+      },
+      {
+        "timeSubmitted": 8357,
+        "contestantName": "MS23:usr-08(Codigo CeReAl-CBTIS 217)",
+        "problemIndex": "J",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 139
+      },
+      {
+        "timeSubmitted": 8266,
+        "contestantName": "MS23:usr-23(DragonWorK-CONALEP SALVATIERRA)",
+        "problemIndex": "A",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 137
+      },
+      {
+        "timeSubmitted": 8262,
+        "contestantName": "MS23:usr-06(Maikroso-CBTIS 217)",
+        "problemIndex": "J",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 137
+      },
+      {
+        "timeSubmitted": 8260,
+        "contestantName": "MS23:usr-05(FamCode-CBTIS 217)",
+        "problemIndex": "J",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 137
+      },
+      {
+        "timeSubmitted": 8214,
+        "contestantName": "MS23:usr-26(CuriCientificos-ENMS SALVATIERRA)",
+        "problemIndex": "J",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 136
+      },
+      {
+        "timeSubmitted": 8157,
+        "contestantName": "MS23:usr-31(Omega-vectors-OMI MICHOACAN)",
+        "problemIndex": "K",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 135
+      },
+      {
+        "timeSubmitted": 8123,
+        "contestantName": "MS23:usr-23(DragonWorK-CONALEP SALVATIERRA)",
+        "problemIndex": "C",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 135
+      },
+      {
+        "timeSubmitted": 8065,
+        "contestantName": "MS23:usr-31(Omega-vectors-OMI MICHOACAN)",
+        "problemIndex": "K",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 134
+      },
+      {
+        "timeSubmitted": 8005,
+        "contestantName": "MS23:usr-31(Omega-vectors-OMI MICHOACAN)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 96.67,
+        "penalty": 133
+      },
+      {
+        "timeSubmitted": 7790,
+        "contestantName": "MS23:usr-10(NovaElix-CBTIS 65)",
+        "problemIndex": "J",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 129
+      },
+      {
+        "timeSubmitted": 7761,
+        "contestantName": "MS23:usr-05(FamCode-CBTIS 217)",
+        "problemIndex": "D",
+        "verdict": "PA",
+        "problemScore": 90,
+        "penalty": 129
+      },
+      {
+        "timeSubmitted": 7724,
+        "contestantName": "MS23:usr-01(Net Teams-BACH. BIVALENTE TALENTOS IRAPUATO)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 93.33,
+        "penalty": 128
+      },
+      {
+        "timeSubmitted": 7710,
+        "contestantName": "MS23:usr-26(CuriCientificos-ENMS SALVATIERRA)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 80,
+        "penalty": 128
+      },
+      {
+        "timeSubmitted": 7695,
+        "contestantName": "MS23:usr-05(FamCode-CBTIS 217)",
+        "problemIndex": "D",
+        "verdict": "PA",
+        "problemScore": 90,
+        "penalty": 128
+      },
+      {
+        "timeSubmitted": 7679,
+        "contestantName": "MS23:usr-33(LOS PRIMOS-SECUNDARIAS MENDEL-INDEP-IBERO)",
+        "problemIndex": "K",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 127
+      },
+      {
+        "timeSubmitted": 7678,
+        "contestantName": "MS23:usr-13(Full Stack Alchemist-CETIS 120)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 127
+      },
+      {
+        "timeSubmitted": 7673,
+        "contestantName": "MS23:usr-19(Tecno power girls-CONALEP ACAMBARO)",
+        "problemIndex": "M",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 127
+      },
+      {
+        "timeSubmitted": 7645,
+        "contestantName": "MS23:usr-01(Net Teams-BACH. BIVALENTE TALENTOS IRAPUATO)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 93.33,
+        "penalty": 127
+      },
+      {
+        "timeSubmitted": 7624,
+        "contestantName": "MS23:usr-31(Omega-vectors-OMI MICHOACAN)",
+        "problemIndex": "K",
+        "verdict": "PA",
+        "problemScore": 90,
+        "penalty": 127
+      },
+      {
+        "timeSubmitted": 7610,
+        "contestantName": "MS23:usr-10(NovaElix-CBTIS 65)",
+        "problemIndex": "J",
+        "verdict": "RTE",
+        "problemScore": 0,
+        "penalty": 126
+      },
+      {
+        "timeSubmitted": 7559,
+        "contestantName": "MS23:usr-18(LOS PCS-CONALEP VALLE DE SANTIAGO)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 57,
+        "penalty": 125
+      },
+      {
+        "timeSubmitted": 7548,
+        "contestantName": "MS23:usr-08(Codigo CeReAl-CBTIS 217)",
+        "problemIndex": "J",
+        "verdict": "PA",
+        "problemScore": 6.67,
+        "penalty": 125
+      },
+      {
+        "timeSubmitted": 7529,
+        "contestantName": "MS23:usr-04(The ORIG rejected us-CBTIS 217)",
+        "problemIndex": "E",
+        "verdict": "PA",
+        "problemScore": 14.29,
+        "penalty": 125
+      },
+      {
+        "timeSubmitted": 7477,
+        "contestantName": "MS23:usr-26(CuriCientificos-ENMS SALVATIERRA)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 80,
+        "penalty": 124
+      },
+      {
+        "timeSubmitted": 7469,
+        "contestantName": "MS23:usr-18(LOS PCS-CONALEP VALLE DE SANTIAGO)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 57,
+        "penalty": 124
+      },
+      {
+        "timeSubmitted": 7450,
+        "contestantName": "MS23:usr-28(Aztrobots 2-TALENTOS GUANAJUATO-AZTECA)",
+        "problemIndex": "K",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 124
+      },
+      {
+        "timeSubmitted": 7413,
+        "contestantName": "MS23:usr-25(C-Chaperos-ENMS SALVATIERRA)",
+        "problemIndex": "M",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 123
+      },
+      {
+        "timeSubmitted": 7375,
+        "contestantName": "MS23:usr-14(Puro StackOverflow-CETIS 120)",
+        "problemIndex": "L",
+        "verdict": "RTE",
+        "problemScore": 0,
+        "penalty": 122
+      },
+      {
+        "timeSubmitted": 7275,
+        "contestantName": "MS23:usr-22(WOLF BOTS-CONALEP MOROLEON)",
+        "problemIndex": "F",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 121
+      },
+      {
+        "timeSubmitted": 7272,
+        "contestantName": "MS23:usr-24(ENMS Penjamo-ENMS PENJAMO)",
+        "problemIndex": "E",
+        "verdict": "PA",
+        "problemScore": 14.29,
+        "penalty": 121
+      },
+      {
+        "timeSubmitted": 7253,
+        "contestantName": "MS23:usr-28(Aztrobots 2-TALENTOS GUANAJUATO-AZTECA)",
+        "problemIndex": "K",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 120
+      },
+      {
+        "timeSubmitted": 7250,
+        "contestantName": "MS23:usr-22(WOLF BOTS-CONALEP MOROLEON)",
+        "problemIndex": "N",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 120
+      },
+      {
+        "timeSubmitted": 7192,
+        "contestantName": "MS23:usr-14(Puro StackOverflow-CETIS 120)",
+        "problemIndex": "L",
+        "verdict": "RTE",
+        "problemScore": 0,
+        "penalty": 119
+      },
+      {
+        "timeSubmitted": 7133,
+        "contestantName": "MS23:usr-06(Maikroso-CBTIS 217)",
+        "problemIndex": "K",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 118
+      },
+      {
+        "timeSubmitted": 7127,
+        "contestantName": "MS23:usr-21(Nobody-CONALEP MOROLEON)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 118
+      },
+      {
+        "timeSubmitted": 7096,
+        "contestantName": "MS23:usr-26(CuriCientificos-ENMS SALVATIERRA)",
+        "problemIndex": "N",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 118
+      },
+      {
+        "timeSubmitted": 7086,
+        "contestantName": "MS23:usr-14(Puro StackOverflow-CETIS 120)",
+        "problemIndex": "L",
+        "verdict": "RTE",
+        "problemScore": 0,
+        "penalty": 118
+      },
+      {
+        "timeSubmitted": 7052,
+        "contestantName": "MS23:usr-24(ENMS Penjamo-ENMS PENJAMO)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 117
+      },
+      {
+        "timeSubmitted": 7051,
+        "contestantName": "MS23:usr-18(LOS PCS-CONALEP VALLE DE SANTIAGO)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 57,
+        "penalty": 117
+      },
+      {
+        "timeSubmitted": 7041,
+        "contestantName": "MS23:usr-11(Osos Informaticos-CBTIS 65)",
+        "problemIndex": "K",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 117
+      },
+      {
+        "timeSubmitted": 7029,
+        "contestantName": "MS23:usr-26(CuriCientificos-ENMS SALVATIERRA)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 96.67,
+        "penalty": 117
+      },
+      {
+        "timeSubmitted": 6954,
+        "contestantName": "MS23:usr-15(Malware-CETIS 77)",
+        "problemIndex": "D",
+        "verdict": "PA",
+        "problemScore": 90,
+        "penalty": 115
+      },
+      {
+        "timeSubmitted": 6922,
+        "contestantName": "MS23:usr-18(LOS PCS-CONALEP VALLE DE SANTIAGO)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 57,
+        "penalty": 115
+      },
+      {
+        "timeSubmitted": 6861,
+        "contestantName": "MS23:usr-05(FamCode-CBTIS 217)",
+        "problemIndex": "M",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 114
+      },
+      {
+        "timeSubmitted": 6805,
+        "contestantName": "MS23:usr-06(Maikroso-CBTIS 217)",
+        "problemIndex": "D",
+        "verdict": "PA",
+        "problemScore": 50,
+        "penalty": 113
+      },
+      {
+        "timeSubmitted": 6765,
+        "contestantName": "MS23:usr-28(Aztrobots 2-TALENTOS GUANAJUATO-AZTECA)",
+        "problemIndex": "K",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 112
+      },
+      {
+        "timeSubmitted": 6747,
+        "contestantName": "MS23:usr-20(Los guapos-CONALEP ACAMBARO)",
+        "problemIndex": "B",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 112
+      },
+      {
+        "timeSubmitted": 6736,
+        "contestantName": "MS23:usr-27(Aztrobots 1-TALENTOS GUANAJUATO-AZTECA)",
+        "problemIndex": "K",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 112
+      },
+      {
+        "timeSubmitted": 6731,
+        "contestantName": "MS23:usr-01(Net Teams-BACH. BIVALENTE TALENTOS IRAPUATO)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 10,
+        "penalty": 112
+      },
+      {
+        "timeSubmitted": 6729,
+        "contestantName": "MS23:usr-04(The ORIG rejected us-CBTIS 217)",
+        "problemIndex": "D",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 112
+      },
+      {
+        "timeSubmitted": 6726,
+        "contestantName": "MS23:usr-15(Malware-CETIS 77)",
+        "problemIndex": "D",
+        "verdict": "PA",
+        "problemScore": 40,
+        "penalty": 112
+      },
+      {
+        "timeSubmitted": 6716,
+        "contestantName": "MS23:usr-06(Maikroso-CBTIS 217)",
+        "problemIndex": "D",
+        "verdict": "PA",
+        "problemScore": 40,
+        "penalty": 111
+      },
+      {
+        "timeSubmitted": 6715,
+        "contestantName": "MS23:usr-21(Nobody-CONALEP MOROLEON)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 111
+      },
+      {
+        "timeSubmitted": 6703,
+        "contestantName": "MS23:usr-18(LOS PCS-CONALEP VALLE DE SANTIAGO)",
+        "problemIndex": "M",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 111
+      },
+      {
+        "timeSubmitted": 6683,
+        "contestantName": "MS23:usr-28(Aztrobots 2-TALENTOS GUANAJUATO-AZTECA)",
+        "problemIndex": "K",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 111
+      },
+      {
+        "timeSubmitted": 6681,
+        "contestantName": "MS23:usr-22(WOLF BOTS-CONALEP MOROLEON)",
+        "problemIndex": "F",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 111
+      },
+      {
+        "timeSubmitted": 6678,
+        "contestantName": "MS23:usr-07(Team Wolf-CBTIS 217)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 96.67,
+        "penalty": 111
+      },
+      {
+        "timeSubmitted": 6660,
+        "contestantName": "MS23:usr-04(The ORIG rejected us-CBTIS 217)",
+        "problemIndex": "D",
+        "verdict": "PA",
+        "problemScore": 40,
+        "penalty": 111
+      },
+      {
+        "timeSubmitted": 6648,
+        "contestantName": "MS23:usr-23(DragonWorK-CONALEP SALVATIERRA)",
+        "problemIndex": "I",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 110
+      },
+      {
+        "timeSubmitted": 6612,
+        "contestantName": "MS23:usr-25(C-Chaperos-ENMS SALVATIERRA)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 57,
+        "penalty": 110
+      },
+      {
+        "timeSubmitted": 6605,
+        "contestantName": "MS23:usr-11(Osos Informaticos-CBTIS 65)",
+        "problemIndex": "C",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 110
+      },
+      {
+        "timeSubmitted": 6605,
+        "contestantName": "MS23:usr-17(CLIC-K-CONALEP VALLE DE SANTIAGO)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 56,
+        "penalty": 110
+      },
+      {
+        "timeSubmitted": 6565,
+        "contestantName": "MS23:usr-29(The Fallen Order-OMI MICHOACAN)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 109
+      },
+      {
+        "timeSubmitted": 6543,
+        "contestantName": "MS23:usr-17(CLIC-K-CONALEP VALLE DE SANTIAGO)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 56,
+        "penalty": 109
+      },
+      {
+        "timeSubmitted": 6510,
+        "contestantName": "MS23:usr-19(Tecno power girls-CONALEP ACAMBARO)",
+        "problemIndex": "A",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 108
+      },
+      {
+        "timeSubmitted": 6482,
+        "contestantName": "MS23:usr-21(Nobody-CONALEP MOROLEON)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 108
+      },
+      {
+        "timeSubmitted": 6477,
+        "contestantName": "MS23:usr-26(CuriCientificos-ENMS SALVATIERRA)",
+        "problemIndex": "I",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 107
+      },
+      {
+        "timeSubmitted": 6466,
+        "contestantName": "MS23:usr-11(Osos Informaticos-CBTIS 65)",
+        "problemIndex": "A",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 107
+      },
+      {
+        "timeSubmitted": 6459,
+        "contestantName": "MS23:usr-27(Aztrobots 1-TALENTOS GUANAJUATO-AZTECA)",
+        "problemIndex": "I",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 107
+      },
+      {
+        "timeSubmitted": 6457,
+        "contestantName": "MS23:usr-13(Full Stack Alchemist-CETIS 120)",
+        "problemIndex": "D",
+        "verdict": "PA",
+        "problemScore": 50,
+        "penalty": 107
+      },
+      {
+        "timeSubmitted": 6410,
+        "contestantName": "MS23:usr-09(Chicos_13-CBTIS 217)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 106
+      },
+      {
+        "timeSubmitted": 6395,
+        "contestantName": "MS23:usr-06(Maikroso-CBTIS 217)",
+        "problemIndex": "D",
+        "verdict": "CE",
+        "problemScore": 0,
+        "penalty": 106
+      },
+      {
+        "timeSubmitted": 6386,
+        "contestantName": "MS23:usr-25(C-Chaperos-ENMS SALVATIERRA)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 56,
+        "penalty": 106
+      },
+      {
+        "timeSubmitted": 6220,
+        "contestantName": "MS23:usr-09(Chicos_13-CBTIS 217)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 103
+      },
+      {
+        "timeSubmitted": 6141,
+        "contestantName": "MS23:usr-26(CuriCientificos-ENMS SALVATIERRA)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 93.33,
+        "penalty": 102
+      },
+      {
+        "timeSubmitted": 6052,
+        "contestantName": "MS23:usr-13(Full Stack Alchemist-CETIS 120)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 100
+      },
+      {
+        "timeSubmitted": 6038,
+        "contestantName": "MS23:usr-28(Aztrobots 2-TALENTOS GUANAJUATO-AZTECA)",
+        "problemIndex": "F",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 100
+      },
+      {
+        "timeSubmitted": 6021,
+        "contestantName": "MS23:usr-09(Chicos_13-CBTIS 217)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 100
+      },
+      {
+        "timeSubmitted": 5984,
+        "contestantName": "MS23:usr-10(NovaElix-CBTIS 65)",
+        "problemIndex": "M",
+        "verdict": "PA",
+        "problemScore": 83.87,
+        "penalty": 99
+      },
+      {
+        "timeSubmitted": 5948,
+        "contestantName": "MS23:usr-28(Aztrobots 2-TALENTOS GUANAJUATO-AZTECA)",
+        "problemIndex": "M",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 99
+      },
+      {
+        "timeSubmitted": 5948,
+        "contestantName": "MS23:usr-33(LOS PRIMOS-SECUNDARIAS MENDEL-INDEP-IBERO)",
+        "problemIndex": "M",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 99
+      },
+      {
+        "timeSubmitted": 5910,
+        "contestantName": "MS23:usr-13(Full Stack Alchemist-CETIS 120)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 98
+      },
+      {
+        "timeSubmitted": 5908,
+        "contestantName": "MS23:usr-05(FamCode-CBTIS 217)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 98
+      },
+      {
+        "timeSubmitted": 5906,
+        "contestantName": "MS23:usr-14(Puro StackOverflow-CETIS 120)",
+        "problemIndex": "N",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 98
+      },
+      {
+        "timeSubmitted": 5880,
+        "contestantName": "MS23:usr-06(Maikroso-CBTIS 217)",
+        "problemIndex": "I",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 98
+      },
+      {
+        "timeSubmitted": 5830,
+        "contestantName": "MS23:usr-13(Full Stack Alchemist-CETIS 120)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 97
+      },
+      {
+        "timeSubmitted": 5788,
+        "contestantName": "MS23:usr-19(Tecno power girls-CONALEP ACAMBARO)",
+        "problemIndex": "K",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 96
+      },
+      {
+        "timeSubmitted": 5682,
+        "contestantName": "MS23:usr-29(The Fallen Order-OMI MICHOACAN)",
+        "problemIndex": "H",
+        "verdict": "PA",
+        "problemScore": 98,
+        "penalty": 94
+      },
+      {
+        "timeSubmitted": 5656,
+        "contestantName": "MS23:usr-05(FamCode-CBTIS 217)",
+        "problemIndex": "F",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 94
+      },
+      {
+        "timeSubmitted": 5636,
+        "contestantName": "MS23:usr-33(LOS PRIMOS-SECUNDARIAS MENDEL-INDEP-IBERO)",
+        "problemIndex": "M",
+        "verdict": "PA",
+        "problemScore": 22.58,
+        "penalty": 93
+      },
+      {
+        "timeSubmitted": 5620,
+        "contestantName": "MS23:usr-31(Omega-vectors-OMI MICHOACAN)",
+        "problemIndex": "J",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 93
+      },
+      {
+        "timeSubmitted": 5577,
+        "contestantName": "MS23:usr-06(Maikroso-CBTIS 217)",
+        "problemIndex": "M",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 92
+      },
+      {
+        "timeSubmitted": 5574,
+        "contestantName": "MS23:usr-15(Malware-CETIS 77)",
+        "problemIndex": "J",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 92
+      },
+      {
+        "timeSubmitted": 5476,
+        "contestantName": "MS23:usr-33(LOS PRIMOS-SECUNDARIAS MENDEL-INDEP-IBERO)",
+        "problemIndex": "I",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 91
+      },
+      {
+        "timeSubmitted": 5472,
+        "contestantName": "MS23:usr-19(Tecno power girls-CONALEP ACAMBARO)",
+        "problemIndex": "K",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 91
+      },
+      {
+        "timeSubmitted": 5449,
+        "contestantName": "MS23:usr-31(Omega-vectors-OMI MICHOACAN)",
+        "problemIndex": "F",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 90
+      },
+      {
+        "timeSubmitted": 5406,
+        "contestantName": "MS23:usr-33(LOS PRIMOS-SECUNDARIAS MENDEL-INDEP-IBERO)",
+        "problemIndex": "I",
+        "verdict": "PA",
+        "problemScore": 80,
+        "penalty": 90
+      },
+      {
+        "timeSubmitted": 5402,
+        "contestantName": "MS23:usr-19(Tecno power girls-CONALEP ACAMBARO)",
+        "problemIndex": "K",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 90
+      },
+      {
+        "timeSubmitted": 5361,
+        "contestantName": "MS23:usr-31(Omega-vectors-OMI MICHOACAN)",
+        "problemIndex": "M",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 89
+      },
+      {
+        "timeSubmitted": 5338,
+        "contestantName": "MS23:usr-24(ENMS Penjamo-ENMS PENJAMO)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 88
+      },
+      {
+        "timeSubmitted": 5270,
+        "contestantName": "MS23:usr-04(The ORIG rejected us-CBTIS 217)",
+        "problemIndex": "H",
+        "verdict": "PA",
+        "problemScore": 98,
+        "penalty": 87
+      },
+      {
+        "timeSubmitted": 5251,
+        "contestantName": "MS23:usr-30(Binary Sorters-OMI MICHOACAN)",
+        "problemIndex": "J",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 87
+      },
+      {
+        "timeSubmitted": 5222,
+        "contestantName": "MS23:usr-14(Puro StackOverflow-CETIS 120)",
+        "problemIndex": "K",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 87
+      },
+      {
+        "timeSubmitted": 5172,
+        "contestantName": "MS23:usr-26(CuriCientificos-ENMS SALVATIERRA)",
+        "problemIndex": "M",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 86
+      },
+      {
+        "timeSubmitted": 5141,
+        "contestantName": "MS23:usr-22(WOLF BOTS-CONALEP MOROLEON)",
+        "problemIndex": "F",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 85
+      },
+      {
+        "timeSubmitted": 5104,
+        "contestantName": "MS23:usr-15(Malware-CETIS 77)",
+        "problemIndex": "I",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 85
+      },
+      {
+        "timeSubmitted": 5095,
+        "contestantName": "MS23:usr-24(ENMS Penjamo-ENMS PENJAMO)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 84
+      },
+      {
+        "timeSubmitted": 5080,
+        "contestantName": "MS23:usr-11(Osos Informaticos-CBTIS 65)",
+        "problemIndex": "M",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 84
+      },
+      {
+        "timeSubmitted": 5065,
+        "contestantName": "MS23:usr-33(LOS PRIMOS-SECUNDARIAS MENDEL-INDEP-IBERO)",
+        "problemIndex": "F",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 84
+      },
+      {
+        "timeSubmitted": 5052,
+        "contestantName": "MS23:usr-27(Aztrobots 1-TALENTOS GUANAJUATO-AZTECA)",
+        "problemIndex": "M",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 84
+      },
+      {
+        "timeSubmitted": 5041,
+        "contestantName": "MS23:usr-26(CuriCientificos-ENMS SALVATIERRA)",
+        "problemIndex": "M",
+        "verdict": "PA",
+        "problemScore": 96.77,
+        "penalty": 84
+      },
+      {
+        "timeSubmitted": 5036,
+        "contestantName": "MS23:usr-14(Puro StackOverflow-CETIS 120)",
+        "problemIndex": "J",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 83
+      },
+      {
+        "timeSubmitted": 5034,
+        "contestantName": "MS23:usr-15(Malware-CETIS 77)",
+        "problemIndex": "I",
+        "verdict": "PA",
+        "problemScore": 80,
+        "penalty": 83
+      },
+      {
+        "timeSubmitted": 5009,
+        "contestantName": "MS23:usr-13(Full Stack Alchemist-CETIS 120)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 83
+      },
+      {
+        "timeSubmitted": 4968,
+        "contestantName": "MS23:usr-17(CLIC-K-CONALEP VALLE DE SANTIAGO)",
+        "problemIndex": "B",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 82
+      },
+      {
+        "timeSubmitted": 4940,
+        "contestantName": "MS23:usr-24(ENMS Penjamo-ENMS PENJAMO)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 82
+      },
+      {
+        "timeSubmitted": 4911,
+        "contestantName": "MS23:usr-26(CuriCientificos-ENMS SALVATIERRA)",
+        "problemIndex": "M",
+        "verdict": "PA",
+        "problemScore": 96.77,
+        "penalty": 81
+      },
+      {
+        "timeSubmitted": 4886,
+        "contestantName": "MS23:usr-17(CLIC-K-CONALEP VALLE DE SANTIAGO)",
+        "problemIndex": "C",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 81
+      },
+      {
+        "timeSubmitted": 4881,
+        "contestantName": "MS23:usr-31(Omega-vectors-OMI MICHOACAN)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 93.33,
+        "penalty": 81
+      },
+      {
+        "timeSubmitted": 4867,
+        "contestantName": "MS23:usr-24(ENMS Penjamo-ENMS PENJAMO)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 81
+      },
+      {
+        "timeSubmitted": 4812,
+        "contestantName": "MS23:usr-33(LOS PRIMOS-SECUNDARIAS MENDEL-INDEP-IBERO)",
+        "problemIndex": "D",
+        "verdict": "PA",
+        "problemScore": 50,
+        "penalty": 80
+      },
+      {
+        "timeSubmitted": 4805,
+        "contestantName": "MS23:usr-09(Chicos_13-CBTIS 217)",
+        "problemIndex": "K",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 80
+      },
+      {
+        "timeSubmitted": 4789,
+        "contestantName": "MS23:usr-26(CuriCientificos-ENMS SALVATIERRA)",
+        "problemIndex": "M",
+        "verdict": "PA",
+        "problemScore": 96.77,
+        "penalty": 79
+      },
+      {
+        "timeSubmitted": 4786,
+        "contestantName": "MS23:usr-05(FamCode-CBTIS 217)",
+        "problemIndex": "I",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 79
+      },
+      {
+        "timeSubmitted": 4773,
+        "contestantName": "MS23:usr-21(Nobody-CONALEP MOROLEON)",
+        "problemIndex": "C",
+        "verdict": "PA",
+        "problemScore": 90,
+        "penalty": 79
+      },
+      {
+        "timeSubmitted": 4760,
+        "contestantName": "MS23:usr-03(PrograMOP-CBTIS 172)",
+        "problemIndex": "K",
+        "verdict": "PA",
+        "problemScore": 90,
+        "penalty": 79
+      },
+      {
+        "timeSubmitted": 4742,
+        "contestantName": "MS23:usr-22(WOLF BOTS-CONALEP MOROLEON)",
+        "problemIndex": "F",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 79
+      },
+      {
+        "timeSubmitted": 4736,
+        "contestantName": "MS23:usr-16(COMPUTER TEAM-CETIS 89)",
+        "problemIndex": "C",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 78
+      },
+      {
+        "timeSubmitted": 4703,
+        "contestantName": "MS23:usr-15(Malware-CETIS 77)",
+        "problemIndex": "M",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 78
+      },
+      {
+        "timeSubmitted": 4662,
+        "contestantName": "MS23:usr-30(Binary Sorters-OMI MICHOACAN)",
+        "problemIndex": "D",
+        "verdict": "PA",
+        "problemScore": 40,
+        "penalty": 77
+      },
+      {
+        "timeSubmitted": 4610,
+        "contestantName": "MS23:usr-18(LOS PCS-CONALEP VALLE DE SANTIAGO)",
+        "problemIndex": "K",
+        "verdict": "PA",
+        "problemScore": 90,
+        "penalty": 76
+      },
+      {
+        "timeSubmitted": 4543,
+        "contestantName": "MS23:usr-31(Omega-vectors-OMI MICHOACAN)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 75
+      },
+      {
+        "timeSubmitted": 4364,
+        "contestantName": "MS23:usr-24(ENMS Penjamo-ENMS PENJAMO)",
+        "problemIndex": "H",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 72
+      },
+      {
+        "timeSubmitted": 4345,
+        "contestantName": "MS23:usr-31(Omega-vectors-OMI MICHOACAN)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 72
+      },
+      {
+        "timeSubmitted": 4201,
+        "contestantName": "MS23:usr-13(Full Stack Alchemist-CETIS 120)",
+        "problemIndex": "F",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 70
+      },
+      {
+        "timeSubmitted": 4192,
+        "contestantName": "MS23:usr-01(Net Teams-BACH. BIVALENTE TALENTOS IRAPUATO)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 80,
+        "penalty": 69
+      },
+      {
+        "timeSubmitted": 4187,
+        "contestantName": "MS23:usr-08(Codigo CeReAl-CBTIS 217)",
+        "problemIndex": "K",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 69
+      },
+      {
+        "timeSubmitted": 4184,
+        "contestantName": "MS23:usr-07(Team Wolf-CBTIS 217)",
+        "problemIndex": "K",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 69
+      },
+      {
+        "timeSubmitted": 4170,
+        "contestantName": "MS23:usr-10(NovaElix-CBTIS 65)",
+        "problemIndex": "I",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 69
+      },
+      {
+        "timeSubmitted": 4156,
+        "contestantName": "MS23:usr-33(LOS PRIMOS-SECUNDARIAS MENDEL-INDEP-IBERO)",
+        "problemIndex": "D",
+        "verdict": "PA",
+        "problemScore": 40,
+        "penalty": 69
+      },
+      {
+        "timeSubmitted": 4094,
+        "contestantName": "MS23:usr-33(LOS PRIMOS-SECUNDARIAS MENDEL-INDEP-IBERO)",
+        "problemIndex": "D",
+        "verdict": "RTE",
+        "problemScore": 0,
+        "penalty": 68
+      },
+      {
+        "timeSubmitted": 4075,
+        "contestantName": "MS23:usr-03(PrograMOP-CBTIS 172)",
+        "problemIndex": "I",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 67
+      },
+      {
+        "timeSubmitted": 4033,
+        "contestantName": "MS23:usr-33(LOS PRIMOS-SECUNDARIAS MENDEL-INDEP-IBERO)",
+        "problemIndex": "D",
+        "verdict": "PA",
+        "problemScore": 40,
+        "penalty": 67
+      },
+      {
+        "timeSubmitted": 4004,
+        "contestantName": "MS23:usr-15(Malware-CETIS 77)",
+        "problemIndex": "K",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 66
+      },
+      {
+        "timeSubmitted": 3969,
+        "contestantName": "MS23:usr-30(Binary Sorters-OMI MICHOACAN)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 96.67,
+        "penalty": 66
+      },
+      {
+        "timeSubmitted": 3949,
+        "contestantName": "MS23:usr-25(C-Chaperos-ENMS SALVATIERRA)",
+        "problemIndex": "I",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 65
+      },
+      {
+        "timeSubmitted": 3911,
+        "contestantName": "MS23:usr-15(Malware-CETIS 77)",
+        "problemIndex": "K",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 65
+      },
+      {
+        "timeSubmitted": 3869,
+        "contestantName": "MS23:usr-21(Nobody-CONALEP MOROLEON)",
+        "problemIndex": "I",
+        "verdict": "PA",
+        "problemScore": 80,
+        "penalty": 64
+      },
+      {
+        "timeSubmitted": 3865,
+        "contestantName": "MS23:usr-29(The Fallen Order-OMI MICHOACAN)",
+        "problemIndex": "D",
+        "verdict": "PA",
+        "problemScore": 50,
+        "penalty": 64
+      },
+      {
+        "timeSubmitted": 3757,
+        "contestantName": "MS23:usr-08(Codigo CeReAl-CBTIS 217)",
+        "problemIndex": "K",
+        "verdict": "PA",
+        "problemScore": 90,
+        "penalty": 62
+      },
+      {
+        "timeSubmitted": 3740,
+        "contestantName": "MS23:usr-31(Omega-vectors-OMI MICHOACAN)",
+        "problemIndex": "K",
+        "verdict": "PA",
+        "problemScore": 90,
+        "penalty": 62
+      },
+      {
+        "timeSubmitted": 3738,
+        "contestantName": "MS23:usr-03(PrograMOP-CBTIS 172)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 56,
+        "penalty": 62
+      },
+      {
+        "timeSubmitted": 3708,
+        "contestantName": "MS23:usr-19(Tecno power girls-CONALEP ACAMBARO)",
+        "problemIndex": "I",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 61
+      },
+      {
+        "timeSubmitted": 3646,
+        "contestantName": "MS23:usr-12(Programando Experiencia-CETIS 89)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 51,
+        "penalty": 60
+      },
+      {
+        "timeSubmitted": 3616,
+        "contestantName": "MS23:usr-08(Codigo CeReAl-CBTIS 217)",
+        "problemIndex": "K",
+        "verdict": "PA",
+        "problemScore": 90,
+        "penalty": 60
+      },
+      {
+        "timeSubmitted": 3594,
+        "contestantName": "MS23:usr-20(Los guapos-CONALEP ACAMBARO)",
+        "problemIndex": "I",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 59
+      },
+      {
+        "timeSubmitted": 3544,
+        "contestantName": "MS23:usr-07(Team Wolf-CBTIS 217)",
+        "problemIndex": "K",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 59
+      },
+      {
+        "timeSubmitted": 3543,
+        "contestantName": "MS23:usr-31(Omega-vectors-OMI MICHOACAN)",
+        "problemIndex": "J",
+        "verdict": "PA",
+        "problemScore": 33.33,
+        "penalty": 59
+      },
+      {
+        "timeSubmitted": 3408,
+        "contestantName": "MS23:usr-20(Los guapos-CONALEP ACAMBARO)",
+        "problemIndex": "I",
+        "verdict": "PA",
+        "problemScore": 80,
+        "penalty": 56
+      },
+      {
+        "timeSubmitted": 3401,
+        "contestantName": "MS23:usr-12(Programando Experiencia-CETIS 89)",
+        "problemIndex": "F",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 56
+      },
+      {
+        "timeSubmitted": 3398,
+        "contestantName": "MS23:usr-09(Chicos_13-CBTIS 217)",
+        "problemIndex": "I",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 56
+      },
+      {
+        "timeSubmitted": 3354,
+        "contestantName": "MS23:usr-13(Full Stack Alchemist-CETIS 120)",
+        "problemIndex": "K",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 55
+      },
+      {
+        "timeSubmitted": 3310,
+        "contestantName": "MS23:usr-30(Binary Sorters-OMI MICHOACAN)",
+        "problemIndex": "D",
+        "verdict": "PA",
+        "problemScore": 50,
+        "penalty": 55
+      },
+      {
+        "timeSubmitted": 3299,
+        "contestantName": "MS23:usr-24(ENMS Penjamo-ENMS PENJAMO)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 54
+      },
+      {
+        "timeSubmitted": 3294,
+        "contestantName": "MS23:usr-16(COMPUTER TEAM-CETIS 89)",
+        "problemIndex": "C",
+        "verdict": "CE",
+        "problemScore": 0,
+        "penalty": 54
+      },
+      {
+        "timeSubmitted": 3245,
+        "contestantName": "MS23:usr-18(LOS PCS-CONALEP VALLE DE SANTIAGO)",
+        "problemIndex": "I",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 54
+      },
+      {
+        "timeSubmitted": 3238,
+        "contestantName": "MS23:usr-29(The Fallen Order-OMI MICHOACAN)",
+        "problemIndex": "J",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 53
+      },
+      {
+        "timeSubmitted": 3235,
+        "contestantName": "MS23:usr-17(CLIC-K-CONALEP VALLE DE SANTIAGO)",
+        "problemIndex": "C",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 53
+      },
+      {
+        "timeSubmitted": 3220,
+        "contestantName": "MS23:usr-11(Osos Informaticos-CBTIS 65)",
+        "problemIndex": "F",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 53
+      },
+      {
+        "timeSubmitted": 3214,
+        "contestantName": "MS23:usr-03(PrograMOP-CBTIS 172)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 57,
+        "penalty": 53
+      },
+      {
+        "timeSubmitted": 3157,
+        "contestantName": "MS23:usr-19(Tecno power girls-CONALEP ACAMBARO)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 80,
+        "penalty": 52
+      },
+      {
+        "timeSubmitted": 3141,
+        "contestantName": "MS23:usr-12(Programando Experiencia-CETIS 89)",
+        "problemIndex": "F",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 52
+      },
+      {
+        "timeSubmitted": 3124,
+        "contestantName": "MS23:usr-13(Full Stack Alchemist-CETIS 120)",
+        "problemIndex": "K",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 52
+      },
+      {
+        "timeSubmitted": 3119,
+        "contestantName": "MS23:usr-24(ENMS Penjamo-ENMS PENJAMO)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 51
+      },
+      {
+        "timeSubmitted": 3095,
+        "contestantName": "MS23:usr-28(Aztrobots 2-TALENTOS GUANAJUATO-AZTECA)",
+        "problemIndex": "I",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 51
+      },
+      {
+        "timeSubmitted": 2946,
+        "contestantName": "MS23:usr-08(Codigo CeReAl-CBTIS 217)",
+        "problemIndex": "I",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 49
+      },
+      {
+        "timeSubmitted": 2941,
+        "contestantName": "MS23:usr-30(Binary Sorters-OMI MICHOACAN)",
+        "problemIndex": "K",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 49
+      },
+      {
+        "timeSubmitted": 2938,
+        "contestantName": "MS23:usr-04(The ORIG rejected us-CBTIS 217)",
+        "problemIndex": "J",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 48
+      },
+      {
+        "timeSubmitted": 2936,
+        "contestantName": "MS23:usr-31(Omega-vectors-OMI MICHOACAN)",
+        "problemIndex": "I",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 48
+      },
+      {
+        "timeSubmitted": 2936,
+        "contestantName": "MS23:usr-21(Nobody-CONALEP MOROLEON)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 50,
+        "penalty": 48
+      },
+      {
+        "timeSubmitted": 2932,
+        "contestantName": "MS23:usr-09(Chicos_13-CBTIS 217)",
+        "problemIndex": "M",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 48
+      },
+      {
+        "timeSubmitted": 2908,
+        "contestantName": "MS23:usr-24(ENMS Penjamo-ENMS PENJAMO)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 6.67,
+        "penalty": 48
+      },
+      {
+        "timeSubmitted": 2898,
+        "contestantName": "MS23:usr-16(COMPUTER TEAM-CETIS 89)",
+        "problemIndex": "A",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 48
+      },
+      {
+        "timeSubmitted": 2895,
+        "contestantName": "MS23:usr-13(Full Stack Alchemist-CETIS 120)",
+        "problemIndex": "F",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 48
+      },
+      {
+        "timeSubmitted": 2865,
+        "contestantName": "MS23:usr-30(Binary Sorters-OMI MICHOACAN)",
+        "problemIndex": "K",
+        "verdict": "PA",
+        "problemScore": 90,
+        "penalty": 47
+      },
+      {
+        "timeSubmitted": 2801,
+        "contestantName": "MS23:usr-28(Aztrobots 2-TALENTOS GUANAJUATO-AZTECA)",
+        "problemIndex": "I",
+        "verdict": "PA",
+        "problemScore": 80,
+        "penalty": 46
+      },
+      {
+        "timeSubmitted": 2793,
+        "contestantName": "MS23:usr-13(Full Stack Alchemist-CETIS 120)",
+        "problemIndex": "M",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 46
+      },
+      {
+        "timeSubmitted": 2747,
+        "contestantName": "MS23:usr-10(NovaElix-CBTIS 65)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 57,
+        "penalty": 45
+      },
+      {
+        "timeSubmitted": 2736,
+        "contestantName": "MS23:usr-15(Malware-CETIS 77)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 56,
+        "penalty": 45
+      },
+      {
+        "timeSubmitted": 2720,
+        "contestantName": "MS23:usr-28(Aztrobots 2-TALENTOS GUANAJUATO-AZTECA)",
+        "problemIndex": "I",
+        "verdict": "PA",
+        "problemScore": 80,
+        "penalty": 45
+      },
+      {
+        "timeSubmitted": 2665,
+        "contestantName": "MS23:usr-30(Binary Sorters-OMI MICHOACAN)",
+        "problemIndex": "M",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 44
+      },
+      {
+        "timeSubmitted": 2649,
+        "contestantName": "MS23:usr-24(ENMS Penjamo-ENMS PENJAMO)",
+        "problemIndex": "M",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 44
+      },
+      {
+        "timeSubmitted": 2601,
+        "contestantName": "MS23:usr-06(Maikroso-CBTIS 217)",
+        "problemIndex": "D",
+        "verdict": "PA",
+        "problemScore": 50,
+        "penalty": 43
+      },
+      {
+        "timeSubmitted": 2601,
+        "contestantName": "MS23:usr-15(Malware-CETIS 77)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 57,
+        "penalty": 43
+      },
+      {
+        "timeSubmitted": 2585,
+        "contestantName": "MS23:usr-31(Omega-vectors-OMI MICHOACAN)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 56,
+        "penalty": 43
+      },
+      {
+        "timeSubmitted": 2570,
+        "contestantName": "MS23:usr-08(Codigo CeReAl-CBTIS 217)",
+        "problemIndex": "M",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 42
+      },
+      {
+        "timeSubmitted": 2557,
+        "contestantName": "MS23:usr-11(Osos Informaticos-CBTIS 65)",
+        "problemIndex": "I",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 42
+      },
+      {
+        "timeSubmitted": 2528,
+        "contestantName": "MS23:usr-29(The Fallen Order-OMI MICHOACAN)",
+        "problemIndex": "K",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 42
+      },
+      {
+        "timeSubmitted": 2506,
+        "contestantName": "MS23:usr-18(LOS PCS-CONALEP VALLE DE SANTIAGO)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 57,
+        "penalty": 41
+      },
+      {
+        "timeSubmitted": 2488,
+        "contestantName": "MS23:usr-14(Puro StackOverflow-CETIS 120)",
+        "problemIndex": "M",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 41
+      },
+      {
+        "timeSubmitted": 2477,
+        "contestantName": "MS23:usr-16(COMPUTER TEAM-CETIS 89)",
+        "problemIndex": "C",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 41
+      },
+      {
+        "timeSubmitted": 2384,
+        "contestantName": "MS23:usr-04(The ORIG rejected us-CBTIS 217)",
+        "problemIndex": "D",
+        "verdict": "PA",
+        "problemScore": 50,
+        "penalty": 39
+      },
+      {
+        "timeSubmitted": 2367,
+        "contestantName": "MS23:usr-24(ENMS Penjamo-ENMS PENJAMO)",
+        "problemIndex": "K",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 39
+      },
+      {
+        "timeSubmitted": 2361,
+        "contestantName": "MS23:usr-13(Full Stack Alchemist-CETIS 120)",
+        "problemIndex": "K",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 39
+      },
+      {
+        "timeSubmitted": 2343,
+        "contestantName": "MS23:usr-18(LOS PCS-CONALEP VALLE DE SANTIAGO)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 57,
+        "penalty": 39
+      },
+      {
+        "timeSubmitted": 2339,
+        "contestantName": "MS23:usr-15(Malware-CETIS 77)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 57,
+        "penalty": 38
+      },
+      {
+        "timeSubmitted": 2311,
+        "contestantName": "MS23:usr-07(Team Wolf-CBTIS 217)",
+        "problemIndex": "I",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 38
+      },
+      {
+        "timeSubmitted": 2305,
+        "contestantName": "MS23:usr-29(The Fallen Order-OMI MICHOACAN)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 38
+      },
+      {
+        "timeSubmitted": 2296,
+        "contestantName": "MS23:usr-30(Binary Sorters-OMI MICHOACAN)",
+        "problemIndex": "I",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 38
+      },
+      {
+        "timeSubmitted": 2264,
+        "contestantName": "MS23:usr-28(Aztrobots 2-TALENTOS GUANAJUATO-AZTECA)",
+        "problemIndex": "F",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 37
+      },
+      {
+        "timeSubmitted": 2257,
+        "contestantName": "MS23:usr-29(The Fallen Order-OMI MICHOACAN)",
+        "problemIndex": "I",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 37
+      },
+      {
+        "timeSubmitted": 2247,
+        "contestantName": "MS23:usr-25(C-Chaperos-ENMS SALVATIERRA)",
+        "problemIndex": "C",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 37
+      },
+      {
+        "timeSubmitted": 2227,
+        "contestantName": "MS23:usr-31(Omega-vectors-OMI MICHOACAN)",
+        "problemIndex": "D",
+        "verdict": "PA",
+        "problemScore": 50,
+        "penalty": 37
+      },
+      {
+        "timeSubmitted": 2222,
+        "contestantName": "MS23:usr-24(ENMS Penjamo-ENMS PENJAMO)",
+        "problemIndex": "J",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 37
+      },
+      {
+        "timeSubmitted": 2196,
+        "contestantName": "MS23:usr-29(The Fallen Order-OMI MICHOACAN)",
+        "problemIndex": "I",
+        "verdict": "PA",
+        "problemScore": 80,
+        "penalty": 36
+      },
+      {
+        "timeSubmitted": 2145,
+        "contestantName": "MS23:usr-10(NovaElix-CBTIS 65)",
+        "problemIndex": "D",
+        "verdict": "PA",
+        "problemScore": 40,
+        "penalty": 35
+      },
+      {
+        "timeSubmitted": 2129,
+        "contestantName": "MS23:usr-16(COMPUTER TEAM-CETIS 89)",
+        "problemIndex": "C",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 35
+      },
+      {
+        "timeSubmitted": 2089,
+        "contestantName": "MS23:usr-22(WOLF BOTS-CONALEP MOROLEON)",
+        "problemIndex": "C",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 34
+      },
+      {
+        "timeSubmitted": 2088,
+        "contestantName": "MS23:usr-13(Full Stack Alchemist-CETIS 120)",
+        "problemIndex": "J",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 34
+      },
+      {
+        "timeSubmitted": 2079,
+        "contestantName": "MS23:usr-15(Malware-CETIS 77)",
+        "problemIndex": "F",
+        "verdict": "CE",
+        "problemScore": 0,
+        "penalty": 34
+      },
+      {
+        "timeSubmitted": 2074,
+        "contestantName": "MS23:usr-26(CuriCientificos-ENMS SALVATIERRA)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 80,
+        "penalty": 34
+      },
+      {
+        "timeSubmitted": 2067,
+        "contestantName": "MS23:usr-19(Tecno power girls-CONALEP ACAMBARO)",
+        "problemIndex": "C",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 34
+      },
+      {
+        "timeSubmitted": 2048,
+        "contestantName": "MS23:usr-29(The Fallen Order-OMI MICHOACAN)",
+        "problemIndex": "M",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 34
+      },
+      {
+        "timeSubmitted": 2024,
+        "contestantName": "MS23:usr-30(Binary Sorters-OMI MICHOACAN)",
+        "problemIndex": "F",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 33
+      },
+      {
+        "timeSubmitted": 2000,
+        "contestantName": "MS23:usr-24(ENMS Penjamo-ENMS PENJAMO)",
+        "problemIndex": "I",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 33
+      },
+      {
+        "timeSubmitted": 2000,
+        "contestantName": "MS23:usr-07(Team Wolf-CBTIS 217)",
+        "problemIndex": "M",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 33
+      },
+      {
+        "timeSubmitted": 1973,
+        "contestantName": "MS23:usr-28(Aztrobots 2-TALENTOS GUANAJUATO-AZTECA)",
+        "problemIndex": "F",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 32
+      },
+      {
+        "timeSubmitted": 1962,
+        "contestantName": "MS23:usr-16(COMPUTER TEAM-CETIS 89)",
+        "problemIndex": "C",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 32
+      },
+      {
+        "timeSubmitted": 1960,
+        "contestantName": "MS23:usr-04(The ORIG rejected us-CBTIS 217)",
+        "problemIndex": "K",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 32
+      },
+      {
+        "timeSubmitted": 1950,
+        "contestantName": "MS23:usr-19(Tecno power girls-CONALEP ACAMBARO)",
+        "problemIndex": "B",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 32
+      },
+      {
+        "timeSubmitted": 1949,
+        "contestantName": "MS23:usr-29(The Fallen Order-OMI MICHOACAN)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 16.67,
+        "penalty": 32
+      },
+      {
+        "timeSubmitted": 1946,
+        "contestantName": "MS23:usr-01(Net Teams-BACH. BIVALENTE TALENTOS IRAPUATO)",
+        "problemIndex": "M",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 32
+      },
+      {
+        "timeSubmitted": 1940,
+        "contestantName": "MS23:usr-26(CuriCientificos-ENMS SALVATIERRA)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 57,
+        "penalty": 32
+      },
+      {
+        "timeSubmitted": 1886,
+        "contestantName": "MS23:usr-24(ENMS Penjamo-ENMS PENJAMO)",
+        "problemIndex": "I",
+        "verdict": "PA",
+        "problemScore": 80,
+        "penalty": 31
+      },
+      {
+        "timeSubmitted": 1858,
+        "contestantName": "MS23:usr-04(The ORIG rejected us-CBTIS 217)",
+        "problemIndex": "F",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 30
+      },
+      {
+        "timeSubmitted": 1831,
+        "contestantName": "MS23:usr-09(Chicos_13-CBTIS 217)",
+        "problemIndex": "F",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 30
+      },
+      {
+        "timeSubmitted": 1783,
+        "contestantName": "MS23:usr-16(COMPUTER TEAM-CETIS 89)",
+        "problemIndex": "C",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 29
+      },
+      {
+        "timeSubmitted": 1729,
+        "contestantName": "MS23:usr-10(NovaElix-CBTIS 65)",
+        "problemIndex": "D",
+        "verdict": "PA",
+        "problemScore": 30,
+        "penalty": 28
+      },
+      {
+        "timeSubmitted": 1714,
+        "contestantName": "MS23:usr-13(Full Stack Alchemist-CETIS 120)",
+        "problemIndex": "D",
+        "verdict": "PA",
+        "problemScore": 40,
+        "penalty": 28
+      },
+      {
+        "timeSubmitted": 1711,
+        "contestantName": "MS23:usr-24(ENMS Penjamo-ENMS PENJAMO)",
+        "problemIndex": "F",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 28
+      },
+      {
+        "timeSubmitted": 1694,
+        "contestantName": "MS23:usr-14(Puro StackOverflow-CETIS 120)",
+        "problemIndex": "I",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 28
+      },
+      {
+        "timeSubmitted": 1660,
+        "contestantName": "MS23:usr-07(Team Wolf-CBTIS 217)",
+        "problemIndex": "F",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 27
+      },
+      {
+        "timeSubmitted": 1649,
+        "contestantName": "MS23:usr-28(Aztrobots 2-TALENTOS GUANAJUATO-AZTECA)",
+        "problemIndex": "F",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 27
+      },
+      {
+        "timeSubmitted": 1640,
+        "contestantName": "MS23:usr-18(LOS PCS-CONALEP VALLE DE SANTIAGO)",
+        "problemIndex": "C",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 27
+      },
+      {
+        "timeSubmitted": 1633,
+        "contestantName": "MS23:usr-04(The ORIG rejected us-CBTIS 217)",
+        "problemIndex": "M",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 27
+      },
+      {
+        "timeSubmitted": 1632,
+        "contestantName": "MS23:usr-14(Puro StackOverflow-CETIS 120)",
+        "problemIndex": "I",
+        "verdict": "PA",
+        "problemScore": 80,
+        "penalty": 27
+      },
+      {
+        "timeSubmitted": 1620,
+        "contestantName": "MS23:usr-25(C-Chaperos-ENMS SALVATIERRA)",
+        "problemIndex": "B",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 27
+      },
+      {
+        "timeSubmitted": 1610,
+        "contestantName": "MS23:usr-08(Codigo CeReAl-CBTIS 217)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 80,
+        "penalty": 26
+      },
+      {
+        "timeSubmitted": 1591,
+        "contestantName": "MS23:usr-22(WOLF BOTS-CONALEP MOROLEON)",
+        "problemIndex": "B",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 26
+      },
+      {
+        "timeSubmitted": 1583,
+        "contestantName": "MS23:usr-11(Osos Informaticos-CBTIS 65)",
+        "problemIndex": "B",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 26
+      },
+      {
+        "timeSubmitted": 1556,
+        "contestantName": "MS23:usr-26(CuriCientificos-ENMS SALVATIERRA)",
+        "problemIndex": "F",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 25
+      },
+      {
+        "timeSubmitted": 1538,
+        "contestantName": "MS23:usr-17(CLIC-K-CONALEP VALLE DE SANTIAGO)",
+        "problemIndex": "A",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 25
+      },
+      {
+        "timeSubmitted": 1511,
+        "contestantName": "MS23:usr-04(The ORIG rejected us-CBTIS 217)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 93.33,
+        "penalty": 25
+      },
+      {
+        "timeSubmitted": 1460,
+        "contestantName": "MS23:usr-18(LOS PCS-CONALEP VALLE DE SANTIAGO)",
+        "problemIndex": "B",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 24
+      },
+      {
+        "timeSubmitted": 1457,
+        "contestantName": "MS23:usr-26(CuriCientificos-ENMS SALVATIERRA)",
+        "problemIndex": "F",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 24
+      },
+      {
+        "timeSubmitted": 1443,
+        "contestantName": "MS23:usr-04(The ORIG rejected us-CBTIS 217)",
+        "problemIndex": "N",
+        "verdict": "CE",
+        "problemScore": 0,
+        "penalty": 24
+      },
+      {
+        "timeSubmitted": 1427,
+        "contestantName": "MS23:usr-14(Puro StackOverflow-CETIS 120)",
+        "problemIndex": "K",
+        "verdict": "PA",
+        "problemScore": 90,
+        "penalty": 23
+      },
+      {
+        "timeSubmitted": 1374,
+        "contestantName": "MS23:usr-04(The ORIG rejected us-CBTIS 217)",
+        "problemIndex": "N",
+        "verdict": "PA",
+        "problemScore": 90,
+        "penalty": 22
+      },
+      {
+        "timeSubmitted": 1344,
+        "contestantName": "MS23:usr-18(LOS PCS-CONALEP VALLE DE SANTIAGO)",
+        "problemIndex": "B",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 22
+      },
+      {
+        "timeSubmitted": 1344,
+        "contestantName": "MS23:usr-30(Binary Sorters-OMI MICHOACAN)",
+        "problemIndex": "D",
+        "verdict": "PA",
+        "problemScore": 10,
+        "penalty": 22
+      },
+      {
+        "timeSubmitted": 1317,
+        "contestantName": "MS23:usr-14(Puro StackOverflow-CETIS 120)",
+        "problemIndex": "K",
+        "verdict": "PA",
+        "problemScore": 90,
+        "penalty": 21
+      },
+      {
+        "timeSubmitted": 1276,
+        "contestantName": "MS23:usr-08(Codigo CeReAl-CBTIS 217)",
+        "problemIndex": "C",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 21
+      },
+      {
+        "timeSubmitted": 1213,
+        "contestantName": "MS23:usr-04(The ORIG rejected us-CBTIS 217)",
+        "problemIndex": "I",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 20
+      },
+      {
+        "timeSubmitted": 1177,
+        "contestantName": "MS23:usr-21(Nobody-CONALEP MOROLEON)",
+        "problemIndex": "B",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 19
+      },
+      {
+        "timeSubmitted": 1177,
+        "contestantName": "MS23:usr-12(Programando Experiencia-CETIS 89)",
+        "problemIndex": "C",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 19
+      },
+      {
+        "timeSubmitted": 1173,
+        "contestantName": "MS23:usr-08(Codigo CeReAl-CBTIS 217)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 57,
+        "penalty": 19
+      },
+      {
+        "timeSubmitted": 1164,
+        "contestantName": "MS23:usr-14(Puro StackOverflow-CETIS 120)",
+        "problemIndex": "F",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 19
+      },
+      {
+        "timeSubmitted": 1160,
+        "contestantName": "MS23:usr-29(The Fallen Order-OMI MICHOACAN)",
+        "problemIndex": "F",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 19
+      },
+      {
+        "timeSubmitted": 1145,
+        "contestantName": "MS23:usr-28(Aztrobots 2-TALENTOS GUANAJUATO-AZTECA)",
+        "problemIndex": "C",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 19
+      },
+      {
+        "timeSubmitted": 1137,
+        "contestantName": "MS23:usr-05(FamCode-CBTIS 217)",
+        "problemIndex": "B",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 18
+      },
+      {
+        "timeSubmitted": 1137,
+        "contestantName": "MS23:usr-16(COMPUTER TEAM-CETIS 89)",
+        "problemIndex": "A",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 18
+      },
+      {
+        "timeSubmitted": 1131,
+        "contestantName": "MS23:usr-13(Full Stack Alchemist-CETIS 120)",
+        "problemIndex": "I",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 18
+      },
+      {
+        "timeSubmitted": 1131,
+        "contestantName": "MS23:usr-04(The ORIG rejected us-CBTIS 217)",
+        "problemIndex": "I",
+        "verdict": "PA",
+        "problemScore": 80,
+        "penalty": 18
+      },
+      {
+        "timeSubmitted": 1114,
+        "contestantName": "MS23:usr-06(Maikroso-CBTIS 217)",
+        "problemIndex": "F",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 18
+      },
+      {
+        "timeSubmitted": 1105,
+        "contestantName": "MS23:usr-07(Team Wolf-CBTIS 217)",
+        "problemIndex": "B",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 18
+      },
+      {
+        "timeSubmitted": 1098,
+        "contestantName": "MS23:usr-14(Puro StackOverflow-CETIS 120)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 56,
+        "penalty": 18
+      },
+      {
+        "timeSubmitted": 1083,
+        "contestantName": "MS23:usr-29(The Fallen Order-OMI MICHOACAN)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 80,
+        "penalty": 18
+      },
+      {
+        "timeSubmitted": 1030,
+        "contestantName": "MS23:usr-05(FamCode-CBTIS 217)",
+        "problemIndex": "C",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 17
+      },
+      {
+        "timeSubmitted": 1026,
+        "contestantName": "MS23:usr-06(Maikroso-CBTIS 217)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 80,
+        "penalty": 17
+      },
+      {
+        "timeSubmitted": 1004,
+        "contestantName": "MS23:usr-08(Codigo CeReAl-CBTIS 217)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 80,
+        "penalty": 16
+      },
+      {
+        "timeSubmitted": 997,
+        "contestantName": "MS23:usr-07(Team Wolf-CBTIS 217)",
+        "problemIndex": "C",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 16
+      },
+      {
+        "timeSubmitted": 970,
+        "contestantName": "MS23:usr-26(CuriCientificos-ENMS SALVATIERRA)",
+        "problemIndex": "B",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 16
+      },
+      {
+        "timeSubmitted": 951,
+        "contestantName": "MS23:usr-12(Programando Experiencia-CETIS 89)",
+        "problemIndex": "B",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 15
+      },
+      {
+        "timeSubmitted": 939,
+        "contestantName": "MS23:usr-24(ENMS Penjamo-ENMS PENJAMO)",
+        "problemIndex": "D",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 15
+      },
+      {
+        "timeSubmitted": 935,
+        "contestantName": "MS23:usr-13(Full Stack Alchemist-CETIS 120)",
+        "problemIndex": "F",
+        "verdict": "PA",
+        "problemScore": 56,
+        "penalty": 15
+      },
+      {
+        "timeSubmitted": 899,
+        "contestantName": "MS23:usr-28(Aztrobots 2-TALENTOS GUANAJUATO-AZTECA)",
+        "problemIndex": "B",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 14
+      },
+      {
+        "timeSubmitted": 888,
+        "contestantName": "MS23:usr-29(The Fallen Order-OMI MICHOACAN)",
+        "problemIndex": "D",
+        "verdict": "PA",
+        "problemScore": 50,
+        "penalty": 14
+      },
+      {
+        "timeSubmitted": 888,
+        "contestantName": "MS23:usr-23(DragonWorK-CONALEP SALVATIERRA)",
+        "problemIndex": "B",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 14
+      },
+      {
+        "timeSubmitted": 852,
+        "contestantName": "MS23:usr-10(NovaElix-CBTIS 65)",
+        "problemIndex": "C",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 14
+      },
+      {
+        "timeSubmitted": 847,
+        "contestantName": "MS23:usr-30(Binary Sorters-OMI MICHOACAN)",
+        "problemIndex": "C",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 14
+      },
+      {
+        "timeSubmitted": 846,
+        "contestantName": "MS23:usr-09(Chicos_13-CBTIS 217)",
+        "problemIndex": "B",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 14
+      },
+      {
+        "timeSubmitted": 842,
+        "contestantName": "MS23:usr-22(WOLF BOTS-CONALEP MOROLEON)",
+        "problemIndex": "A",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 14
+      },
+      {
+        "timeSubmitted": 842,
+        "contestantName": "MS23:usr-04(The ORIG rejected us-CBTIS 217)",
+        "problemIndex": "C",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 14
+      },
+      {
+        "timeSubmitted": 819,
+        "contestantName": "MS23:usr-18(LOS PCS-CONALEP VALLE DE SANTIAGO)",
+        "problemIndex": "A",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 13
+      },
+      {
+        "timeSubmitted": 811,
+        "contestantName": "MS23:usr-04(The ORIG rejected us-CBTIS 217)",
+        "problemIndex": "B",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 13
+      },
+      {
+        "timeSubmitted": 788,
+        "contestantName": "MS23:usr-07(Team Wolf-CBTIS 217)",
+        "problemIndex": "A",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 13
+      },
+      {
+        "timeSubmitted": 764,
+        "contestantName": "MS23:usr-25(C-Chaperos-ENMS SALVATIERRA)",
+        "problemIndex": "B",
+        "verdict": "RTE",
+        "problemScore": 0,
+        "penalty": 12
+      },
+      {
+        "timeSubmitted": 758,
+        "contestantName": "MS23:usr-10(NovaElix-CBTIS 65)",
+        "problemIndex": "B",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 12
+      },
+      {
+        "timeSubmitted": 750,
+        "contestantName": "MS23:usr-01(Net Teams-BACH. BIVALENTE TALENTOS IRAPUATO)",
+        "problemIndex": "C",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 12
+      },
+      {
+        "timeSubmitted": 739,
+        "contestantName": "MS23:usr-04(The ORIG rejected us-CBTIS 217)",
+        "problemIndex": "A",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 12
+      },
+      {
+        "timeSubmitted": 719,
+        "contestantName": "MS23:usr-03(PrograMOP-CBTIS 172)",
+        "problemIndex": "C",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 11
+      },
+      {
+        "timeSubmitted": 701,
+        "contestantName": "MS23:usr-08(Codigo CeReAl-CBTIS 217)",
+        "problemIndex": "B",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 11
+      },
+      {
+        "timeSubmitted": 694,
+        "contestantName": "MS23:usr-31(Omega-vectors-OMI MICHOACAN)",
+        "problemIndex": "C",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 11
+      },
+      {
+        "timeSubmitted": 680,
+        "contestantName": "MS23:usr-33(LOS PRIMOS-SECUNDARIAS MENDEL-INDEP-IBERO)",
+        "problemIndex": "C",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 11
+      },
+      {
+        "timeSubmitted": 674,
+        "contestantName": "MS23:usr-15(Malware-CETIS 77)",
+        "problemIndex": "C",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 11
+      },
+      {
+        "timeSubmitted": 660,
+        "contestantName": "MS23:usr-30(Binary Sorters-OMI MICHOACAN)",
+        "problemIndex": "B",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 11
+      },
+      {
+        "timeSubmitted": 648,
+        "contestantName": "MS23:usr-12(Programando Experiencia-CETIS 89)",
+        "problemIndex": "A",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 10
+      },
+      {
+        "timeSubmitted": 633,
+        "contestantName": "MS23:usr-14(Puro StackOverflow-CETIS 120)",
+        "problemIndex": "A",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 10
+      },
+      {
+        "timeSubmitted": 625,
+        "contestantName": "MS23:usr-27(Aztrobots 1-TALENTOS GUANAJUATO-AZTECA)",
+        "problemIndex": "C",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 10
+      },
+      {
+        "timeSubmitted": 616,
+        "contestantName": "MS23:usr-01(Net Teams-BACH. BIVALENTE TALENTOS IRAPUATO)",
+        "problemIndex": "B",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 10
+      },
+      {
+        "timeSubmitted": 610,
+        "contestantName": "MS23:usr-26(CuriCientificos-ENMS SALVATIERRA)",
+        "problemIndex": "C",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 10
+      },
+      {
+        "timeSubmitted": 601,
+        "contestantName": "MS23:usr-09(Chicos_13-CBTIS 217)",
+        "problemIndex": "C",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 10
+      },
+      {
+        "timeSubmitted": 585,
+        "contestantName": "MS23:usr-33(LOS PRIMOS-SECUNDARIAS MENDEL-INDEP-IBERO)",
+        "problemIndex": "B",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 9
+      },
+      {
+        "timeSubmitted": 559,
+        "contestantName": "MS23:usr-15(Malware-CETIS 77)",
+        "problemIndex": "B",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 9
+      },
+      {
+        "timeSubmitted": 534,
+        "contestantName": "MS23:usr-24(ENMS Penjamo-ENMS PENJAMO)",
+        "problemIndex": "C",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 8
+      },
+      {
+        "timeSubmitted": 529,
+        "contestantName": "MS23:usr-31(Omega-vectors-OMI MICHOACAN)",
+        "problemIndex": "B",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 8
+      },
+      {
+        "timeSubmitted": 526,
+        "contestantName": "MS23:usr-27(Aztrobots 1-TALENTOS GUANAJUATO-AZTECA)",
+        "problemIndex": "B",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 8
+      },
+      {
+        "timeSubmitted": 499,
+        "contestantName": "MS23:usr-08(Codigo CeReAl-CBTIS 217)",
+        "problemIndex": "A",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 8
+      },
+      {
+        "timeSubmitted": 464,
+        "contestantName": "MS23:usr-30(Binary Sorters-OMI MICHOACAN)",
+        "problemIndex": "A",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 7
+      },
+      {
+        "timeSubmitted": 463,
+        "contestantName": "MS23:usr-27(Aztrobots 1-TALENTOS GUANAJUATO-AZTECA)",
+        "problemIndex": "B",
+        "verdict": "WA",
+        "problemScore": 0,
+        "penalty": 7
+      },
+      {
+        "timeSubmitted": 460,
+        "contestantName": "MS23:usr-06(Maikroso-CBTIS 217)",
+        "problemIndex": "C",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 7
+      },
+      {
+        "timeSubmitted": 451,
+        "contestantName": "MS23:usr-03(PrograMOP-CBTIS 172)",
+        "problemIndex": "B",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 7
+      },
+      {
+        "timeSubmitted": 438,
+        "contestantName": "MS23:usr-13(Full Stack Alchemist-CETIS 120)",
+        "problemIndex": "C",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 7
+      },
+      {
+        "timeSubmitted": 414,
+        "contestantName": "MS23:usr-15(Malware-CETIS 77)",
+        "problemIndex": "A",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 6
+      },
+      {
+        "timeSubmitted": 407,
+        "contestantName": "MS23:usr-24(ENMS Penjamo-ENMS PENJAMO)",
+        "problemIndex": "B",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 6
+      },
+      {
+        "timeSubmitted": 401,
+        "contestantName": "MS23:usr-26(CuriCientificos-ENMS SALVATIERRA)",
+        "problemIndex": "A",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 6
+      },
+      {
+        "timeSubmitted": 379,
+        "contestantName": "MS23:usr-13(Full Stack Alchemist-CETIS 120)",
+        "problemIndex": "B",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 6
+      },
+      {
+        "timeSubmitted": 367,
+        "contestantName": "MS23:usr-29(The Fallen Order-OMI MICHOACAN)",
+        "problemIndex": "B",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 6
+      },
+      {
+        "timeSubmitted": 352,
+        "contestantName": "MS23:usr-06(Maikroso-CBTIS 217)",
+        "problemIndex": "B",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 5
+      },
+      {
+        "timeSubmitted": 349,
+        "contestantName": "MS23:usr-09(Chicos_13-CBTIS 217)",
+        "problemIndex": "A",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 5
+      },
+      {
+        "timeSubmitted": 326,
+        "contestantName": "MS23:usr-10(NovaElix-CBTIS 65)",
+        "problemIndex": "A",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 5
+      },
+      {
+        "timeSubmitted": 321,
+        "contestantName": "MS23:usr-15(Malware-CETIS 77)",
+        "problemIndex": "A",
+        "verdict": "CE",
+        "problemScore": 0,
+        "penalty": 5
+      },
+      {
+        "timeSubmitted": 317,
+        "contestantName": "MS23:usr-28(Aztrobots 2-TALENTOS GUANAJUATO-AZTECA)",
+        "problemIndex": "A",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 5
+      },
+      {
+        "timeSubmitted": 315,
+        "contestantName": "MS23:usr-31(Omega-vectors-OMI MICHOACAN)",
+        "problemIndex": "A",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 5
+      },
+      {
+        "timeSubmitted": 311,
+        "contestantName": "MS23:usr-01(Net Teams-BACH. BIVALENTE TALENTOS IRAPUATO)",
+        "problemIndex": "A",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 5
+      },
+      {
+        "timeSubmitted": 290,
+        "contestantName": "MS23:usr-05(FamCode-CBTIS 217)",
+        "problemIndex": "A",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 4
+      },
+      {
+        "timeSubmitted": 283,
+        "contestantName": "MS23:usr-14(Puro StackOverflow-CETIS 120)",
+        "problemIndex": "B",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 4
+      },
+      {
+        "timeSubmitted": 275,
+        "contestantName": "MS23:usr-25(C-Chaperos-ENMS SALVATIERRA)",
+        "problemIndex": "A",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 4
+      },
+      {
+        "timeSubmitted": 271,
+        "contestantName": "MS23:usr-29(The Fallen Order-OMI MICHOACAN)",
+        "problemIndex": "C",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 4
+      },
+      {
+        "timeSubmitted": 239,
+        "contestantName": "MS23:usr-06(Maikroso-CBTIS 217)",
+        "problemIndex": "A",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 3
+      },
+      {
+        "timeSubmitted": 222,
+        "contestantName": "MS23:usr-03(PrograMOP-CBTIS 172)",
+        "problemIndex": "A",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 3
+      },
+      {
+        "timeSubmitted": 217,
+        "contestantName": "MS23:usr-29(The Fallen Order-OMI MICHOACAN)",
+        "problemIndex": "A",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 3
+      },
+      {
+        "timeSubmitted": 206,
+        "contestantName": "MS23:usr-24(ENMS Penjamo-ENMS PENJAMO)",
+        "problemIndex": "A",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 3
+      },
+      {
+        "timeSubmitted": 197,
+        "contestantName": "MS23:usr-33(LOS PRIMOS-SECUNDARIAS MENDEL-INDEP-IBERO)",
+        "problemIndex": "A",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 3
+      },
+      {
+        "timeSubmitted": 186,
+        "contestantName": "MS23:usr-13(Full Stack Alchemist-CETIS 120)",
+        "problemIndex": "A",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 3
+      },
+      {
+        "timeSubmitted": 180,
+        "contestantName": "MS23:usr-27(Aztrobots 1-TALENTOS GUANAJUATO-AZTECA)",
+        "problemIndex": "A",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 3
+      },
+      {
+        "timeSubmitted": 166,
+        "contestantName": "MS23:usr-14(Puro StackOverflow-CETIS 120)",
+        "problemIndex": "C",
+        "verdict": "AC",
+        "problemScore": 100,
+        "penalty": 2
+      }
+    ]
+  }
