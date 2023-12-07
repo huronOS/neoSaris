@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 import { getContestDataWithVjudgeAPI } from "../../parsers/vjudge/vjudge-api-parser";
+import { ContestData } from "../../types/contestDataTypes";
 
-const VjudgeForm = ({ setContestData, setStep }) => {
+const VjudgeForm = ({
+  setContestData,
+  setStep,
+}: {
+  setContestData: (contestData: ContestData) => void;
+  setStep: (step: string) => void;
+}) => {
   const [contestId, setContestId] = useState("");
   const [frozenTime, setFrozenTime] = useState(0);
   const [numberOfProblems, setNumberOfProblems] = useState(0);

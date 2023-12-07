@@ -1,5 +1,6 @@
 import axios from "axios";
 import { sha512 } from "js-sha512";
+import { ContestData } from "../../types/contestDataTypes";
 
 const buildParams = ({
   method,
@@ -109,6 +110,8 @@ export const getContestData = async ({
       frozenTimeDuration: frozenTime,
       name: response.result.contest.name,
       type: response.result.contest.type,
+      scoreMode: "absolute",
+      penaltyPerSubmission: 20,
     },
     problems: response.result.problems.map(problem => {
       return { index: problem.index, name: problem.name };
@@ -116,7 +119,7 @@ export const getContestData = async ({
     contestants: response.result.rows.map((row, index) => {
       return {
         id: index,
-        name: row.party.teamName || row.party.members[0].handle || `NO_TEAM_NAME_${id}`,
+        name: row.party.teamName || row.party.members[0].handle || `NO_TEAM_NAME_${index}`,
       };
     }),
   };
@@ -146,12 +149,13 @@ export const getContestDataWithCodeforcesAPI = async ({
     apiKey,
     apiSecret,
   });
-  const JSONobject = {
+  const JSONobject: ContestData = {
     contestMetadata: contestData.contestData,
     problems: contestData.problems,
     contestants: contestData.contestants,
     verdicts: {
       accepted: ["OK", "PARTIAL"],
+      partiallyAccepted: [],
       wrongAnswerWithPenalty: [
         "FAILED",
         "RUNTIME_ERROR",

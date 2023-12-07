@@ -79,6 +79,7 @@ export const getContestDataWithVjudgeAPI = async (
     contestants: contestData.contestants,
     verdicts: {
       accepted: ["ACCEPTED"],
+      partiallyAccepted: [],
       wrongAnswerWithPenalty: ["WRONG_ANSWER"],
       wrongAnswerWithoutPenalty: [],
     },
