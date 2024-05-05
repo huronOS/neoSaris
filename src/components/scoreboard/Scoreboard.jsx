@@ -213,6 +213,8 @@ class Scoreboard extends Component {
       result.position = 0;
       result.name = contestant.name;
       result.id = contestant.id;
+      result.school = contestant.school;
+      result.iconName = contestant.iconName;
       result.penalty = 0;
       result.solved = 0;
       result.isProblemSolved = isProblemSolved;

@@ -229,7 +229,7 @@ class TableRow extends Component {
         {/*Rank*/}
         <span className="tableRow-Rank">{this.props.team.position}</span>
         {/*Photo*/}
-        <img className="tableRow-Picture" src={this.getImageForTeam(this.props.team.id)} alt="" />
+        <img className="tableRow-Picture" src={this.getImageForTeam(this.props.team.iconName)} alt="" />
         {/*Name+Problems*/}
         <div className="tableRow-TeamData">
           {/*ContestantName*/}
