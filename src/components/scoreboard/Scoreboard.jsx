@@ -12,7 +12,7 @@ class Scoreboard extends Component {
       if (
         submission.timeSubmitted <
         submissionsData.contestMetadata.duration -
-          submissionsData.contestMetadata.frozenTimeDuration
+        submissionsData.contestMetadata.frozenTimeDuration
       ) {
         let result = {};
         result.contestantName = submission.contestantName;
@@ -30,8 +30,8 @@ class Scoreboard extends Component {
     submissionsData.submissions.forEach(function (submission) {
       if (
         submission.timeSubmitted >=
-          submissionsData.contestMetadata.duration -
-            submissionsData.contestMetadata.frozenTimeDuration &&
+        submissionsData.contestMetadata.duration -
+        submissionsData.contestMetadata.frozenTimeDuration &&
         submission.timeSubmitted <= submissionsData.contestMetadata.duration
       ) {
         let result = {};
@@ -366,6 +366,7 @@ class Scoreboard extends Component {
       let submissionWhenFrozen = this.state.submissionWhenFrozen;
 
       if (idToRemove < submissionWhenFrozen.length) {
+        console.log("upsub");
         submissions.push(submissionWhenFrozen[idToRemove]);
         submissionWhenFrozen.splice(idToRemove, 1);
       }
@@ -382,19 +383,22 @@ class Scoreboard extends Component {
 
       if (
         this.nextSubmission(idOfNextUserRowHighlighted, submissionWhenFrozen, this.state.teams) ===
-          -1 &&
+        -1 &&
         this.state.idOfNextUserRowHighlighted >= 0 &&
         this.standingRemainsStatic() === true
       ) {
+        console.log("last");
         let contestantNameToSelect = this.state.teams[this.state.idOfNextUserRowHighlighted].name;
         this.setState({
           contestantNameToSelect: contestantNameToSelect,
           standingHasChangedInLastOperation: false,
         });
       } else if (
+
         this.state.idOfNextUserRowHighlighted >= 0 &&
         this.standingRemainsStatic() === false
       ) {
+
         let contestantNameToSelect =
           this.state.lastPositionInStanding[this.state.idOfNextUserRowHighlighted];
         this.updatePositionOfStandings();
@@ -488,6 +492,7 @@ class Scoreboard extends Component {
             idOfNextUserRowHighlighted: idOfNextUserRowHighlighted,
           });
         } else {
+          console.log("here");
           this.findNextSubmissionToReveal();
           let isPressedKeyOn = 1 - this.state.isPressedKeyOn;
           this.setState({
