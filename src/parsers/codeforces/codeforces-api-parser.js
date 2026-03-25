@@ -5,9 +5,9 @@ const buildParams = ({
   method,
   contestId,
   isPrivate = false,
-  groupId = "",
   apiKey = "",
   apiSecret = "",
+  asManager = false,
 }) => {
   if (!isPrivate) {
     return {
@@ -15,16 +15,15 @@ const buildParams = ({
     };
   }
   const time = `${Math.floor(Date.now() / 1000)}`;
-  const groupCode = groupId;
   const rand = "123456";
-  const str = `${rand}/${method}?apiKey=${apiKey}&contestId=${contestId}&groupCode=${groupCode}&time=${time}#${apiSecret}`;
+  const str = `${rand}/${method}?apiKey=${apiKey}&asManager=${asManager}&contestId=${contestId}&time=${time}#${apiSecret}`;
   const hash = sha512(encodeURI(str));
   return {
-    groupCode,
     contestId,
     apiKey,
     time,
     apiSig: rand + hash,
+    asManager,
   };
 };
 
@@ -38,9 +37,9 @@ export const getSubmissions = async ({
   duration,
   contestId,
   isPrivate = false,
-  groupId = "",
   apiKey = "",
   apiSecret = "",
+  asManager = false,
 }) => {
   const { data: response } = await axios
     .request({
@@ -51,9 +50,9 @@ export const getSubmissions = async ({
         method: "contest.status",
         contestId,
         isPrivate,
-        groupId,
         apiKey,
         apiSecret,
+        asManager,
       }),
     })
     .catch(error => {
@@ -68,7 +67,7 @@ export const getSubmissions = async ({
       return {
         timeSubmitted: Math.floor(submission.relativeTimeSeconds / 60),
         contestantName:
-          submission.author.teamName || submission.author.members[0].handle || "NO_TEAM_NAME",
+          submission.author.teamName || submission.author.members[0].name || submission.author.members[0].handle || "NO_TEAM_NAME",
         problemIndex: submission.problem.index,
         verdict: submission.verdict,
       };
@@ -79,9 +78,9 @@ export const getContestData = async ({
   frozenTime = 60,
   contestId,
   isPrivate = false,
-  groupId = "",
   apiKey = "",
   apiSecret = "",
+  asManager = false,
 }) => {
   const { data: response } = await axios
     .request({
@@ -92,9 +91,9 @@ export const getContestData = async ({
         method: "contest.standings",
         contestId,
         isPrivate,
-        groupId,
         apiKey,
         apiSecret,
+        asManager,
       }),
     })
     .catch(error => {
@@ -116,7 +115,7 @@ export const getContestData = async ({
     contestants: response.result.rows.map((row, index) => {
       return {
         id: index,
-        name: row.party.teamName || row.party.members[0].handle || `NO_TEAM_NAME_${id}`,
+        name: row.party.teamName || row.party.members[0].name || row.party.members[0].handle || `NO_TEAM_NAME_${id}`,
       };
     }),
   };
@@ -126,25 +125,25 @@ export const getContestDataWithCodeforcesAPI = async ({
   frozenTime,
   contestId,
   isPrivate = false,
-  groupId = "",
   apiKey = "",
   apiSecret = "",
+  asManager = false,
 }) => {
   const contestData = await getContestData({
     frozenTime,
     contestId,
     isPrivate,
-    groupId,
     apiKey,
     apiSecret,
+    asManager,
   });
   const submissions = await getSubmissions({
     duration: contestData.contestData.duration,
     contestId,
     isPrivate,
-    groupId,
     apiKey,
     apiSecret,
+    asManager,
   });
   const JSONobject = {
     contestMetadata: contestData.contestData,
